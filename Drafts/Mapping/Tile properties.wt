@@ -1,0 +1,21 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.19.0|1439309}}
+'''Tile properties''' are used to provide different characteristics and information about the [[tiles]]. It is a necessary process to go through when [[adding new tiles|creating new tiles]] which is often resolved by copying the tile properties of existing tiles that are similar to the new tile you are creating. But if in need of documentation on what each property does, you can refer to the [https://pz-wiki-modding.github.io/PZ-API-Docs/mapping/tile_properties.html PZ API Doc].
+
+{{Note|type=warn|Not all game interactions come from tile properties. For example, if a car is driving on a floor tile from blends_street_*, it's considered to be on a road, otherwise the car is offroad. Reading the java source files is the only way to find other such interactions.}}
+
+== Directions ==
+Directions for the tiles follow the classic coordinate system of the Project Zomboid isometric view, with north being the top right and west being the top left.
+[[File:SpriteGridPos.png|400px|class=logo-dark]]
+
+== Surface and ItemHeight ==
+Below are images demonstration the parameters [https://pz-wiki-modding.github.io/PZ-API-Docs/mapping/tile_properties.html#surface Surface], [https://pz-wiki-modding.github.io/PZ-API-Docs/mapping/tile_properties.html#itemheight ItemHeight] and [https://pz-wiki-modding.github.io/PZ-API-Docs/mapping/tile_properties.html#issurfaceoffset IsSurfaceOffset]. The "Zero" here is not a parameter but simply added on the image to better show where the parameters start counting from.
+
+[[File:Tile property - Surface.png|400px]]
+[[File:Tile property - ItemHeight.png|300px]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping}}
