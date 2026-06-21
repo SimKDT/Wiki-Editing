@@ -15,4 +15,7 @@ return {
     ["blog"] = {file="File:Favicon_Forum.png"},
     ["gdrive"] = {file="File:Google Drive icon.webp"},
     ["npmjs"] = {file="File:npmjs icon.png"},
+    ["windows"] = {file="File:favicon windows.png"},
+    ["vscode"] = {file="File:Visual Studio Code - logo.png"},
+    ["pzapidocs"] = {file="File:PZ API Documentation - preview.png"},
 }

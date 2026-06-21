@@ -49,10 +49,10 @@ module yourModule /* or Base */
 
 The <code><RecipeID></code> is a unique identifier for the recipe, and '''should not have spaces in it'''. It is used to define the name of the recipe in the [[Translations|translation files]], in <code>Recipes.json</code>. For example, if the <code><RecipeID></code> is <code>MyRecipe</code>, the translation file for English needs to have:
 {{CodeSnip
-| lang = lua
+| lang = json
 | code =
 {
-    "MyRecipe" = "My recipe name"
+    "MyRecipe": "My recipe name"
 }
 }}
 
@@ -128,10 +128,10 @@ Different parameters can be used in the <code>craftRecipe</code> block to define
 
 === Available skills ===
 You can define multiple skills and their respective experience points/levels by separating them with <code>;</code>. Below is how each parameters need to be formatted:
-*[[xpAward]] format is <code>skill:experience</code>
-*[[SkillRequired]] format is <code>skill:level</code>
-*[[AutoLearnAll]] format is <code>skill:level</code>
-*[[AutoLearnAny]] format is <code>skill:level</code>
+* [[xpAward]] format is <code>skill:experience</code>
+* [[SkillRequired]] format is <code>skill:level</code>
+* [[AutoLearnAll]] format is <code>skill:level</code>
+* [[AutoLearnAny]] format is <code>skill:level</code>
 
 You can find the available skills in the {{JavaObject|package=zombie/characters/skills|PerkFactory.Perks}} class. Alternatively, you can also use modded skills defined by your mod or other mods.
 
@@ -256,7 +256,6 @@ Below is the list of tags that are used in vanilla crafts:
 
 {{note|type=warn|The crafting bench tag is mandatory for the recipe to be recognized.}}
 
-
 == Modifying existing recipes ==
 {{Stub|section=true|Other methods to modify specific elements exist and need to be documented.}}
 Below will be a list of known methods to modify specific elements of existing recipes.
@@ -286,6 +285,7 @@ Patch 42.18 added <code>getModTags()</code>, <code>setTags()</code> for CraftRec
 
 === Adding a new output mapper output ===
 Below are listed methods to modify an existing craftRecipe [[itemMapper]]s.
+
 ==== First method ====
 This method needs the mod to define a craftRecipe with the same name as the one to add new [[itemMapper]] entries. Only the itemMapper or overlayMapper entries need to be added the craftRecipe, which will not overwrite the original craftRecipe but add new entries to it. Simply make sure that your item gets added to the [[inputs]] either by adding it manually or if the input uses [[tags (item parameter)|item tags]], that your item has the same tags.
 {{CodeSnip

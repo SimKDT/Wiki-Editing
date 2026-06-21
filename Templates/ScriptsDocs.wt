@@ -1,0 +1,22 @@
+<noinclude>
+{{Documentation|doc=
+{{tll|ScriptsDocs}} is used to display a note box on the page regarding a specific external documentation reference.
+
+;Produces
+{{ScriptsDocs|Find more information about item blocks [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html here].}}
+{{ScriptsDocs|Find more information about this parameter of item blocks [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#item-icon here].}}
+
+==Parameters==
+;<code>1</code>{{sup|required}}
+:Description of the external documentation reference.
+
+}}
+{{ll|Category:Mbox}}
+</noinclude><includeonly>{{Mbox
+<!-- | background =  -->
+| color = #aecb7f
+| sign = [[File:PZ API Documentation - preview.png|link=PZ API Documentation{{lcs}}]]
+| content = {{{1}}}
+<!-- | note =  -->
+| cat = 
+}}</includeonly>
