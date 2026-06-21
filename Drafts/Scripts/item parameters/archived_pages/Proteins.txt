@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== Proteins ====
+Specifies the number of proteins in the item.
+<syntaxhighlight lang="Java">
+Proteins = 0,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

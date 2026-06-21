@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454821}}
+
+==== AimingPerkHitChanceModifier ====
+Parameter for weapons. A modifier that determines how much the Aim skill affects the chance to hit the target.
+<syntaxhighlight lang="Java">
+AimingPerkHitChanceModifier = 5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

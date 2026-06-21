@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WorldObjectSprite ====
+The parameter specifies the tile that will be used when placing the item as an on square object (Tile).
+<syntaxhighlight lang="Java">
+WorldObjectSprite = furniture_storage_02_8,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

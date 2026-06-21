@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MinRangeModifier ====
+Sets the minimum range modifier for the WeaponPart.
+<syntaxhighlight lang="Java">
+MinRangeModifier = 6,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

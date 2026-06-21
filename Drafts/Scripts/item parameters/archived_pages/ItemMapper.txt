@@ -1,0 +1,74 @@
+{{Title|itemMapper}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{Main|CraftRecipe}}
+The <code>itemMapper</code> parameter allows input items to be mapped to an output item. This is useful when you want to use a specific item in the recipe, but the player can use different items that are equivalent. This can alternatively be used for crafts that are the same for different types of objects. Mappers involve [[inputs]] and [[outputs]] as well as a whole new parameter <code>itemMapper</code>. To map items you need to use the following format:
+{{CodeSnip
+| lang = html
+| code =
+inputs
+{
+    item 1 <item table> mappers[mapperID],
+}
+outputs
+{
+    item 1 mapper:mapperID,
+}
+itemMapper mapperID
+{
+    <output item3> = <input item1>,
+    <output item4> = <input item2>,
+    ...
+}
+}}
+
+It is also possible to have two different inputs be used in the mapper:
+{{CodeSnip
+| lang = html
+| code =
+inputs
+{
+    item 1 <item table> mappers[mapperID],
+    item 1 <item table> mappers[mapperID],
+}
+outputs
+{
+    item 1 mapper:mapperID,
+}
+itemMapper mapperID
+{
+    <output item3> = <input item1>;<input item5>,
+    <output item4> = <input item2>;<input item6>,
+    ...
+}
+}}
+
+What this does is it will output <code>item3</code> if the two inputs defined in the <code>inputs</code> block are respectively <code>item1</code> and <code>item5</code> and it will be <code>item4</code> if they are respectively <code>item2</code> and <code>item6</code>.
+
+== Example ==
+Creating a recipe which allows the user to open or close an umbrella needs to take into account the different colors of the umbrella.
+
+For example, if you want to use a closed umbrella in a recipe, but the player can use any color of closed umbrella, you can use the following code:
+{{CodeSnip
+| lang = lua
+| code =
+inputs
+{
+    item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue;Base.ClosedUmbrellaRed;Base.ClosedUmbrellaTINTED;Base.ClosedUmbrellaWhite] mappers[umbrellaElla] flags[InheritColor;Prop1],
+}
+outputs
+{
+    item 1 mapper:umbrellaElla,
+}
+itemMapper umbrellaElla
+{
+    Base.UmbrellaBlack = Base.ClosedUmbrellaBlack,
+    Base.UmbrellaBlue = Base.ClosedUmbrellaBlue,
+    Base.UmbrellaRed = Base.ClosedUmbrellaRed,
+    Base.UmbrellaTINTED = Base.ClosedUmbrellaTINTED,
+    Base.UmbrellaWhite = Base.ClosedUmbrellaWhite,
+}
+}}
+
+{{ll|Category:craftRecipe parameters}}

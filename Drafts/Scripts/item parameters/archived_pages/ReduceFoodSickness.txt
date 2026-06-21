@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReduceFoodSickness ====
+A modifier that determines how much the level of food poisoning will decrease.
+<syntaxhighlight lang="Java">
+ReduceFoodSickness = 12,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

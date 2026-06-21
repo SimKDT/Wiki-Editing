@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== JamGunChance ====
+Parameter for weapons. Chance for gun jam.
+<syntaxhighlight lang="Java">
+JamGunChance = 2,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

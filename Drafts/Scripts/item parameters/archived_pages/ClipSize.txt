@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454931}}
+
+==== ClipSize ====
+Firearm magazine capacity.
+<syntaxhighlight lang="Java">
+ClipSize = 6,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

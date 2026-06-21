@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== UseDelta ====
+Determines how much the Drainable item's value will be spent on a single use.
+<syntaxhighlight lang="Java">
+UseDelta = 0.16,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

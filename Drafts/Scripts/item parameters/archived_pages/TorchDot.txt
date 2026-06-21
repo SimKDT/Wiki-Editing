@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== TorchDot ====
+Determines the sector on which the object will shine.
+<syntaxhighlight lang="Java">
+TorchDot = 0.66,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

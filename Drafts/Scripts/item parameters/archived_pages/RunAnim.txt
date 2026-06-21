@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== RunAnim ====
+The parameter sets the animation of running with a weapon.
+<syntaxhighlight lang="Java">
+RunAnim = Run_Weapon2,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

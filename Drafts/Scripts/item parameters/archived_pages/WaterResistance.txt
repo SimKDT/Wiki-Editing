@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WaterResistance ====
+Modifier that is involved in determining the protection against moisture.
+<syntaxhighlight lang="Java">
+WaterResistance = 0.45,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

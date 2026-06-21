@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454909}}
+
+==== CannedFood ====
+Set "ItemType" to "CannedFood". ''Type'' of item must be "Food"
+<syntaxhighlight lang="Java">
+CannedFood = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454911}}
+
+==== CantAttackWithLowestEndurance ====
+If this parameter is set to true, then the player will not be able to attack with this item if endurance is very low.
+<syntaxhighlight lang="Java">
+CantAttackWithLowestEndurance = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

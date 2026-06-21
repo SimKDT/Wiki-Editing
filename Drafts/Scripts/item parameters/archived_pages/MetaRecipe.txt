@@ -1,0 +1,25 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>MetaRecipe</code> parameter is used to link two recipes so that if the meta recipe is known then the main recipe is known. The opposite however is not true, if the main recipe is known the meta recipe is not automatically known.
+
+== Example ==
+In this example below, the recipe <code>MyRecipe1</code> will be known if the recipe <code>MyRecipe2</code> is known. However if the recipe <code>MyRecipe1</code> is known, the recipe <code>MyRecipe2</code> will not automatically be known and needs to be learnt.
+{{CodeSnip
+| lang = lua
+| code =
+craftRecipe MyRecipe1
+{
+    ...
+}
+
+craftRecipe MyRecipe2
+{
+    ...
+    metaRecipe = MyRecipe1,
+    ...
+}
+}}
+
+{{ll|Category:craftRecipe parameters}}

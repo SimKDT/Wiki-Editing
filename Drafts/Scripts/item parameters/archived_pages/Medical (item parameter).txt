@@ -1,0 +1,12 @@
+{{Title|{{lcs|slash=false}}}} <!-- changes display title to subpage name -->
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== Medical ====
+Set "ItemType" to "Medical".
+<syntaxhighlight lang="Java">
+Medical = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

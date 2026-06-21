@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454991}}
+
+==== CountDownSound ====
+The sound that will be played while the trap is running before the explosion.
+<syntaxhighlight lang="Java">
+CountDownSound = ticking,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WeightWet ====
+Used for clothes. Sets the weight when clothes are wet. (The game dynamically calculates the weight depending on how wet the clothes are)
+<syntaxhighlight lang="Java">
+WeightWet = 1.5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

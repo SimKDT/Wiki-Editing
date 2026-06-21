@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454967}}
+
+==== CombatSpeedModifier ====
+Used for clothes. Affects weapon attack speed.
+<syntaxhighlight lang="Java">
+CombatSpeedModifier = 0.9,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

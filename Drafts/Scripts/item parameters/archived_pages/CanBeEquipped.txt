@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454893}}
+
+==== CanBeEquipped ====
+The area on the body where the object will be placed. All locations can be checked in the file ''media\lua\shared\NPCs\BodyLocations.lua''
+<syntaxhighlight lang="Java">
+CanBeEquipped = FannyPackFront,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455085}}
+
+==== FishingLure ====
+Determines if the item is a Fishing lure.
+<syntaxhighlight lang="Java">
+FishingLure = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455007}}
+
+==== DangerousUncooked ====
+Used for food. If the parameter is true, then there is a chance to get an infection (Just an infection, not a zombie virus).
+<syntaxhighlight lang="Java">
+DangerousUncooked = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

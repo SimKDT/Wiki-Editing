@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== smokeRange ====
+The radius of smoke spread after an item explodes.
+<syntaxhighlight lang="Java">
+SmokeRange = 5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

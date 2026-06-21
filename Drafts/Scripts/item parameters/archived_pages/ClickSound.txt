@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454927}}
+
+==== clickSound ====
+Parameter for weapons. The parameter specifies the sound that will be played when the trigger is pressed.
+<syntaxhighlight lang="Java">
+ClickSound = M9Jam,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

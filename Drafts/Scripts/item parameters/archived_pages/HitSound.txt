@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455111}}
+
+==== HitSound ====
+Used for weapons. Indicates the sound that will be played when the item hits. You can set the value to 'null' (to remove the sound).
+<syntaxhighlight lang='Java'>
+HitSound = BaseballBatHit,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

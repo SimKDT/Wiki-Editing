@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MinRange ====
+Used for weapons. Sets the minimum attack range of the weapon. Range affects the chance of hitting a target.
+<syntaxhighlight lang="Java">
+MinRange = 0.61,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

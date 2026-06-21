@@ -1,0 +1,24 @@
+{{Title|model (mannequin)}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.10.0}}
+{{Main|Mannequin (scripts)}}
+The {{Code|model}} parameter is used to define the model used by the mannequin. The available [[File formats#Modeling and animation formats|models]] are found inside {{Code|media/models_X/skinned}}, for example:
+*{{Code|FemaleBody}}
+*{{Code|Female_Skeleton}}
+*{{Code|MaleBody}}
+*{{Code|Male_Skeleton}}
+*{{Code|Mannequin_Scarecrow}}
+*{{Code|Mannequin_Skeleton}}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+model = Mannequin_Scarecrow,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:mannequin parameters}}

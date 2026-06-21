@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== suspensionDamping ====
+Specifies a modifier for suspension damping.
+<syntaxhighlight lang="Java">
+suspensionDamping = 1.88,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

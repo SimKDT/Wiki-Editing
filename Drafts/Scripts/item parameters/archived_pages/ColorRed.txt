@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454965}}
+
+==== ColorRed ====
+Sets the red color parameter (0-255) to use in the tint of the item's icon and to determine the color of the light bulb's glow.
+<syntaxhighlight lang="Java">
+ColorRed = 228,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

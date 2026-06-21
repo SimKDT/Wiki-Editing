@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReloadTime ====
+Modifier of the time required to recharge.
+<syntaxhighlight lang="Java">
+ReloadTime = 25,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

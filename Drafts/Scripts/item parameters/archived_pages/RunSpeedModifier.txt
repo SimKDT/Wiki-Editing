@@ -1,0 +1,13 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== RunSpeedModifier ====
+Affects the player's running speed.
+
+('''NOTE:''' This option only works on backpacks and containers that are worn or carried)
+<syntaxhighlight lang="Java">
+RunSpeedModifier = 0.97,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

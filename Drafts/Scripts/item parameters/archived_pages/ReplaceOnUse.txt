@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReplaceOnUse ====
+The parameter specifies the type of item that the player will receive after using the original item.
+<syntaxhighlight lang="Java">
+ReplaceOnUse = TinCanEmpty,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

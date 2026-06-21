@@ -1,0 +1,41 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.0|2=984907}}
+{{Removed|text=As of [[Build 42.13.0]], this feature was removed to only depend on [[translations]].}}
+'''{{Code|DisplayName}}''' was used to set the display name of an item. This parameter was optional as of [[Build 42.12.3]]. It was suggested to use item name [[translations]] instead, which would take priority over this parameter. The priority order for the display name of an item was:
+# [[Translations|Item name translation]] for current language
+# [[Translations|Item name translation]] for English
+# {{Code|DisplayName}} parameter
+# Item full type
+
+Below is an example usage of the parameter:
+{{CodeSnip|code=
+DisplayName = Opened Canned Tomato,
+}}
+
+{{Note|type=warn|It is highly advised to use translations instead of this parameter, as it provides other modders the ability to translate your items into their own language with simple addons for your mod.}}
+
+== Using translation ==
+{{Move|section=true|Item (scripts)|Item translation should now be explained in the main [[Item (scripts)]] page since the <code>DisplayName</code> parameter is now deprecated as of [[Build 42.13.0]].}}
+Setup a [[Translations#Commonly used files|translation file]] for one or more languages inside the folder {{Code|media/lua/shared/Translate/{language code}/}} with {{Code|{language code}}} listed in the [[Translations#Languages|translations]] page. The file needs to be named {{Code|ItemName_{language code}.txt}}:
+{{CodeSnip|code=
+media/
+└── lua/
+    └── shared/
+        └── Translate/
+            ├── EN/
+            │   └── ItemName_EN.txt
+            ├── FR/
+            │   └── ItemName_FR.txt
+            └── ...
+}}
+
+Inside the file, add a line for each item you want to translate, using the full type of the item as the key with the prefix {{Code|ItemName_}}, and the desired display name as the value:
+{{CodeSnip|code=
+ItemName_EN = {
+    ItemName_Base.CannedTomato = Opened Canned Tomato,
+    ItemName_Base.CannedCorn = Opened Canned Corn,
+}
+}}
+
+{{ll|Category:Item scripts parameters}}

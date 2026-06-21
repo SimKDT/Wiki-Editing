@@ -1,0 +1,79 @@
+{{Title|texture}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.10.0}}
+{{Main|Mannequin (scripts)}}
+The {{Code|texture}} parameter is used to define the texture rendered on the mannequin model. The textures can usually be found in the {{Code|media/textures/body}} folder, but custom ones can also be used.
+
+== Available mannequin textures ==
+Below are some of the body textures available in the vanilla game:
+<div class="list-columns" style="column-width:250px; max-width:900px;">
+*<code>F_Mannequin_Black</code>
+*<code>F_Mannequin_White</code>
+*<code>F_ZedBody01</code>
+*<code>F_ZedBody01_level1</code>
+*<code>F_ZedBody01_level2</code>
+*<code>F_ZedBody01_level3</code>
+*<code>F_ZedBody02</code>
+*<code>F_ZedBody02_level1</code>
+*<code>F_ZedBody02_level2</code>
+*<code>F_ZedBody02_level3</code>
+*<code>F_ZedBody03</code>
+*<code>F_ZedBody03_level1</code>
+*<code>F_ZedBody03_level2</code>
+*<code>F_ZedBody03_level3</code>
+*<code>F_ZedBody04</code>
+*<code>F_ZedBody04_level1</code>
+*<code>F_ZedBody04_level2</code>
+*<code>F_ZedBody04_level3</code>
+*<code>FemaleBody01</code>
+*<code>FemaleBody02</code>
+*<code>FemaleBody03</code>
+*<code>FemaleBody04</code>
+*<code>FemaleBody05</code>
+*<code>M_Mannequin_Black</code>
+*<code>M_Mannequin_White</code>
+*<code>M_ZedBody01</code>
+*<code>M_ZedBody01_level1</code>
+*<code>M_ZedBody01_level2</code>
+*<code>M_ZedBody01_level3</code>
+*<code>M_ZedBody02</code>
+*<code>M_ZedBody02_level1</code>
+*<code>M_ZedBody02_level2</code>
+*<code>M_ZedBody02_level3</code>
+*<code>M_ZedBody03</code>
+*<code>M_ZedBody03_level1</code>
+*<code>M_ZedBody03_level2</code>
+*<code>M_ZedBody03_level3</code>
+*<code>M_ZedBody04</code>
+*<code>M_ZedBody04_level1</code>
+*<code>M_ZedBody04_level2</code>
+*<code>M_ZedBody04_level3</code>
+*<code>MaleBody01</code>
+*<code>MaleBody01a</code>
+*<code>MaleBody02</code>
+*<code>MaleBody02a</code>
+*<code>MaleBody03</code>
+*<code>MaleBody03a</code>
+*<code>MaleBody04</code>
+*<code>MaleBody04a</code>
+*<code>MaleBody05</code>
+*<code>MaleBody05a</code>
+*<code>Male_Scarecrow</code>
+*<code>Skeleton</code>
+*<code>SkeletonBurned</code>
+*<code>SkeletonMuscle</code>
+*<code>Skeleton_Mannequin</code>
+</div>
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+texture = F_Mannequin_Black,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:mannequin parameters}}

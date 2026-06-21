@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454977}}
+
+==== conditionLowerOffroad ====
+A modifier for the Vehicle Part that affects how badly the part will be damaged off-road.
+<syntaxhighlight lang="Java">
+ConditionLowerOffroad = 0.35,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

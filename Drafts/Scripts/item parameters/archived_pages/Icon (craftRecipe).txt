@@ -1,0 +1,15 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.10.0}}
+{{Main|CraftRecipe}}
+{{About|icons for [[craftRecipe (scripts)|craftRecipe scripts]]|icons for [[item (scripts)|item scripts]]|icon}}
+The <code>Icon</code> parameter is used to define the icon of the recipe. This parameter will refer to a texture in the game files. This seems to be used only once in the vanilla recipes with the entry <code>Icon = "Item_WaterDrop",</code> as the icon usually defaults to the items that will be crafted.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+Icon = "Item_WaterDrop",
+}}
+
+{{ll|Category:craftRecipe parameters}}

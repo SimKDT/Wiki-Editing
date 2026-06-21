@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455005}}
+
+==== DamageModifier ====
+Sets the damage modifier for the WeaponPart.
+<syntaxhighlight lang="Java">
+DamageModifier = 0.5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

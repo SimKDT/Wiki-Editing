@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PushBackMod ====
+The parameter determines the modifier that affects the stagger of targets after being hit.
+<syntaxhighlight lang="Java">
+PushBackMod = 0.3,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

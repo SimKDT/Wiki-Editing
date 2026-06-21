@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454983}}
+
+==== ConsolidateOption ====
+Specifies the translation ID for the merging items option.
+<syntaxhighlight lang="Java">
+ConsolidateOption = ContextMenu_Merge,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

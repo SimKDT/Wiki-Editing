@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== RequiresEquippedBothHands ====
+If the parameter is true, then the item must be held in both hands to use it.
+<syntaxhighlight lang="Java">
+RequiresEquippedBothHands = TRUE,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

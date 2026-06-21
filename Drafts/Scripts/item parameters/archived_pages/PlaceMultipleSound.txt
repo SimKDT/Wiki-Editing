@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PlaceMultipleSound ====
+Specifies the sound that will be played when multiple items are placed on the ground.
+<syntaxhighlight lang="Java">
+PlaceMultipleSound = BoxOfRoundsPlaceAll,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

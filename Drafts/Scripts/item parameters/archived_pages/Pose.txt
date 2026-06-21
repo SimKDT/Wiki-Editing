@@ -1,0 +1,18 @@
+{{Title|pose}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.10.0}}
+{{Unverified|It is likely the value that needs to be given isn't the name of the AnimNode file but instead the [[Name|name of the animation]] defined in the AnimNode file.}}
+The {{Code|pose}} parameter is used to define the [[AnimNodes]] being used by the mannequin.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+pose = pose01,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:mannequin parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== OpenSound ====
+Specifies the sound that will be played when an item (InventoryContainer) is opened.
+<syntaxhighlight lang="Java">
+OpenSound = OpenBag,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

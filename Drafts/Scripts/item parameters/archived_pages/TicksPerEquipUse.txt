@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== TicksPerEquipUse ====
+The parameter sets the value of how many ticks must pass for the item to spend one use.
+<syntaxhighlight lang="Java">
+TicksPerEquipUse = 110,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

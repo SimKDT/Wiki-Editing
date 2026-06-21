@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== RackAfterShoot ====
+Parameter for weapons. If the parameter is true, then after the shot the player will reload the weapon.
+<syntaxhighlight lang="Java">
+RackAfterShoot = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

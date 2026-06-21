@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454811}}
+
+==== AcceptMediaType ====
+The type of media that this device can play. 1 - TV-tapes, 0 - CDs
+<syntaxhighlight lang="Java">
+AcceptMediaType = 1,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

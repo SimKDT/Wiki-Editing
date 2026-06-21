@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454903}}
+
+==== CanHaveHoles ====
+Parameter for clothes. Specifies whether an item can have holes.
+<syntaxhighlight lang="Java">
+CanHaveHoles = false,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454825}}
+
+==== AimingPerkRangeModifier ====
+Parameter for weapons. A modifier that determines how much the Aim skill affects the maximum firing range.
+<syntaxhighlight lang="Java">
+AimingPerkRangeModifier = 1.5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

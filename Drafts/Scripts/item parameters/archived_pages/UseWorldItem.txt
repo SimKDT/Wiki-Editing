@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== UseWorldItem ====
+When this param is true, after placing item on ground will be used world texture sprite. (from "media/inventory/world/WItem_####.png")
+<syntaxhighlight lang="Java">
+UseWorldItem = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

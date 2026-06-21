@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WeaponLength ====
+Parameter for melee weapons. A modifier that affects attack range.
+<syntaxhighlight lang="Java">
+WeaponLength = 0.23,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

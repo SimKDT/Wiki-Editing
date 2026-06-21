@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReplaceOnCooked ====
+Replaces the item with the specified one after cooking.
+<syntaxhighlight lang="Java">
+ReplaceOnCooked = GrilledCheese,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

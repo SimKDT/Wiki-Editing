@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== IsPortable ====
+Determines if the player can use the given Radio Item as a portable item.
+<syntaxhighlight lang="Java">
+IsPortable = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

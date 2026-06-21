@@ -1,0 +1,15 @@
+{{Title|needToBeLearn}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>needToBeLearn</code> parameter specifies if the recipe needs to be learned before it can be crafted. Boolean, either <code>true</code> or <code>false</code>. Default is <code>false</code>.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+needToBeLearn = true,
+}}
+
+{{ll|Category:craftRecipe parameters}}

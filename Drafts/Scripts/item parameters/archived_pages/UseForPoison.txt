@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== UseForPoison ====
+Used as a multiplier for poison strength in recipes with this item.
+<syntaxhighlight lang="Java">
+UseForPoison = 38,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

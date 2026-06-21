@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454907}}
+
+==== CanStoreWater ====
+If the parameter is true, then the item will be able to store water.
+<syntaxhighlight lang="Java">
+CanStoreWater = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

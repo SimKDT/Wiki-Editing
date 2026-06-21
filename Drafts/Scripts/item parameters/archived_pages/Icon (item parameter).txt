@@ -1,0 +1,67 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.12.1}}
+{{Main|item (scripts)}}
+{{About|icons for [[item (scripts)|item scripts]]|icons for [[craftRecipe (scripts)|craftRecipe scripts]]|icon (craftRecipe)}}
+'''{{Code|icon}}''' specifies the Icon for an item, usually used in the inventory and crafting menus. The icon needs to be located inside the {{Code|media/textures/}} folder and must start with {{Code|Item_}} and be of the extension [[File formats#Image formats|<code>.png</code>]]:
+{{CodeSnip|code =
+media/
+└── textures/
+    └── Item_iconName.png
+}}
+
+Then reference the icon in the item script with:
+{{CodeSnip|code =
+Icon = iconName,
+}}
+
+To sum it up, follow these rules to set an icon for an item:
+*The icon file must be a PNG file (ending with {{Code|.png}}).
+*The icon file must be located in the {{Code|media/textures/}} folder.
+*The icon file name must start with {{Code|Item_}}.
+*The icon file name must not include the {{Code|Item_}} prefix when referenced in the item script.
+*The icon file name must not include the {{Code|.png}} extension when referenced in the item script.
+
+{{Note|type=warn|A common mistake when an icon is not showing up is to forget the {{Code|Item_}} prefix.}}
+
+== Subfolders ==
+Subfolders are not directly supported, but you can use some tricks to have one by doing:
+{{CodeSnip|code =
+Icon = subFolder/iconName,
+}}
+With the following file structure:
+{{CodeSnip|code =
+media/
+└── textures/
+    └── Item_subFolder/
+        └── iconName.png
+}}
+
+== Food icons ==
+Icons can be specified for rotten, cooked, and burned food by adding these suffix to the icon files:
+;{{Code|Rotten}} or {{Code|Spoiled}}
+:Food that has rotten, meaning has passed the [[DaysTotallyRotten]] value.
+;{{Code|Cooked}}
+:Food that has been cooked, meaning has passed the [[MinutesToCook]] value.
+;{{Code|Overdone}} or {{Code|Burnt}}
+:Food that has been cooked to the point of burning, meaning has passed the [[MinutesToBurn]] value.
+
+Food condition icons that do not exist will use the default icon value.
+
+=== Example ===
+Take a food item with the icon file defined as such:
+{{CodeSnip|code =
+Icon = iconName,
+}}
+
+To add variants based on food condition, you would have the following file structure:
+{{CodeSnip|code =
+media/
+└── textures/
+    ├── Item_iconName.png
+    ├── Item_iconNameCooked.png
+    ├── Item_iconNameRotten.png
+    └── Item_iconNameBurnt.png
+}}
+
+{{ll|Category:Item scripts parameters}}

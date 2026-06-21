@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WetCooldown ====
+Cooldown wetness modifier for item.
+<syntaxhighlight lang="Java">
+WetCooldown = 8000,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

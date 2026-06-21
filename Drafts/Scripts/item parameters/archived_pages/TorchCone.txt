@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== TorchCone ====
+If the parameter is true, then the item will shine with a cone.
+<syntaxhighlight lang="Java">
+TorchCone = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

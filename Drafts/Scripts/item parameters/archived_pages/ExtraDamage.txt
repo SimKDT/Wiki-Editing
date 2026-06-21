@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455059}}
+
+==== extraDamage ====
+The additional damage dealt by a thrown item hit.
+<syntaxhighlight lang="Java">
+ExtraDamage = 0.001,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

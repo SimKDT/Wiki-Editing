@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455021}}
+
+==== DoorDamage ====
+Parameter for weapons. A modifier that affects how much damage is dealt to a door/vehicle with a given weapon.
+<syntaxhighlight lang="Java">
+DoorDamage = 9,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

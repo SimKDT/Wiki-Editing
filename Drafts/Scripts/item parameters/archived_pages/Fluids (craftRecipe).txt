@@ -1,0 +1,56 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+'''Fluids''' use in recipes do not use a specific parameter to be defined but are directly defined in [[inputs]], even for fluid output.
+
+They are used in the same way as items, but have specific formatting. You start by defining which container the liquid can be in, usually this is done by listing every item with <code>[*]</code> and then defining the gain or loss of liquid.
+{{CodeSnip
+| lang = lua
+| code =
+inputs
+{
+    item <quantity integer> [item1, item2...] <mode optional> <flags optional>,
+    -fluid <quantity float> [fluid1, fluid2...],
+    item <quantity integer> [item1, item2...] <mode optional> <flags optional>,
+    +fluid <quantity float> outputFluid,
+}
+}}
+
+All fluid consumption and production is listed in <code>inputs</code> but <code>-fluid</code> defines fluid consumption while <code>+fluid</code> defines fluid production. The <code>quantity</code> is a float that defines the amount of liquid used or produced.
+
+<code>-fluid</code> requires the definition of fluids used inside a table like formatting (<code>[Water;TaintedWater...]</code>) while <code>+fluid</code> requires the definition of a single fluid (<code>Water</code>).
+
+{{Note|type=warn|Notice that the fluids which serve as inputs are in between {{Code|[]}} while the output fluid is not. This is because input can take multiple options for the fluid while output can only have one option.}}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 3
+| source = entity_coffeemachine.txt
+| path = ProjectZomboid\media\scripts\entities\appliances\workstations
+| retrieved = true
+| version = 42.5.1
+| code =
+craftRecipe MakeCoffeeMug
+{
+    timedAction = MakeCoffee,
+    Time = 20,
+    category = Cooking,
+    Tags = CoffeeMachine;Cooking,
+    inputs
+    {
+        item 1 [Base.Coffee2],
+        item 1 [*],
+        -fluid 0.2 [Water;TaintedWater],
+        item 1 tags[CoffeeMaker],
+        +fluid 0.2 Coffee,
+    }
+    outputs
+    {
+    }
+}
+}}
+
+{{ll|Category:craftRecipe parameters}}

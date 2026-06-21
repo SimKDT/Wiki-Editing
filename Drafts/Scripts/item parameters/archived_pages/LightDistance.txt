@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== LightDistance ====
+Specifies the range of the glow of the item.
+<syntaxhighlight lang="Java">
+LightDistance = 25,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

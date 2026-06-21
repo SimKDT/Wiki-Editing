@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WeaponSprite ====
+Specifies the name of model for the weapon.
+<syntaxhighlight lang="Java">
+WeaponSprite = HandAxe,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

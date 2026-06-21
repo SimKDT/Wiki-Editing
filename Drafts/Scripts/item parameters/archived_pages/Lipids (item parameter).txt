@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+{{About|item parameter|player parameter|Nutrition#Nutrients}}
+
+==== Lipids ====
+Specifies the amount of lipids in an item.
+<syntaxhighlight lang="Java">
+Lipids = 0,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

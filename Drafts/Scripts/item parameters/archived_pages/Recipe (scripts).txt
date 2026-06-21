@@ -1,0 +1,310 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+{{About|[[Build 41]] crafting recipes|crafting recipes for [[Build 42]]|CraftRecipe|an [[item]] called “Recipe”|Recipe}}
+
+== Introduction ==
+Recipes are a description of the ingredients for crafting an item and a description of the item that will result from crafting.
+
+Be careful in the syntax of describing parameters in recipes. Recipes use the property:value format, while items use property=value.
+
+Recipe example:
+<syntaxhighlight lang="Java">
+recipe Open Box of Nails
+{
+    NailsBox,
+
+    Result:Nails=20,
+    Sound:PutItemInBag,
+    Time:5.0,
+}
+</syntaxhighlight>
+
+'''Recipe parameters:'''
+
+=== Source ===
+Crafting resources are specified without a parameter word. There are several options for specifying the resources needed for crafting:
+
+'''1) itemType1/itemType2/itemType3,'''
+
+Items allowed for crafting are indicated. The recipe will require one of these items.
+
+Example:
+<syntaxhighlight lang="Java">
+Paperclip/Nails/FishingHook,
+</syntaxhighlight>
+
+'''2) itemType=Count,'''
+
+Specifies the type of item and the quantity of the item that will be used. If the item is Drainable, then the uses of the item are used. If only one item is needed, then only the item type can be specified.
+
+Example:
+<syntaxhighlight lang="Java">
+FishingRodBreak,
+Nails=3,
+</syntaxhighlight>
+
+'''3) itemType;Count,'''
+
+Specifies the type of food item and the quantity of 'Hunger' that will be used. Functions identically to itemType=Count for Drainable items.
+
+Example:
+<syntaxhighlight lang="Java">
+EmptyJar,
+Sugar;5,
+</syntaxhighlight>
+
+'''4) [LuaFuncToGetItemTypes]=Count,'''
+
+The Lua function is used to specify items. The functions are specified in a separate Lua file (the file must be placed in the media\lua\server folder).
+
+Example:
+
+'''Part of recipe code:'''
+<syntaxhighlight lang="Java">
+[Recipe.GetItemTypes.FishingLine]=2,
+</syntaxhighlight>
+'''Lua code:''' (Add all items tagged "FishingLine")
+<syntaxhighlight lang="Lua">
+function Recipe.GetItemTypes.FishingLine(scriptItems)
+    scriptItems:addAll(getScriptManager():getItemsTag("FishingLine"))
+end
+</syntaxhighlight>
+
+'''5) keep ItemType,'''
+
+So you can specify an item that will not be spent on a recipe, but that you need to keep in hand for crafting.
+
+Example:
+<syntaxhighlight lang="Java">
+keep Saw,
+</syntaxhighlight>
+
+'''6) destroy ItemType'''
+
+So you can specify that the item will be destroyed after crafting.
+
+Example:
+<syntaxhighlight lang="Java">
+destroy RippedSheets,
+</syntaxhighlight>
+
+=== Override ===
+If this parameter is specified, then a recipe that is already loaded by the game will be overwritten with this recipe. Used, for example, to overwrite vanilla recipes.
+<syntaxhighlight lang="Java">
+Override:true,
+</syntaxhighlight>
+
+=== AnimNode ===
+Specifies the ID of the animation that will be used when crafting the item. Example:
+<syntaxhighlight lang="Java">
+AnimNode:RipSheets,
+</syntaxhighlight>
+
+=== Prop1 ===
+Used to indicate the item that will be in the main (right) hand during crafting.
+<syntaxhighlight lang="Java">
+Prop1:Screwdriver,
+</syntaxhighlight>
+Also, as an item, you can specify a resource for crafting '''Source=%Ordinal number of the resource%'''. Example:
+<syntaxhighlight lang="Java">
+Prop1:Source=1
+</syntaxhighlight>
+
+=== Prop2 ===
+Used to indicate the item that will be in the extra (left) hand during crafting.
+<syntaxhighlight lang="Java">
+Prop2:Log,
+</syntaxhighlight>
+Also, as an item, you can specify a resource for crafting '''Source=%Ordinal number of the resource%'''. Example:
+<syntaxhighlight lang="Java">
+Prop2:Source=3
+</syntaxhighlight>
+
+=== Time ===
+Specifies how much time will be spent on crafting.
+<syntaxhighlight lang="Java">
+Time:230.0,
+</syntaxhighlight>
+
+=== Sound ===
+Sound that will be played when player craft item.
+<syntaxhighlight lang="Java">
+Sound:PutItemInBag,
+</syntaxhighlight>
+
+=== InSameInventory ===
+If the parameter is true, then the resources for crafting will be used from only one container (the one where the crafting menu was opened).
+<syntaxhighlight lang="Java">
+InSameInventory:true,
+</syntaxhighlight>
+
+=== Result ===
+The result of crafting (item type and quantity). Example:
+<syntaxhighlight lang="Java">
+Result:FishingHook=10,
+</syntaxhighlight>
+If the result of crafting is an item in a single copy, then the number of items can be skipped.
+<syntaxhighlight lang="Java">
+Result:Hat_TinFoilHat,
+</syntaxhighlight>
+
+=== OnCanPerform ===
+The parameter contains the name of a Lua function that will check the condition necessary to start crafting. Example:
+<syntaxhighlight lang="Java">
+OnCanPerform:Recipe.OnCanPerform.HockeyMaskSmashBottle,
+</syntaxhighlight>
+<syntaxhighlight lang="Lua">
+function Recipe.OnCanPerform.HockeyMaskSmashBottle(recipe, playerObj)
+    local wornItem = playerObj:getWornItem("MaskEyes")
+    return (wornItem ~= nil) and (wornItem:getType() == "Hat_HockeyMask")
+end
+</syntaxhighlight>
+
+=== OnTest ===
+The parameter contains the name of the Lua function that checks the resources (items) used in crafting and returns true or false.
+<syntaxhighlight lang="Java">
+OnTest:Recipe.OnTest.IsNotWorn,
+</syntaxhighlight>
+<syntaxhighlight lang="Lua">
+function Recipe.OnTest.IsNotWorn(item)
+    if instanceof(item, "Clothing") then
+    return not item:isWorn()
+    end
+    return true
+end
+</syntaxhighlight>
+
+=== OnCreate ===
+The parameter contains the name of the Lua function that is called before using the resources and getting the crafting result. Allows you to add additional functional. Resource items, a crafting result item, and a player object are passed as input to the function.
+<syntaxhighlight lang="Java">
+OnCreate:Recipe.OnCreate.Dismantle,
+</syntaxhighlight>
+<syntaxhighlight lang="Lua">
+function Recipe.OnCreate.Dismantle(items, result, player)
+    player:getInventory():AddItem("Base.ElectronicsScrap");
+end
+</syntaxhighlight>
+
+=== AllowDestroyedItem ===
+If the parameter is true, then allows the use of broken items as a resource
+<syntaxhighlight lang="Java">
+AllowDestroyedItem:true,
+</syntaxhighlight>
+
+=== AllowFrozenItem ===
+If the parameter is true, then allows frozen items to be used as a resource
+<syntaxhighlight lang="Java">
+AllowFrozenItem:true
+</syntaxhighlight>
+
+=== AllowRottenItem ===
+If the parameter is true, then allows the use of rotten items as a resource
+<syntaxhighlight lang="Java">
+AllowRottenItem:true
+</syntaxhighlight>
+
+=== NeedToBeLearn ===
+If the parameter is true, then in order to craft this item, you must first learn the recipe. Usually recipes are learned through magazines or given for certain perks/professions.
+<syntaxhighlight lang="Java">
+NeedToBeLearn:true,
+</syntaxhighlight>
+
+=== Category ===
+Specifies the category in which the recipe will be displayed. Example:
+<syntaxhighlight lang="Java">
+Category:Carpentry,
+</syntaxhighlight>
+
+=== RemoveResultItem ===
+If the parameter is true, then the recipe will not return the crafting result to the player.
+<syntaxhighlight lang="Java">
+RemoveResultItem:true
+</syntaxhighlight>
+
+=== CanBeDoneFromFloor ===
+If the parameter is true, then the crafting of the item can be done without picking up resources from the floor Required
+
+Item to be repaired.
+
+Required : WoodAxe,
+(The player will not move items to inventory)
+<syntaxhighlight lang="Java">
+CanBeDoneFromFloor:true,
+</syntaxhighlight>
+
+=== NearItem ===
+Allows crafting only if there is an object nearby with the name of the value, which is specified in the parameter.
+<syntaxhighlight lang="Java">
+NearItem:Workbench,
+</syntaxhighlight>
+
+=== SkillRequired ===
+The parameter indicates the required skill and its level for crafting.
+<syntaxhighlight lang="Java">
+SkillRequired:Woodwork=7,
+</syntaxhighlight>
+Skill List: Axe, Blunt, SmallBlunt, LongBlade, SmallBlade, Spear, Maintenance, Aiming, Reloading, Woodwork, Cooking, Farming, Doctor, Electricity, MetalWelding, Mechanics, Tailoring, Fishing, Trapping, PlantScavenging, Fitness, Strength, Sprinting, Lightfoot , Nimble, Sneak
+
+=== OnGiveXP ===
+The parameter contains the name of a Lua function that gives experience to the crafting player.
+<syntaxhighlight lang="Java">
+OnGiveXP:Recipe.OnGiveXP.SawLogs,
+</syntaxhighlight>
+<syntaxhighlight lang="Lua">
+function Recipe.OnGiveXP.SawLogs(recipe, ingredients, result, player)
+    if player:getPerkLevel(Perks.Woodwork) <= 3 then
+        player:getXp():AddXP(Perks.Woodwork, 3);
+    else
+        player:getXp():AddXP(Perks.Woodwork, 1);
+    end
+end
+</syntaxhighlight>
+
+=== Obsolete ===
+If the parameter is true, then the recipe will be removed from the game. The parameter can be useful for overriding and removing vanilla recipes.
+<syntaxhighlight lang="Java">
+Obsolete:true,
+</syntaxhighlight>
+
+=== Heat ===
+The parameter indicates the temperature of the resource required for crafting. -1.0 (Very hot) to 1.0 (Very cold).
+<syntaxhighlight lang="Java">
+Heat:-0.22
+</syntaxhighlight>
+
+=== NoBrokenItems ===
+If the parameter is true, then broken items cannot be used in crafting.
+<syntaxhighlight lang="Java">
+NoBrokenItems:true,
+</syntaxhighlight>
+
+=== StopOnWalk ===
+If the parameter is true, then it will not be possible to craft the item when the player is walking. If it is false, then it will be possible to craft on the go.
+<syntaxhighlight lang="Java">
+StopOnWalk:false
+</syntaxhighlight>
+
+=== StopOnRun ===
+If the parameter is true, then it will not be possible to craft an item when the player is running. If set to false, then it will be possible to craft while running.
+<syntaxhighlight lang="Java">
+StopOnRun:false
+</syntaxhighlight>
+
+=== IsHidden ===
+If the parameter is true, then hides crafting from the crafting menu.
+<syntaxhighlight lang="Java">
+IsHidden:true,
+</syntaxhighlight>
+
+== Lua ==
+Inherit <code>Recipe</code> from <code>Base</code> first:
+<syntaxhighlight lang="Lua">
+local Recipe = Recipe
+
+function Recipe.OnCreate.YourRecipe(items, result, player, selectedItem)
+   ...
+end
+</syntaxhighlight>
+
+{{ll|Category:Scripts}}

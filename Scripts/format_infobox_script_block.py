@@ -12,7 +12,7 @@ ToMap = {
 }
 
 SCRIPT_PATH = os.path.dirname(__file__)
-path = os.path.join(SCRIPT_PATH, "..", "pz-scripts-data", "data", "scriptBlocks.json")
+path = os.path.join(SCRIPT_PATH, "..", "pz-scripts-data", "out", "scriptBlocks.json")
 path = os.path.abspath(path)
 
 with open(path, 'r') as file:

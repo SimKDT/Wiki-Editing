@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== suspensionCompression ====
+Defines a modifier for suspension compression.
+<syntaxhighlight lang="Java">
+suspensionCompression = 1.83,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

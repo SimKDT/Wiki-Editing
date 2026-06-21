@@ -1,0 +1,10 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454995}}
+
+Used for weapons. Specifies the critical strike modifier that is used in the calculation of the chance of a critical strike.
+<syntaxhighlight lang="Java">
+CriticalChance = 20,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

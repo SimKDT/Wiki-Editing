@@ -1,0 +1,74 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.0.2}}
+{{About|script blocks defining fluids in-game and how to create a custom fluid|in-game fluids|Fluid}}
+
+== Introduction ==
+The block describes the parameters of a fluid added to the game.
+
+Example:
+
+{{CodeSnip
+| lang = lua
+| code =
+fluid Test
+    {
+        Color           = 1.000 : 0.894 : 0.769, , -- The color value here must be an RGB01 value ( Decimal ranges from 0 to 1. Alpha (transparency) input is not supported.
+        ColorReference  = Red, -- You can also use a plaintext color reference.
+        DisplayName     = FLUID_TEST,
+
+        Categories
+        {
+
+            Beverage,
+            Industrial,
+        }
+
+        -- Optional stuff:
+
+        -- reference a filter script:
+        BlendWhiteList  = MyFluidFilter,
+        BlendBlackList  = MyFluidFilter,
+
+        BlendWhiteList -- You can define whether this fluid can or cannot be blended with others.
+        {
+            whitelist = true,
+            fluids
+            {
+                Water,
+            }
+            categories
+            {
+                Beverage,
+            }
+        }
+
+        Properties
+        {
+            fatigueChange           = 0,
+            hungerChange            = 0,
+            stressChange            = 0,
+            thirstChange            = 0,
+            unhappyChange           = 0,
+            calories                = 0,
+            carbohydrates           = 0,
+            lipids                  = 0,
+            proteins                = 0,
+            alcohol                 = 0,
+            fluReduction            = 0,
+            painReduction           = 0,
+            enduranceChange         = 0,
+            foodSicknessReduction   = 0,
+        }
+
+        Poison
+        {
+            maxEffect       = None, -- Acceptable values: None, Low(Unconfirmed/Untested), Medium, Extreme, Deadly,
+            minAmount       = 0, -- Minimum poison effect. Any decimal value from 0 to 1.0
+            diluteRatio     = 0, -- The ratio of this poison and how diluted it becomes when added to other fluids.
+        }
+
+    }
+}}
+
+{{ll|Category:Scripts}}

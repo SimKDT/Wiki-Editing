@@ -1,0 +1,32 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+The '''{{Code|ItemType}}''' parameter defines the class the item will be instantiated as. Every items are created as an {{JavaObject|InventoryItem|package=zombie/inventory|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}'s subclass, based on the value of this parameter. The various parameters the [[item (scripts)|item script]] can have are dependent on the class of the item; such as food items will hold nutritional values and weapon items will hold damage values.
+
+The possible values are:
+*<code>base:alarmclock</code>
+*<code>base:alarmclockclothing</code>
+*<code>base:animal</code>
+*<code>base:clothing</code>
+*<code>base:container</code>
+*<code>base:drainable</code>
+*<code>base:food</code>
+*<code>base:key</code>
+*<code>base:literature</code>
+*<code>base:map</code>
+*<code>base:moveable</code>
+*<code>base:normal</code>
+*<code>base:radio</code>
+*<code>base:weapon</code>
+*<code>base:weaponpart</code>
+
+Below is an example for the parameter:
+{{CodeSnip| code =
+ItemType = base:food,
+}}
+
+{{Note|In [[Build 42.12.0]] patch note, it was announced that work is being put on replacing the {{Code|Type}} system by the ECS system that [[Fluid (scripts)]] notably use, which should make items way more flexible in their definitions, so you could add a radio ECS to an item for it be a radio, or food ECS etc.
+{{Quote|text=In the future, it'll help us in making ECS items work - so items will have components, instead of having a "Food.class" item, we'll have a simple InventoryItem and add a component "Nutrition" to it. The intent is for it to ultimately simplify our code a lot.|author=[https://theindiestone.com/forums/index.php?/topic/86939-build-42120-unstable-released/ The Indie Stone]}}
+}}
+
+{{ll|Category:Item scripts parameters}}

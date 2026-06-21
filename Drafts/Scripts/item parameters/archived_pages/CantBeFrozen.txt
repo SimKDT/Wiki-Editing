@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454915}}
+
+==== CantBeFrozen ====
+If the parameter is true, then the item cannot be frozen in the refrigerator.
+<syntaxhighlight lang="Java">
+CantBeFrozen = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

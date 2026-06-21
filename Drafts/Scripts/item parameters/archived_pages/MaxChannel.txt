@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MaxChannel ====
+Maximum channel available for an item (Radio)
+<syntaxhighlight lang="Java">
+MaxChannel = 1000000,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

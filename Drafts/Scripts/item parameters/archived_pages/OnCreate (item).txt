@@ -1,0 +1,65 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== OnCreate ====
+Specifies a Lua function that will be called when the item spawns. An object is passed to the function as an argument. It is convenient to use to set the parameters of an object when it appears in the world.
+<syntaxhighlight lang="Java">
+OnCreate = Fishing.OnCreateFish,
+</syntaxhighlight>
+
+<syntaxhighlight lang="Lua">
+Fishing.OnCreateFish = function(_item)
+    if not _item then return; end;
+    local item = _item;
+    local itemType = item:getFullType();
+    local fish;
+    for _, fishDef in ipairs(fishes) do
+        if fishDef.item == itemType then
+            fish = fishDef;
+        end;
+    end;
+    if not fish then return; end;
+    --
+    local sizeName = "Small";
+    local fishSizeNumber = ZombRand(100);
+    if fishSizeNumber <= 20 then
+        sizeName = "Big";
+    elseif fishSizeNumber <= 30 then
+        sizeName = "Medium";
+    end;
+    local baseWeightLb = item:getActualWeight();
+    local size = nil;
+    local weightKg = nil;
+
+    -- now we set the size (for the name) and weight (for hunger) according to his size (little, medium and big)
+    if sizeName == "Small" then
+        size = ZombRand(fish.little.minSize, fish.little.maxSize);
+        weightKg = size / fish.little.weightChange;
+    elseif sizeName == "Medium" then
+        size = ZombRand(fish.medium.minSize, fish.medium.maxSize);
+        weightKg = size / fish.medium.weightChange;
+    else
+        size = ZombRand(fish.big.minSize, fish.big.maxSize);
+        weightKg = size / fish.big.weightChange;
+    end
+
+    local nutritionFactor = 2.2 * weightKg / baseWeightLb;
+    item:setCalories(item:getCalories() * nutritionFactor);
+    item:setLipids(item:getLipids() * nutritionFactor);
+    item:setCarbohydrates(item:getCarbohydrates() * nutritionFactor);
+    item:setProteins(item:getProteins() * nutritionFactor);
+    local wScale = fish.scaleCoeff[math.floor(size / 10.0)]
+    if wScale == nil then wScale = 1.0 end
+    item:setWorldScale(wScale);
+
+    -- hunger reduction is weight of the fish div by 6, and set it to negative
+    item:setBaseHunger(- weightKg / 6);
+    item:setHungChange(item:getBaseHunger());
+    -- weight is kg * 2.2 (in pound)
+    item:setActualWeight(weightKg * 2.2);
+    item:setCustomWeight(true);
+end
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

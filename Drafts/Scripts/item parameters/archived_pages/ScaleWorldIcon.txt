@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ScaleWorldIcon ====
+If the UseWorldItem parameter is true, then the ScaleWorldIcon parameter specifies the scale for texture.
+<syntaxhighlight lang="Java">
+ScaleWorldIcon = 2.0,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

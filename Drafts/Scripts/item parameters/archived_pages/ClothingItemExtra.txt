@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454957}}
+
+==== ClothingItemExtra ====
+Used for clothes. The parameter indicates an additional option of how the item can be dressed additionally.
+<syntaxhighlight lang="Java">
+ClothingItemExtra = Hat_BaseballCap_Reverse,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

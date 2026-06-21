@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== IsTelevision ====
+Determines if the item is a TV.
+<syntaxhighlight lang="Java">
+IsTelevision = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

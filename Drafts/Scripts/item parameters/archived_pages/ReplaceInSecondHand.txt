@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReplaceInSecondHand ====
+Specifies the model that will be used to replace the second hand item with a specific animation.
+<syntaxhighlight lang="Java">
+ReplaceInSecondHand = Bag_PistolCase_LHand holdingbagleft,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

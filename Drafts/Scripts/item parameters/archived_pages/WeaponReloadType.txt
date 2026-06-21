@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WeaponReloadType ====
+Parameter for weapons. Specifies the type of reload. The types of reloads are specified in the animation parameters. If you want to use the reload type from the original game - look at this option for a weapon of a similar type.
+<syntaxhighlight lang="Java">
+WeaponReloadType = doublebarrelshotgun,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

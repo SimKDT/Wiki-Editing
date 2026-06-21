@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MinChannel ====
+Minimum channel available for an item (Radio)
+<syntaxhighlight lang="Java">
+MinChannel = 200,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454859}}
+
+==== BadCold ====
+Food will give more unhappiness if the food is cold.
+<syntaxhighlight lang="Java">
+BadCold = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

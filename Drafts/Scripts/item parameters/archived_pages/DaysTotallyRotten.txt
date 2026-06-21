@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455011}}
+
+==== DaysTotallyRotten ====
+Used for food. Indicates how many days the food will be totally rotten.
+<syntaxhighlight lang="Java">
+DaysTotallyRotten = 8,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

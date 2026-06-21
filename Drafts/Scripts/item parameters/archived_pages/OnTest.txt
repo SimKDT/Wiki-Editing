@@ -1,0 +1,39 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>OnTest</code> parameter is used to define a Lua function that will be called to verify if the recipe can be crafted. If the function returns <code>true</code>, the recipe can be crafted but if the function returns <code>false</code>, the recipe cannot be crafted. The function should be [[Lua (language)#Local and global|global]] and defined in a Lua file. Vanilla puts its global crafting functions inside the file <code>media/lua/server/recipecode.lua</code> however make sure to define your custom functions in a uniquely named file.
+
+The function should have the following structure:
+{{CodeSnip
+| lang = lua
+| code =
+function MyOnTestFunction(item, result)
+    -- your custom code here
+    return logicTestResult  -- based on your logic test above
+end
+}}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+OnTest = Recipe.OnTest.OnlyBrokenSaw,
+}}
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 2713
+| source = recipecode.lua
+| path = ProjectZomboid\media\lua\server
+| retrieved = true
+| version = 42.5.1
+| code =
+function Recipe.OnTest.OnlyBrokenSaw (sourceItem, result)
+    if sourceItem:hasTag("Saw") then return true end
+	return not sourceItem:isBroken()
+end
+}}
+
+{{ll|Category:craftRecipe parameters}}

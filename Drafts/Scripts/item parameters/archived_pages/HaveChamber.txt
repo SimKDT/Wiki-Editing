@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455097}}
+
+==== HaveChamber ====
+Parameter for weapons. Indicates if the weapon has a chamber for bullet.
+<syntaxhighlight lang="Java">
+HaveChamber = false,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== SoundMap ====
+Specifies an EventName-Sound pair.
+<syntaxhighlight lang="Java">
+SoundMap = SpearStab SpearHuntingKnifeStab,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

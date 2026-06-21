@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== RemoveUnhappinessWhenCooked ====
+Used for food. If the parameter is true, then after cooking the item will not give unhappiness.
+<syntaxhighlight lang="Java">
+RemoveUnhappinessWhenCooked = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

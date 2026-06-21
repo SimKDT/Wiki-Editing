@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455081}}
+
+==== firePower ====
+Modifier for the strength of the fire that will appear after the explosion.
+<syntaxhighlight lang="Java">
+FirePower = 97,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

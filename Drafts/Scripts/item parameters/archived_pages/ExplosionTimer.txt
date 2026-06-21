@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455053}}
+
+==== explosionTimer ====
+The time before the trap explodes.
+<syntaxhighlight lang="Java">
+ExplosionTimer = 5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

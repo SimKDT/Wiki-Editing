@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PageToWrite ====
+The number of pages that can be written on in the item.
+<syntaxhighlight lang="Java">
+PageToWrite = 12,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

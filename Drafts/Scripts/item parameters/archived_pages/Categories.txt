@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454921}}
+
+==== Categories ====
+Parameter for weapons. Specifies the category for the game to correctly recognize the skill for this weapon. Categories: Axe, Spear, SmallBlade, LongBlade, Blunt, SmallBlunt.
+<syntaxhighlight lang="Java">
+Categories = SmallBlade,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454887}}
+
+==== Calories ====
+Specifies the number of calories in an item.
+<syntaxhighlight lang="Java">
+Calories = 10.5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

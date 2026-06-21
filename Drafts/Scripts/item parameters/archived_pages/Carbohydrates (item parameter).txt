@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=458641}}
+{{About|item parameter|player parameter|Nutrition#Nutrients}}
+
+==== Carbohydrates ====
+Specifies the number of carbohydrates in the item.
+<syntaxhighlight lang="Java">
+Carbohydrates = 28,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

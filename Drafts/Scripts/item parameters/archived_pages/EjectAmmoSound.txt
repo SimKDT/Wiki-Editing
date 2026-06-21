@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455027}}
+
+==== EjectAmmoSound ====
+Parameter for weapons. This parameter specifies the sound that will be played when the weapon is unloaded.
+<syntaxhighlight lang="Java">
+EjectAmmoSound = DoubleBarrelShotgunEjectAmmo,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

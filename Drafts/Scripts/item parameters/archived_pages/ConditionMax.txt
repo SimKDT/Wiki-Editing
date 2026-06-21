@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454981}}
+
+==== ConditionMax ====
+Sets maximum durability.
+<syntaxhighlight lang="Java">
+ConditionMax = 10,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

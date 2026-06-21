@@ -1,0 +1,18 @@
+{{Title|female}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.10.0}}
+{{Main|mannequin (scripts)}}
+The {{Code|female}} parameter is used to define if the mannequin is a female or male. The value can be either {{Code|true}} or {{Code|false}}.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+female = true,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:mannequin parameters}}

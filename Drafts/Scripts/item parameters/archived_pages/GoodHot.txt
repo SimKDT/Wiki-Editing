@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455091}}
+
+==== GoodHot ====
+Food will give less unhappiness if the food is warmed up.
+<syntaxhighlight lang="Java">
+GoodHot = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

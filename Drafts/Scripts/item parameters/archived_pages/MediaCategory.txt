@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MediaCategory ====
+Specifies the item type that will be used to determine the playback device.
+<syntaxhighlight lang="Java">
+MediaCategory = Retail-VHS,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

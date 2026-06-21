@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== TreeDamage ====
+Wood damage modifier.
+<syntaxhighlight lang="Java">
+TreeDamage = 5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454863}}
+
+==== BandagePower ====
+The modifier affects how long the medical bandage stays clean, the ability to clear a burn, and the ability to apply the item as a bandage.
+<syntaxhighlight lang="Java">
+BandagePower = 4,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

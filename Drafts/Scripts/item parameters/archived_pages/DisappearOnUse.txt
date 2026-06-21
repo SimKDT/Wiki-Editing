@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455015}}
+
+==== DisappearOnUse ====
+If the parameter is set to false, then there will be no waste of using the item (In normal use).
+<syntaxhighlight lang="Java">
+DisappearOnUse = false,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

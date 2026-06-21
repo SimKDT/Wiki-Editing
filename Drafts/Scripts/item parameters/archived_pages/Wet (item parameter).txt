@@ -1,0 +1,9 @@
+{{Title|{{lcs|slash=false}}}} <!-- changes display title to subpage name -->
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== Wet ====
+''DEPRECATED''
+
+{{ll|Category:Item scripts parameters}}

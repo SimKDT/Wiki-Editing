@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReloadTimeModifier ====
+Reload time modifier (WeaponPart item). Negative number to speed up reload time.
+<syntaxhighlight lang="Java">
+ReloadTimeModifier = -5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455069}}
+
+==== FillFromTapSound ====
+Specifies the sound that will be played when tap water is poured into an item.
+<syntaxhighlight lang="Java">
+FillFromTapSound = GetWaterFromTapPlasticBig,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

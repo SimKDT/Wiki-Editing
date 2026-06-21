@@ -1,0 +1,146 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+== Introduction ==
+The block describes an option to improve/create a multi stage building.
+
+Example:
+<syntaxhighlight lang="Java">
+multistagebuild UpgradeWoodenWall_2To3
+{
+    PreviousStage:WoodenWallLvl2,
+    Name:WoodenWallLvl3,
+    TimeNeeded:200,
+    BonusHealth:100,
+    BonusSkill:FALSE,
+    SkillRequired:Woodwork=7,
+    ItemsRequired:Base.Plank=1;Base.Nails=4,
+    ItemsToKeep:Base.Hammer,
+    Sprite:walls_exterior_wooden_01_24,
+    NorthSprite:walls_exterior_wooden_01_25,
+    CanBePlastered:true,
+    WallType:wall,
+    CraftingSound:Hammering,
+    ID:Upgrade to Wooden Wall Lvl 32,
+    XP:Woodwork=10,
+}
+</syntaxhighlight>
+
+== Parameters ==
+
+=== Name ===
+A unique name for the recipe. Not used for display in the game (name of the block is used for display in the game)
+<syntaxhighlight lang="Java">
+Name:WoodenWallLvl3,
+</syntaxhighlight>
+
+=== TimeNeeded ===
+Time required to build.
+<syntaxhighlight lang="Java">
+TimeNeeded:250,
+</syntaxhighlight>
+
+=== BonusHealth ===
+Parameter of additional durability for building. The parameter is also affected by the bonus durability setting in Sandbox.
+<syntaxhighlight lang="Java">
+BonusHealth:500,
+</syntaxhighlight>
+
+=== Sprite ===
+The parameter sets the tile of west sprite.
+<syntaxhighlight lang="Java">
+sprite:walls_exterior_wooden_01_40,
+</syntaxhighlight>
+
+=== North Sprite ===
+The parameter sets the tile of north sprite.
+<syntaxhighlight lang="Java">
+NorthSprite:walls_exterior_wooden_01_41,
+</syntaxhighlight>
+
+=== KnownRecipe ===
+A recipe that a player must know in order to complete a building.
+<syntaxhighlight lang="Java">
+KnownRecipe: Make Metal Walls,
+</syntaxhighlight>
+
+=== Thump Sound ===
+The sound that will be played when someone hits a building.
+<syntaxhighlight lang="Java">
+ThumpSound:ZombieThumpMetal,
+</syntaxhighlight>
+
+=== WallType ===
+Sets the wall type. Options: wall/doorframe/windowsframe.
+<syntaxhighlight lang="Java">
+WallType:doorframe,
+</syntaxhighlight>
+
+=== CraftingSound ===
+The sound that will be played during construction.
+<syntaxhighlight lang="Java">
+CraftingSound: Hammering,
+</syntaxhighlight>
+
+=== CompletionSound ===
+The sound that will be played when the building is completed.
+<syntaxhighlight lang="Java">
+CompletionSound:BuildMetalStructureMedium,
+</syntaxhighlight>
+
+=== ID ===
+The unique recipe ID. Used to prevent building recipes from being duplicated.
+<syntaxhighlight lang="Java">
+ID:Create Metal Window Lvl 1,
+</syntaxhighlight>
+
+=== CanBePlastered ===
+The parameter indicates that the building can be plastered.
+<syntaxhighlight lang="Java">
+CanBePlastered:true,
+</syntaxhighlight>
+
+=== BonusSkill ===
+If the parameter is true, then a bonus to the health of the building is given (depending on the carpentry skill).
+<syntaxhighlight lang="Java">
+BonusSkill:false
+</syntaxhighlight>
+
+=== Can Barricade ===
+Sets whether this building can be barricaded.
+<syntaxhighlight lang="Java">
+CanBarricade:true,
+</syntaxhighlight>
+
+=== XP ===
+Specifies how much experience will be given to certain skills.
+<syntaxhighlight lang="Java">
+XP:Woodwork=10;MetalWelding=15,
+</syntaxhighlight>
+
+=== PreviousStage ===
+Specifies the previous building stage to which the current building can be applied.
+<syntaxhighlight lang="Java">
+PreviousStage:WoodenWallFrame;MetalWallFrame,
+</syntaxhighlight>
+
+=== SkillRequired ===
+Specifies the minimum skill level required to build.
+<syntaxhighlight lang="Java">
+SkillRequired:MetalWelding=5,
+</syntaxhighlight>
+
+=== ItemsRequired ===
+Specifies the resources that will be spent on the construction.
+<syntaxhighlight lang="Java">
+ItemsRequired:Base.SheetMetal=3;Base.BlowTorch=7,
+</syntaxhighlight>
+
+=== ItemsToKeep ===
+Specifies the item that the player must have in their inventory.
+<syntaxhighlight lang="Java">
+ItemsToKeep:Base.BlowTorch,
+</syntaxhighlight>
+
+{{ll|Category:Scripts}}

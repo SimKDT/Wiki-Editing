@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455041}}
+
+==== EquippedNoSprint ====
+If this parameter is set to true, then the player will not be able to run fast when this item is equipped.
+<syntaxhighlight lang="Java">
+EquippedNoSprint = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

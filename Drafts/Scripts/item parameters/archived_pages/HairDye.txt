@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455095}}
+
+==== HairDye ====
+Indicates that the item is hair dye.
+<syntaxhighlight lang="Java">
+HairDye = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

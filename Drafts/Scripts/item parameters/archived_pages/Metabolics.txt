@@ -1,0 +1,118 @@
+{{Title|metabolics}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.8.1}}
+{{Main|timedAction (scripts)}}
+The {{Code|metabolics}} parameter is used to define the impact of the action on the player character's metabolics, such as the calories burn rate or body heat generation. It uses predefined enumeration values to specify the multiplier on the metabolism.
+
+To use the metabolics in a timed action, use the following format:
+{{CodeSnip
+| lang = lua
+| code =
+metabolics = <metabolics value>,
+}}
+
+== Available values ==
+Below are each values available alongside their respective multiplier on the metabolism:
+{| class="wikitable theme-blue sortable"
+|+ style="white-space:nowrap" | Metabolics values and multipliers
+! Value !! Multiplier
+|-
+| {{Code|Sleeping}} || 0.8
+|-
+| {{Code|SeatedResting}} || 1.0
+|-
+| {{Code|StandingAtRest}} || 1.2
+|-
+| {{Code|SedentaryActivity}} || 1.2
+|-
+| {{Code|Default}} || 1.6
+|-
+| {{Code|DrivingCar}} || 1.4
+|-
+| {{Code|LightDomestic}} || 1.9
+|-
+| {{Code|HeavyDomestic}} || 2.9
+|-
+| {{Code|DefaultExercise}} || 3.0
+|-
+| {{Code|UsingTools}} || 3.4
+|-
+| {{Code|LightWork}} || 4.3
+|-
+| {{Code|MediumWork}} || 5.4
+|-
+| {{Code|DiggingSpade}} || 6.5
+|-
+| {{Code|HeavyWork}} || 7.0
+|-
+| {{Code|ForestryAxe}} || 8.5
+|-
+| {{Code|Walking2kmh}} || 1.9
+|-
+| {{Code|Walking5kmh}} || 3.1
+|-
+| {{Code|Running10kmh}} || 6.5
+|-
+| {{Code|Running15kmh}} || 9.5
+|-
+| {{Code|JumpFence}} || 4.0
+|-
+| {{Code|ClimbRope}} || 8.0
+|-
+| {{Code|Fitness}} || 6.0
+|-
+| {{Code|FitnessHeavy}} || 9.0
+|-
+| {{Code|MAX}} || 10.3
+|}
+
+{{CodeBox|title=These values were retrieved from the [[Decompiling game code|decompiled game code]]|class=blue|
+{{CodeSnip
+| lang = java
+| line = true
+| start = 7
+| source = Metabolics.java
+| path = ProjectZomboid\zombie\character\BodyDamage
+| retrieved = true
+| version = 42.8.1
+| code =
+public enum Metabolics {
+    Sleeping(0.8F),
+    SeatedResting(1.0F),
+    StandingAtRest(1.2F),
+    SedentaryActivity(1.2F),
+    Default(1.6F),
+    DrivingCar(1.4F),
+    LightDomestic(1.9F),
+    HeavyDomestic(2.9F),
+    DefaultExercise(3.0F),
+    UsingTools(3.4F),
+    LightWork(4.3F),
+    MediumWork(5.4F),
+    DiggingSpade(6.5F),
+    HeavyWork(7.0F),
+    ForestryAxe(8.5F),
+    Walking2kmh(1.9F),
+    Walking5kmh(3.1F),
+    Running10kmh(6.5F),
+    Running15kmh(9.5F),
+    JumpFence(4.0F),
+    ClimbRope(8.0F),
+    Fitness(6.0F),
+    FitnessHeavy(9.0F),
+    MAX(10.3F);
+}}
+}}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+metabolics = HeavyWork,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:timedAction parameters}}

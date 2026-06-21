@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== OBSOLETE ====
+Indicates that the item is obsolete. Removes the item from rendering on the ground and from other uses.
+<syntaxhighlight lang="Java">
+OBSOLETE = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454969}}
+
+==== ConditionAffectsCapacity ====
+If the parameter is true, then the state of the item will affect the capacity of the item.
+<syntaxhighlight lang="Java">
+ConditionAffectsCapacity = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

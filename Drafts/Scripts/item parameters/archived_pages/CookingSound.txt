@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454985}}
+
+==== CookingSound ====
+Used for food. Determines the sound that will be used when cooking food.
+<syntaxhighlight lang="Java">
+CookingSound = BoilingFood,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

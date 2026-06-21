@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== NoTransmit ====
+Indicates that the device is not transmitting or receiving data (Radio).
+<syntaxhighlight lang="Java">
+NoTransmit = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

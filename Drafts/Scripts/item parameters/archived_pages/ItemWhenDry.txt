@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ItemWhenDry ====
+The parameter specifies the item that the original item will be replaced with after drying.
+<syntaxhighlight lang="Java">
+ItemWhenDry = Base.BathTowel,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

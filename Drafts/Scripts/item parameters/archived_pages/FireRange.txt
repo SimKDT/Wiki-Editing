@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455083}}
+
+==== fireRange ====
+Fire spread radius.
+<syntaxhighlight lang="Java">
+FireRange = 6,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MinDamage ====
+Parameter for weapons. Sets the minimum damage factor, which affects the resulting damage.
+<syntaxhighlight lang="Java">
+MinDamage = 0.1,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

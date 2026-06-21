@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== KeepOnDeplete ====
+Keep an item when the item is used up.
+<syntaxhighlight lang="Java">
+KeepOnDeplete = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

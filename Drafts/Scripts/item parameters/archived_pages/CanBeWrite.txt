@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454901}}
+
+==== CanBeWrite ====
+Determines whether it is possible to write in the given item.
+<syntaxhighlight lang="Java">
+CanBeWrite = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== NeckProtectionModifier ====
+Parameter for clothes. Specifies a modifier that affects the chance of a successful wound to the neck. Max value: 1.0
+<syntaxhighlight lang="Java">
+NeckProtectionModifier = 0.5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

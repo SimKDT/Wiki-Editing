@@ -1,0 +1,26 @@
+{{Title|muscleStrainParts}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.8.1}}
+{{Note|This parameter should be used alongside [[muscleStrainFactor]] and [[muscleStrainSkill]].}}
+{{Main|timedAction (scripts)}}
+The {{Code|muscleStrainParts}} parameter is used to define the body parts that are affected by muscle strain during a timed action. It is defined by a list of body part names. To use muscle strain parts in a timed action, use the following format:
+{{CodeSnip
+| lang = lua
+| code =
+muscleStrainParts = <part1>;<part2>;<part3>,
+}}
+
+The body parts used are the ones defined in the enumeration of {{JavaObject|package=zombie/characters/BodyDamage|BodyPartType}}.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+muscleStrainParts = Hand_R;ForeArm_R;UpperArm_R,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:timedAction parameters}}

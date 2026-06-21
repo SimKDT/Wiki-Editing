@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454889}}
+
+==== CanBandage ====
+Indicates whether this item can apply a bandage to a wound.
+<syntaxhighlight lang="Java">
+CanBandage	=	true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

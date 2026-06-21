@@ -1,0 +1,51 @@
+{{Title|category}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+{{About|[[craftRecipe]] <code>category</code> parameter|PZwiki categories|:Category:Main}}
+The <code>category</code> parameter is used to define the category of the recipe, thus helping users find the craft. The category is defined by the following format:
+{{CodeSnip
+| lang = lua
+| code =
+category = <category name>,
+}}
+
+== Full list of categories ==
+Below is the list of categories which are used in vanilla crafts:
+<div class="list-columns" style="column-width: 250px; max-width: 900px;">
+*<code>Ammunition</code>
+*<code>Armor</code>
+*<code>Assembly</code>
+*<code>Blacksmithing</code>
+*<code>Blade</code>
+*<code>Carpentry</code>
+*<code>Carving</code>
+*<code>Cooking</code>
+*<code>Cookware</code>
+*<code>Electrical</code>
+*<code>Farming</code>
+*<code>Fishing</code>
+*<code>Glassmaking</code>
+*<code>Knapping</code>
+*<code>Masonry</code>
+*<code>Medical</code>
+*<code>Metalworking</code>
+*<code>Miscellaneous</code>
+*<code>Packing</code>
+*<code>Pottery</code>
+*<code>Repair</code>
+*<code>Survival</code>
+*<code>Tailoring</code>
+*<code>Tools</code>
+*<code>Weaponry</code>
+</div>
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+category = Tailoring,
+}}
+
+{{ll|Category:craftRecipe parameters}}

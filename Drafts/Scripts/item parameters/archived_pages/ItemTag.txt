@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.0|1254627}}
+{{About|the parameter used in [[Item (scripts)|item scripts]] to assign tags to items.|a list of tags in the base game|Item tag}}
+{{Stub|As of [[Build 42.13.0]], the '''ItemTags''' parameter has been reshaped to use an enum system instead of string values. This page is a stub and needs to be expanded to document this new system which depends on [[registries]].}}
+'''ItemTag'''s serve as labels that can be assigned to multiple items to identify recurring characteristics or functionalities, for example knives, bottles etc. They can notably be used in [[CraftRecipe]]s to define required items by their tags instead of specific item names.
+
+== See also ==
+*[[Item tag]] - a list of tags in the base game.
+
+{{ll|Category:Item scripts parameters}}

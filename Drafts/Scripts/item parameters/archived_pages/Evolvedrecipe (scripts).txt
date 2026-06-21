@@ -1,0 +1,204 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+== Introduction ==
+The evolved recipe is divided into three parts: '''the thing to be transformed''', '''things that can be used in recipe''' and '''the result of the transformation'''.
+
+Example:
+We want to create recipe for sandwich with Ham and Tomato. We have 4 items:
+<syntaxhighlight lang="Java">
+item Tomato
+{
+	DisplayCategory = Food,
+	Type				=		Food,
+	DisplayName			=		Tomato,
+	Icon				=		Tomato,
+	Weight				=		0.2,
+	HungerChange 		=		-12,
+	ThirstChange		=		-15,
+	DaysFresh 			=		4,
+	DaysTotallyRotten 	=	 	12,
+	EvolvedRecipe       =       Sandwich:6;Burger:6,
+	ThirstChange	=	-8,
+	FoodType    =   Vegetables,
+    Carbohydrates = 3.53,
+    Proteins = 1.29,
+    Lipids = 0.21,
+    Calories = 14,
+    StaticModel = Tomato_Ground,
+    WorldStaticModel = Tomato_Ground,
+	Tags = HideUncooked,
+	IsCookable = TRUE,
+	MinutesToCook = 10,
+	MinutesToBurn = 30,
+	CookingSound = FryingFood,
+	GoodHot = true,
+}
+
+item Ham
+{
+	DisplayName = Ham,
+	DisplayCategory = Food,
+	Type = Food,
+	Weight = 1,
+	Icon = Ham,
+	EatType = 2handforced,
+	FoodType = Meat,
+	Packaged = TRUE,
+	DaysFresh = 5,
+	DaysTotallyRotten = 10,
+    EvolvedRecipe       =       Sandwich:3;Burger:3,
+	HungerChange = -60,
+	Calories = 1560,
+	Carbohydrates = 91,
+	Lipids = 78,
+	Proteins = 117,
+	StaticModel = Ham,
+	WorldStaticModel = Ham,
+	Tooltip = Tooltip_item_NeedsSliced,
+	Tags = HideUncooked,
+	IsCookable = TRUE,
+	MinutesToCook = 20,
+	MinutesToBurn = 40,
+	CookingSound = FryingFood,
+	GoodHot = true,
+}
+
+item BreadSlices
+{
+	DisplayName = Bread Slices,
+	DisplayCategory = Food,
+	Type = Food,
+	Weight = 0.1,
+	Icon = BreadSlices,
+	EvolvedRecipe = Soup:5;Stew:5;Salad:5,
+	FoodType = Bread,
+	IsCookable = true,
+	ReplaceOnCooked = Toast,
+	MinutesToCook = 4,
+	DaysFresh = 3,
+	DaysTotallyRotten = 6,
+	HungerChange = -10,
+	Calories = 177,
+	Carbohydrates = 33,
+	Lipids = 2.22,
+	Proteins = 5.9,
+	StaticModel = BreadSlices,
+	WorldStaticModel = BreadSlices,
+	Tags = HideCooked;FitsToaster,
+}
+
+item Sandwich
+{
+	DisplayName = Sandwich,
+	DisplayCategory = Food,
+	Type = Food,
+	Weight = 0.2,
+	Icon = Sandwich,
+	DaysFresh = 3,
+	DaysTotallyRotten = 6,
+	HungerChange = -10,
+	Calories = 360,
+	Carbohydrates = 42,
+	Lipids = 8.5,
+	Proteins = 5.8,
+	StaticModel = Sandwich,
+	WorldStaticModel = CheeseSandwich,
+	Tags = HideUncooked;Toastable,
+	IsCookable = TRUE,
+	MinutesToCook = 5,
+	MinutesToBurn = 20,
+}
+</syntaxhighlight>
+
+We set with the EvolvedRecipe parameter that Tomato and Ham can be added to Sandwich.
+
+Next, we create the script EvolvedRecipe:
+<syntaxhighlight lang="Java">
+evolvedrecipe Sandwich
+{
+	BaseItem:BreadSlices,
+	MaxItems:4,
+	ResultItem:Sandwich,
+	Name:Make Sandwich,
+	CanAddSpicesEmpty:true,
+	AddIngredientIfCooked:true,
+	Template:Sandwich,
+}
+</syntaxhighlight>
+In the recipe, we indicated that BreadSlices can be used to create Sandwich. We also indicated that you can add spices even if no other ingredients have been added and that you can add ingredients if the BreadSlices or Sandwich is already cooked.
+
+We also indicated with this EvolvedRecipe that it is possible to add Ham, Tomato and spices to the already prepared Sandwich (the ability to add spices is added by default).
+
+More about EvolvedRecipe parameters:
+
+=== BaseItem ===
+The item that the new item will be based on. Example:
+<syntaxhighlight lang="Java">
+BaseItem:BreadSlices,
+</syntaxhighlight>
+
+=== Name ===
+Recipe name. Example:
+<syntaxhighlight lang="Java">
+Name:Make Sandwich,
+</syntaxhighlight>
+
+=== ResultItem ===
+Item that will result from crafting. Example:
+<syntaxhighlight lang="Java">
+ResultItem:Sandwich,
+</syntaxhighlight>
+
+=== Cookable ===
+If the parameter is true, then the item that will be the result of crafting can be cooked.
+<syntaxhighlight lang="Java">
+Cookable:true
+</syntaxhighlight>
+
+=== MaxItems ===
+This parameter specifies the maximum number of items that can be added to the base item.
+<syntaxhighlight lang="Java">
+MaxItems:4,
+</syntaxhighlight>
+
+=== AddIngredientIfCooked ===
+If the parameter is true, then the cooked item (ResultItem/BaseItem) can be used.
+<syntaxhighlight lang="Java">
+AddIngredientIfCooked:true,
+</syntaxhighlight>
+
+=== AddIngredientSound ===
+The parameter determines the sound of adding an item in a recipe. The default sound is '''AddItemInRecipe'''
+<syntaxhighlight lang="Java">
+AddIngredientSound:AddItemInBeverage,
+</syntaxhighlight>
+
+=== CanAddSpicesEmpty ===
+Adds the ability to add spices even if no ingredients have been added yet.
+<syntaxhighlight lang="Java">
+CanAddSpicesEmpty:true
+</syntaxhighlight>
+
+=== IsHidden ===
+Removes a recipe from the recipe menu.
+<syntaxhighlight lang="Java">
+IsHidden:true,
+</syntaxhighlight>
+
+=== AllowFrozenItem ===
+Allows the use of frozen ingredients.
+<syntaxhighlight lang="Java">
+AllowFrozenItem:true,
+</syntaxhighlight>
+
+=== Template ===
+The parameter specifies a template name by which ingredients will be specified in Item scripts. For example, for the Sandwich Baguette and Sandwich recipes, we use template Sandwich. And in Items scripts we specify EvolvedRecipe=Sandwich:4;. Now these items can be used for the first and second recipe.
+
+Example:
+<syntaxhighlight lang="Java">
+Template:Sandwich,
+</syntaxhighlight>
+
+{{ll|Category:Scripts}}

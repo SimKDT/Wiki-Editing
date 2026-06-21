@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MinutesToBurn ====
+Used for food. Indicates how many minutes must elapse from the start of cooking for the food to burn.
+<syntaxhighlight lang="Java">
+MinutesToBurn = 60,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

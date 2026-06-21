@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455065}}
+
+==== FatigueChange ====
+Used for food. Indicates how much fatigue the food will take away. If the number is negative, fatigue will decrease, if it is positive, it will increase.
+<syntaxhighlight lang="Java">
+FatigueChange = -50,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

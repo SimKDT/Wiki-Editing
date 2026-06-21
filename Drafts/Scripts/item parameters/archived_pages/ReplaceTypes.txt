@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReplaceTypes ====
+Used to specify an item to replace when the item is filled with something. Written in the format "Source ResultItem; Source2 ResultItem2".
+<syntaxhighlight lang="Java">
+ReplaceTypes = PetrolSource WaterBottlePetrol;WaterSource WaterBottleFull,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

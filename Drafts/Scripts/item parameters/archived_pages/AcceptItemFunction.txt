@@ -1,0 +1,16 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454809}}
+
+==== AcceptItemFunction ====
+Specifies the name of a Lua function that is called to check if the given item can be placed in the container. The original item is passed as a parameter, a Boolean parameter (true or false) is returned.
+<syntaxhighlight lang="Java">
+AcceptItemFunction = AcceptItemFuncForFannyPack,
+</syntaxhighlight>
+<syntaxhighlight lang="Java">
+function AcceptItemFuncForFannyPack(item)
+    return item:getActualWeight() < 0.5;
+end
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455105}}
+
+==== HitChanceModifier ====
+Chance modifier to hit the target (WeaponPart item). A positive number to increase the hit chance.
+<syntaxhighlight lang="Java">
+HitChanceModifier = 8,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

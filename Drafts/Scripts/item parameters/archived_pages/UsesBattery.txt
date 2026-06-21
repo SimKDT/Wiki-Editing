@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== UsesBattery ====
+Sets whether the item uses a battery.
+<syntaxhighlight lang="Java">
+UsesBattery = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

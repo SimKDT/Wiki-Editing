@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== OnlyAcceptCategory ====
+Determines what category of items can be put into an item (ItemContainer).
+<syntaxhighlight lang="Java">
+OnlyAcceptCategory = Key,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

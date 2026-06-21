@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455033}}
+
+==== EnduranceChange ====
+Used for food. Indicates how much endurance the food will remove. If the number is negative, endurance will decrease, if positive, it will increase.
+<syntaxhighlight lang="Java">
+EnduranceChange = 2,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

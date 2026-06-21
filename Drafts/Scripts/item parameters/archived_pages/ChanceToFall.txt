@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454923}}
+
+==== ChanceToFall ====
+Chance modifier for clothing item to drop.
+<syntaxhighlight lang="Java">
+ChanceToFall = 60,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

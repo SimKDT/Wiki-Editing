@@ -1,0 +1,10 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+Indicates how much stress the use of the item will remove. If the number is negative, stress will decrease, if it is positive, it will increase.
+<syntaxhighlight lang="Java">
+StressChange = -15,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

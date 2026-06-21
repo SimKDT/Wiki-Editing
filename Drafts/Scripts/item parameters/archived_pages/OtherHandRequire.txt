@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== OtherHandRequire ====
+Parameter for weapons. A parameter that determines the required item in the extra hand to use the original item.
+<syntaxhighlight lang="Java">
+OtherHandRequire = Lighter,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

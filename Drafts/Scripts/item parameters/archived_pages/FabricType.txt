@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455063}}
+
+==== FabricType ====
+Specifies the material from which the clothes is made. Values: Cotton, Denim, Leather.
+<syntaxhighlight lang="Java">
+FabricType = Denim,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

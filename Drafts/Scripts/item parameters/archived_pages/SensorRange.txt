@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== sensorRange ====
+The range at which the trap sensor is triggered.
+<syntaxhighlight lang="Java">
+SensorRange = 4,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

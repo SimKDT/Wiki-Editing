@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454833}}
+
+==== AlcoholPower ====
+A modifier for a medical item that affects the ability to disinfect a wound and the pain from applying the item.
+<syntaxhighlight lang="Java">
+AlcoholPower = 4,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

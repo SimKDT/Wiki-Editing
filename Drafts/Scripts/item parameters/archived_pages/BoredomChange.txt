@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454875}}
+
+==== BoredomChange ====
+Indicates how much boredom the use of the item will remove. If the number is negative, boredom will decrease, if positive, it will increase.
+<syntaxhighlight lang="Java">
+BoredomChange = -50,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

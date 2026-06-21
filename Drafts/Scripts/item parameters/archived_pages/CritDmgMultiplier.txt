@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454993}}
+
+==== CritDmgMultiplier ====
+Used for weapons. Indicates a modifier to a critical hit that is used in calculating the damage of a critical hit.
+<syntaxhighlight lang="Java">
+CritDmgMultiplier = 1.7,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== Poison ====
+Indicates if a food item is poisonous.
+<syntaxhighlight lang="Java">
+Poison = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== KnockBackOnNoDeath ====
+If the parameter is set to true, then when hit with this weapon, the player will receive a small amount of experience in the strength skill.
+<syntaxhighlight lang="Java">
+KnockBackOnNoDeath = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

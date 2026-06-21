@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454943}}
+
+==== CloseSound ====
+Specifies the sound that will be played when the item (InventoryContainer) is closed.
+<syntaxhighlight lang="Java">
+CloseSound = CloseBag,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

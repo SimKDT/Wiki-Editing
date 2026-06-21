@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454919}}
+
+==== Capacity ====
+Capacity of InventoryContainer item.
+<syntaxhighlight lang="Java">
+Capacity = 22,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

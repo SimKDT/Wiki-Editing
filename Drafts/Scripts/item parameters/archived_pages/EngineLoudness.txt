@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455037}}
+
+==== engineLoudness ====
+Vehicle engine noise modifier.
+<syntaxhighlight lang="Java">
+EngineLoudness = 120,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== VehicleType ====
+Indicates what type of car this item will fit (Vehicle part). Values: 1 - Standard, 2 - Heavy Duty, 3 - Sport
+<syntaxhighlight lang="Java">
+VehicleType = 2,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

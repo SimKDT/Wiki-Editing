@@ -1,0 +1,26 @@
+{{Title|xpAwards}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>xpAward</code> specificies the experience points awarded for crafting the recipe for one or more skills. The parameter should be formated this way:
+{{CodeSnip
+| lang = lua
+| code =
+-- a single skill
+xpAward = <skill name>:<xp amount>,
+
+-- multiple skills
+xpAward = <skill1 name>:<xp amount>;<skill2 name>:<xp amount>,format
+}}
+
+For the list of skills used in vanilla crafts, see [[craftRecipe (scripts)#Available skills|Available skills]].
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+xpAward = Blacksmith:10;Tailoring:5,
+}}
+
+{{ll|Category:craftRecipe parameters}}

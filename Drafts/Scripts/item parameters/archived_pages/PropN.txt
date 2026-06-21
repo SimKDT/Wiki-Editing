@@ -1,0 +1,37 @@
+{{Title|propN}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.8.1}}
+{{Main|timedAction (scripts)}}
+The {{Code|prop1}} and {{Code|prop2}} parameters are respectively used to define the items held in the character's main and secondary hands during a timed action. By not giving the parameter, the character will not hold an item in the hand associated with the parameter. A [[item (scripts)|script item full ID]], also known as the full type, is used to set the item held in the hand.
+
+To use a prop in a timed action, use the following format:
+{{CodeSnip
+| lang = lua
+| code =
+prop1 = <item name>,
+prop2 = <item name>,
+}}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+prop1 = Base.Hammer,
+prop2 = Base.Nails,
+}}
+{{CodeSnip
+| lang = lua
+| code =
+prop1 = Base.BaseballBat,
+}}
+{{CodeSnip
+| lang = lua
+| code =
+prop2 = Base.RadioBlack,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:timedAction parameters}}

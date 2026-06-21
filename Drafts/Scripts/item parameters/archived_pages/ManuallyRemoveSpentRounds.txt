@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ManuallyRemoveSpentRounds ====
+Parameter for weapons. If the parameter is true, then the shells will not fall to the ground after being fired.
+<syntaxhighlight lang="Java">
+ManuallyRemoveSpentRounds = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

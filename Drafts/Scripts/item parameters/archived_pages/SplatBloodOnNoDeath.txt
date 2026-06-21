@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== SplatBloodOnNoDeath ====
+Parameter for weapons. Determines whether drops of blood will fall after hitting the target.
+<syntaxhighlight lang="Java">
+SplatBloodOnNoDeath = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

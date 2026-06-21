@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== NumLevelsTrained ====
+Used to set how much levels will be boost. Need write "levelNum - 1"
+<syntaxhighlight lang="Java">
+NumLevelsTrained = 2,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

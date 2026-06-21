@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455071}}
+
+==== FireMode ====
+Parameter for weapons. Specifies which firing mode the weapon has. ('''Auto''' or '''Single''')
+<syntaxhighlight lang="Java">
+FireMode = Auto,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PlacedSprite ====
+The sprite that will be used for the trap after it is set.
+<syntaxhighlight lang="Java">
+PlacedSprite = constructedobjects_01_32,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

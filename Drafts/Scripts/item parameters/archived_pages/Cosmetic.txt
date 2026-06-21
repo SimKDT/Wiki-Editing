@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454987}}
+
+==== Cosmetic ====
+Parameter for clothes. If the parameter is true, then the item will not render a 3D model (The exception is an item that is worn on the Eye part of the body)
+<syntaxhighlight lang="Java">
+Cosmetic = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

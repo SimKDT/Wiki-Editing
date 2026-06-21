@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454897}}
+
+==== canBeRemote ====
+Specifies that the trap is controlled remotely.
+<syntaxhighlight lang="Java">
+CanBeRemote = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

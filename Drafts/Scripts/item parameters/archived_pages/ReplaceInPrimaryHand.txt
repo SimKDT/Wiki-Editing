@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReplaceInPrimaryHand ====
+Specifies the model that will be used to replace the main hand item with a certain animation.
+<syntaxhighlight lang="Java">
+ReplaceInPrimaryHand = Bag_PistolCase_RHand holdingbagright,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

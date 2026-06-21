@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== InsertAmmoSound ====
+Parameter for weapons. The parameter specifies the sound that will be played during reloading.
+<syntaxhighlight lang="Java">
+InsertAmmoSound = DoubleBarrelShotgunInsertAmmo,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

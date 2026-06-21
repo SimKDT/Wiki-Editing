@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454959}}
+
+==== ClothingItemExtraOption ====
+Parameter for clothes. Specifies an option for the context menu for the ClothingItemExtra parameter.
+<syntaxhighlight lang="Java">
+ClothingItemExtraOption = ReverseCap,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

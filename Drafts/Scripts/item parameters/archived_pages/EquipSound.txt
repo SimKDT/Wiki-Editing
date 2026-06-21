@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455039}}
+
+==== EquipSound ====
+Parameter for weapons. The parameter specifies the sound that will be played when the weapon is equipped.
+<syntaxhighlight lang="Java">
+EquipSound = M14Equip,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

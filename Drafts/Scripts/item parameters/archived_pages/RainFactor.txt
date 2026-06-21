@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== RainFactor ====
+Modifier for the rate at which water enters this item when it rains. The object must be able to store water.
+<syntaxhighlight lang="Java">
+RainFactor = 0.8,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454917}}
+
+==== CantEat ====
+If the parameter is true, then the given food item cannot be eaten.
+<syntaxhighlight lang="Java">
+CantEat = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

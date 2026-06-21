@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== Ranged ====
+Used for weapons. If the parameter is true, then the weapon is considered a firearm.
+<syntaxhighlight lang="Java">
+Ranged = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

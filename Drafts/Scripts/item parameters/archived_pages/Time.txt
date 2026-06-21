@@ -1,0 +1,15 @@
+{{Title|time}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>time</code> parameter allows you to set the time it takes to finish the craft. The value doesn't have a set unit, so refer to other vanilla crafts and testing values to get an idea of the time needed for your custom craft.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+time = 100,
+}}
+
+{{ll|Category:craftRecipe parameters}}

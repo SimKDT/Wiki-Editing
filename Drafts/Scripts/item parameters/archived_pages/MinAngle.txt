@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MinAngle ====
+Used for weapons. Determines the minimum aiming angle at which there will be enemies that can be hit. The larger the angle, the smaller the sector of hitting targets (selects the target more accurately). Example: Axe=0.72, AssaultRifle=0.965
+<syntaxhighlight lang="Java">
+MinAngle = 0.75,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

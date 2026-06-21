@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PoisonPower ====
+Used as a factor for the strength of the poison in an item. Affects the rate of poisoning.
+<syntaxhighlight lang="Java">
+PoisonPower = 75,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PhysicsObject ====
+If the parameter is true, then the player will throw the given item. The icon specified in this parameter will be used.
+<syntaxhighlight lang="Java">
+PhysicsObject	=	Molotov,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

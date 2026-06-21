@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== SkillTrained ====
+Determines the skill that will receive the experience boost.
+<syntaxhighlight lang="Java">
+SkillTrained = Trapping,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

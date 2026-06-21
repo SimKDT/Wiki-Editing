@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MicRange ====
+The radius at which the item's microphone will pick up the player's voice.
+<syntaxhighlight lang="Java">
+MicRange = 5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

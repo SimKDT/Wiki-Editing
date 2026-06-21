@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== UseWhileUnequipped ====
+If true, then this DrainableItem's charge will be spent when it is activated and not equipped.
+<syntaxhighlight lang="Java">
+UseWhileUnequipped = false,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WeightModifier ====
+Parameter for WeaponPart. Determines how the weapon part affects the weight of the weapon. A positive number adds weight, a negative number decreases it.
+<syntaxhighlight lang="Java">
+WeightModifier = 0.5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

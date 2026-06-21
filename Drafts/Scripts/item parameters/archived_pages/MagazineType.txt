@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MagazineType ====
+Parameter for weapons. The parameter specifies the magazine type for the weapon.
+<syntaxhighlight lang="Java">
+MagazineType = Base.9mmClip,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== SoundVolume ====
+Parameter for firearms. Determines the volume of the shot.
+<syntaxhighlight lang="Java">
+SoundVolume = 50,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

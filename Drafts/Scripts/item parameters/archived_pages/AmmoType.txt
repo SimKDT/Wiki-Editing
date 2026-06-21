@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454847}}
+
+==== AmmoType ====
+Parameter for firearms. Specifies the ammo type.
+<syntaxhighlight lang="Java">
+AmmoType = Base.ShotgunShells,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

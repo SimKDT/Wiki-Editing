@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455075}}
+
+==== fireModePossibilities ====
+Sets the possible weapon firing modes that can be switched between.
+<syntaxhighlight lang="Java">
+FireModePossibilities = Auto/Single,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

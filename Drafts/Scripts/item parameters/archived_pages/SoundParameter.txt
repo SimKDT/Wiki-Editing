@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== SoundParameter ====
+A modifier that affects the noise from an item when it is equipped (InventoryContainer). First parameter is EquippedBaggageContainer, second parameter is (Values: None, HikingBag, DuffleBag, PlasticBag, SchoolBag, ToteBag, GarbageBag)
+<syntaxhighlight lang="Java">
+SoundParameter = EquippedBaggageContainer HikingBag,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

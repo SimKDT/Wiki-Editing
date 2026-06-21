@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454851}}
+
+==== AngleModifier ====
+Parameter for Weapon Part. A modifier that affects the angle of fire.
+<syntaxhighlight lang="Java">
+AngleModifier = -0.1,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454813}}
+
+==== ActivatedItem ====
+The parameter specifies whether the item can be activated. For example, a lighter.
+<syntaxhighlight lang="Java">
+ActivatedItem = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

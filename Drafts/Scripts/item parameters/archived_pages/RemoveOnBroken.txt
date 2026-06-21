@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== RemoveOnBroken ====
+Parameter for clothes. Specifies whether to delete the item when the state becomes zero.
+<syntaxhighlight lang="Java">
+RemoveOnBroken = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

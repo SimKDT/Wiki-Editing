@@ -1,0 +1,8 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ShareEndurance ====
+''DEPRECATED''
+
+{{ll|Category:Item scripts parameters}}

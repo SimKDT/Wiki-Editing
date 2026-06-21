@@ -1,0 +1,51 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+== Introduction ==
+Fixing blocks are used to fix items in Project Zomboid. Example: repairing [[Wood Axe]] with different materials:
+
+<syntaxhighlight lang="Java">
+fixing Fix Wood Axe
+{
+    Require : WoodAxe,
+
+    Fixer : Woodglue=2; Woodwork=2,
+    Fixer : DuctTape=2,
+    Fixer : Glue=2,
+    Fixer : Scotchtape=4,
+}
+</syntaxhighlight>
+
+'''More about parameters:'''
+
+=== Required ===
+Item to be repaired.
+<syntaxhighlight lang="Java">
+Required : WoodAxe,
+</syntaxhighlight>
+
+=== Fixer ===
+This parameter specifies the material that will be used for repair and its quantity. Also, as an optional second parameter, you can specify the skill required for this type of repair. Example:
+<syntaxhighlight lang="Java">
+Fixer : Woodglue=2; Woodwork=2,
+Fixer : DuctTape=2,
+Fixer : Nails,
+</syntaxhighlight>
+Important - The first parameter is the material, the second parameter (if required) is the skill.
+
+Skill List: Axe, Blunt, SmallBlunt, LongBlade, SmallBlade, Spear, Maintenance, Aiming, Reloading, Woodwork, Cooking, Farming, Doctor, Electricity, MetalWelding, Mechanics, Tailoring, Fishing, Trapping, PlantScavenging, Fitness, Strength, Sprinting, Lightfoot , Nimble, Sneak
+
+=== GlobalItem ===
+An additional item that is needed to repair the item (to be used)
+<syntaxhighlight lang="Java">
+GlobalItem : DuctTape=3,
+</syntaxhighlight>
+
+=== ConditionModifier ===
+Item repair percentage modifier.
+<syntaxhighlight lang="Java">
+ConditionModifier : 0.3,
+</syntaxhighlight>
+
+{{ll|Category:Scripts}}

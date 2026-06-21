@@ -1,0 +1,261 @@
+{{Title|inputs}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.11.0}}
+{{Main|CraftRecipe}}
+The <code>inputs</code> parameter defines the ingredients needed to craft an item. It usually includes a combination of items, tags, modes, and mappers for consumption of the crafting ingredients.
+
+Inputs are listed one after the other and follow the format examples below:
+{{CodeSnip/custom|code=
+inputs
+{{CodeSnip/symbol|&#123;}}
+:{{CodeSnip/comment|-- simplest form}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|-- simplest form, different quantity for some items}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|1=2}}:{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|-- with tags}}
+:item {{CodeSnip/param|quantity}} tags{{CodeSnip/symbol|[}}{{CodeSnip/param|3=tag1}};{{CodeSnip/param|3=tag2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|-- combining tags with item table}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}} tags{{CodeSnip/symbol|[}}{{CodeSnip/param|3=tag1}};{{CodeSnip/param|3=tag2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|-- with mode, mappers and flags}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}} mode:{{CodeSnip/param|4=mode}} mappers{{CodeSnip/symbol|[}}{{CodeSnip/param|5=mapperID}}{{CodeSnip/symbol|]}} flags{{CodeSnip/symbol|[}}{{CodeSnip/param|6=flag1}};{{CodeSnip/param|6=flag2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|...}}
+{{CodeSnip/symbol|&#125;}}
+}}
+
+{{Note|type=error|Every {{Code|inputs}} line needs to end with a comma, or this will cause a parsing error. However, make sure to NOT include a comma after the final {{Code|} }} of the {{Code|inputs}} block!}}
+
+== Parameters ==
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | Parameter details
+! style="min-width:100px;" | Parameter !! Description
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|1=quantity}}</code>
+| The {{CodeSnip/param|1=quantity}} is an integer that defines the number of items needed for the recipe.
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|2=item}}</code> table
+| Items are listed in a table by separating them with a semicolon (<code>;</code>). The table can contain multiple items which the player can use for this specific input. The items need to have their full type noted in the list. For example, <code>Base.ClosedUmbrellaBlack</code> is the black closed umbrella item. For a custom module it would have to be <code>YourModuleName.YourItemID</code>.
+{{CodeSnip
+| lang = lua
+| code =
+item 1 [Base.SmallKnife]
+item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue],
+item 1 [YourModuleName.YourItemID],
+}}
+
+You can also use <code>{{CodeSnip/symbol|[}}*{{CodeSnip/symbol|]}}</code> for the item table to allow any item. This is notably used for fluids which are detailed in [[Fluids (craftRecipe)]].
+
+You can have different input amounts for different items in the table by adding <code>{{CodeSnip/param|1=quantity}}:</code> in front of the item ID which needs to have a different {{CodeSnip/param|1=quantity}} value than the default one. For example:
+{{CodeSnip
+| lang = lua
+| code =
+item 1 [Item1;2:Item2;10:Item3],
+}}
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|3=tag}}</code> table
+| {{CodeSnip/param|3=Tags}} are used to identify a specific class of items that can be used in the recipe. It differs from [[Tags (craftRecipe)]] which are recipe tags and instead uses tags which are defined in the [[Item (scripts)|item script]] itself to identify types of items. You can define your own custom tags in your own items to use in your custom recipes too. Tags are listed in the format <code>tags[{{CodeSnip/param|3=tagName1}};{{CodeSnip/param|3=tagName2}}...]</code>. See [[Item tag]] for the list of tags available in the game.
+
+For example, <code>Base.SmallKnife</code> has the tags:
+<code>Tags = {{CodeSnip/param|3=CutPlant}};{{CodeSnip/param|3=SharpKnife}};{{CodeSnip/param|3=ButcherAnimal}};{{CodeSnip/param|3=HasMetal}};{{CodeSnip/param|3=Blade}};{{CodeSnip/param|3=Sharpenable}};{{CodeSnip/param|3=KillAnimal}}</code> which define specific uses of the knife so you can identify it with the most relevant tag for your recipe.
+{{CodeSnip
+| lang = lua
+| code =
+item 1 tags[SharpKnife],
+}}
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|4=mode}}</code>
+| The {{CodeSnip/param|4=mode}} is an optional parameter that can be used to define how the item is used in the recipe. Currently only two options are available:
+*<code>{{CodeSnip/param|4=keep}}</code> - The item will be kept after the recipe is finished.
+*<code>{{CodeSnip/param|4=destroy}}</code> - The item will be deleted after the recipe is finished.
+
+By default, <code>{{CodeSnip/param|4=destroy}}</code> is used. Some [[#Flags|{{CodeSnip/param|6=flags}}]] can be used to impact how <code>{{CodeSnip/param|4=keep}}</code> is used, like reducing the condition of the item for example.
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|5=mapperID}}</code>
+| The {{CodeSnip/param|5=mapper}} is an optional parameter used to link input items to their output equivalent. To see more detail on mappers and how they are used, see [[itemMapper]].
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|6=flag}}</code> table
+| {{CodeSnip/param|6=Flags}} are used to define conditions to respect for items to be used in this input or behaviors to apply to this input item when keeping it. See [[#Flags|flags]] for the list of flags available.
+|}
+
+== {{CodeSnip/param|6=Flags}} ==
+{{Stub|This list is outdated and incomplete. The last version of it dates to the [[Build 42.6.0]]}}
+Below is a list of flags that can be used:
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Equipping items
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>Prop1</code>
+| style="min-width: 600px;"| The item will be equipped in the right hand.
+|-
+| style="min-width: 200px;"| <code>Prop2</code>
+| style="min-width: 600px;"| The item will be equipped in the left hand.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Special conditions
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>AllowFavorite</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>HandcraftOnly</code>
+| style="min-width: 600px;"| The item can only be crafted by hand.
+|-
+| style="min-width: 200px;"| <code>DontPutBack</code>
+| style="min-width: 600px;"| Item won't be put back in the container it was taken from (usually bottles that need to be opened).
+|-
+| style="min-width: 200px;"| <code>IsExclusive</code>
+| style="min-width: 600px;"| Whenever multiple possible inputs are available but only a single type can be used, to not mix multiple different items.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Food conditions
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>AllowFrozenItem</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>AllowRottenItem</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>IsCookedFoodItem</code>
+| style="min-width: 600px;"| The item is cooked.
+|-
+| style="min-width: 200px;"| <code>IsUncookedFoodItem</code>
+| style="min-width: 600px;"| The item is uncooked.
+|-
+| style="min-width: 200px;"| <code>IsWholeFoodItem</code>
+| style="min-width: 600px;"| Instead of consuming uses of the item, it will use the whole food item.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Fluids
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>ItemIsFluid</code>
+| style="min-width: 600px;"| The item is a fluid, <span style="font-weight: bold; color: orange;">unclear</span>.
+|-
+| style="min-width: 200px;"| <code>FullOfWater</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>IsEmpty</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>NotEmpty</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>IsFull</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>NotFull</code>
+| style="min-width: 600px;"|
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Item condition
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>IsDamaged</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>IsUndamaged</code>
+| style="min-width: 600px;"| The item is not damaged.
+|-
+| style="min-width: 200px;"| <code>IsWorn</code>
+| style="min-width: 600px;"| The item (clothing) is currently worn by the player.
+|-
+| style="min-width: 200px;"| <code>IsNotWorn</code>
+| style="min-width: 600px;"| The item (clothing) is currently not worn by the player.
+|-
+| style="min-width: 200px;"| <code>AllowDestroyedItem</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>NoBrokenItems</code>
+| style="min-width: 600px;"| The item is not broken.
+|-
+| style="min-width: 200px;"| <code>IsHeadPart</code>
+| style="min-width: 600px;"| The item is a head part.
+|-
+| style="min-width: 200px;"| <code>MayDegrade</code>
+| style="min-width: 600px;"| Will degrade the item used.
+|-
+| style="min-width: 200px;"| <code>MayDegradeHeavy</code>
+| style="min-width: 600px;"| Will degrade heavily the item used.
+|-
+| style="min-width: 200px;"| <code>MayDegradeLight</code>
+| style="min-width: 600px;"| Will degrade lightly the item used.
+|-
+| style="min-width: 200px;"| <code>IsSharpenable</code>
+| style="min-width: 600px;"| The item can be sharpened.
+|-
+| style="min-width: 200px;"| <code>IsNotDull</code>
+| style="min-width: 600px;"| The item is sharp.
+|-
+| style="min-width: 200px;"| <code>SharpnessCheck</code>
+| style="min-width: 600px;"| The item's sharpness will be reduced.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Inheriting items
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>CopyClothing</code>
+| style="min-width: 600px;"| The output clothing item will copy the input clothing item condition, like dirt, blood, holes, decal/variant and patches.
+|-
+| style="min-width: 200px;"| <code>InheritAmmunition</code>
+| style="min-width: 600px;"| Crafted item will receive the ammunition of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritColor</code>
+| style="min-width: 600px;"| Crafted item will receive the color of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritCondition</code>
+| style="min-width: 600px;"| Crafted item will receive the condition of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritCooked</code>
+| style="min-width: 600px;"| Crafted item will receive the cooked status of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritFavorite</code>
+| style="min-width: 600px;"| Crafted item will receive the favorite status of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritFoodAge</code>
+| style="min-width: 600px;"| Crafted item will receive the food age of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritHeadCondition</code>
+| style="min-width: 600px;"| Crafted item will receive the head condition of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritSharpness</code>
+| style="min-width: 600px;"| Crafted item will receive the sharpness amount of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritUses</code>
+| style="min-width: 600px;"| Crafted item will receive the uses amount of the input item.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Unknown
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>ItemCount</code>
+| style="min-width: 600px;"| Used for Drainable items. Use the item count instead of drainable item uses.
+|-
+| style="min-width: 200px;"| <code>DontReplace</code>
+| style="min-width: 600px;"|
+|}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+inputs
+{
+    item 1 tags[RipClothingCotton] flags[AllowDestroyedItem;IsNotWorn],
+    item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue] mappers[umbrellaElla],
+    item 1 [Base.Hammer] mode:keep flags[Prop1],
+}
+}}
+
+{{ll|Category:craftRecipe parameters}}

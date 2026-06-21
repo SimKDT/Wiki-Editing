@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454865}}
+
+==== BaseSpeed ====
+Used for weapons. Affects weapon attack speed.
+<syntaxhighlight lang="Java">
+BaseSpeed = 0.93,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

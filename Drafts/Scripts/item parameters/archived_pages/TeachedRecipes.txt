@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== TeachedRecipes ====
+The names of the recipes that the player will learn after reading the literature.
+<syntaxhighlight lang="Java">
+TeachedRecipes = Make Fishing Net;Get Wire Back,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

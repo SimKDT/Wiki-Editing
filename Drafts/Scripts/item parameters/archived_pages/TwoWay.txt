@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== TwoWay ====
+If the parameter is true, then the item can play and transmit sound. If false - only play.
+<syntaxhighlight lang="Java">
+TwoWay = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

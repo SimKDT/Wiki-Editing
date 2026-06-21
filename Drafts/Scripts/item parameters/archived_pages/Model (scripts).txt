@@ -1,0 +1,118 @@
+{{Title|model (scripts)}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.10.0|2=822669}}
+The '''model''' script block is used to define a model and its parameters which will be used for [[item (scripts)|items]] or [[vehicle (scripts)|vehicles]].
+
+== Parameters ==
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters for the <code>model</code> block
+! Parameter name !! Description !! Example
+|-
+| style="padding: 10px;text-align: center;"| <code>mesh</code>
+| Specifies the model file to be used. File must be located in <code>media/models_X</code> and it should link to the filename without its extension.
+| For the model file <code>media/models_X/MyMod/Burger.fbx</code>, you would write:
+{{CodeSnip
+| lang = java
+| code =
+mesh = MyMod/Burger,
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>scale</code>
+| Scale for the model size. This is a single float value.
+| {{CodeSnip
+| lang = java
+| code =
+scale = 1.5,
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>static</code>
+| {{Unverified|section=true|Supposition regarding non-deformable objects based on previous [[Special:PermanentLink/871255|revision]] of the page.}}
+Boolean value <code>true</code> or <code>false</code>. If set to <code>true</code>, the model will be static. This is typically used for non deformable objects, which means clothings should not be static.
+| {{CodeSnip
+| lang = java
+| code =
+static = true,
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>texture</code>
+| Sets the texture for the model. The file must be located in <code>media/textures</code> by writing the path to the filename without its extension.
+| For the texture file <code>media/textures/BurgerTex.png</code>, you would write:
+{{CodeSnip
+| lang = java
+| code =
+texture = BurgerTex,
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>invertX</code>
+| Boolean value <code>true</code> or <code>false</code>. If set to <code>true</code>, the scale by the X axis will be inverted.
+| {{CodeSnip
+| lang = java
+| code =
+invertX = true,
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>boneWeight</code>
+| {{Unverified|section=true|Supposition regarding vehicle bones based on previous [[Special:PermanentLink/871255|revision]] of the page.}}
+Sets the bone weight for the model. This is used for vehicle bones, which are not currently used in the game.
+| {{CodeSnip
+| lang = java
+| code =
+boneWeight = DoorRearLeft_bone 1.0,
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>animationsMesh</code>
+| {{Stub|section=true}}
+Sets the animation for the model. This is used for models that are used as entities such as the character.
+| {{CodeSnip
+| lang = java
+| code =
+animationsMesh = Human,
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>attachment</code>
+| Script block that define attachments and their parameters for the model, such as item attachment on the body or vehicle attachment. See [[attachment (scripts)|attachment script block]] for more details.
+| {{CodeSnip
+| lang = java
+| code =
+attachment Bip01_Prop2
+{
+    offset = 0.0142 0.0401 0.0000,
+    rotate = -23.3606 21.2788 37.5386,
+    scale = 0.8280,
+}
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>postProcess</code>
+| {{Stub|What is this useful for?|section=true}}
+Sets post-processing steps for assimp to use when importing the model. Steps should be separated with <code>;</code>, and prefixed with either <code>+</code> to add the step or <code>-</code> to remove the step (primarily used to remove a default step). Steps correspond to members of the [https://github.com/assimp/assimp/blob/master/port/jassimp/jassimp/src/jassimp/AiPostProcessSteps.java AiPostProcessSteps] enum. The default steps are <code>FIND_INSTANCES</code>, <code>MAKE_LEFT_HANDED</code>, <code>LIMIT_BONE_WEIGHTS</code>, <code>TRIANGULATE</code>, <code>OPTIMIZE_MESHES</code>, <code>REMOVE_REDUNDANT_MATERIALS</code>, <code>JOIN_IDENTICAL_VERTICES</code>.
+| {{CodeSnip
+| code =
+postProcess = +CALC_TANGENT_SPACE;-JOIN_IDENTICAL_VERTICES,
+}}
+|}
+
+== Example ==
+{{CodeSnip
+| lang = Java
+| code =
+model Burger
+{
+	mesh = Burger,
+    scale = 1.5,
+    static = true,
+    texture = BurgerTex,
+
+	attachment Bip01_Prop2
+	{
+		offset = 0.0142 0.0401 0.0000,
+		rotate = -23.3606 21.2788 37.5386,
+		scale = 0.8280,
+	}
+}
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Scripts}}

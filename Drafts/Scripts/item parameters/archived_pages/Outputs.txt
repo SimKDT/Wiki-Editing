@@ -1,0 +1,93 @@
+{{Title|outputs}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>outputs</code> parameter defines the items that will be created when the recipe is finished. Outputs are listed one after the other and follow the format below:
+{{CodeSnip/custom|code=
+outputs
+{{CodeSnip/braces|l}}
+:{{CodeSnip/comment|-- simple item output}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/param|2=item}},
+
+:{{CodeSnip/comment|-- using mappers}}
+:item {{CodeSnip/param|quantity}} mapper:{{CodeSnip/param|5=mapperID}},
+
+:{{CodeSnip/comment|...}}
+{{CodeSnip/braces|r}}
+}}
+
+{{Note|type=error|Every {{Code|outputs}} lines need to finish with a comma or this will cause a parsing error. However, make sure to NOT put a comma after the final {{Code|} }} of the {{Code|outputs}} block !}}
+
+== Parameters ==
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | Parameter details
+! style="min-width:100px;" | Parameter !! Description
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|1=quantity}}</code>
+| The {{CodeSnip/param|1=quantity}} is an integer that defines the number of items needed for the recipe.
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|2=item}}</code>
+| The output item is unique for an output line. The items need to have their full type noted in the list. For example, <code>Base.ClosedUmbrellaBlack</code> is the black closed umbrella item. For a custom module it would have to be <code>YourModuleName.YourItemID</code>.
+{{CodeSnip
+| lang = lua
+| code =
+item 1 Base.SmallKnife
+item 1 Base.ClosedUmbrellaBlack,
+item 1 YourModuleName.YourItemID,
+}}
+
+{{Note|type=warn|Notice the difference with the [[inputs]] writing where here <code>{{CodeSnip/param|2=item}}</code> is not in-between {{Code|[]}} because only one item can exist for an output entry.}}
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|5=mapperID}}</code>
+| The {{CodeSnip/param|5=mapper}} is a parameter used to link input items to their output equivalent. To see more detail on mappers and how they are used, see [[itemMapper]].
+|-
+| style="text-align:center" | flags {{sup|unused|red}}
+| Flags for outputs currently do not have a single example in the vanilla recipes. The flags are listed because present in the game code, but there currently is no confirmation of them working. See [[#flags|flags]] for the list of flags.
+|}
+
+{{Note|type=error|Both {{CodeSnip/param|2=item}} and {{CodeSnip/param|5=mapper}} methods of listing items can't be combined.}}
+
+== flags ==
+Below is the full list of flags that can be used:
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Special conditions
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>HandcraftOnly</code>
+| style="min-width: 600px;"| The output item can only be crafted when you didn't use automation.
+|-
+| style="min-width: 200px;"| <code>AutomationOnly</code>
+| style="min-width: 600px;"| The output item can only be crafted when you used automation. (existed but not implemented yet)
+|}
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Fluids
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>IsEmpty</code>
+| style="min-width: 600px;"| The fluidContainer is empty.
+|-
+| style="min-width: 200px;"| <code>ForceEmpty</code>
+| style="min-width: 600px;"| Fluid already contained will be emptied.
+|-
+| style="min-width: 200px;"| <code>AlwaysFill</code>
+| style="min-width: 600px;"| The fluidContainer will try to fill up if the available capacity exceeds the create fluid amount.
+|-
+| style="min-width: 200px;"| <code>RespectCapacity</code>
+| style="min-width: 600px;"| The fluidContainer must have enough free capacity.
+|}
+
+{{Note|type=warn|Flags for outputs currently do not have a single example in the vanilla recipes. The flags are listed because present in the game code, but there currently is no confirmation of them working.}}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+outputs
+{
+    item 1 Base.Tissue,
+    item 1 Base.ScratchTicket,
+}
+}}
+
+{{ll|Category:craftRecipe parameters}}

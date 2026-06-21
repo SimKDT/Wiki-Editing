@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== remoteRange ====
+The range at which the trap can be remotely activated.
+<syntaxhighlight lang="Java">
+RemoteRange = 11,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

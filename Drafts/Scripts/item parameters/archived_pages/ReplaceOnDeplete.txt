@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReplaceOnDeplete ====
+Used for Drainable items. Specifies the item that the original item will be replaced with when depleted.
+<syntaxhighlight lang="Java">
+ReplaceOnDeplete = PaintbucketEmpty,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

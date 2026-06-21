@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454845}}
+
+==== AmmoBox ====
+Parameter for weapons. Indicates what type of ammo box the weapon uses.
+<syntaxhighlight lang="Java">
+AmmoBox = 308Box,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

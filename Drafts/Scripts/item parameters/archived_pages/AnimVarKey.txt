@@ -1,0 +1,43 @@
+{{Title|animVarKey}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.8.1}}
+{{Note|This parameter should be used alongside [[animVarVal]].}}
+{{Main|timedAction (scripts)}}
+The {{Code|animVarKey}} parameter is used to define a specific [[AnimNode]] {{Code|m_Conditions}} variable key-value pair to use a specific action animation variant. To use an animation variable key in a timed action, use the following format:
+{{CodeSnip
+| lang = lua
+| code =
+animVarKey = <key name>,
+}}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+actionAnim      = Loot,
+animVarKey      = LootPosition,
+animVarVal      = Low,
+}}
+For the following [[AnimNode]]:
+{{CodeSnip
+| lang = xml
+| code =
+<?xml version="1.0" encoding="utf-8"?>
+<animNode x_extends="Loot.xml">
+	<m_Name>LootHigh</m_Name>
+	<m_AnimName>Bob_IdleLooting_High</m_AnimName>
+	<m_Conditions />
+	<m_Conditions />
+	<m_Conditions>
+		<m_Name>LootPosition</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>High</m_StringValue>
+	</m_Conditions>
+</animNode>
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:timedAction parameters}}

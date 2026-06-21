@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454837}}
+
+==== AlwaysKnockdown ====
+If the parameter is true, then each hit will be a critical hit.
+<syntaxhighlight lang="Java">
+AlwaysKnockdown = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455013}}
+
+==== DigitalPadlock ====
+Set item as digital padlock.
+<syntaxhighlight lang="Java">
+DigitalPadlock = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

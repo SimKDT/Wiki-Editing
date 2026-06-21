@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455089}}
+
+==== FoodType ====
+Specifies the type of food. Used in some recipes.
+<syntaxhighlight lang="Java">
+FoodType = Meat,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

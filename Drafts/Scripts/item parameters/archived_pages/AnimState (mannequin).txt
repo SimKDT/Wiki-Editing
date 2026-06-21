@@ -1,0 +1,17 @@
+{{Title|animState (mannequin)}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.10.0}}
+The {{Code|animState}} parameter is used to define the [[AnimState]] being used by the mannequin. This needs to be the folder name of the AnimState.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+animState = female,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:mannequin parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455017}}
+
+==== DisplayCategory ====
+Specifies the category of the item to display (in the list of items).
+<syntaxhighlight lang="Java">
+DisplayCategory = Camping,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

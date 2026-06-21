@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== noiseDuration ====
+The duration of the sound after the sound trap is triggered.
+<syntaxhighlight lang="Java">
+NoiseDuration = 30,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

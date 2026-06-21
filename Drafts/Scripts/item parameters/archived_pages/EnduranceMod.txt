@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455035}}
+
+==== EnduranceMod ====
+A modifier that affects how endurance is spent during an attack.
+<syntaxhighlight lang="Java">
+EnduranceMod = 1.4,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

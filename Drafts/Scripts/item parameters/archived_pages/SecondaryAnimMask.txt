@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== SecondaryAnimMask ====
+Specifies the animation mask that will be applied to the animation when the item is in the secondary hand.
+<syntaxhighlight lang="Java">
+SecondaryAnimMask = HoldingTorchLeft,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

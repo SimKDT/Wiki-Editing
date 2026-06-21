@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454867}}
+
+==== BaseVolumeRange ====
+A modifier that will affect the base volume of the device.
+<syntaxhighlight lang="Java">
+BaseVolumeRange = 12,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

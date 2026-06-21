@@ -1,0 +1,25 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>SkillRequired</code> parameter specifies the skill required to craft the recipe. The parameter should be formated this way:
+{{CodeSnip
+| lang = lua
+| code =
+-- a single skill
+skillRequired = <skill name>:<level>,
+
+-- multiple skills
+skillRequired = <skill1 name>:<level>;<skill2 name>:<level>,
+}}
+
+For the list of skills used in vanilla crafts, see [[craftRecipe (scripts)#Available skills|Available skills]]
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+skillRequired = Blacksmith:3;Tailoring:2,
+}}
+
+{{ll|Category:craftRecipe parameters}}

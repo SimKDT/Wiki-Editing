@@ -1,0 +1,144 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>Tags</code> parameter is used to define specific conditions that need to be respected to be able to craft. The tags are defined by the following format:
+{{CodeSnip
+| lang = lua
+| code =
+-- single tag
+Tags = tag1,
+
+-- multiple tags
+Tags = tag1;tag2;...,
+}}
+
+== List of tags ==
+Below is the list of tags that are used in vanilla crafts:
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Tags
+! Tag !! Description
+|-
+| style="min-width: 200px;"| <code>CanAlwaysBeResearched</code>
+| style="min-width: 600px;"| Doesn't need to respect specific conditions to be researched.
+|-
+| style="min-width: 200px;"| <code>CanBeDoneInDark</code>
+| style="min-width: 600px;"| Can be crafted in the dark.
+|-
+| style="min-width: 200px;"| <code>RightClickOnly</code>
+| style="min-width: 600px;"| Can only be crafted by right-clicking.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Activity tags
+! Tag !! Description
+|-
+| style="min-width: 200px;"| <code>Cooking</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Electrical</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Engineer</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Farming</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Fishing</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Glassmaking</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Health</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Packing</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Pottery</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Smithing</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Survivalist</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Trapper</code>
+| style="min-width: 600px;"|
+|-
+| style="min-width: 200px;"| <code>Welding</code>
+| style="min-width: 600px;"|
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Crafting benches
+! Tag !! Description
+|-
+| style="min-width: 200px;"| <code>AnySurfaceCraft</code>
+| style="min-width: 600px;"| Can be crafted on any surface.
+|-
+| style="min-width: 200px;"| <code>InHandCraft</code>
+| style="min-width: 600px;"| Can be crafted in hand. Makes the recipe available from the context menu on items usable in the recipe.
+|-
+| style="min-width: 200px;"| <code>CanBeDoneFromFloor</code>
+| style="min-width: 600px;"| Can be crafted from the floor.
+|-
+| style="min-width: 200px;"| <code>CoffeeMachine</code>
+| style="min-width: 600px;"| Can be crafted in a coffee machine.
+|-
+| style="min-width: 200px;"| <code>Forge</code>
+| style="min-width: 600px;"| Can be crafted in a forge.
+|-
+| style="min-width: 200px;"| <code>Furnace</code>
+| style="min-width: 600px;"| Can be crafted in a furnace.
+|-
+| style="min-width: 200px;"| <code>Grindstone</code>
+| style="min-width: 600px;"| Can be crafted on a grindstone.
+|-
+| style="min-width: 200px;"| <code>HandPress</code>
+| style="min-width: 600px;"| Can be crafted on a hand press.
+|-
+| style="min-width: 200px;"| <code>Heckling</code>
+| style="min-width: 600px;"| Can be crafted on a heckle.
+|-
+| style="min-width: 200px;"| <code>KeyDuplicator</code>
+| style="min-width: 600px;"| Can be crafted in a key duplicator.
+|-
+| style="min-width: 200px;"| <code>KilnLarge</code>
+| style="min-width: 600px;"| Can be crafted in a large kiln.
+|-
+| style="min-width: 200px;"| <code>KilnSmall</code>
+| style="min-width: 600px;"| Can be crafted in a small kiln.
+|-
+| style="min-width: 200px;"| <code>PotteryBench</code>
+| style="min-width: 600px;"| Can be crafted on a pottery bench.
+|-
+| style="min-width: 200px;"| <code>PotteryWheel</code>
+| style="min-width: 600px;"| Can be crafted on a pottery wheel.
+|-
+| style="min-width: 200px;"| <code>Rippling</code>
+| style="min-width: 600px;"| Can be crafted in a ripple comb.
+|-
+| style="min-width: 200px;"| <code>Scutching</code>
+| style="min-width: 600px;"| Can be crafted on a scutching board.
+|-
+| style="min-width: 200px;"| <code>StandingDrillPress</code>
+| style="min-width: 600px;"| Can be crafted on a standing drill press.
+|-
+| style="min-width: 200px;"| <code>Toaster</code>
+| style="min-width: 600px;"| Can be crafted in a toaster.
+|}
+
+{{note|type=warn|The crafting bench tag is mandatory for the recipe to be recognized.}}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+Tags = InHandCraft;CanAlwaysBeResearched,
+}}
+
+{{ll|Category:craftRecipe parameters}}

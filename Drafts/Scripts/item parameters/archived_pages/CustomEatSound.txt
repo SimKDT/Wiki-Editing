@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454999}}
+
+==== CustomEatSound ====
+Specifies the sound that will play when the item is eaten.
+<syntaxhighlight lang="Java">
+CustomEatSound = EatingFruit,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

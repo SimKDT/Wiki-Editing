@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== IsWaterSource ====
+If the parameter is true, then the item can be used as a source of water.
+<syntaxhighlight lang="Java">
+IsWaterSource = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,83 @@
+{{Title|mannequin (scripts)}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.10.0}}
+{{Main|Scripts}}
+{{About|custom mannequin [[scripts]]|mannequin objects|mannequin}}
+[[File:mannequin - mapping guide.png|thumb]]
+{{Code|mannequin}} scripts are used to define custom [[mannequin]] types in Project Zomboid, which can be used in [[mapping]] to create mannequins in the world.
+
+== mannequin parameters ==
+The {{Code|mannequin}} block can have the following parameters:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters for the <code>mannequin</code> block
+! Parameter name !! Description
+|-
+| style="padding: 10px;text-align: center;"| [[female]]
+| style="padding: 5px;"| {{Code|true}} or {{Code|false}} boolean value to define if the mannequin is female.
+|-
+| style="padding: 10px;text-align: center;"| [[model (mannequin)|model]]
+| style="padding: 5px;"| The model used by the mannequin. Available models are found inside {{Code|media/models_X/skinned}}, for example:
+*{{Code|FemaleBody}}
+*{{Code|Female_Skeleton}}
+*{{Code|MaleBody}}
+*{{Code|Male_Skeleton}}
+*{{Code|Mannequin_Scarecrow}}
+*{{Code|Mannequin_Skeleton}}
+|-
+| style="padding: 10px;text-align: center;"| [[texture]]
+| style="padding: 5px;"| Used to chose the texture that will be rendered on the mannequin model. The textures can usually be found in the {{Code|media/textures/body}} folder, but custom ones can also be used.
+|-
+| style="padding: 10px;text-align: center;"| [[animSet (mannequin)|animSet]]
+| style="padding: 5px;"| Name of the [[AnimSet]] being used.
+|-
+| style="padding: 10px;text-align: center;"| [[animState (mannequin)|animState]]
+| style="padding: 5px;"| Name of the [[AnimState]] being used.
+|-
+| style="padding: 10px;text-align: center;"| [[pose]]
+| style="padding: 5px;"| Name of the [[AnimNodes]] being used.
+|-
+| style="padding: 10px;text-align: center;"| [[outfit (mannequin)|outfit]]
+| style="padding: 5px;"| The outfit used by the mannequin.
+|}
+
+{{Note|Animal models and textures can be used in mannequins ! For the [[outfit]] parameter, you can use the {{Code|Naked}} outfit but some clothing items can be used by animals such as hats.}}
+
+== Available mannequins ==
+Below is the list of available mannequins in the vanilla game:
+<div class="list-columns" style="column-width:200px; max-width:900px;">
+*<code>FemaleBlack01</code>
+*<code>FemaleBlack02</code>
+*<code>FemaleBlack03</code>
+*<code>MaleBlack01</code>
+*<code>MaleBlack02</code>
+*<code>MaleBlack03</code>
+*<code>FemaleWhite01</code>
+*<code>FemaleWhite02</code>
+*<code>FemaleWhite03</code>
+*<code>MaleWhite01</code>
+*<code>MaleWhite02</code>
+*<code>MaleWhite03</code>
+*<code>BloodFirst</code>
+*<code>Chunk</code>
+*<code>CommandoIan</code>
+*<code>CommandoJohn</code>
+*<code>Frogman</code>
+*<code>GrimeyRick</code>
+*<code>Setup</code>
+*<code>TheGeneral</code>
+*<code>UppermostFirearm</code>
+*<code>Walter</code>
+*<code>Wizard</code>
+*<code>MannequinScarecrow01</code>
+*<code>MannequinScarecrow02</code>
+*<code>MannequinScarecrow03</code>
+*<code>MannequinSkeleton01</code>
+*<code>FemaleLeather</code>
+*<code>MaleLeather</code>
+</div>
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Scripts}}

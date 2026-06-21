@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455023}}
+
+==== DoorHitSound ====
+Used for weapons. Indicates the sound when hitting a door.
+<syntaxhighlight lang="Java">
+DoorHitSound = HammerHit,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

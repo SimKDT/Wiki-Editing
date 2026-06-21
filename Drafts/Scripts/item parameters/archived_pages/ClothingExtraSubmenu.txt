@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454945}}
+
+==== ClothingExtraSubmenu ====
+Used for clothes. The parameter specifies an additional option for the context menu of how the item can be equipped by default.
+<syntaxhighlight lang="Java">
+ClothingExtraSubmenu = ForwardCap,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

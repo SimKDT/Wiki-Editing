@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455043}}
+
+==== EvolvedRecipe ====
+Indicates in which Evolved recipes this item can participate as an ingredient. And how much the item will be spent per use. The Cooked parameter determines whether the dish should be cooked before adding the ingredient.
+<syntaxhighlight lang="Java">
+EvolvedRecipe = Soup:3;Stew:3;Stir fry:3;Burger:3|Cooked;Salad:3;Sandwich:3,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

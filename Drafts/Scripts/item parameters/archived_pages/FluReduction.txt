@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455087}}
+
+==== FluReduction ====
+A modifier that determines how much the disease level will decrease when the item is eaten.
+<syntaxhighlight lang="Java">
+FluReduction = 5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

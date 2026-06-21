@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WindResistance ====
+A modifier that is involved in determining wind protection.
+<syntaxhighlight lang="Java">
+WindResistance = 0.15,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

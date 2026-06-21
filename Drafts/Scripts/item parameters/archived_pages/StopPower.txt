@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== StopPower ====
+Parameter for firearms. A modifier that affects the chance of a critical shot.
+<syntaxhighlight lang="Java">
+StopPower = 7,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== OtherHandUse ====
+Used for weapons. If the parameter is true, then the item in the extra hand will be used. (Example - Molotov cocktail and lighter)
+<syntaxhighlight lang="Java">
+OtherHandUse = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

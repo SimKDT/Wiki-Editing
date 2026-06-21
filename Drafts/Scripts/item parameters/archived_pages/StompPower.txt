@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== StompPower ====
+Used for shoes. This parameter specifies the damage modifier for a kick attack against a prone opponent.
+<syntaxhighlight lang="Java">
+StompPower = 2.1,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

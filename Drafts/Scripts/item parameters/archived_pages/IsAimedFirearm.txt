@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== IsAimedFirearm ====
+The parameter specifies that the item is a firearm.
+<syntaxhighlight lang="Java">
+IsAimedFirearm = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

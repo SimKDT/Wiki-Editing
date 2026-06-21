@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== IdleAnim ====
+The parameter sets the idle animation with the weapon.
+<syntaxhighlight lang="Java">
+IdleAnim = Idle_Weapon2,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

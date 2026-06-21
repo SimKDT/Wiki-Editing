@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454899}}
+
+==== CanBeReused ====
+Determines if the trap can be picked up and used again. Does not work with sensory traps.
+<syntaxhighlight lang="Java">
+CanBeReused = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

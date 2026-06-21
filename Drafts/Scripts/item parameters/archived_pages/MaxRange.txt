@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MaxRange ====
+Used for weapons. Sets the weapon's maximum attack range. Range affects the chance of hitting a target.
+<syntaxhighlight lang="Java">
+MaxRange = 1.55,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

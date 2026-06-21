@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PainReduction ====
+A modifier that determines how much the pain level will decrease after eating the item.
+<syntaxhighlight lang="Java">
+PainReduction = 7,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

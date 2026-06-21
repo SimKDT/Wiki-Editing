@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455045}}
+
+==== EvolvedRecipeName ====
+Specifies the display name when adding an item as an ingredient to an Evolved Recipe.
+<syntaxhighlight lang="Java">
+EvolvedRecipeName = Beef,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

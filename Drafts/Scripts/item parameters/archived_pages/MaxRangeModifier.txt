@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MaxRangeModifier ====
+Sets the maximum range modifier for the WeaponPart.
+<syntaxhighlight lang="Java">
+MaxRangeModifier = 7,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

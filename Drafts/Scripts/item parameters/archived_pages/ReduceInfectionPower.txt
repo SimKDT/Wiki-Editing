@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ReduceInfectionPower ====
+A modifier that affects the speed of healing from an infection (From a normal infection, not from a zombie virus).
+<syntaxhighlight lang="Java">
+ReduceInfectionPower = 50,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

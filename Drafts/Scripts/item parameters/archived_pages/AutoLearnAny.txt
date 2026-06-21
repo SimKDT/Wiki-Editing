@@ -1,0 +1,28 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>autoLearnAny</code> parameter specifies that at least one of the skills and its associated level need to be reached to learn the recipe. The parameter should be formated this way:
+{{CodeSnip
+| lang = lua
+| code =
+-- a single skill
+autoLearnAny = <skill name>:<level amount>,
+
+-- multiple skills
+autoLearnAny = <skill1 name>:<level amount>;<skill2 name>:<level amount>,format
+}}
+
+For the list of skills used in vanilla crafts, see [[craftRecipe (scripts)#Available skills|Available skills]].
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+autoLearnAny = Carving:3;Maintenance:2,
+}}
+
+== See also ==
+*[[AutoLearnAll]]
+
+{{ll|Category:craftRecipe parameters}}

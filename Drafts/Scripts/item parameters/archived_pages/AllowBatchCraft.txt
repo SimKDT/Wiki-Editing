@@ -1,0 +1,14 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>AllowBatchCraft</code> parameter is used to allow the recipe to be crafted in batches. This will make a slider appear on the crafting to craft multiple ones at once. Needs to be a boolean and default is <code>true</code>, set to <code>false</code> to disable batch craft.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+AllowBatchCraft = false,
+}}
+
+{{ll|Category:craftRecipe parameters}}

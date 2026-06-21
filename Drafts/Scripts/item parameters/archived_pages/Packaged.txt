@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== Packaged ====
+If this parameter is true, then the tooltip of the item will display the number of calories, lipids, proteins and carbohydrates.
+<syntaxhighlight lang="Java">
+Packaged = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455025}}
+
+==== EatType ====
+Sets the animation variable that will be used when the item is eaten (FoodType Variable in .xml files).
+<syntaxhighlight lang="Java">
+EatType = Kettle,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

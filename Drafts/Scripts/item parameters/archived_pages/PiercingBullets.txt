@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PiercingBullets ====
+If this parameter is set to true, then the bullets will be able to pass through the target and hit another target behind.
+<syntaxhighlight lang="Java">
+PiercingBullets = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

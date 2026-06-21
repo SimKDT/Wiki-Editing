@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== IconsForTexture ====
+The names of the icons are specified, which in order correspond to the possible textures of the item (as specified in the .xml file of the clothing).
+<syntaxhighlight lang="Java">
+IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

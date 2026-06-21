@@ -1,0 +1,65 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.5.1}}
+{{Main|CraftRecipe}}
+The <code>OnCreate</code> parameter allows the referencing of a Lua function that will be called when the crafting recipe is finished. This can be used to add custom behavior to the crafting recipe when it gets finished. The function should be [[Lua (language)#Local and global|global]] and defined in a Lua file. Vanilla puts its global crafting functions inside the file <code>media/lua/server/recipecode.lua</code> however make sure to define your custom functions in a uniquely named file.
+
+The function should have the following structure:
+{{CodeSnip
+| lang = lua
+| code =
+function MyOnCreateFunction(craftRecipeData, character)
+    -- your custom code here
+end
+}}
+
+The [[CraftRecipeData|craftRecipeData]] is a java object that contains the data of the crafting recipe. The <code>character</code> is the [[IsoPlayer|player character]] who is crafting the recipe.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+OnCreate = Recipe.OnCreate.OpenCannedFood,
+}}
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 685
+| source = recipecode.lua
+| path = ProjectZomboid\media\lua\server
+| retrieved = true
+| version = 42.5.1
+| code =
+-- set back the age of the food and give the jar back
+function Recipe.OnCreate.OpenCannedFood(craftRecipeData, character)
+	local items = craftRecipeData:getAllConsumedItems();
+	local result = craftRecipeData:getAllCreatedItems():get(0);
+    local jar = items:get(0);
+    local aged = jar:getAge() / jar:getOffAgeMax();
+    result:setBaseHunger(jar:getBaseHunger())
+    result:setHungChange(jar:getHungChange())
+    result:setCarbohydrates(jar:getCarbohydrates())
+    result:setLipids(jar:getLipids())
+    result:setProteins(jar:getProteins())
+    result:setCalories(jar:getCalories())
+
+    result:setAge(result:getOffAgeMax() * aged);
+    result:setCooked(jar:isCooked())
+    result:setBurnt(jar:isBurnt())
+
+	result:syncItemFields();
+
+    -- character:getInventory():AddItem("Base.EmptyJar");
+    local lid = instanceItem("Base.JarLid");
+    local mData = jar:getModData()
+    local cond = mData.LidCondition or 9
+    lid:setCondition(cond)
+    character:getInventory():AddItem(lid);
+	sendAddItemToContainer(character:getInventory(), lid);
+
+--    print("you're new food have age " .. result:getAge());
+end
+}}
+
+{{ll|Category:craftRecipe parameters}}

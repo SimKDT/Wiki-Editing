@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455099}}
+
+==== HerbalistType ====
+To recognize an item with this parameter, you need to know the Herbalist recipe.
+<syntaxhighlight lang="Java">
+HerbalistType = Mushroom,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

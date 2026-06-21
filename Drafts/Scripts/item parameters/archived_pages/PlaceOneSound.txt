@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PlaceOneSound ====
+Specifies the sound that will play when an item is placed on the ground.
+<syntaxhighlight lang="Java">
+PlaceOneSound = BoxOfRoundsPlaceOne,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

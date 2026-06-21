@@ -1,0 +1,23 @@
+{{Title|timedAction (craftRecipe)}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.8.1}}
+{{Main|CraftRecipe}}
+{{About|the {{Code|timedAction}} parameter used in crafting recipes|the {{Code|timedAction}} script block explanations|timedAction (scripts)|the Lua timed actions used in the game|Timed Actions}}
+The '''{{Code|timedAction}}''' parameter is used to define the action animation played during the crafting process, and is defined by a [[timedAction (scripts)|timedAction script]]. To use a timed action in a [[craftRecipe]], use the following format:
+{{CodeSnip
+| lang = lua
+| code =
+timedAction = <action name>,
+}}
+
+For a full list of actions, see [[timedAction (scripts)]].
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+timedAction = Making,
+}}
+
+{{ll|Category:craftRecipe parameters}}

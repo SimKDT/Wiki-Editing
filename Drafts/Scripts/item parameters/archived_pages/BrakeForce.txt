@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454877}}
+
+==== BrakeForce ====
+Vehicle part brake power modifier.
+<syntaxhighlight lang="Java">
+brakeForce = 25,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

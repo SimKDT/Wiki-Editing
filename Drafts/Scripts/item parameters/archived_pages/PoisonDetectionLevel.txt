@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== PoisonDetectionLevel ====
+The parameter indicates at what level of cooking it will be clear that this food item is poisonous. The formula for calculating the level of cooking skill that will determine if food is poisonous: '''CookingSkillLevel >= 10 - PoisonDetectionLevel'''
+<syntaxhighlight lang="Java">
+PoisonDetectionLevel = 7,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

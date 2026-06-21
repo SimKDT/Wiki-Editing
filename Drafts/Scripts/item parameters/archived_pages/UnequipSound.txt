@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== UnequipSound ====
+Parameter for weapons. The parameter specifies the sound that will be played when the weapon is unequiped.
+<syntaxhighlight lang="Java">
+UnequipSound = M16UnEquip,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

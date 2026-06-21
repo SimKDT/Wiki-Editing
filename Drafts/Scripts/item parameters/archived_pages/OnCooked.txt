@@ -1,0 +1,20 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== OnCooked ====
+Specifies the name of the Lua function that is called when the item is cooked. The original item is passed as a parameter.
+<syntaxhighlight lang="Java">
+OnCooked = CannedFood_OnCooked,
+</syntaxhighlight>
+
+<syntaxhighlight lang="Lua">
+function CannedFood_OnCooked(cannedFood)
+    local aged = cannedFood:getAge() / cannedFood:getOffAgeMax();
+    cannedFood:setOffAgeMax(90);
+    cannedFood:setOffAge(60);
+    cannedFood:setAge(cannedFood:getOffAgeMax() * aged);
+end
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

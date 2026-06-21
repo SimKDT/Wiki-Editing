@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== ScratchDefense ====
+Parameter for clothes. The parameter specifies the scratch protection modifier.
+<syntaxhighlight lang="Java">
+ScratchDefense = 30,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

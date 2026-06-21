@@ -1,0 +1,354 @@
+{{Title|craftRecipe}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{About|[[Build 42]] crafting recipes|crafting recipes for [[Build 41]]|Recipe (scripts)}}
+'''craftRecipe'''s are a type of [[scripts]] used to define crafting recipes by providing a set of parameters and conditions.
+
+{{Note|Crafting recipes in [[Build 42]] were changed to use a different formatting and system than the one used in [[Build 41]] ([[Recipe (scripts)|Recipe]]).}}
+
+== craftingRecipe format ==
+To create a new crafting recipe, simply use the following entry in a script file:
+{{CodeSnip
+| lang = java
+| code =
+module yourModule /* or Base */
+{
+    craftRecipe <RecipeID>
+    {
+        ...
+    }
+}
+}}
+
+The <code><RecipeID></code> is a unique identifier for the recipe, and '''should not have spaces in it'''. It is used to define the name of the recipe in the [[Translations|translation files]], in <code>Recipes_{language}.txt</code>. For example, if the <code><RecipeID></code> is <code>MyRecipe</code>, the translation file for English needs to have:
+{{CodeSnip
+| lang = lua
+| code =
+Recipes_EN = {
+    Recipe_MyRecipe = "My Recipe Name",
+}
+}}
+
+{{BugBox|The <code>module</code> cannot be a custom one or your mod will not work on [[multiplayer]]. In the meantime, use <code>module Base</code>, but you should be able to easily swap it when this gets fixed.|version=42.13.0}}
+
+== craftRecipe parameters ==
+Different parameters can be used in the <code>craftRecipe</code> block to define the recipe. The following table lists the available parameters and the mandatory ones:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters for the <code>craftRecipe</code> block
+! Parameter name !! Description
+|-
+| style="padding: 10px;text-align: center;"| [[Tags (craftRecipe)|Tags]]{{sup|mandatory|red}}
+| style="padding: 5px; max-width: 500px;"| Specifies specific conditions which need to be respected to craft this item. At least one crafting bench tag is necessary for the craft to be recognized, such as {{Code|AnySurfaceCraft}}.
+|-
+| style="padding: 10px;text-align: center;"| [[inputs]]{{sup|mandatory|red}}
+| style="padding: 5px; max-width: 500px;"| The ingredients needed to crafting the item.
+|-
+| style="padding: 10px;text-align: center;"| [[outputs]]
+| style="padding: 5px; max-width: 500px;"| The item produced from the craft.
+|-
+| style="padding: 10px;text-align: center;"| [[time]]
+| style="padding: 5px; max-width: 500px;"| Time to craft the item. Defaults to 50.
+|-
+| style="padding: 10px;text-align: center;"| [[timedAction (craftRecipe)|timedAction]]
+| style="padding: 5px; max-width: 500px;"| Specifies an animation played during the crafting process, as well as sounds and the calorie burn and body heat generation rates.
+|-
+| style="padding: 10px;text-align: center;"| [[category]]
+| style="padding: 5px; max-width: 500px;"| Specifies the category of the crafting recipe. This helps to organize and identify recipes in the crafting menu.
+|-
+| style="padding: 10px;text-align: center;"| [[ToolTip]]
+| style="padding: 5px; max-width: 500px;"| Description of the crafting which is shown in the crafting menu.
+|-
+| style="padding: 10px;text-align: center;"| [[Icon (craftRecipe)|Icon]]
+| style="padding: 5px; max-width: 500px;"| Specifies the icon associated with this crafting recipe.
+|-
+| style="padding: 10px;text-align: center;"| [[itemMapper]]
+| style="padding: 5px; max-width: 500px;"| Allows to define an item mapping for input items to create a specific output item.
+|-
+| style="padding: 10px;text-align: center;"| [[OnCreate (craftRecipe)|OnCreate]]
+| style="padding: 5px; max-width: 500px;"| Whenever the crafting recipe is finished, this Lua function will be called.
+|-
+| style="padding: 10px;text-align: center;"| [[OnTest]]
+| style="padding: 5px; max-width: 500px;"| Used to verify if the recipe can be crafted.
+|-
+| style="padding: 10px;text-align: center;"| [[xpAward]]
+| style="padding: 5px; max-width: 500px;"| Specifies the experience points awarded for crafting this item.
+|-
+| style="padding: 10px;text-align: center;"| [[SkillRequired]]
+| style="padding: 5px; max-width: 500px;"| Specifies the skill level required to perform this crafting action.
+|-
+| style="padding: 10px;text-align: center;"| [[needToBeLearn]]
+| style="padding: 5px; max-width: 500px;"| Should the player learn the recipe before being able to craft it.
+|-
+| style="padding: 10px;text-align: center;"| [[AutoLearnAll]]
+| style="padding: 5px; max-width: 500px;"| All the skills and their required level need to be reached to learn the recipe, not be be confused with AutoLearnAny.
+|-
+| style="padding: 10px;text-align: center;"| [[AutoLearnAny]]
+| style="padding: 5px; max-width: 500px;"| Only one of the listed skills and their required level needs to be reached to learn the recipe, not be confused with AutoLearnAll.
+|-
+| style="padding: 10px;text-align: center;"| [[MetaRecipe]]
+| style="padding: 5px; max-width: 500px;"| A meta recipe is used to link two recipes so that if the meta recipe is known then the main recipe is known.
+|-
+| style="padding: 10px;text-align: center;"| [[AllowBatchCraft]]
+| style="padding: 5px; max-width: 500px;"| Allows the recipe to be crafted in batches.
+|-
+| style="padding: 10px;text-align: center;"| [[Fluids (craftRecipe)|Fluids]]
+| style="padding: 5px; max-width: 500px;"| Recipes can use fluids.
+|-
+| style="padding: 10px;text-align: center;"| [[overlayMapper]]
+| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
+|-
+| style="padding: 10px;text-align: center;"| [[recipeGroup]]
+| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
+|}
+
+=== Available skills ===
+You can define multiple skills and their respective experience points/levels by separating them with <code>;</code>. Below is how each parameters need to be formatted:
+*[[xpAward]] format is <code>skill:experience</code>
+*[[SkillRequired]] format is <code>skill:level</code>
+*[[AutoLearnAll]] format is <code>skill:level</code>
+*[[AutoLearnAny]] format is <code>skill:level</code>
+
+You can find the available skills in the {{JavaObject|package=zombie/characters/skills|PerkFactory.Perks}} class. Alternatively, you can also use modded skills defined by your mod or other mods.
+
+== Modifying existing recipes ==
+{{Stub|section=true|Other methods to modify specific elements exist and need to be documented.}}
+Below will be a list of known methods to modify specific elements of existing recipes.
+
+{{Note|type=error|The new craftRecipe from [[Build 42]] is very limited when it comes to modifying existing recipes from the Lua compared to the previous [[recipe (scripts)|recipe scripts]] from [[Build 41]]. It often requires the use of tricks to access recipe data and is often suboptimal.<br>
+Want this to change ? Push for TIS to implement proper modification methods for modders [https://theindiestone.com/forums/index.php?/topic/86011-allow-lua-to-edit-recipes-in-b42/#comment-441055 here]!}}
+
+=== Adding a new output mapper output ===
+Below are listed methods to modify an existing craftRecipe [[itemMapper]]s.
+==== First method ====
+This method needs the mod to define a craftRecipe with the same name as the one to add new [[itemMapper]] entries. Only the itemMapper or overlayMapper entries need to be added the craftRecipe, which will not overwrite the original craftRecipe but add new entries to it. Simply make sure that your item gets added to the [[inputs]] either by adding it manually or if the input uses [[tags (item parameter)|item tags]], that your item has the same tags.
+{{CodeSnip
+| lang = lua
+| code =
+craftRecipe DrySmallLeather
+    {
+        itemMapper DryLeatherSmall
+        {
+            Base.RaccoonLeather_Spiffo_Fur_Tan = Base.RaccoonLeather_Spiffo_Fur_Tan_Wet,
+        }
+        overlayMapper
+        {
+            Base.RaccoonLeather_Spiffo_Fur_Tan_Wet = DeerLeather,
+        }
+}
+}}
+
+==== Second method ====
+The second method involves the use of Lua.
+{{CodeSnip
+| lang = lua
+| code =
+Events.OnGameStart.Add(function()
+    local recipe = ScriptManager.instance:getCraftRecipe("SliceHead")
+    if recipe then
+        local outputs = recipe:getOutputs()
+        for i=0, outputs:size()-1 do
+            local out = outputs:get(i)
+            local mapper = out:getOutputMapper()
+            if mapper then
+                local list = ArrayList.new()
+                list:add("HorseMod.Horse_Head")
+                mapper:addOutputEntree("HorseMod.Horse_Skull", list)
+                mapper:OnPostWorldDictionaryInit(recipe:getName())
+            end
+        end
+    end
+end)
+}}
+
+=== Adding new inputs ===
+Below is an example of how you can add new items to the [[inputs]] of an existing craftRecipe using Lua. The hardest part of adding new items to inputs is identifying the inputs themselves, which is done with a testFunction in the example below. The reason it is so complicated to add to inputs is that it involves directly accessing the cached item script inputs stored in a [[Lua (API)#Methods and fields|Java field]] called <code>loadedItems</code>, thus requiring access via [[Lua (API)#Accessing fields|reflection]], and directly adding your item entries in there.
+
+In the example provided, the recipe also depends on itemMappers, so you need to make sure to patch using the method described in [[#Adding a new output mapper output]].
+{{CodeBox
+| class = blue
+| title = Full snipet for adding new inputs to an existing craftRecipe
+|
+<syntaxhighlight lang="lua">
+local items = {
+    "HorseMod.HorseLeather_AP_Fur_Tan",
+    "HorseMod.HorseLeather_AP_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_APHO_Fur_Tan",
+    "HorseMod.HorseLeather_APHO_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_AQHBR_Fur_Tan",
+    "HorseMod.HorseLeather_AQHBR_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_AQHP_Fur_Tan",
+    "HorseMod.HorseLeather_AQHP_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_FBG_Fur_Tan",
+    "HorseMod.HorseLeather_FBG_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_GDA_Fur_Tan",
+    "HorseMod.HorseLeather_GDA_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_LPA_Fur_Tan",
+    "HorseMod.HorseLeather_LPA_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_T_Fur_Tan",
+    "HorseMod.HorseLeather_T_Fur_Tan_Medium",
+}
+
+-- this is the item full type we will use to identify the correct input to add our new items to
+-- in this recipe example this is enough because we know the second input only contains tool items, so not really leathers
+local checkItem = "Base.Leather_Crude_Large"
+
+---An example of input identification function. Checks if the input contains an item with a specific full type, which is usually enough to identify it.
+---@param input InputScript
+---@param loadedItems ArrayList<string>
+---@return boolean
+local function identifyInput(input, loadedItems)
+    if loadedItems:contains(checkItem) then return true end
+    return false
+end
+
+---Utility function to retrieve fields of specific Java object instances.
+---@param object any
+---@param field string
+local function getJavaField(object, field)
+    local offset = string.len(field)
+    for i = 0, getNumClassFields(object) - 1 do
+        local m = getClassField(object, i)
+        if string.sub(tostring(m), -offset) == field then
+            return getClassFieldVal(object, m)
+        end
+    end
+    return nil -- no field found
+end
+
+---Function used to patch a recipe by adding new items to one of its inputs. Uses a `testInput` function to identify the correct input to add items to.
+---@param recipeID string
+---@param testInput fun(input: InputScript, loadedItems: ArrayList<string>): boolean
+---@param itemsToAdd string[]
+local function patchRecipe(recipeID, testInput, itemsToAdd)
+    -- retrieve the recipe informations
+    local craftRecipe = getScriptManager():getCraftRecipe(recipeID)
+    local inputs = craftRecipe:getInputs()
+
+    for i = 0, inputs:size() - 1 do
+        -- retrieve the input and its script loaded items
+        local input = inputs:get(i)
+        local loadedItems = getJavaField(input, "loadedItems") --[[@as ArrayList<string>]]
+
+        -- check if the input passes the test function
+        if testInput(input, loadedItems) then
+            -- add the items to the input
+            for j = 1, #itemsToAdd do
+                loadedItems:add(itemsToAdd[j])
+            end
+            return
+        end
+    end
+end
+
+patchRecipe("Base.CutLeatherInHalf", identifyInput, items)
+</syntaxhighlight>
+}}
+
+== Example ==
+Below are a few examples of vanilla crafting recipes you can do:
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 4
+| source = recipes_carpentry.txt
+| path = ProjectZomboid\media\scripts\recipes
+| retrieved = true
+| version = 42.8.1
+| code =
+craftRecipe SawLogs
+{
+    timedAction = SawLogs,
+    Time = 230,
+    Tags = InHandCraft;CanBeDoneFromFloor,
+    category = Carpentry,
+    xpAward = Woodwork:5,
+    inputs
+    {
+        item 1 [Base.Log] flags[Prop2],
+        item 1 tags[Saw] mode:keep flags[MayDegradeLight;Prop1],
+    }
+    outputs
+    {
+        item 3 Base.Plank,
+    }
+}
+}}
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 139
+| source = recipes_lightsources.txt
+| path = ProjectZomboid\media\scripts\recipes
+| retrieved = true
+| version = 42.8.1
+| code =
+craftRecipe RefillHurricaneLantern
+{
+    timedAction = Making,
+    Time = 50,
+    OnCreate = Recipe.OnCreate.RefillHurricaneLantern,
+    /* OnTest = Recipe.OnTest.RefillHurricaneLantern, */
+    Tags = InHandCraft;CanBeDoneInDark,
+    category = Miscellaneous, /*category = Survival,*/
+    inputs
+    {
+        item 1 [Base.Lantern_Hurricane;Base.Lantern_Hurricane_Copper;Base.Lantern_Hurricane_Forged;Base.Lantern_Hurricane_Gold;Base.Lantern_Hurricane_Silver] mode:destroy flags[NotFull;AllowFavorite;InheritFavorite;ItemCount] mappers[LampMapper],
+        item 1 [*],
+        -fluid 1.0 [Petrol],
+    }
+    outputs
+    {
+        item 1 mapper:LampMapper,
+    }
+    itemMapper LampMapper
+    {
+        Base.Lantern_Hurricane = Base.Lantern_Hurricane,
+        Base.Lantern_Hurricane_Copper = Base.Lantern_Hurricane_Copper,
+        Base.Lantern_Hurricane_Forged = Base.Lantern_Hurricane_Forged,
+        Base.Lantern_Hurricane_Gold = Base.Lantern_Hurricane_Gold,
+        Base.Lantern_Hurricane_Silver = Base.Lantern_Hurricane_Silver,
+
+        default = Base.Lantern_Hurricane,
+    }
+}
+}}
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 745
+| source = recipes_bone.txt
+| path = ProjectZomboid\media\scripts\recipes
+| retrieved = true
+| version = 42.8.1
+| code =
+craftRecipe CarveWhistle
+{
+    time = 200,
+    tags = AnySurfaceCraft;Survivalist,
+    category = Carving,
+    xpAward = Carving:60,
+    SkillRequired = Carving:6,
+    needTobeLearn = true,
+    AutoLearnAny = Carving:8,
+    timedAction = SharpenStake,
+    inputs
+    {
+        item 1 tags[DrillWood;DrillMetal;DrillWoodPoor] mode:keep flags[MayDegradeLight],
+        item 1 tags[SharpKnife] mode:keep flags[MayDegradeLight],
+        item 1 [Base.SmallAnimalBone] flags[Prop2;AllowDestroyedItem],
+    }
+    outputs
+    {
+        item 1 Base.Whistle_Bone,
+    }
+}
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Scripts}}

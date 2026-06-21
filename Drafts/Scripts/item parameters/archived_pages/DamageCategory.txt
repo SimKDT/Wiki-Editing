@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455001}}
+
+==== damageCategory ====
+Parameter for weapons. Specifies what type of damage will be displayed on the enemy that we hit with this weapon.
+<syntaxhighlight lang="Java">
+DamageCategory = Slash,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

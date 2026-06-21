@@ -1,0 +1,25 @@
+{{Title|actionAnim}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.8.1}}
+{{Main|timedAction (scripts)}}
+The {{Code|actionAnim}} parameter is used to define the animation played during a timed action. It is defined by a [[PerformingAction|performing action]] script. To use an action animation in a timed action, use the following format:
+{{CodeSnip
+| lang = lua
+| code =
+actionAnim = <action name>,
+}}
+
+See [[PerformingAction|performing action]] for the full list of available animation actions.
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+actionAnim = PackingBox,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:timedAction parameters}}

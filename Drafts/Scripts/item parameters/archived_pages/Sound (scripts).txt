@@ -1,0 +1,109 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+== Introduction ==
+The block sets the sound parameters, which can then be used in the game.
+
+Example:
+<syntaxhighlight lang="java">
+sound eHeliMusicHostile {
+    category = EHE: Main,
+    loop = true,
+    is3D = true,
+    clip {
+        file = media/sound/RideOfTheValkyries.ogg,
+        distanceMin = 20,
+        distanceMax = 650,
+        reverbFactor = 0.1,
+        volume = 0.7,
+        }
+}
+</syntaxhighlight>
+
+== Parameters ==
+
+=== category ===
+The category to which the sound belongs.
+<syntaxhighlight lang="Java">
+category = UI,
+</syntaxhighlight>
+
+=== is3D ===
+This parameter determines that it will be possible to determine the direction of the sound source.
+<syntaxhighlight lang="Java">
+is3D = true,
+</syntaxhighlight>
+
+=== loop ===
+This parameter determines whether the sound will be looped. (Will play until the sound is turned off with Lua code)
+<syntaxhighlight lang="Java">
+loop = true,
+</syntaxhighlight>
+
+=== master ===
+Specifies the audio stream to which the audio belongs. Influences which sound volume setting will affect the sound.
+<syntaxhighlight lang="Java">
+master = Ambient,
+</syntaxhighlight>
+
+=== maxInstancesPerEmitter ===
+Specifies how many of this sound the sound source (emitter) can play at the same time.
+<syntaxhighlight lang="Java">
+maxInstancesPerEmitter = 2,
+</syntaxhighlight>
+
+=== clip ===
+This block specifies basic information about the sound file.
+
+== Clip block parameters ==
+
+=== distanceMax ===
+Sets the maximum distance at which the sound will be heard.
+<syntaxhighlight lang="Java">
+distanceMax = 100
+</syntaxhighlight>
+
+=== distanceMin ===
+Sets the minimum distance at which the sound will be heard. Between the minimum and maximum distance, the sound volume will gradually decrease.
+<syntaxhighlight lang="Java">
+distanceMin = 20,
+</syntaxhighlight>
+
+=== event ===
+Specifies an event that will trigger the playback of a specific sound. Used for sounds from FMOD sound banks (vanilla sound files).
+<syntaxhighlight lang="Java">
+event = Object/GarageDoor/Open,
+</syntaxhighlight>
+
+=== file ===
+Specifies the sound file to be played. ".ogg" and ".wav" files are supported.
+<syntaxhighlight lang="Java">
+file=media/sound/boats/boat_sails_remove.ogg,
+</syntaxhighlight>
+
+=== pitch ===
+Sets the sound pitch.
+<syntaxhighlight lang="Java">
+pitch=1.5
+</syntaxhighlight>
+
+=== volume ===
+Specifies the sound volume modifier.
+<syntaxhighlight lang="Java">
+volume = 0.7,
+</syntaxhighlight>
+
+=== reverbFactor ===
+Sets the sound reverb.
+<syntaxhighlight lang="Java">
+reverbFactor = 0.1,
+</syntaxhighlight>
+
+=== reverbMaxRange ===
+Sets the maximum distance for the sound reverb.
+<syntaxhighlight lang="Java">
+reverbMaxRange = 20.0,
+</syntaxhighlight>
+
+{{ll|Category:Scripts}}

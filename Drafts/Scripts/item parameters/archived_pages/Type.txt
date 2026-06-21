@@ -1,0 +1,29 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1|2=985323}}
+{{Removed|Build 42.13.0|ItemType}}
+he '''{{Code|Type}}''' parameter defines the class the item will be instantiated as. All items are created as an {{JavaObject|InventoryItem|package=zombie/inventory|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}'s subclass, based on the value of this parameter. The various parameters the [[item (scripts)|item script]] can have are dependent on the class of the item; such as food items will hold nutritional values and weapon items will hold damage values.
+
+The possible values are:
+* AlarmClock
+* AlarmClockClothing
+* Animal
+* Clothing
+* Container
+* Drainable
+* Food
+* Key
+* Literature
+* Map
+* Moveable
+* Normal
+* Radio
+* Weapon
+* WeaponPart
+
+Below is an example for the parameter:
+{{CodeSnip| code =
+Type = Food,
+}}
+
+{{ll|Category:Item scripts parameters}}

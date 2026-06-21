@@ -1,0 +1,27 @@
+{{Title|muscleStrainFactor}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.8.1}}
+{{Note|This parameter should be used alongside [[muscleStrainSkill]] and [[muscleStrainParts]].}}
+{{Unverified}}
+{{Main|timedAction (scripts)}}
+The {{Code|muscleStrainFactor}} parameter is used to define the muscle strain generated during a timed action. It is defined by a number that represents the muscle strain amount added at the end of the action. To use a muscle strain factor in a timed action, use the following format:
+{{CodeSnip
+| lang = lua
+| code =
+muscleStrainFactor = <number>,
+}}
+
+{{Note|This is unverified but the number likely needs to be between 0 and 1, where 0 is no strain and 1 is maximum strain.}}
+
+== Example ==
+{{CodeSnip
+| lang = lua
+| code =
+muscleStrainFactor = 0.1,
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:timedAction parameters}}

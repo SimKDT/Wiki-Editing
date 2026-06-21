@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== WeightReduction ====
+The parameter sets a modifier for reducing the perceived weight of items that are in this ItemContainer.
+<syntaxhighlight lang="Java">
+WeightReduction = 30,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

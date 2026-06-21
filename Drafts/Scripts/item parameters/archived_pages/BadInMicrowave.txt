@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454861}}
+
+==== BadInMicrowave ====
+If the parameter is set to true, then microwave cooking will add unhappiness and boredom to the food.
+<syntaxhighlight lang="Java">
+BadInMicrowave = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

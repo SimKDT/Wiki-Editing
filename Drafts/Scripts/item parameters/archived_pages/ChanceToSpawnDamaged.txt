@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454925}}
+
+==== ChanceToSpawnDamaged ====
+Parameter for vehicle parts. The parameter sets a modifier for the chance of spawning a damaged part.
+<syntaxhighlight lang="Java">
+ChanceToSpawnDamaged = 25,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

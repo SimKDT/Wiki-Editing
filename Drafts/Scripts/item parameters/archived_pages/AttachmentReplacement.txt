@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454853}}
+
+==== AttachmentReplacement ====
+Determines which slot will replace the item.
+<syntaxhighlight lang="Java">
+AttachmentReplacement = Bag,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

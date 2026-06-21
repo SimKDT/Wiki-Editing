@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=455003}}
+
+==== DamageMakeHole ====
+Parameter for weapons. Determines if the weapon will inflict damage to clothing, which will leave a hole.
+<syntaxhighlight lang="Java">
+DamageMakeHole = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

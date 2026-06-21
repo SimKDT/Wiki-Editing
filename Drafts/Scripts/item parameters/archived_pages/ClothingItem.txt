@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454947}}
+
+==== ClothingItem ====
+Specifies the .xml name of the clothing element script.
+<syntaxhighlight lang="Java">
+ClothingItem = Bag_SurvivorBag,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

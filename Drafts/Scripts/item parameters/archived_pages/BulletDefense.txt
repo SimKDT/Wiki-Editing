@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454883}}
+
+==== BulletDefense ====
+Parameter for clothes. The parameter specifies the bullet protection modifier.
+<syntaxhighlight lang="Java">
+BulletDefense = 100,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

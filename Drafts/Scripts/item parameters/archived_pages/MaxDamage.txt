@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+
+==== MaxDamage ====
+Used for weapons. Sets the maximum damage factor, which affects the resulting damage.
+<syntaxhighlight lang="Java">
+MaxDamage = 1.5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

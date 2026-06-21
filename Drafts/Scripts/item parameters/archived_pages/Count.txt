@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16|2=454989}}
+
+==== Count ====
+Determines how many items of this type will appear when spawning/crafting this type of item.
+<syntaxhighlight lang="Java">
+Count = 5,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}
