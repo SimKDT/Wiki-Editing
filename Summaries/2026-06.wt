@@ -1,0 +1,17 @@
+Hello, welcome to this new modding summary for June 2026. Light month for the wiki, mostly [[PZ API Documentation]] work and changes.
+
+[[PZ API Documentation]] now has documentation for [[File format#XML|XML]] files such as [[AnimNode]]s and [[Clothing.xml]]. You can find it [https://pz-wiki-modding.github.io/PZ-API-Docs/xml.html here]. There is also documentation for [[Tile properties]] that you can find [https://pz-wiki-modding.github.io/PZ-API-Docs/mapping/tile_properties.html here] (albeit incomplete for now). 
+
+The various [[:Category:Scripts|Scripts]] pages have been updated to link to the new documentation by utilizing the [[Template:Infobox|Infobox]] template as well as showing some general properties. They now also link to the PZ API Documentation for their parameters. The old parameters wiki page still exist, but considering the majority of these are outdated and I will not bother updating them, I will probably remove them in the future, or maybe make an automated script to update them from the [[PZ Scripts Data]].
+
+Thanks to the work of [[User:Paddlefruit|Paddlefruit]], the extension DirectX X Importer used in [[importing assets]] now supports animations and was improved by working with its creator for Project Zomboid support.
+
+A new [[Character rigs|rig]] presented by the [[Unofficial PZ Cinematic Animation Discord]] was documented. Also related, there are now documented tutorials on the [[Rendering]] page by following the other modding field pages format.
+
+Smaller changes:
+* The [[B42 Map]] has now been brough over to the [[Project Zomboid Map Project]] and largely updated.
+* The [[Java]] page received some extra information.
+
+Thanks to the various users contributing to the modding wiki this month:
+* [[User:RJ RayJay|RJ RayJay]] - updated the documentation of his own [[FrameworkZ]].
+* [[User:Jowhiey|Jowhiey]] - fixed some mistakes in the [[Mod optimization]] page.
