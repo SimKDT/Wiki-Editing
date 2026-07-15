@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=454913}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#cantbeconsolided here].}}
+
+==== CantBeConsolided ====
+If this parameter is true, then this item (Drainable) cannot be combined with an item of a similar type.
+<syntaxhighlight lang="Java">
+CantBeConsolided = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

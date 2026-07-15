@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=454991}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. This parameter is not documented in the ScriptsDocs, meaning it is either yet documented or non-existent in [[Build 42]].}}
+
+==== CountDownSound ====
+The sound that will be played while the trap is running before the explosion.
+<syntaxhighlight lang="Java">
+CountDownSound = ticking,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=454833}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#alcoholpower here].}}
+
+==== AlcoholPower ====
+A modifier for a medical item that affects the ability to disinfect a wound and the pain from applying the item.
+<syntaxhighlight lang="Java">
+AlcoholPower = 4,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

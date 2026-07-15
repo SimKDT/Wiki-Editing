@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=455045}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#evolvedrecipename here].}}
+
+==== EvolvedRecipeName ====
+Specifies the display name when adding an item as an ingredient to an Evolved Recipe.
+<syntaxhighlight lang="Java">
+EvolvedRecipeName = Beef,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=455001}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#damagecategory here].}}
+
+==== damageCategory ====
+Parameter for weapons. Specifies what type of damage will be displayed on the enemy that we hit with this weapon.
+<syntaxhighlight lang="Java">
+DamageCategory = Slash,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

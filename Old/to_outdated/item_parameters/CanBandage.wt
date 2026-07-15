@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=454889}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#canbandage here].}}
+
+==== CanBandage ====
+Indicates whether this item can apply a bandage to a wound.
+<syntaxhighlight lang="Java">
+CanBandage	=	true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

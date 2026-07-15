@@ -1,8 +1,0 @@
-{{LangSwitch}}
-{{Navbar modding}}
-{{Page version|41.78.16}}
-
-==== IsAimedHandWeapon ====
-''DEPRECATED''
-
-{{ll|Category:Item scripts parameters}}

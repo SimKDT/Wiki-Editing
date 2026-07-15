@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=455027}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#ejectammosound here].}}
+
+==== EjectAmmoSound ====
+Parameter for weapons. This parameter specifies the sound that will be played when the weapon is unloaded.
+<syntaxhighlight lang="Java">
+EjectAmmoSound = DoubleBarrelShotgunEjectAmmo,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

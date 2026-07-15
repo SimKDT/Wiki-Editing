@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#minangle here].}}
+
+==== MinAngle ====
+Used for weapons. Determines the minimum aiming angle at which there will be enemies that can be hit. The larger the angle, the smaller the sector of hitting targets (selects the target more accurately). Example: Axe=0.72, AssaultRifle=0.965
+<syntaxhighlight lang="Java">
+MinAngle = 0.75,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

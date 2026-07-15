@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#knockbackonnodeath here].}}
+
+==== KnockBackOnNoDeath ====
+If the parameter is set to true, then when hit with this weapon, the player will receive a small amount of experience in the strength skill.
+<syntaxhighlight lang="Java">
+KnockBackOnNoDeath = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

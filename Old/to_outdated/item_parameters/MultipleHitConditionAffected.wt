@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#multiplehitconditionaffected here].}}
+
+==== MultipleHitConditionAffected ====
+Parameter for weapons. If the parameter is set to true, then when a weapon hits targets, the durability of the weapon is spent. Usually set to false for firearms.
+<syntaxhighlight lang="Java">
+MultipleHitConditionAffected = false,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

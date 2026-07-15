@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#reloadtime here].}}
+
+==== ReloadTime ====
+Modifier of the time required to recharge.
+<syntaxhighlight lang="Java">
+ReloadTime = 25,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

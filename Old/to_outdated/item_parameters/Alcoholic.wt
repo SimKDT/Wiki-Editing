@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=454835}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#alcoholic here].}}
+
+==== Alcoholic ====
+The parameter indicates that the item contains alcohol. Used for alcoholic drinks and alcohol-sterilized bandages.
+<syntaxhighlight lang="Java">
+Alcoholic = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

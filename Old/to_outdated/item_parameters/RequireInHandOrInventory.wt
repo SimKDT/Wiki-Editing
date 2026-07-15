@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#requireinhandorinventory here].}}
+
+==== RequireInHandOrInventory ====
+The parameter specifies the item that the player must have in order to use the original item. You can select multiple items.
+<syntaxhighlight lang="Java">
+RequireInHandOrInventory = Matches/Matchbox/LighterDisposable/Lighter,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

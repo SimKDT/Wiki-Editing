@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19}}
+
+==== Tooltip ====
+Specifies a Tooltip string. Specifies the line ID from the translation file.
+<syntaxhighlight lang="Java">
+Tooltip = Tooltip_item_Campfire,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

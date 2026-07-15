@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=455033}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#endurancechange here].}}
+
+==== EnduranceChange ====
+Used for food. Indicates how much endurance the food will remove. If the number is negative, endurance will decrease, if positive, it will increase.
+<syntaxhighlight lang="Java">
+EnduranceChange = 2,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

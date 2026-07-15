@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=455111}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#hitsound here].}}
+
+==== HitSound ====
+Used for weapons. Indicates the sound that will be played when the item hits. You can set the value to 'null' (to remove the sound).
+<syntaxhighlight lang='Java'>
+HitSound = BaseballBatHit,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

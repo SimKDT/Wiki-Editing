@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#stresschange here].}}
+
+Indicates how much stress the use of the item will remove. If the number is negative, stress will decrease, if it is positive, it will increase.
+<syntaxhighlight lang="Java">
+StressChange = -15,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

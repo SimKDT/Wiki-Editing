@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=455063}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#fabrictype here].}}
+
+==== FabricType ====
+Specifies the material from which the clothes is made. Values: Cotton, Denim, Leather.
+<syntaxhighlight lang="Java">
+FabricType = Denim,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

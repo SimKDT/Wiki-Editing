@@ -1,8 +1,0 @@
-{{LangSwitch}}
-{{Navbar modding}}
-{{Page version|41.78.16}}
-
-==== ImpactSound ====
-''Not used in game at this moment''
-
-{{ll|Category:Item scripts parameters}}

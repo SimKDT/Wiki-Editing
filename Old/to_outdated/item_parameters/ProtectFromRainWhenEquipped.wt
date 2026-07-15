@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#protectfromrainwhenequipped here].}}
+
+==== ProtectFromRainWhenEquipped ====
+If this parameter is true, then the player is protected from rain if the item is equipped.
+<syntaxhighlight lang="Java">
+ProtectFromRainWhenEquipped = true,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}

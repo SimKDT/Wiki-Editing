@@ -1,0 +1,12 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19|2=454883}}
+{{Deletion|This parameter page is deprecated. Please refer to the [[PZ API Documentation|ScriptsDocs]] for the most up-to-date information. You can find the ScriptsDocs entry for this parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#bulletdefense here].}}
+
+==== BulletDefense ====
+Parameter for clothes. The parameter specifies the bullet protection modifier.
+<syntaxhighlight lang="Java">
+BulletDefense = 100,
+</syntaxhighlight>
+
+{{ll|Category:Item scripts parameters}}
