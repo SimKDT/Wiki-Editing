@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.19.0}}
+{{Page version|42.20.0}}
 {{Infobox
 | title = PZ API Documentation
 | class = theme-blue
@@ -36,6 +36,7 @@ It also links to other external documentations such as the [[JavaDocs]] and the 
 
 == See also ==
 * [[PZ Data]]
+* [[Rosetta Project]]
 
 == Navigation ==
 {{Navbox modding}}

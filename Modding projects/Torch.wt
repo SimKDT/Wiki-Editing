@@ -1,0 +1,24 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Infobox
+| title = Torch
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | page=github:demiurgeQuantified/torch
+        | Repository
+        }}
+    }}
+}}
+'''Torch''' is a Python library intended to be used to generate type definitions or bindings for other languages without source code access from [[Decompiling game code|decompiled Java code]], such as with [[Umbrella (modding)|Umbrella]]. It was designed for the [[Rosetta Project]] to automatically generate the necessary Rosetta doc files.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

@@ -1,0 +1,30 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.0}}
+{{Infobox
+| title = PZ Backup
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/PZ-Backup/releases
+        | Download
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/PZ-Backup
+        | Repository
+        }}
+    }}
+}}
+'''PZ Backup''' is a tool that allows the user to create a copy of their Project Zomboid installation, including the game files, mods, and saves into a separate folder. This is useful when playing different versions of the game or to keep a stable installation independent of the game updates and mod updates. You can simply run the tool and launch the game from the new installation to continue playing on your latest save without worrying about the future updates.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

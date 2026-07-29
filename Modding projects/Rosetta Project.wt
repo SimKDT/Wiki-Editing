@@ -1,0 +1,50 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.0}}
+{{Infobox
+| title = Rosetta Project
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Umbrella/pz-lua-stubdata
+        | PZ Lua Stubdata
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Umbrella/pz-rosetta-source
+        | PZ Rosetta Source
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Umbrella/torch-zomboid
+        | Torch Zomboid
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:Rosetta-Docs
+        | Rosetta Docs
+        }}
+    }}
+}}
+The '''Rosetta Project''' is a collection of datasets and tools which are used to provide data regarding the [[Lua (API)|Lua]] files distributed in the form of the [[Visual Studio Code|VSCode]] extension [[Umbrella (modding)|Umbrella]],  of the [[LuaDocs]] and the [[Unofficial JavaDocs (Build 42)|JavaDocs]].
+
+The following are provided:
+* [[github:PZ-Umbrella/pz-lua-stubdata|PZ Lua Stubdata]] - a dataset of the Lua files of the game
+* [[github:PZ-Umbrella/pz-rosetta-source|PZ Rosetta Source]] - a dataset of the Java files of the game
+* [[github:PZ-Umbrella/torch-zomboid|Torch Zomboid]] - a Python application using [[Torch]] to generate the stub files for [[Umbrella (modding)|Umbrella]]
+
+The datasets are written following the [[github:Rosetta-Docs|Rosetta Docs]] format.
+
+== See also ==
+* [[PZ API Documentation]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}
