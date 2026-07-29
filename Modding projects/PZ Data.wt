@@ -1,0 +1,53 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.19.0}}
+{{Infobox
+| title = PZ Data
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/pz-scripts-data
+        | PZ Scripts Data
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/pz-translation-data
+        | PZ Translation Data
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/pz-xml-data
+        | PZ XML Data
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/pz-java-parser
+        | PZ Java Parser
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/pz-lua-parser
+        | PZ Lua Parser
+        }}
+    }}
+}}
+The '''PZ Data''' project is a collection of datasets which provide data regarding [[Scripts]], [[Translation]], [[Lua (API)|Lua]] and [[Java]]. It is composed of 2 types of datasets:
+* ''Data'' types - manually written datasets which provide various documentation written by hand by the community.
+* ''Parser'' types - automatically generated datasets from the game files, be it the [[Decompiling game code|decompiled Java code]] or the [[Lua (API)|Lua]] files.
+
+They are notably used to provide [[github:PZ-Wiki-Modding/pz-translation-data#schemas|schemas]] for validation of translation files. Schemas for the XML files of the game are also provided [[github:PZ-Wiki-Modding/pz-xml-data#schemas|here]].
+
+== See also ==
+* [[PZ API Documentation]]
+* [[ZedScripts]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

@@ -1,0 +1,33 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.19.0}}
+{{Infobox
+| title = PZ Icon Maker
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | page=github:AlexVDefi/rcpz-tools/releases
+        | Download
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:AlexVDefi/rcpz-tools
+        | Repository
+        }}
+    }}
+}}
+'''PZ Icon Maker''' is an application which provides the ability to easily create icon textures for your items from their 3D model. It shares its repository with the [[PZ Survivor Studio]] tool.
+
+== See also ==
+* [[PZ Survivor Studio]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

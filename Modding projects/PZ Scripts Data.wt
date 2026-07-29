@@ -10,20 +10,17 @@
     | 1 = Links
     | 2 = 
         {{Infobox/socials
-        | link=https://pz-wiki-modding.github.io/pz-scripts-data
-        | ScriptsDocs
-        }}
-        {{Infobox/socials
         | type = github
         | link=https://github.com/PZ-Wiki-Modding/pz-scripts-data
         | Repository
         }}
     }}
 }}
-'''PZ Scripts Data''' is a repository which provides data regarding the [[Scripts]] syntax, script blocks and parameters. It is notably used by the [[ZedScripts]] extension for [[Visual Studio Code]]. This dataset is also used to provide a ''ScriptsDocs'' website with an API reference documentation for the Scripts.
+'''PZ Scripts Data''' is a dataset which provides data regarding the [[Scripts]] parameters and syntax. It is notably used by the [[ZedScripts]] extension for [[Visual Studio Code]] and to generate the [[PZ API Documentation]].
 
 == See also ==
-*[[PZ Translation Data]]
+* [[PZ API Documentation]]
+* [[PZ Translation Data]]
 
 == Navigation ==
 {{Navbox modding}}

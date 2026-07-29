@@ -33,16 +33,8 @@ This is a [[Template:Navbar|navbar]] used at the top of modding pages to assist 
   |{{ll|Translation}}
   |{{ll|Modding projects}}
   }}
-|content={{ToggleBox|title=<div style="text-align: center;">[[Build 42.18.0]] modding news</div>|id=modding-news|class=blue|content=
-* [[craftRecipe]]s custom [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/module.html module] now works in [[multiplayer]]
-* Fixed "Game crash with missing recipe items"
-* Improved craft history (added cleanup)
-* Added <code>getModTags()</code> and <code>setTags()</code> for [[craftRecipe]]s
-* Fixed file writters bug so it now returns <code>nil</code> when initialized incorrectly
-* Added tag <code>FitsClothingRack</code> which is used to indicate whenever this item is a clothing rack item
-* Added new event <code>SyncFactionServer(factionName, isRemove))</code> which triggers on any change in faction
-* Added [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/character_trait_definition.html#texture Texture field] for <code>character_trait_definition</code>
-* Fixed Mod Foraging Icon bug, now possible to collect mod items by foraging.
-* Added public methods for [https://demiurgequantified.github.io/ProjectZomboidJavaDocs/zombie/characters/IsoZombie.html IsoZombie]: <code>doCrawlerSpeed(zombieSpeed)</code>, <code>doSprinter()</code>, <code>doFastShambler()</code>, <code>doFakeShambler()</code>, <code>doShambler()</code>, <code>getSpeedType()</code>
+|content={{ToggleBox|title=<div style="text-align: center;">July Modding News</div>|id=modding-news|class=blue|content=
+* Upcoming [[Build 42.20.0]] is the a candidate for stable release, expecting less modding breaking changes to the modding API.
+* [[JavaDocs]] for B42 moved to new link: [https://albion.codeberg.page/PZ-JavaDocs/ here].
 }}
 }}<includeonly/>

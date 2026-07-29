@@ -19,23 +19,23 @@
         }}
         {{Infobox/socials
         | type = github
-        | link=https://github.com/PZ-Wiki-Modding/PZ-API-Docs
+        | page=github:PZ-Wiki-Modding/PZ-API-Docs
         | Repository
         }}
     }}
 }}
-The '''PZ API Documentation''' aims to provide multiple documentation which list elements of the game. These are:
+The '''PZ API Documentation''' aims to provide multiple documentation which list elements of the game which are defined using the [[PZ Data]] dataset. These are:
 * [[PZ Scripts Data|ScriptsDocs]]
 * [[Procedural distributions|Distribution]]
 * [[Java|Java parsed data]]
 * [[Tile properties]]
 * [[Translation]]s
+* XML files such as [[AnimNode]]s.
 
 It also links to other external documentations such as the [[JavaDocs]] and the [[LuaDocs]].
 
 == See also ==
-* [[PZ Scripts Data]]
-* [[PZ Translation Data]]
+* [[PZ Data]]
 
 == Navigation ==
 {{Navbox modding}}

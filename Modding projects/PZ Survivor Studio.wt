@@ -1,0 +1,45 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.19.0}}
+{{Infobox
+| title = PZ Survivor Studio
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:PZ Survivor Studio - example animation.gif]]
+    | p2 = [[File:PZ Survivor Studio - example.png]]
+    | 1 = [[File:PZ Survivor Studio - example animation.gif|link=]]
+    | 2 = [[File:PZ Survivor Studio - example.png|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = other
+        | link=https://pz-icon-maker.vercel.app/
+        | Tool
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:AlexVDefi/rcpz-tools/releases
+        | Download
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:AlexVDefi/rcpz-tools
+        | Repository
+        }}
+    }}
+}}
+'''PZ Survivor Studio''' is a web app used to create very simple renders of your character. It ships the game assets directly in the web app. Alternatively you can install the application on your computer. It also allows you to load and use modded assets. It shares its repository with the [[PZ Icon Maker]] tool.
+
+== See also ==
+* [[PZ Icon Maker]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}
