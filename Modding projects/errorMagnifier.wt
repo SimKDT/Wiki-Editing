@@ -1,0 +1,42 @@
+{{Title|errorMagnifier}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.0}}
+{{Infobox
+| title = errorMagnifier
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:errorMagnifier - icon.jpeg]]
+    | 1 = [[File:errorMagnifier - icon.jpeg|link=]]
+    | p2 = [[File:errorMagnifier - preview1.jpeg]]
+    | 2 = [[File:errorMagnifier - preview1.jpeg|link=]]
+    | p3 = [[File:errorMagnifier - preview2.jpeg]]
+    | 3 = [[File:errorMagnifier - preview2.jpeg|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2896041179
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=github
+        | page=github:Chuckleberry-Finn/errorMagnifier
+        | GitHub repository
+        }}
+    }}
+}}
+'''errorMagnifier''' is a mod that adds an interface for users to better manage and view [[errors]] that occur in the game. It provides an easy way for users to copy and share the relevant information needed for modders to identify and fix issues. It is designed to be a tool for both players and modders, improving the overall community-modder interaction.
+
+{{Clear}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

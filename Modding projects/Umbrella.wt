@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.12.3}}
+{{Page version|42.20.0}}
 {{About|a modding project|the item|Umbrella}}
 {{Infobox
 | title = Umbrella
@@ -44,12 +44,17 @@
         }}
     }}
 }}
-'''Umbrella''' is a collection of Lua type stubs for the [[Lua (API)|Lua API]]. It tells your IDE about Zomboid's classes and functions in order to provide autocomplete and type checking. It can be used with any IDE and language server that supports EmmyLua annotations, but is primarily designed for [[Visual Studio Code|VSCode]]'s [[EmmyLua]] plugin.
+'''Umbrella''' is a collection of [[Typing|Lua type stubs]] for the [[Lua (API)|Lua API]]. It tells your IDE about Zomboid's classes and functions in order to provide autocomplete and type checking. It can be used with any IDE and language server that supports EmmyLua annotations, but is primarily designed for [[Visual Studio Code|VSCode]]'s [[EmmyLua]] plugin. The Lua stubs are generated from the [[Rosetta Project]] datasets and tools.
+
+{{Note|type=error|
+The extensions below are '''not''' Umbrella ! These are extensions for other games !
+[[File:Umbrella - wrong extensions.png|center]]
+}}
 
 == How to activate Umbrella ==
 Two lua language server extensions are available:
-*[[LuaLs]] - Lua Language Server by Sumneko.
-*[[EmmyLua]] <span style="color: orange;">(recommended)</span> - EmmyLua plugin for various IDEs.
+* [[LuaLs]] - Lua Language Server by Sumneko.
+* [[EmmyLua]] <span style="color: orange;">(recommended)</span> - EmmyLua plugin for various IDEs.
 
 Both don't use the same installation method, so follow the instructions for your chosen extension.
 
@@ -59,19 +64,20 @@ Both don't use the same installation method, so follow the instructions for your
 Install the [[EmmyLua|EmmyLua extension]], compared to [[LuaLs]] git isn't needed here. Download Umbrella's last source code from the GitHub release page or [https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository clone the repository].
 
 Once the EmmyLua extension is downloaded and active:
-*Create the default configuration file for EmmyLua ({{Code|.emmyconfig.json}}) in your workspace root which you can find the content in [[EmmyLua#Configuration file|EmmyLua's configuration file section]].
-*In the {{Code|library}} field, add a new entry to the array ({{Code|[]}}) with the path to Umbrella's {{Code|library}} folder on your computer.
+* Create the default configuration file for EmmyLua ({{Code|.emmyrc.json}}) in your workspace root which you can find the content in [[EmmyLua#Configuration file|EmmyLua's configuration file section]].
+* In the {{Code|library}} field, add a new entry to the array ({{Code|[]}}) with the path to Umbrella's {{Code|library}} folder on your computer.
 
 Your configuration file structure should look something like this:
 {{CodeBox
 | class = blue
 | title = Configuration file example
+| collapsed = false
 |
 <syntaxhighlight lang="json">
 {
     "$schema": "https://raw.githubusercontent.com/EmmyLuaLs/emmylua-analyzer-rust/refs/heads/main/crates/emmylua_code_analysis/resources/schema.json",
     "workspace": {
-        "library": ["C:\Documents\Umbrella\library"],
+        "library": ["C:\\Documents\\Umbrella-main\\library"],
         "workspaceRoots": [
             "Contents/mods/YourMod/42/media/lua"
         ]
@@ -102,14 +108,26 @@ Your configuration file structure should look something like this:
 With the {{Code|$PZ_UMBRELLA}} variable pointing to {{Code|C:\Documents\Umbrella\library}}
 }}
 
+{{Note|If EmmyLua is not respecting your workspace root and still analyses other version folders, you can ignore them (or any other directory) like so:
+{{CodeSnip
+| lang = json
+| code =
+"workspace": {
+    "ignoreDir": ["Contents/mods/YourModId/media"]
+}
+}}
+}}
+
+{{Note|type=error|Do '''NOT''' use Visual Studio Code workspaces to contain multiple projects using EmmyLua. EmmyLua will only load the first top-level {{Code|.emmyrc.json}} config and will '''ignore the other configs'''. This is not an Umbrella issue, but an issue with EmmyLua}}
+
 === LuaLs ===
 Install the [[LuaLs|Lua extension by Sumneko]] as well as [https://git-scm.com/downloads git] for it to work. You can download the Lua extension from the [[Visual Studio Code|VSCode]] extensions marketplace directly in the IDE. See [https://code.visualstudio.com/docs/editor/extension-marketplace Extension Marketplace documentation] if you're having trouble downloading extensions.
 
 Once the Lua extension is downloaded and active:
-*Press {{Key|CTRL}}+{{Key|SHIFT}}+{{Key|P}}.
-*Open "Lua: Open Addon Manager ..."
-*In the search bar, look for "Umbrella", or "Umbrella (Unstable)" if developing mods on the Unstable version of the game.
-*Click <code>Enable</code> to activate it. If not downloaded already, make sure to enable again after it got downloaded.
+* Press {{Key|CTRL}}+{{Key|SHIFT}}+{{Key|P}}.
+* Open "Lua: Open Addon Manager ..."
+* In the search bar, look for "Umbrella", or "Umbrella (Unstable)" if developing mods on the Unstable version of the game.
+* Click <code>Enable</code> to activate it. If not downloaded already, make sure to enable again after it got downloaded.
 
 {{Note|type=warn|You need to activate Umbrella for each new [[Visual Studio Code#Workspace|workspace]].}}
 {{Note|type=error|Don't forget to install [https://git-scm.com/downloads git] on your system, as well as activate Umbrella in the '''Addon Manager'''.}}

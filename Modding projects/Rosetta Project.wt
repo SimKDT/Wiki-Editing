@@ -26,6 +26,11 @@
         }}
         {{Infobox/socials
         | type = github
+        | page=github:PZ-Umbrella/pz-lua-stubgen
+        | PZ Lua Stubgen
+        }}
+        {{Infobox/socials
+        | type = github
         | page=github:Rosetta-Docs
         | Rosetta Docs
         }}
@@ -36,12 +41,16 @@ The '''Rosetta Project''' is a collection of datasets and tools which are used t
 The following are provided:
 * [[github:PZ-Umbrella/pz-lua-stubdata|PZ Lua Stubdata]] - a dataset of the Lua files of the game
 * [[github:PZ-Umbrella/pz-rosetta-source|PZ Rosetta Source]] - a dataset of the Java files of the game
-* [[github:PZ-Umbrella/torch-zomboid|Torch Zomboid]] - a Python application using [[Torch]] to generate the stub files for [[Umbrella (modding)|Umbrella]]
+* [[github:PZ-Umbrella/torch-zomboid|Torch Zomboid]] - a Python application using [[Torch]] to generate the stub files
+* [[github:PZ-Umbrella/pz-lua-stubgen|PZ Lua Stubgen]] - a TypeScript application to generate the stub files
 
-The datasets are written following the [[github:Rosetta-Docs|Rosetta Docs]] format.
+The datasets are written and generated following the [[github:Rosetta-Docs|Rosetta Docs]] format. Stub files are used to provide API indications to [[EmmyLua]] and [[LuaLs]], with the stubs shipped in [[Umbrella (modding)|Umbrella]].
+
+[[File:Rosetta Project.png|class=logo-dark|400px]]
 
 == See also ==
 * [[PZ API Documentation]]
+* [[PZ Data]]
 
 == Navigation ==
 {{Navbox modding}}

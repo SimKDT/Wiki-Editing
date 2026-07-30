@@ -1,5 +1,9 @@
 items:
   - files:
+      input: Latex/Rosetta Project/Rosetta Project.pdf
+      output: Latex/Rosetta Project/Rosetta Project.png
+    dpi: 200
+  - files:
       input: Latex/Networking/Networking.pdf
       output: Latex/Networking/Networking.png
     dpi: 200
