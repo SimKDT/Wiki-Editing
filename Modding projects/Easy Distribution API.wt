@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.8.1}}
+{{Page version|42.20.0}}
 {{Infobox
 | title = Easy Distributions API
 | class = theme-blue
@@ -20,13 +20,16 @@
         }}
         {{Infobox/socials
         | type=github
-        | link=https://github.com/DrStalker/Zomboid-EasyDistributions
+        | page=github:DrStalker/Zomboid-EasyDistributions
         | GitHub repository
         }}
     }}
 }}
 '''Easy Distributions API''' is a library of tools to simplify the process of adding [[Procedural distributions|loot distribution]] to mods. Currently the mod provides the following set of tools:
-*Add an item by following the same distribution as another item. A multiplier can be applied to the chance.
+* Add an item by following the same distribution as another item. A multiplier can be applied to the chance.
+
+== See also ==
+* [[KR Core OS]]
 
 == Navigation ==
 {{Navbox modding}}

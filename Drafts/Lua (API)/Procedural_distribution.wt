@@ -1,7 +1,13 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.7.0|2=405935}}
+{{Page version|42.20.0|2=405935}}
 '''Procedural distribution''' explains how the loot system of the game works and how you can add your own loot to the procedural distribution.
+
+Tools exist to make it easier to manage distributions in your mods:
+* [[KR Core OS]]
+* [[Easy Distributions API]]
+
+The [[PZ API Documentation]] provides a full list of distributions and their details.
 
 == How does loot generation works ==
 Containers in a room generate with different possibilities of [[#Distributions|distribution lists]]. Loot in containers is generated whenever they get loaded in the game or can respawn loot if the proper settings in the [[Custom Sandbox|sandbox options]] are set.
@@ -83,33 +89,33 @@ ProceduralDistributions.list = {
 
 === Tags for distribution ===
 Alongside the <code>rolls</code> tag for the <code>distributionName</code> and <code>junk</code> tables, you can add arguments which will modify how items spawn in and their conditions of spawn:
-*<code>ignoreZombieDensity</code> - ignores the zombie density impact on item spawn chance.
-*<code>isShop</code> - when not set to true:
-**Can be a stash. (Related to <code>stashChance</code>)
-**[[DrainableComboItem]] get random amount of uses.
-**[[HandWeapon]] can have lower condition (40% chance).
-**Items with head condition get reduced head condition (40% chance).
-**Items with sharpness condition get reduced sharpness condition (40% chance).
-**Bags get items inside them.
-*<code>stashChance</code> - chance for the container to be a stash.
-*<code>canBurn</code> - Food can be burnt (25% chance) or cooked.
-*<code>isWorn</code> and <code>isTrash</code> - items spawn with lower condition, delta etc:
-**[[HandWeapon]] get reduced item condition.
-**Items with head condition get reduced head condition.
-**Items with sharpness condition get reduced sharpness condition.
-**[[DrainableComboItem]] get reduced item uses (i.e. batteries).
-**Impact on non-canned and edible (non can't eat) food:
-***Non-vermin, cookable and non-replacable on cooked will be either cooked or burnt (50% chance).
-***Non-rotten items will be rotten (75% chance) or have increased age (less fresh).
-***Have reduced food value.
-*<code>isWorn</code> specifically:
-**Clothing items will have reduced condition, can be dirty (25% chance), bloody (1% chance) and/or have holes (25% chance).
-*<code>isTrash</code> specifically:
-**Clothing items will have reduced condition, can be wet (25% chance), dirty (95% chance), bloody (10% chance) and/or have holes (75% chance).
-*<code>isRotten</code> - non-rotten items will be rotten (75% chance) or have increased age (less fresh).
-*<code>bags</code> - unsure, could be adding bags to the container.
-*<code>maxMap</code> (integer) - limits the same item to a max amount. (UNSURE)
-*<code>onlyOne</code> '''DEPRECATED''' - a tag which can be found in distributions but looks deprecated from the java.
+* <code>ignoreZombieDensity</code> - ignores the zombie density impact on item spawn chance.
+* <code>isShop</code> - when not set to true:
+** Can be a stash. (Related to <code>stashChance</code>)
+** [[DrainableComboItem]] get random amount of uses.
+** [[HandWeapon]] can have lower condition (40% chance).
+** Items with head condition get reduced head condition (40% chance).
+** Items with sharpness condition get reduced sharpness condition (40% chance).
+** Bags get items inside them.
+* <code>stashChance</code> - chance for the container to be a stash.
+* <code>canBurn</code> - Food can be burnt (25% chance) or cooked.
+* <code>isWorn</code> and <code>isTrash</code> - items spawn with lower condition, delta etc:
+** [[HandWeapon]] get reduced item condition.
+** Items with head condition get reduced head condition.
+** Items with sharpness condition get reduced sharpness condition.
+** [[DrainableComboItem]] get reduced item uses (i.e. batteries).
+** Impact on non-canned and edible (non can't eat) food:
+*** Non-vermin, cookable and non-replaceable on cooked will be either cooked or burnt (50% chance).
+*** Non-rotten items will be rotten (75% chance) or have increased age (less fresh).
+*** Have reduced food value.
+* <code>isWorn</code> specifically:
+** Clothing items will have reduced condition, can be dirty (25% chance), bloody (1% chance) and/or have holes (25% chance).
+* <code>isTrash</code> specifically:
+** Clothing items will have reduced condition, can be wet (25% chance), dirty (95% chance), bloody (10% chance) and/or have holes (75% chance).
+* <code>isRotten</code> - non-rotten items will be rotten (75% chance) or have increased age (less fresh).
+* <code>bags</code> - unsure, could be adding bags to the container.
+* <code>maxMap</code> (integer) - limits the same item to a max amount. (UNSURE)
+* <code>onlyOne</code> '''DEPRECATED''' - a tag which can be found in distributions but looks deprecated from the java.
 
 == How to add your own items to distributions ==
 The main challenges you will face is properly understanding how loot generation actually works (see [[#How does loot generation works]]), finding the right distribution list and organizing the file which adds these. Inserting inside the procedural distribution needs to be done in <code>media/lua/server</code>.
@@ -240,19 +246,23 @@ This is notably a major problem in some popular mods such as [https://steamcommu
 
 === Solutions ===
 Different methods exist to counter act having to add a lot of tiny items to containers. Some of the best methods can involve:
-*having an item with variants which can change texture and data on the go. For example imagine a mod which adds game cards, it would require a hundred items but instead of creating an [[Item scripts|item script]] for each you can dynamically set the cards by utilizing functions that will change its texture, icon, name, tooltip etc on the go.
-*creating dummy items. When the dummy item gets added to the container, you can intercept it with [[OnFillContainer]], and replace it with another item which you can pick randomly in a list of items that are supposed to have similar spawn chances.
+* having an item with variants which can change texture and data on the go. For example imagine a mod which adds game cards, it would require a hundred items but instead of creating an [[Item scripts|item script]] for each you can dynamically set the cards by utilizing functions that will change its texture, icon, name, tooltip etc on the go.
+* creating dummy items. When the dummy item gets added to the container, you can intercept it with [[OnFillContainer]], and replace it with another item which you can pick randomly in a list of items that are supposed to have similar spawn chances.
 
 {{Note|type=warn|Decreasing the overall chance of your items spawning is a band-aid solution which has its own problems. If your item is of a similar type as another one and should spawn with the same chances, this won't be possible since you decreased the chance of spawning it compared to the other item.}}
 
 == Distributions ==
-For a full list of distributions and detailed information about them, see distributions section of the [[PZ API Documentation]].
+For a full list of distributions and detailed information about them, see distributions section of the [https://pz-wiki-modding.github.io/PZ-API-Docs/mapping/procedural_distributions.html PZ API Documentation].
 
 == See also ==
-*[[PZTools]] - a tool to explore the loot distribution of the game.
+* [[Easy Distributions API]] - provides some tools to simplify the process of adding loot distribution.
+* [[KR Core OS]] - provides tools that utilizes [[PZ Loot Containers]] to easily manage distributions.
+* [[PZTools]] - a tool to explore the loot distribution of the game.
+* [[PZ Data]] - provides automatic parsing of the distributions which are then used in the [[PZ API Documentation]].
+* [[PZ Loot Containers]] - provides a dataset of the distributions associated to categories.
 
 == External links ==
-*[https://theindiestone.com/forums/index.php?/topic/38165-quick-guide-how-to-mod-the-loot-distribution-system-distributionslua-proceduraldistributionslua/ Quick Guide: How To Mod The Loot Distribution System (Distributions.lua, ProceduralDistributions.lua)] — a 2021 guide to adding loot distribution.
+* [https://theindiestone.com/forums/index.php?/topic/38165-quick-guide-how-to-mod-the-loot-distribution-system-distributionslua-proceduraldistributionslua/ Quick Guide: How To Mod The Loot Distribution System (Distributions.lua, ProceduralDistributions.lua)] — a 2021 guide to adding loot distribution.
 
 == Navigation ==
 {{Navbox modding}}

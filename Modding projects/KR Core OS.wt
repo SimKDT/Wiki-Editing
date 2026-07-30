@@ -1,0 +1,36 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.0}}
+{{Infobox
+| title = KR Core OS
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3714654032
+        | Steam Workshop
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:TacoBestialIntergalactico/KR-CoreOS---Shared-Library-Modding-API
+        }}
+    }}
+}}
+'''KR Core OS''' is a library for modders to use in their mods. Currently the library provides the following features:
+* Item Distribution API - helps register items into specific [[Procedural distributions]] thanks to a categorization of the different available distributions in [[PZ Loot Containers]]
+* Vehicle Distribution API - register custom vehicles into the world spawn zones (parking lots, traffic jams, junkyards, etc)
+
+== See also ==
+* [[Easy Distributions API]]
+* [[PZ Loot Containers]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

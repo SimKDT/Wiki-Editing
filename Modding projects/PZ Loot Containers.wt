@@ -1,0 +1,29 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.0}}
+{{Infobox
+| title = PZ Loot Containers
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | page=github:TacoBestialIntergalactico/PZ-Loot-Containers
+        | GitHub repository
+        }}
+    }}
+}}
+'''PZ Loot Containers''' is a dataset of the [[Procedural distributions]] associated to categories to more easily identify the different distributions of the game. It is used by [[KR Core OS]] to provide a tool for modders to add items to specific categories of distributions.
+
+== See also ==
+* [[PZ Data]]
+* [[KR Core OS]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}
