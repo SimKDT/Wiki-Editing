@@ -9,5 +9,122 @@
         "io": "disable",
         "coroutine": "disable"
     },
-    "Lua.workspace.checkThirdParty": false
+    "Lua.workspace.checkThirdParty": false,
+    "files.associations": {
+        "console*.txt": "log",
+        "coop-console*.txt": "log",
+    },
+    "logFileHighlighter.customPatterns": [
+        {
+            "pattern": "f:.*> ",
+            "foreground": "#8b8b8b"
+        },
+        {
+            "pattern": "^TRACE.*$",
+            "foreground": "#CCCCCC"
+        },
+        {
+            "pattern": "^NOISE.*$",
+            "foreground": "#AA88FF"
+        },
+        {
+            "pattern": "^DEBUG.*$",
+            "foreground": "#56af56"
+        },
+        {
+            "pattern": "^LOG.*$",
+            "foreground": "#b6c1ca"
+        },
+        {
+            "pattern": "^WARN.*$",
+            "foreground": "#FFAA00"
+        },
+        {
+            "pattern": "^ERROR.*$",
+            "foreground": "#FF4444"
+        },
+        {
+            "pattern": "Exception thrown[\\s\\S]*?(?=^\\s*(TRACE|NOISE|DEBUG|LOG|WARN))",
+            "foreground": "#FF4444",
+            "patternFlags": "s"
+        },
+        {
+            "pattern": "^-----------------------------------------.*?(TRACE|NOISE|DEBUG|LOG|WARN|ERROR)",
+            "foreground": "#FF4444",
+            "patternFlags": "si",
+        },
+    ],
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "log.constant",
+                "settings": {
+                    "foreground": "#cacaca"
+                }
+            },
+            {
+                "scope": "log.date",
+                "settings": {
+                    "foreground": "#cacaca",
+                    "fontStyle": ""
+                }
+            },
+                        {
+                "scope": "log.debug",
+                "settings": {
+                    "foreground": "#cacaca",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "log.error",
+                "settings": {
+                    "foreground": "#cacaca",
+                    "fontStyle": ""
+                }
+            },
+                        {
+                "scope": "log.exception",
+                "settings": {
+                    "foreground": "#cacaca",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "log.exceptiontype",
+                "settings": {
+                    "foreground": "#cacaca",
+                    "fontStyle": ""
+                }
+            },
+                        {
+                "scope": "log.info",
+                "settings": {
+                    "foreground": "#cacaca",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "log.string",
+                "settings": {
+                    "foreground": "#cacaca",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "log.verbose",
+                "settings": {
+                    "foreground": "#cacaca",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "log.warning",
+                "settings": {
+                    "foreground": "#cacaca",
+                    "fontStyle": ""
+                }
+            },
+        ]
+    }
 }

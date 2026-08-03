@@ -1,0 +1,143 @@
+<noinclude>
+{{Documentation|doc=
+{{Protection}}
+This {{ll|PZwiki:Mboxes|mbox}} is used to indicate that a page is updated to a specific version of the game.
+
+== Usage ==
+=== Parameters ===
+; <code>1</code> {{sup|required}}
+: Game version the page was updated in, default to <code>Unknown version</code>.
+
+; <code>hidecat</code>
+: If set to <code>true</code>, will not add the page to any version category.
+
+; <code>2</code>
+: Set to an <code>oldid</code> to create a permanent link to a specific revision. Used to link to a revision for an old version of the game.
+: To get an oldid:
+:# In the right sidebar (3 dots on citizen) select "Permanent link" to get the current revision. Or, go to the page history {{Key|Alt|Shift|h}}, then select the desired revision.
+: Then, in the URL, there will be <code>oldid=12345</code>, the <code>oldid</code> is the string of numbers after the <code>{{=}}</code>.
+
+== Example ==
+* {{tll|Page version|{{Current version|unstable}}}} - Updated to latest unstable build
+{{Page version|{{Current version|unstable}}|hidecat=true|id=unstable}}
+
+* {{tll|Page version|{{Current version|unstable}}|2{{=}}3}} - Updated to latest unstable build and an oldid provided
+{{Page version|{{Current version|unstable}}|2=3|hidecat=true|id=unstable_oldid}}
+
+* {{tll|Page version|42.0.2}} - Updated to an outdated unstable build
+{{Page version|42.0.2|hidecat=true|id=outdated_unstable}}
+
+* {{tll|Page version|42.0.2|2{{=}}3}} - Updated to an outdated unstable build and an oldid provided
+{{Page version|42.0.2|2=3|hidecat=true|id=outdated_unstable_oldid}}
+
+* {{tll|Page version|41.78.16}} - Updated to the latest stable build
+{{Page version|{{Current version|stable}}|hidecat=true|id=stable}}
+
+* {{tll|Page version|41.65}} - Outdated
+{{Page version|41.65|hidecat=true|outdated}}
+
+{{Translation guide|<syntaxhighlight lang="wikitext">{{#switch: {{{1|}}}
+| stable_title = This page has been revised for the current ''stable'' version ({{{2}}}).
+| stable_content = Help by adding any missing content.
+| stable_note = Parts of this page may have been [[PZwiki:Project Build 42 Update#Automations|automatically]] updated to the latest build ({{ll|Build {{Current version|unstable}}|{{Current version|unstable}}}}).
+| unstable_latest_title = This page has been updated to the current ''unstable'' beta version ({{{2}}}).
+| unstable_latest_content = There may be additional features that are not in the stable version ({{ll|Build {{Current version|stable}}|{{Current version|stable}}}}).
+| unstable_latest_note = Help by adding any missing content.
+| unstable_outdated_title = This page has been updated to an ''unstable'' beta version ({{{2}}}).
+| unstable_outdated_content = There may be additional features that are not in the stable version ({{ll|Build {{Current version|stable}}|{{Current version|stable}}}}).
+| unstable_outdated_note = Help get this page updated to the current unstable version ({{ll|Build {{Current version|unstable}}|{{Current version|unstable}}}}).
+| outdated_title = This page was last updated for an ''older'' version ({{{2}}}).
+| outdated_content = The current stable version is {{ll|Build {{Current version|stable}}|{{Current version|stable}}}}, so information on this page may be inaccurate.
+| outdated_note = Help get this page updated by adding any missing content.
+| #default = {{Error|translation}}
+}}
+</syntaxhighlight>}}
+
+== See also ==
+* {{ll|PZwiki:Mboxes}}
+}}
+{{ll|Category:Mbox}}
+</noinclude><includeonly>{{#switch: {{#ifexpr:{{{1}}}>{{Current version|stable}}
+  |beta <!-- if version is greater than stable version, it should be recognised as a beta version -->
+  |{{{1|}}} <!-- else return input -->
+}}
+<!-- UPDATED TO STABLE -->
+|{{Current version|stable}} = {{Mbox
+  | border = 1px solid #40d62d
+  | background = var(--background-message-success)
+  | color = #40d62d
+  | sign = [[File:Emotes_yes.png|link=Template:Page version{{lcs}}|class=notpageimage]]
+  | title = {{tt|name=Page version|default=This page has been revised for the current ''stable'' version ({{#if:{{{1|}}}|[[Build {{{1}}}|{{{1}}}]]|''Unknown version''}}).|arg1=stable_title|arg2={{#if:{{{1|}}}|[[Build {{{1}}}|{{{1}}}]]|''Unknown version''}}}}
+  | content = {{tt|name=Page version|default=Help by adding any missing content.|arg1=stable_content}} <small>{{Edit link|hidecat=true}}</small>
+  | note = {{tt|name=Page version|default=Parts of this page may have been [[PZwiki:Project Build 42 Update#Automations|automatically]] updated to the latest build ({{ll|Build {{Current version|unstable}}|{{Current version|unstable}}}}).{{#if:{{{2|}}}|<br>''[[Special:PermanentLink/{{{2}}}|For the Build 41 page, please see this archived version]].''}}|arg1=stable_note}}
+  | id = {{{id|version}}}
+  | collapsed = true
+  | cat = {{yesno|{{{hidecat|}}} <!-- include cat tracking for page up-to-date -->
+    | yes = <!-- all categories should be hidden -->
+    | no = {{#if: {{{1|}}}
+      | Version {{{1|}}}{{lcs}}
+      | Unknown version{{lcs}}
+      }}
+    }}
+  }}
+<!-- UNSTABLE -->
+|beta = {{#ifeq:{{{1}}}|{{Current_version|unstable}}
+<!-- UPDATED TO LATEST UNSTABLE -->
+|{{Mbox
+  | border = 1px solid #ff8010
+  | background = var(--background-message-warn)
+  | color = #ff8010
+  | sign = [[File:UI_Tick_Eng.png|link=Template:Page version{{lcs}}|class=notpageimage]]
+  | title = {{tt|name=Page version|default=This page has been updated to the current ''unstable'' beta version ({{#if:{{{1|}}}|[[Build {{{1}}}|{{{1}}}]]|''Unknown version''}}). {{#if:{{{2|}}}|<br>''<span style="color: #ff8010; font-size: 1.2em;">For the Build 41 page, [[Special:PermanentLink/{{{2}}}|please see this archived version]].</span>''}}|arg1=unstable_latest_title|arg2={{#if:{{{1|}}}|[[Build {{{1}}}|{{{1}}}]]|''Unknown version''}}|arg3={{{2}}}}}
+  | content = {{tt|name=Page version|default=There may be additional features that are not in the stable version ({{ll|Build {{Current version|stable}}|{{Current version|stable}}}}).|arg1=unstable_latest_content}}
+  | note = {{tt|name=Page version|default=Help by adding any missing content.|arg1=unstable_latest_note}} {{Edit link|hidecat=true}}
+  | id = {{{id|version}}}
+  | collapsed = true
+  | cat = {{yesno|{{{hidecat|}}}
+    | yes = <!-- all categories should be hidden -->
+    | no = {{#if: {{{1|}}}
+      | Version {{{1|}}}{{lcs}}
+      | Unknown version{{lcs}}
+      }}
+    }}
+  }}
+<!-- UPDATED TO OUTDATED UNSTABLE -->
+|{{Mbox
+  | border = 1px solid #ff8010
+  | background = var(--background-message-warn)
+  | color = #ff8010
+  | sign = [[File:Profession_engineer.png|link=Template:Page version{{lcs}}|class=notpageimage]]
+  | title = {{tt|name=Page version|default=This page has been updated to an ''unstable'' beta version ({{#if:{{{1|}}}|[[Build {{{1}}}|{{{1}}}]]|''Unknown version''}}). {{#if:{{{2|}}}|<br>''<span style="color: #ff8010; font-size: 1.2em;">For the Build 41 page, [[Special:PermanentLink/{{{2}}}|please see this archived version]].</span>''}}|arg1=unstable_outdated_title|arg2={{#if:{{{1|}}}|[[Build {{{1}}}|{{{1}}}]]|''Unknown version''}}}}
+  | content = {{tt|name=Page version|default=There may be additional features that are not in the stable version ({{ll|Build {{Current version|stable}}|{{Current version|stable}}}}).|arg1=unstable_outdated_content}}
+  | note = {{tt|name=Page version|default=Help get this page updated to the current unstable version ({{ll|Build {{Current version|unstable}}|{{Current version|unstable}}}}).|arg1=unstable_outdated_note}} {{Edit link|hidecat=true}}
+  | id = {{{id|version}}}
+  | collapsed = true
+  | cat = {{yesno|{{{hidecat|}}}
+    | yes = <!-- all categories should be hidden -->
+    | no = {{#if: {{{1|}}}
+      | Version {{{1|}}}{{lcs}}
+      | Unknown version{{lcs}}
+      }}
+    }}
+  }}
+}}
+<!-- OUTDATED -->
+|#default = {{Mbox
+  | border = 1px solid #d62c2c
+  | background = var(--background-message-error)
+  | color = #d62c2c
+  | sign = [[File:Emotes_no.png|link=Template:Page version{{lcs}}|class=notpageimage]]
+  | title = {{tt|name=Page version|default=This page was last updated for an ''older'' version ({{#if:{{{1|}}}|[[Build {{{1}}}|{{{1}}}]]|''Unknown version''}}).|arg1=outdated_title|arg2={{#if:{{{1|}}}|[[Build {{{1}}}|{{{1}}}]]|''Unknown version''}}}}
+  | content = {{tt|name=Page version|default=The current stable version is {{ll|Build {{Current version|stable}}|{{Current version|stable}}}}, so information on this page may be inaccurate.|arg1=outdated_content}}
+  | note = {{tt|name=Page version|default=Help get this page updated by adding any missing content.|arg1=outdated_note}} {{Edit link|hidecat=true}}
+  | id = {{{id|version}}}
+  | collapsed = {{#ifeq:{{{1|}}}|{{Current version|stable}}|true|false}}
+  | cat = {{yesno|{{{hidecat|}}}
+    | yes = <!-- all categories should be hidden -->
+    | no = {{#if: {{{1|}}}
+      | Version {{{1|}}}{{lcs}}
+      | Unknown version{{lcs}}
+      }}
+    }}
+  }}
+}}</includeonly>

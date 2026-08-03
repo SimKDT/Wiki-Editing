@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.19.0}}
+{{Page version|42.20.0}}
 {{About|an overview about modding|PZwiki project|PZwiki:Project Modding}}
 [[File:SpiffosWorkshop.png|link=https://steamcommunity.com/app/108600/workshop/|frame|right|Spiffo's Workshop is the home of [[Project Zomboid]] mods on [[Steam]]]]
 Modding is the process of creating new content by creating [[mods]] for a game. For Project Zomboid, modding is a natively integrated part of the game with a mod manager and an API to allow modders to create a various quantity of content, from simple items to complex systems. Mods are usually uploaded to the [[Spiffo's Workshop]] which serves as the official method for sharing mods with the community.
@@ -51,16 +51,17 @@ You can learn more in detail how to get started with modding in the [[getting st
 
 == Modding fields ==
 Modding is split in different fields, each with their own tools and creation process. For a few general resources on modding that you will need to know regardless of the field you are working on:
+* [[Mod structure]] - Explains a mod files structure.
 * [[Game files]] - Explains Project Zomboid's file structure.
 * [[File formats]] - Documentation of file formats used by the game.
-* [[Mod structure]] - Explains a mod files structure.
 * [[Debug mode]] - Explanations of how to run the game in the debug (developer) mode and how to use it.
 * [[Startup parameters]] - Startup parameters to launch the game with.
 * [[Mod optimization]] - Learn various tips, tricks and good habits that will improve your mods performances.
 * [[Procedural distributions]] - List and explanations of procedural distributions.
+* [[PZ API Documentation]] - An in-depth documentation of different API elements for modding such as [[Scripts]], [[Lua (API)]], [[Mapping]], [[Translation]] etc.
 
 Below is a list of all the modding fields with a brief description of what they involve and links to the relevant pages:
-{| class="wikitable theme-blue sortable" style="text-align: center;
+{| class="wikitable theme-blue sortable" style="text-align: left;
 |+ style="white-space:nowrap" | Modding fields
 |-
 ! Field !! Description !! Important pages
@@ -69,22 +70,28 @@ Below is a list of all the modding fields with a brief description of what they 
 ([[:Category:Scripts]])
 | Allow to add items in the game with simple parameters which can be edited in any text editor. No programming knowledge is needed.
 |
+* [[ZedScripts]] - a [[Visual Studio Code|VSCode]] extension to help working with scripts.
+* [[PZ API Documentation]] - provided an in-depth ScriptsDocs.
 |-
 | [[Lua (API)|Lua API]]
 ([[:Category:Lua (API)]])
 | Allows modders to program functionalities via a Java implementation of Lua called Kahlua which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and allows the use of exposed Java class and methods from Lua scripts.
 |
+* [[Visual Studio Code]] and [[Umbrella (modding)|Umbrella]] - the perfect tools to work with Lua programming for Project Zomboid.
 * [[Lua (language)]] to learn how to code with the Lua programming language.
-* [[Lua object]] – a full list of available Lua Objects to be used by modders.
+* [[Lua object]] – a list of available Lua Objects to be used by modders.
 * [[Lua event]] – a full list of available Events to hook on.
 * [[Java object]] – a list of informations about some Java objects which can be used with the Lua API.
 * [[Java documentation]] - a list of external links to the Java documentation of game.
 * [[Decompiling game code]] - a guide to decompiling the Java to better understand how the game works.
+* [[LuaDocs]]
 |-
 | [[Java]]
 ([[:Category:Java]])
 | Involves modifying the Java game code directly and the manual installation of the Java files to modify deep game functionalities. It is not recommended for beginners as it requires a good knowledge of Java and programming in general.
 |
+* [[Decompiling game code]] - a guide to decompiling the Java to better understand how the game works.
+* [[IntelliJ IDEA]] - IntelliJ IDEA is an IDE specialized for Java development.
 |-
 | [[Modeling]]
 | Creating 3D models to be used in item making, vehicle making or renders.
@@ -100,11 +107,13 @@ Below is a list of all the modding fields with a brief description of what they 
 | [[Rendering]]
 | Creating 2D images from 3D models to be used in various medias in-game such as [[fliers]].
 |
+* [[Character rigs]] - character rigs which can be used to create renders of characters in various poses.
 |-
 | [[Animation]]
 ([[:Category:Animation]])
 | Used to create new animations for characters to visually do certain actions. It involves knowledge of 3D softwares for animating but also a small bit of XML programming required to get your animation in-game.
 |
+* [[Character rigs]] - character rigs which can be used to create animations of characters.
 |-
 | [[Mapping]]
 ([[:Category:Mapping]])
@@ -120,6 +129,7 @@ Below is a list of all the modding fields with a brief description of what they 
 | [[Translations]]
 | Translating the game or mods to various languages.
 |
+* [[PZ API Documentation]] - provides an in-depth documentation of the available language codes and translation files.
 |}
 
 == Modding guides ==

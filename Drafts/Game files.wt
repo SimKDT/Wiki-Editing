@@ -1,106 +1,100 @@
-{{Header|Modding|Modding guides}}
-{{Page version|42.7.0}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.0}}
 {{About|game files of Project Zomboid|modding structure of Project Zomboid|Modding structure|explanations of file formats|File formats}}
 This page describes the '''game files''' of Project Zomboid and how to access them. This page will list where different types of files can be found.
 
-==Accessing the game files==
+== Accessing the game files ==
 The game folder holds most of the game code, files, textures, maps, models etc. Accessing the game files of Project Zomboid can be easily achieved through Steam:
-*Open your Steam game library
-*Right click on Project Zomboid > Manage > Browse local files
-*Alternatively you can rick click Project Zomboid > Properties > Installed files > Browse
+* Open your Steam game library
+* Right click on Project Zomboid > Manage > Browse local files
+* Alternatively you can rick click Project Zomboid > Properties > Installed files > Browse
 
 This should open a folder named <code>ProjectZomboid/</code> with a similar path to this:
 {{CodeSnip
 | code =
-Steam/
-└── steamapps/
-    └── common/
-        └── ProjectZomboid/
-            └── ...
+📁 Steam/
+    📁 steamapps/
+        📁 common/
+            📁 ProjectZomboid/
+                ...
 }}
 
 Also check this [https://www.youtube.com/watch?v=5LCGwCk7RH4 video] which explains two different methods of finding the files.
 
-==Media folder==
-Most of the files which you'll be interested in when modding will be located in:
-{{CodeSnip
-| code =
-Steam/
-└── steamapps/
-    └── common/
-        └── ProjectZomboid/
-            └── media/
-                └── ...
-}}
-
-==Java files==
-The Java files of the game are located in the {{Code|zombie}} folder. Tools exist to [[Decompiling game code|decompile the Java code]] to make it easier to read. Below is the path to the Java files:
-{{CodeSnip
-| code =
-Steam/
-└── steamapps/
-    └── common/
-        └── ProjectZomboid/
-            └── zombie/
-                └── ...
-}}
-
-==Cache folder==
+== Cache folder ==
 The cache folder (named <code>Zomboid</code> by default) holds most of your configuration of the game, as well as local mods, and doesn't get deleted when you uninstall the game, holding all your configurations. To access the folder in Windows, simply use the environment variable <code>%UserProfile%</code> in the file explorer. The cache folder will be located at:
 {{CodeSnip
 |code =
-%UserProfile%/
-└── Zomboid/
-    └── ...
+📁 %UserProfile%/
+    📁 Zomboid/
+        ...
+}}
+
+On Linux, the cache folder is located at:
+{{CodeSnip
+|code =
+📁 ~
+    📁 Zomboid/
+        ...
 }}
 
 {{Note|Deleting this folder can sometimes fix some game issues, however this will delete your game settings and saves, which you can backup before doing so.}}
 {{Note|You can change your cache folder with the [[Startup parameters|startup parameter]] {{Code|1=-cachedir=<String Path>}}. If the folder doesn't exist, the game will create it.}}
 
-===Console file===
+=== Console file ===
 The console file is the game log file which contains informations about the state of the game, errors, warnings and other useful informations for debugging. This file is created when the game is launched. [[Lua (language)#Print|Prints]] will show up in the console file.
 
 The console file is located at the following path:
 {{CodeSnip
 |code =
-%UserProfile%/
-└── Zomboid/
-    └── console.txt
+📁 %UserProfile%/
+    📁 Zomboid/
+        📄 console.txt
 }}
 
-==Online workshop folders==
-When accessing the game files, if you go in a few folders above in <code>Steam/steamapps/</code>, you can access the folder <code>workshop/content/</code> which stores every mods from all of your games. Project Zomboid has the Steam ID <code>108600</code> which can be seen in the URL of the Steam market page of the game. The mods are stored in the following folder:
+== Media folder ==
+Most of the files which you'll be interested in when modding will be located in:
 {{CodeSnip
-|code =
-Steam/
-└── steamapps/
-    └── workshop/
-        └── content/
-            └── 108600/
-                └── ...
+| code =
+📁 Steam/
+    📁 steamapps/
+        📁 common/
+            📁 ProjectZomboid/
+                📁 media/
+                    ...
 }}
 
-The folder of the mod will be named after its [[Workshop ID]].
+== Java files ==
+The Java files of the game were previously located in the {{Code|zombie}} folder but are not stored in the game file folder next {{Code|media}} in the file {{Code|projectzomboid.jar}}. Tools exist to [[Decompiling game code|decompile the Java code]] to make them readable. Below is the path to the jar file:
+{{CodeSnip
+| code =
+📁 Steam/
+    📁 steamapps/
+        📁 common/
+            📁 ProjectZomboid/
+                📄 projectzomboid.jar
+}}
 
-==Searching the game files==
+== Searching the game files ==
 Tools exist to search through the entirety of the game files for specific elements in the game code. [[Wikipedia:Integrated development environment|Integrated development environment (IDE)]] are notably the most common ones used by modders since they allow you to search for specific terms inside text files in an entire workspace:
-*[[Visual Studio Code]] - a free IDE developped by Microsoft. Very easy to use and navigate and a few addons exist to help modding.
-*[[IntelliJ IDEA]] - a free IDE developped by JetBrains. It is a bit more complex to use than Visual Studio Code but has a lot of features and is very powerful especially to navigate the Java.
+* [[Visual Studio Code]] - a free IDE developed by Microsoft. Very easy to use and navigate and a few addons exist to help modding.
+* [[IntelliJ IDEA]] - a free IDE developed by JetBrains. It is a bit more complex to use than Visual Studio Code but has a lot of features and is very powerful especially to navigate the Java.
 
 Open the entire game folder as a workspace in the IDE of your choice to be able to search through all the files. You can open the <code>media/</code> folder or the [[Decompiling game code|decompiled code]] as a workspace to search through all the files.
 
-===Example===
+=== Example ===
 If you're searching for where something is used in Project Zomboid's code, you can simply use this functionality. For example, let's search for [[ISTakeFuel]] in [[Visual Studio Code|VSCode]]:
 
 [[File:VSCode_exampleSearchInFolder.png|400px|center]]
 
-==See also==
-*[[Modding structure]]
-*[[Workshop.txt]]
-*[[mod.info]]
-*[[File formats]] - a [[File formats#Importing assets|section]] details tools to import the [[Wikipedia:DirectX|DirectX]] assets into modern formats.
+== See also ==
+* [[Modding structure]]
+* [[Workshop.txt]]
+* [[mod.info]]
+* [[File formats]] - a [[File formats#Importing assets|section]] details tools to import the [[Wikipedia:DirectX|DirectX]] assets into modern formats.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
-{{ll|Category:Guides}}
+{{ll|Category:Modding guides}}

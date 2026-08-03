@@ -1,6 +1,6 @@
 {{LangSwitch}}
-{{Navbar_modding}}
-{{Page version|42.13.0}}
+{{Navbar modding}}
+{{Page version|42.20.0}}
 This guide explains how to create a simple trait mod for [[Project Zomboid]], explaining the various steps involved in detail:
 #Registration
 #Trait script
@@ -10,17 +10,17 @@ The creation of a trait mod involves the definition of this trait in the first p
 
 == Registration ==
 {{Main|Registries}}
-You must first [[Registries|register]] the trait in the trait registry. This creates a key to reference the trait by.
-
-Firstly, create the registry file (<code>media/registries.lua</code>) in your mod with the following contents:
+You must first [[Registries|register]] the trait in the trait registry. This creates a key to reference the trait by. Start by creating the registry file (<code>media/registries.lua</code>) in your mod with the following content:
 {{CodeSnip
 | lang = lua
 | code =
 ---FILE: media/registries.lua
 
 -- replace with name of the global you created to store your registries above
-_MyModRegistries = {}
+_MyModRegistries = {} -- this is a table, it will hold references to your registered elements
 
+-- we store your trait registries in a subtable of the global table
+-- so it is not mixed with other registries you may add to your mod
 _MyModRegistries.traits = {
     -- "mymod:mytrait" is the identifier for this trait
     -- "mymod" is the namespace for your trait: this should be the same for all registries in your mod
@@ -28,74 +28,129 @@ _MyModRegistries.traits = {
 }
 }}
 
-Secondly, create a [[Lua (language)#Modules|module]] to store the registries from your mod. This should be in <code>media/lua/shared/</code> and the name should be unique, which it is best to name after your mod.
-{{CodeSnip
-| lang = lua
-| code =
----FILE: media/lua/shared/MyMod/Registries.lua
-
--- name of a global populated by media/registries.lua
-return _MyModRegistries
-}}
-
-This module allows for an easy way to reference your registries from other Lua scripts directly, instead of depending on a [[Lua (language)#Local and global|global variable]]. This is expanded further in the guide.
-
 == Trait script ==
-{{Move|section=true|character_trait_definition|This details the parameters of the <code>character_trait_definition</code> script, which should be in its own page.}}
-Next a [[character_trait_definition]] script must be created. This defines the basic properties of the trait, such as its name and cost.
+You need to create a [[scripts]] which will define the trait properties. Create a [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/character_trait_definition.html character_trait_definition] script which will contain its name and cost as well as other important properties.
 {{CodeSnip
-| lang = cpp
+| lang = java
 | code =
 module MyMod {
     character_trait_definition mymod:mytrait {
-        /* Identifier of the trait matching the one passed to CharacterTrait.register */
+        /* identifier of the trait matching the one passed to CharacterTrait.register */
         CharacterTrait = mymod:mytrait,
-        /* Name of the translation string to use for the trait's name */
+        /* translation key of the trait's name */
         UIName = UI_trait_mymod:mytrait,
-        /* Point cost of the trait */
-        Cost = 2,
-        /* Name of the translation string to use for the trait's description */
+        /* translation key of the trait's description */
         UIDescription = UI_trait_mymod:mytrait_Desc,
-        /* If true, the trait will not be selectable at character creation */
+
+        /* point cost of the trait */
+        Cost = 2,
+
+        /* if true, the trait will not be selectable at character creation */
         IsProfessionTrait = false,
-        /* If true, the trait will not be selectable in multiplayer */
+        /* if true, the trait will not be selectable in multiplayer */
         DisabledInMultiplayer = false,
-        /* List of recipes to give characters with the trait */
+        
+        /* list of recipes to give characters with the trait */
         GrantedRecipes = MakeSawPlank;SheetMetalWeapon,
-        /* List of other traits granted when taking the trait */
+        /* list of other traits granted when taking the trait */
         GrantedTraits = base:smoker,
-        /* List of skill levels to grant */
-        XPBoosts = Aiming=1;Reloading=1,
-        /* List of traits that cannot be taken at the same time as this trait */
+        /* list of traits that cannot be taken at the same time as this trait */
         MutuallyExclusiveTraits = base:clumsy;base:deaf,
-        /* Path to the trait's icon */
-        Texture = media/ui/Traits/trait_mymod:mytrait.png,
+        /* list of skill levels to grant */
+        XPBoosts = Aiming=1;Reloading=1,
     }
 }
 }}
 
+{{Note|Make sure to check the [[PZ API Documentation|ScriptsDocs]] for what parameters are available for the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/character_trait_definition.html character_trait_definition] script.}}
+
+== Naming your trait ==
+To name your trait, you need to reference the <code>UIName</code> value in your trait script into your mod's [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/translation_files.html#ui UI.json] translation file where the key is the value of <code>UIName</code>. For the description, it is the same process but you need to reference the <code>UIDescription</code> value of your trait script. See [[translation]] for more information.
+{{CodeSnip
+| lang = json
+| code =
+{
+    "UI_trait_mymod:mytrait": "My Trait name",
+    "UI_trait_mymod:mytrait_Desc": "This is my trait description."
+}
+}}
+
+== Giving your trait an icon ==
+To give your trait an icon, you must place it inside of your media folder exactly like shown:
+{{CodeSnip
+| code =
+📁 media/
+    📁 ui/
+        📁 Traits/
+            📄 trait_mytrait.png    <--- mytrait here refers to the script ID mymod:mytrait, without "mymod:"
+}}
+Trait icons are rendered in 18x18 pixels. To create an icon for your trait it is recommended to use [https://www.gimp.org/ GIMP], or another image editor which supports 18x18.
+
 == Referencing the trait in Lua ==
-The script is enough for basic traits, but most trait mods will want to do something more complex than this. You will need to implement any custom functionality in [[Lua]]. For example, this is how a trait that grants an item to the player when they first spawn would be implemented:
+The script is enough for basic traits, but most trait mods will want to do something more complex than this. You will need to implement any custom functionality in [[Lua]]. 
+
+Create a [[Lua (language)#Modules|module]] to store the registries from your mod. This should be in <code>media/lua/shared/</code> preferably and the relative path to the Lua file should be unique, which it is best to name after your mod.
 {{CodeSnip
 | lang = lua
 | code =
--- we need our registry to check for the trait
-local MyModRegistries = require("MyMod/Registries")
+---FILE: media/lua/shared/MyMod/registries.lua
 
+-- name of the global table populated by media/registries.lua
+return _MyModRegistries
+}}
+
+This module allows for an easy way to reference of your registries from other Lua scripts directly, instead of depending on a [[Lua (language)#Local and global|global variable]]. The reason we do that is to not poluate the global name space and for better code organization, but it is technically not necessary, just good practice.
+
+This is how a trait that grants an item to the player when they first spawn would be implemented by referencing the trait from the registry module:
+{{CodeSnip
+| lang = lua
+| code =
+---FILE: media/lua/server/MyMod/trait_on_spawn.lua
+
+-- we need our registry to check for the trait
+-- so we retrieve it and store it in a local variable for easy access
+local MyModRegistries = require("MyMod/registries")
+
+---this function will add a pistol to the player's inventory if they have the trait
 ---@param player IsoPlayer
 local function addItemOnSpawn(player)
     -- check for the trait using the registry key
     if player:hasTrait(MyModRegistries.traits.MyTrait) then
         -- add a pistol to the player's inventory
         player:getInventory():addItem(ItemKey.Weapon.Pistol)
+
+        -- in multiplayer, you may need to done syncing
     end
 end
 
 -- run our function when the OnNewGame event is triggered
---  contrary to the name, this event is triggered any time you create a new character, not just in new worlds
+-- contrary to the name, this event is triggered any time you create a new character, not just in new worlds
 Events.OnNewGame.Add(addItemOnSpawn)
 }}
 
 {{Note|It is highly recommended to use [[Visual Studio Code]] alongside [[Umbrella (modding)|Umbrella]] to help with Lua modding.}}
+
+== Adding a trait via Lua ==
+An alternative to the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/character_trait_definition.html character_trait_definition] script is to add the trait from Lua, for example:
+{{CodeSnip
+| lang = lua
+| code =
+local function createDynamicTrait()
+    local traitName = getText("UI_trait_NightVision")
+    local traitDesc = getText("UI_trait_NightVisionDesc")
+    local myTrait = CharacterTraitDefinition.addCharacterTraitDefinition(
+        CharacterTrait.NightVision,
+        traitName,
+        2,
+        traitDesc,
+        false,
+        false
+    )
+end
+Events.OnGameBoot.Add(createDynamicTrait)
+}}
+
+== Navigation ==
+{{Navbox modding}}
 
 {{ll|Category:Modding guides}}
