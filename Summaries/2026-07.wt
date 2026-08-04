@@ -1,0 +1,73 @@
+Hello, welcome to this new modding summary for July 2026.
+
+This month saw the release of [[Build 42.20.0]], the exit from unstable directly into stable. With this came a few announcements regarding [[AnimZed]] and the [[Mapping#Mapping tools|Mapping tools]]:
+{{Quote|author=[[The Indie Stone]] in the [[pz:blog/news/2026/07/next-steps-2/|NEXT STEPS]] blog post|text=After we hit Stable, once hot fixing and such is over, we will be releasing both our latest mapping tools (WorldZed, TileZed, etc.) and our in-house animation editor and integration tool, AnimZed. We believe that having greater control over animations will be of huge benefit to modders looking to unleash their creativity.}}
+
+If you want to start [[mapping]], you don't have to wait as unofficial tools are already available and will allow smooth transition to the official tools when they are released, if you want to move to the official tools.
+
+Below is a list of all the latest modding news that [[Build 42.20.0]] brought. This list was compiled manually by me as TIS didn't give any changelogs for modding in the stable patch note because nothing interesting happened for modding, which also means that most documentation for [[Build 42.19.0]] are almost completely valid. If you found something of interest that is not listed here, feel free to add it to [[Template:Navbar modding]].
+* New language code: [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/language_codes.html#strew STREW] (joke language), [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/language_codes.html#es-cl ES_CL], [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/language_codes.html#es-mx ES_MX]
+* New translation files: mostly for the game, not modding related
+* <code>language.txt</code> files changed to JSON based format <code>language.json</code>, see [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/translation_files.html#language here].
+* Lots of new world generation files for the [[Lua (API)|Lua]] in <code>media/lua/server/WorldGen</code>
+* New function <code>LuaTableUtil:insertAllUniqueElementsFromJavaList(list, array)</code> to insert elements of ArrayLists into a Lua table
+* Some new [[Procedural distributions]] and rooms, added to [https://pz-wiki-modding.github.io/PZ-API-Docs/mapping.html PZ API Docs]
+* A bunch of new getters and setters for [[Java]] have been added, if you have requests for more, please ask in the [https://discord.com/channels/136501320340209664/1476602902607954043 #mod_portal] channel of the official [[Discord#Official server|Discord server]].
+* New [https://albion.codeberg.page/PZ-JavaDocs/zombie/ui/UIElement.html#drawTextWithBackground(zombie.ui.UIFont,java.lang.String,double,double,double,double,double,double,double,double,double,double,double,double) drawTextWithBackground] method for UI making.
+* Vehicles seem to have had a lot of logic and organization changes, possibly more tools for modders to play with.
+* Newly exposed classes are:
+** <code>CraftRecipe.XpAward</code>
+** <code>StreetPoints</code>
+** <code>Transform</code>
+** <code>VirtualVehicle</code>
+** <code>WorldMapStreet</code>
+* [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#getFileWriter(java.lang.String,boolean,boolean) getFileWriter] now is limited to writing files with specific extensions:
+** <code>ini</code>
+** <code>cfg</code>
+** <code>txt</code>
+** <code>log</code>
+** Interestingly enough, [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#getModFileWriter(java.lang.String,java.lang.String,boolean,boolean) getModFileWriter] didn't get any limitations.
+* New [[Networking|sync]] methods were added:
+** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendHitZombie(zombie.characters.IsoPlayer) sendHitZombie] (interestingly, instantly marked as deprecated ?)
+** Faction related methods:
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#acceptFactionInvite(zombie.characters.Faction,java.lang.String,java.lang.String,boolean) acceptFactionInvite]
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionChangeOwner(zombie.characters.Faction,java.lang.String) sendFactionChangeOwner]
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionChangeTag(zombie.characters.Faction) sendFactionChangeTag]
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionChangeTitle(zombie.characters.Faction,java.lang.String) sendFactionChangeTitle]
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionCreate(java.lang.String,java.lang.String) sendFactionCreate]
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionDisband(zombie.characters.Faction) sendFactionDisband]
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionRemoveMember(zombie.characters.Faction,java.lang.String) sendFactionRemoveMember]
+** Foraging related methods:
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendForageRequestZone(zombie.characters.IsoPlayer,java.lang.String) sendForageRequestZone]
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendForagePool(zombie.characters.IsoPlayer,java.lang.String,se.krka.kahlua.vm.KahluaTable) sendForagePool]
+*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendForageSpot(zombie.characters.IsoPlayer,java.lang.String) sendForageSpot]
+* Two new [[Lua event]]s (more were actually found and properly documented in the [[Rosetta Project]]):
+** RequestMedicalCheck
+** AcceptedMedicalCheck
+* Vector2 class got a new [https://albion.codeberg.page/PZ-JavaDocs/zombie/iso/Vector2.html#mul(float) multiplier method]
+* Signs seem to point to [[ActionGroup]] now finally supporting modding, with modded files getting loaded by the game. This should notably allow for modders to use GrappleZed without any manual installation, but also do advanced [[animation]].
+
+[[File:Rosetta Project.png|class=logo-dark|thumb|Rosetta Project structure]]
+The [[Rosetta Project]] has finally been documented on the wiki, which is used to provide some of the most used tools for modding, that is [[Umbrella (modding)]], the [[Unofficial JavaDocs (Build 42)|Unofficial JavaDocs]] and the [[LuaDocs]]. The [[Torch]] python package which is used to parse and generate the Rosetta Docs Java files is also now documented. Similarly, I documented the [[PZ Data]] project of my own which I have been feeding with data related to [[Scripts]], [[translation]] and XML files.
+
+[[File:PZ Modding Configs - preview.png|thumb|Preview of the console logs with syntax highlighting]]
+Default configuration files for [[Visual Studio Code]] to properly setup your modding environment have been released in the [[PZ Modding Configs]] project, which includes a default configuration for [[Umbrella (modding)|Umbrella]]'s [[EmmyLua]] configuration, as well as schema references for the XML files and [[translation]] JSON files from the [[PZ Data]] in the form of a <code>.vscode/settings.json</code> file. Those VSCode configurations also provide console highlights with the right extensions installed. I will look to create proper VSCode extensions to automatically load these configurations in the future, as well as to load [[Umbrella (modding)|Umbrella]] automatically.
+
+Two new projects [[PZ Icon Maker]] and [[PZ Survivor Studio]] have been added to the wiki which provide tools to create icons for your mods' items and renders of your character. Also documented the [[PZ Backup]] tool to create local copies of the game and your installed mods. [[errorMagnifier]] is also finally documented on the wiki, which is a mod that modders can provide to their playerbase to more easily report errors to the modders. [[PZ Loot Containers]] provides categories for each distributions, to more easily identify distributions. [[KR Core OS]] provides a library using that to more easily manage distributions in your mods.
+
+This 2nd of August 2026 I held a Sit-Down Sunday to present the modding documentations available for Project Zomboid. I also went over the different tools you need to setup for your modding environment and how you can contribute to the different documentations. You can find the VOD [https://www.youtube.com/watch?v=6CCdLyoo4qk here].
+
+Smaller changes:
+* Updated [[Sandbox options]] to the new recent versions, just to clarify the page a bit
+* Added a reference to the error numbers for the uploader results in [[Uploading mods]]
+* [[Modding]] fields received some extra page links
+* [[Module:Socials/data]] now supports Codeberg icons
+
+Thanks to the various users contributing to the modding wiki this month:
+* [[User:LookinSharp|LookinSharp]] - fixed links to the [[ScriptsDocs]] in [[craftRecipe]]
+* [[User:Albion|albion]] - added a note in [[craftRecipe]] about some methods to modify existing recipes being outdated. They also updated the URL to their [[Unofficial JavaDocs (Build 42)|JavaDocs]] and update it to [[Build 42.20.0]]
+* [[User:Coldfire|Coldfire]] - fixed a parameter name in [[fluid (scripts)]]
+* [[User:Aoqia|Aoqia]] - clarified some bits in [[Startup parameters]]
+* [[User:GamestraMechanic|GamestraMechanic]] - updated [[Vehicle zones]] to [[Build 42.20.0]]
+* [[User:RastrilloG|RastrilloG]] - tweaked links in [[craftRecipe]]
+* [[User:Thomas|Thomas]] - clarified environment variables for [[Umbrella (modding)|Umbrella]]'s configuration need to be "system" variables

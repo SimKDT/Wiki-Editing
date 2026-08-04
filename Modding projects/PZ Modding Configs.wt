@@ -1,0 +1,38 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.0}}
+{{Infobox
+| title = PZ Modding Configs
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:PZ Modding Configs - preview.png]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/pz-modding-config/releases/tag/2026-08-04
+        | Download
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/pz-modding-config
+        | Repository
+        }}
+    }}
+}}
+'''PZ Modding Configs''' provides default configurations for your modding environment in [[Visual Studio Code]]. The configurations include a default configuration for [[Umbrella (modding)|Umbrella]]'s [[EmmyLua]] configuration, as well as schema references for the XML files and [[translation]] JSON files from the [[PZ Data]] in the form of a <code>.vscode/settings.json</code> file. Those VSCode configurations also provide console highlights with the right extensions installed, see the [[github:PZ-Wiki-Modding/pz-modding-config#Usage|repository README]] for more information on how to use this configuration.
+
+== See also ==
+* [[Umbrella (modding)]]
+* [[ZedScripts]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}
