@@ -75,4 +75,8 @@ This is a [[Template:Navbar|navbar]] used at the top of modding pages to assist 
 * Vector2 class got a new [https://albion.codeberg.page/PZ-JavaDocs/zombie/iso/Vector2.html#mul(float) multiplier method]
 * Signs seem to point to [[ActionGroup]] now finally supporting modding, with modded files getting loaded by the game. This should notably allow for modders to use GrappleZed without any manual installation, but also do advanced [[animation]].
 }}
+{{ToggleBox|title=<div style="text-align: center;">[[Build 42.20.1]] Modding News</div>|id=modding-news-hotfix|class=blue|content=
+* <code>json</code> extension is now allowed for [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#getFileWriter(java.lang.String,boolean,boolean) getFileWriter] (alongside <code>ini</code>, <code>cfg</code>, <code>txt</code>, <code>log</code>)
+* <code>%</code> characters now need to be escaped in the [[translation]]s (e.g. <code>%%</code> for a single <code>%</code> when resolved)
+}}
 }}<includeonly/>

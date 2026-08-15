@@ -37,7 +37,7 @@
         },
         {
             "pattern": "^WARN.*$",
-            "foreground": "#FFAA00"
+            "scope": "editorWarning"
         },
         {
             "pattern": "^ERROR.*$",
@@ -53,78 +53,5 @@
             "foreground": "#FF4444",
             "patternFlags": "si",
         },
-    ],
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": "log.constant",
-                "settings": {
-                    "foreground": "#cacaca"
-                }
-            },
-            {
-                "scope": "log.date",
-                "settings": {
-                    "foreground": "#cacaca",
-                    "fontStyle": ""
-                }
-            },
-                        {
-                "scope": "log.debug",
-                "settings": {
-                    "foreground": "#cacaca",
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "log.error",
-                "settings": {
-                    "foreground": "#cacaca",
-                    "fontStyle": ""
-                }
-            },
-                        {
-                "scope": "log.exception",
-                "settings": {
-                    "foreground": "#cacaca",
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "log.exceptiontype",
-                "settings": {
-                    "foreground": "#cacaca",
-                    "fontStyle": ""
-                }
-            },
-                        {
-                "scope": "log.info",
-                "settings": {
-                    "foreground": "#cacaca",
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "log.string",
-                "settings": {
-                    "foreground": "#cacaca",
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "log.verbose",
-                "settings": {
-                    "foreground": "#cacaca",
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "log.warning",
-                "settings": {
-                    "foreground": "#cacaca",
-                    "fontStyle": ""
-                }
-            },
-        ]
-    }
+    ]
 }

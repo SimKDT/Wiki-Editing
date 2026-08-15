@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.17.0}}
+{{Page version|42.20.2}}
 {{About|the Lua API|a guide to learn how to code with Lua|Lua (language)}}
 Project Zomboid allows modders to program functionalities via a [[Java]] implementation of '''[[Lua (language)|Lua]]''' called Kahlua, which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and allows the use of exposed Java class and methods from Lua scripts.
 
@@ -69,6 +69,7 @@ For example [https://projectzomboid.com/modding/zombie/characters/IsoPlayer.html
 {{Note|Class objects from the Java are not the same as [[Lua objects]]! They are not tables, but rather direct links to the Java classes. As such, they cannot be used as Lua objects and do not have the same properties as Lua objects.}}
 
 === Accessing fields ===
+=== Static fields ===
 Public static fields of exposed classes are exposed to Lua in a global table of the same name as the class.
 {{CodeSnip
 | lang = lua
@@ -76,7 +77,9 @@ Public static fields of exposed classes are exposed to Lua in a global table of 
 local DEATH_MUSIC_NAME = IsoPlayer.DEATH_MUSIC_NAME
 }}
 
-Fields are different as they are not directly exposed but can be accessed by using reflection. It involves a fairly complex set of operations:
+=== Instance fields ===
+{{Note|type=error|Accessing fields is no longer possible since [[Build 42.15.0]] due to reflection being restricted to [[debug mode]] only for security reasons. Static fields can still be accessed without any problems however.}}
+Instance fields are different as they are not directly exposed but can be accessed by using reflection. It involves a fairly complex set of operations:
 {{CodeSnip
 | lang = lua
 | code =
@@ -93,17 +96,7 @@ end
 }}
 This can access any field declared by the class, regardless of whether it is private or public.
 
-Alternatively, [[Starlit Library (Modding project)]] is a library which simplifies the access of fields on [[Java objects]]. Thanks to this library, accessing fields can simply be done in the following way:
-{{CodeSnip
-| lang = lua
-| code =
--- with <object> an instance of a Java class
--- and <field> the field you want to access
-local fieldValue = <object>.<field>
-}}
-Accessing fields this way is also much less expensive than the above method due to the library's heavy usage of caching.
-
-{{Note|type=error|Accessing the inherited fields of a class from one of its subclass is not possible currently.}}
+{{Note|type=warn|Accessing the inherited fields of a class from one of its subclass is not possible currently.}}
 
 === Constructor ===
 Constructors are used to instantiate a Java class. This is done with the following way:
@@ -252,5 +245,5 @@ The server subfolder is actually loaded only when launching a save, so anytime L
 == Navigation ==
 {{Navbox modding}}
 
-{{ll|Category:Modding guides}}
 {{ll|Category:Modding}}
+{{ll|Category:Modding guides}}
