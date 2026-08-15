@@ -1,85 +1,150 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.19.0}}
+{{Page version|42.20.0}}
 {{Infobox
 | color = theme-blue
 | class = theme-blue
 | title = Java
 | {{Infobox/image
-    | p1 = [[File:Java logo.png]]
-    }}
+  | p1 = [[File:Java logo.png]]
+  }}
 
-    {{Infobox/section
-    | id = 1
-    | 1 = Links
-    | 2 = 
-        {{Infobox/socials
-        | type=other
-        | link=https://www.oracle.com/fr/java/technologies/downloads/
-        | Oracle's JDK download
-        }}
-        {{Infobox/socials
-        | type=other
-        | link=https://openjdk.org/
-        | OpenJDK download
-        }}
+  {{Infobox/section
+  | id = 1
+  | 1 = Links
+  | 2 = 
+    {{Infobox/socials
+    | type=other
+    | link=https://www.oracle.com/java/technologies/downloads/
+    | Oracle's JDK download
     }}
+    {{Infobox/socials
+    | type=other
+    | link=https://openjdk.org/
+    | OpenJDK download
+    }}
+  }}
 
-    {{Infobox/section
-    | id = 1
-    | 1 = Relevant pages
-    | 2 = 
-        {{Infobox/socials
-        | page=Decompiling game code
-        }}
-        {{Infobox/socials
-        | page=Startup parameters
-        }}
+  {{Infobox/section
+  | id = 2
+  | 1 = Relevant pages
+  | 2 = 
+    {{Infobox/socials
+    | page=Decompiling game code
     }}
+    {{Infobox/socials
+    | page=Startup parameters
+    }}
+  }}
 }}
-'''Java''' modding consists in creating mods directly in Java, which provides way more liberties than [[Lua (API)|Lua modding]], but is also more complex and has its own limitations. The principal limitation is that Java mods cannot be directly loaded from Workshop mods, and requires a manual installation from the users. Another limitation is that any changes to the game code of the classes you modify will be overwritten by any game updates, and will thus require you to update your mod way more often than other mod types, which isn't ideal for long term support.
+'''Java''' modding means writing mods directly in Java, the language the game engine itself is written in. It reaches far more of the game than [[Lua (API)|Lua modding]] can, but it's harder to start with, and it comes with two catches.
 
-You can access the game code by [[Decompiling game code|decompiling]] it.
+The first is installation. The game never loads Java mods by itself, not even from the Workshop.
 
-{{Note|type=warn|If you are new to modding, or programming in general, it is recommended to start with [[Lua (API)|Lua modding]] first.}}
+The second is maintenance. A Java mod is compiled against one specific build. When an update changes a class you replaced, your copy still holds the old code and has to be rebuilt from the freshly decompiled source. Expect to update a Java mod far more often than a Lua one. [[#Java mod loaders|Mod loaders]] soften both limitations, though they don't remove them.
+
+{{Note|type=warn|If you are new to modding, or to programming in general, start with [[Lua (API)|Lua modding]] first.}}
+
+== Installing the JDK ==
+Decompiling and compiling both need a '''JDK''' (Java Development Kit), which includes the <code>javac</code> compiler. A JRE won't do, no compiler.
+
+The game ships with its own runtime, so this is needed for modding only, not for playing.
+
+Install the version that matches the game rather than the newest one available, see [[Java#Compiling your modified code|Compiling your modified code]] for the version currently in use. Builds come from [https://www.oracle.com/java/technologies/downloads/ Oracle] or from other implementations such as [https://openjdk.org/ OpenJDK], and either works.
+
+Then add the JDK's <code>bin</code> folder to your <code>PATH</code> and restart your terminal so it picks up the new value. Check that it took:
+{{CodeSnip|lang=bash|code=javac -version}}
+
+== Compiling your modified code ==
+Once you have [[Decompiling game code|decompiled the game]] and edited the source, it has to go back through the compiler before the game can use it.
+
+As of [[Build 42.13.0]], [[Project Zomboid]] runs on [https://www.oracle.com/java/technologies/javase/jdk25-archive-downloads.html Java 25], so your class files have to target that version. Use JDK 25. A newer JDK also works if you pass <code>--release 25</code>, but you're better off matching the game's version. A class file built for a higher version is rejected at load time with <code>UnsupportedClassVersionError</code>.
+
+Replace <code>GameFiles</code> with your game folder, <code>output</code> with any folder for the result, and <code>path\file.java</code> with the file you are compiling. On Linux and macOS, use forward slashes.
+{{CodeSnip|lang=bash|code=javac -cp "GameFiles\projectzomboid.jar" -d "output" "path\file.java"}}
+
+* <code>-cp</code> puts the game code on the classpath, so your source can see the classes it calls.
+* <code>-d</code> sends the result to a folder of your choice. Without it, class files land next to the source. <code>javac</code> recreates the package structure inside it.
+
+One source file can produce several class files, because nested and anonymous classes compile into <code>Foo$Inner.class</code> and <code>Foo$1.class</code>. Missing one shows up as <code>NoClassDefFoundError</code> while playing.
+
+Parts of the game code reach into internal JDK packages, which is why <code>ProjectZomboid64.json</code> passes <code>--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED</code> to the JVM at startup. If the class you are rebuilding touches such a package, <code>javac</code> refuses to compile it until you pass the same flag:
+{{CodeSnip|lang=bash|code=javac --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED -cp "GameFiles\projectzomboid.jar" -d "output" "path\file.java"}}
+
+Compiling produces the files but doesn't install them.
 
 == Loading Java mods ==
-Java mods are not loaded automatically by the game, and require at least one or more manual installation by the user at some point. What this means is either you distribute Java files inside your mod files that users will need to manually copy into their game files, or you use one of the Java mod loaders that were created that the users will need to manually install once, but be able to load automatically Java mods that use them.
+Every Java mod needs at least one manual step from the user. You have two options:
+* Ship the compiled class files with your mod and let users copy them into their game files.
+* Build on top of a Java mod loader. The user installs the loader by hand once, and from then on it loads Java mods for them.
 
-The <code>ProjectZomboid64.json</code> file indicates to the JVM what path for the Java files is to be used, it indicates the <code>projectzomboid.jar</code> will be loaded and the root folder which containes this configuration file (<code>.</code>). Java files are usually placed in the <code>zombie</code> folder:
+=== How the game finds class files ===
+<code>ProjectZomboid64.json</code> holds the classpath the launcher passes to the JVM. On the client it begins like this:
 {{CodeSnip
-| lang = lua
+| lang = json
 | code =
-📁 ProjectZomboid -- on Linux, this is ProjectZomboid/projectzomboid
-    📁 media
-        ...
-    📁 zombie
-        📄 YourModClass.class
-        📁 characters
-            📄 IsoZombie.java -- a base game class overwrite
-    📄 ProjectZomboid64.json
-    ...
+{
+  "mainClass": "zombie/gameStates/MainScreenState",
+  "classpath": [
+    ".",
+    "projectzomboid.jar"
+  ],
 }}
 
-You can load any custom class files, but they will not interact with the game until you hook or overwrite an existing class at some point. This is where Java mod loaders come in handy, as they provide a way to hook into the game code without needing to rewrite the entire class, which means no incompatibilities with other Java mods. Another advantage of Java mod loaders is that they can make it easier for Java mods to not break after updates depending on how they are implemented.
+Two entries matter. <code>projectzomboid.jar</code> is the game code, and <code>.</code> is the folder the configuration file sits in.
+
+The archive also bundles the libraries the game depends on, among them Log4j, SQLite JDBC, OSHI, Javacord and others. That is convenient when compiling, since a single <code>-cp projectzomboid.jar</code> covers everything with nothing else to download. It also means [[Decompiling game code|decompiling]] the archive hands you those libraries alongside the game, but only the game's own packages, such as <code>zombie</code>, are yours to change.
+
+Because that folder is on the classpath, the JVM searches it for classes as well, including package folders you add yourself. A fresh installation has no <code>zombie</code> folder, because all the vanilla code now lives inside the jar. But one you create gets searched all the same.
+
+The classpath is searched in order, and the first match wins. Since <code>.</code> is listed ahead of the jar, your class file is found first and loaded instead of the copy in the archive, which stays untouched.
+
+The alternate <code>.bat</code> launch builds the same two entries in <code>PZ_CLASSPATH</code>, in the same order, so it makes no difference which launcher you use. See [[Startup parameters]].
+
+The folder path has to mirror the package name exactly, as it appears in the decompiled source. Overwriting <code>zombie.characters.IsoZombie</code> therefore means putting your <code>IsoZombie.class</code> in <code>zombie/characters/</code>. An overwrite always replaces the whole class, so there is no way to change part of one and leave the rest alone. A finished installation looks like this:
+{{CodeSnip
+| lang = text
+| code =
+📁 ProjectZomboid -- on Linux, this is ProjectZomboid/projectzomboid
+  📁 media
+      ...
+  📁 zombie
+    📄 YourModClass.class -- your own class, declared in package zombie
+    📁 characters
+      📄 IsoZombie.class -- replaces zombie.characters.IsoZombie
+  📄 projectzomboid.jar -- game code and bundled libraries
+  📄 ProjectZomboid64.json
+  ...
+}}
+
+{{Note|type=warn|Only compiled <code>.class</code> files are ever loaded. A <code>.java</code> source file put here is ignored without a word in the console, and the vanilla class loads instead. Compile first, then install the result.}}
+
+=== Installing on a dedicated server ===
+The dedicated server works the same way, but its classpath sits one level deeper. The entries are <code>java/.</code> and <code>java/projectzomboid.jar</code>, under <code>"mainClass": "zombie/network/GameServer"</code>. Package folders go inside the server's <code>java</code> folder, not in the server root:
+{{CodeSnip
+| lang = text
+| code =
+📁 ProjectZomboidDedicatedServer
+  📁 java
+    📁 zombie
+      📁 characters
+        📄 IsoZombie.class
+    📄 projectzomboid.jar
+  📄 ProjectZomboid64.json
+  ...
+}}
+
+In multiplayer, a class that runs on both sides has to be installed on both, and the two copies must match.
+
+=== Java mod loaders ===
+You can load as many custom class files as you like, but they do nothing until the game actually reaches your code. Without a mod loader, the only way to get there is to replace a vanilla class outright, so only one mod can ever own a given class.
+
+Mod loaders let several mods patch the same class instead of replacing it, which clears up most conflicts between Java mods. Some also cut down on breakage after updates: a small patch rides out changes elsewhere in the class. A full replacement wouldn't.
 
 Available Java mod loaders:
-* [[ZombieBuddy]] {{Sup|recommended|orange}} is a Java agent that allows mods to inject custom code into any game method using simple {{Code|@Patch}} annotations with {{Code|OnEnter}}/{{Code|OnExit}} hooks.
-* [[Leaf]] provides a mod loader for Java mods and tools to not require a full rewrite of the classes you want to modify, without needing you to update your mod as often.
-* [[Necroid]] is an external Java mod loader that compiles the mods on the fly, meaning as long as the API doesn't change, the mod will still work without needing an update.
-
-== Installing Java ==
-You can download the last version on [https://www.oracle.com/fr/java/technologies/downloads/ Oracle's website], but other Java implementations such as [https://openjdk.org/ OpenJDK] will work too. Make sure to restart your terminal after downloading a new java version if you are [[Decompiling game code|decompiling]] from it.
-
-== Recompiling the Java code ==
-After [[Decompiling game code|decompiling the Java]], it is possibly to modify it and recompile it to create Java mods. As of [[Build 42.13.0]], [[Project Zomboid]] uses [https://www.oracle.com/java/technologies/javase/jdk25-archive-downloads.html Java Version 25]. To compile and run custom Java code for Project Zomboid, you must be using Java version 25.
-
-To compile a .java file into a .class file, type this command into a suitable terminal such as Powershell or Command Prompt, replacing "GameFiles" with the path to your Project Zomboid game files, and "path/file.java" with the path to the file you want to compile.
-{{CodeSnip|lang=bash|code=javac -cp "GameFiles\projectzomboid.jar"  "path/file.java"}}<blockquote></blockquote>
-
-You can then drag the class file into your game or server files (GameFiles/zombie/iso for example) and the class files should run.
-
-Normally there is no "zombie" folder in your game files, but the game will still recognize the directory and will still run the class files placed in it. If you want to overwrite an existing vanilla class file, create a directory and file name that matches the location and name of the vanilla class file to be overridden.
+* [[ZombieBuddy]] {{Sup|recommended|orange}} is a Java agent, installed through the JVM arguments rather than by copying class files. Mods use {{Code|@Patch}} annotations with {{Code|OnEnter}}/{{Code|OnExit}} hooks to inject code into any game method.
+* [[Leaf]] provides a mod loader along with tools for changing part of a class without rewriting the whole of it, which also means fewer updates on your side.
+* [[Necroid]] is an external mod loader that compiles mod sources against your installed copy of the game. You tick the mods you want and press Apply Changes. Necroid compiles them and diffs the result against what's currently installed. Then it adds or removes class files to match. After a game update, refresh its reference copy of the game and apply the patches again. A small update usually reapplies cleanly, sometimes with a few manual fixes. A large one may not apply at all.
 
 == Navigation ==
 {{Navbox modding}}
