@@ -1,13 +1,11 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.0|2=405935}}
+{{Page version|42.20.3|2=405935}}
 '''Procedural distribution''' explains how the loot system of the game works and how you can add your own loot to the procedural distribution.
 
 Tools exist to make it easier to manage distributions in your mods:
 * [[KR Core OS]]
 * [[Easy Distributions API]]
-
-The [[PZ API Documentation]] provides a full list of distributions and their details.
 
 == How does loot generation works ==
 Containers in a room generate with different possibilities of [[#Distributions|distribution lists]]. Loot in containers is generated whenever they get loaded in the game or can respawn loot if the proper settings in the [[Custom Sandbox|sandbox options]] are set.
@@ -20,12 +18,12 @@ When loot is being spawned in a container, the event [[OnFillContainer]] trigger
 Vanilla loot distribution is defined in the following file:
 {{CodeSnip
 | code =
-ProjectZomboid/
-└── media/
-    └── lua/
-        └── server/
-            └── Items/
-                └── ProceduralDistributions.lua
+📁 ProjectZomboid
+    📁 media
+        📁 lua
+            📁 server
+                📁 Items
+                    📄 ProceduralDistributions.lua
 }}
 
 Each [[#Distributions|distribution lists]] are added to the [[Lua (language)#Tables|table]] <code>ProceduralDistributions.list</code> in the following form:
@@ -118,9 +116,21 @@ Alongside the <code>rolls</code> tag for the <code>distributionName</code> and <
 * <code>onlyOne</code> '''DEPRECATED''' - a tag which can be found in distributions but looks deprecated from the java.
 
 == How to add your own items to distributions ==
-The main challenges you will face is properly understanding how loot generation actually works (see [[#How does loot generation works]]), finding the right distribution list and organizing the file which adds these. Inserting inside the procedural distribution needs to be done in <code>media/lua/server</code>.
+The main challenges you will face is properly understanding how loot generation actually works (see [[#How does loot generation works]]), finding the right distribution list and organizing the file which adds these. 
 
-There are many ways of achieving this, with the most common one, but worst one, being:
+You will want to create a distribution file at the following path:
+{{CodeSnip
+| code =
+📁 media
+    📁 lua
+        📁 server
+            📁 YourModName
+                📄 ProceduralDistributions.lua
+}}
+
+The filename or exact path doesn't matter, what matters is that it is locked in the <code>lua/server</code> folder. Here we suggest storing in a subfolder named after your mod so your file will never clash with other mods (see [[Lua (API)#Folder structure]]).
+
+There are many ways of add your own distribution, with the most common one, but '''worst''' one, being:
 {{CodeSnip
 | lang = lua
 | code =
@@ -130,7 +140,7 @@ table.insert(ProceduralDistributions.list["DistributionListName"].items, 0.5) --
 
 {{Note|type=warn|Items that are defined with a different [[Scripts#Module block|module]] than <code>Base</code> need to have their module in the item name. For example, if you have an item named <code>MyItem</code> in the <code>MyMod</code> module, you need to add it as <code>MyMod.MyItem</code>.}}
 
-A better way to handle this is to have every distributions and their items and chances in a singular table which is parsed through thanks to a loop and added with a single <code>table.insert</code> line.
+A better way to handle this is to have every distributions and their items and chances in a singular table which is parsed through by a loop and added with a single <code>table.insert</code> line. This both makes it easier to manage and easier to fix when it breaks.
 
 Take this example with a few items and distribution lists:
 {{CodeSnip
@@ -208,34 +218,34 @@ Other table formating and functions can be used to insert in distribution.
 Some vanilla distribution tables will use generic items which are defined inside <code>ClutterTables</code>. Here's all the files that have clutter tables:
 {{CodeSnip
 | code =
-lua/
-└── server/
-    ├── Items/
-    │   ├── Distribution_BinJunk.lua
-    │   ├── Distribution_ClosetJunk.lua
-    │   ├── Distribution_CounterJunk.lua
-    │   ├── Distribution_DeskJunk.lua
-    │   ├── Distribution_ShelfJunk.lua
-    │   └── Distribution_SideTableJunk.lua
-    └── Vehicles/
-        ├── VehicleDistribution_GloveBoxJunk.lua
-        ├── VehicleDistribution_SeatJunk.lua
-        └── VehicleDistribution_TrunkJunk.lua
+📁 lua
+    📁 server
+        📁 Items
+            📄 Distribution_BinJunk.lua
+            📄 Distribution_ClosetJunk.lua
+            📄 Distribution_CounterJunk.lua
+            📄 Distribution_DeskJunk.lua
+            📄 Distribution_ShelfJunk.lua
+            📄 Distribution_SideTableJunk.lua
+        📁 Vehicles
+            📄 VehicleDistribution_GloveBoxJunk.lua
+            📄 VehicleDistribution_SeatJunk.lua
+            📄 VehicleDistribution_TrunkJunk.lua
 }}
 
 Backpacks that spawn in the world also use loot distribution tables which can be found in <code>BagsAndContainers</code> in the following file:
 {{CodeSnip
 | code =
-lua/
-└── server/
-    └── Items/
-        └── Distribution_BagsAndContainers.lua
+📁 lua
+    📁 server
+        📁 Items
+            📄 Distribution_BagsAndContainers.lua
 }}
 
-You can add items in these tables.
+You can add items in these tables to automatically add to existing loot distributions.
 
 === Accessing a container distribution in-game ===
-Accessing a container distribution in-game can be achieved with [[LootZed]] which allows you to check for the various distribution lists for a container as well as listing each items and their chances of spawning in.
+Accessing a container distribution in-game can be achieved with [[LootZed]] which allows you to check for the various distribution lists for a container as well as listing each items and their estimated chances of spawning in.
 
 == Problem with the system ==
 Due to the way the game works, adding new items to a [[#Distributions|distribution list]] will ultimately increase the mean amount of items in this container. For a small demonstration of the issue, see the following image which is a simulation of a distribution list getting more and more entries by following a distribution of loot for different amount of rolls:

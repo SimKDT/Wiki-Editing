@@ -15,3 +15,7 @@ items:
       input: Latex/Mod structure/Mod structure.pdf
       output: Latex/Mod structure/Mod structure.png
     dpi: 200
+  - files:
+      input: Latex/Item full type/Item full type.pdf
+      output: Latex/Item full type/Item full type.png
+    dpi: 200

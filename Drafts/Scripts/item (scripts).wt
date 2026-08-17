@@ -1,7 +1,7 @@
 {{Title|item (scripts)}}
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.19.0|2=1389641}}
+{{Page version|42.20.3|2=1389641}}
 {{Infobox
 | title = item
 | class = theme-blue
@@ -33,8 +33,7 @@
         }}
     }}
 }}
-[[File:ZedScript-Items.png|thumb|List of parameters for each item type]]
-[[File:ItemTypeGuideSmaller.png|thumb]]
+[[File:ZedScript-Items.png|thumb|List of parameters for each item type (OUTDATED B41) - see [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#itemtype-parameters ScriptsDocs]]]
 The item block is used to create items in the game, from weapons to food and clothing. The parameters available in this block mostly depend on the type of item you are creating, set with [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#item-itemtype ItemType].
 
 To get started, create a simple item structure by setting that parameter up correctly, then add more parameters as you need. For example, for a normal item:
@@ -51,21 +50,11 @@ module yourModule
 }
 }}
 
-== Display name ==
-To add a name to display for your item, you need to add the item full type, that is its <code>module.id</code>, inside the [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/translation_files.html#itemname ItemName] translation file. Taking the example from above, your translation file would be:
-{{CodeSnip
-| lang = json
-| code = 
-{
-  "yourModule.yourID": "Your Item Name"
-}
-}}
-
 == Parameters ==
 {{Note|When writing a script for an item, be guided by the scripts of similar items from the vanilla game (or from other mods).}}
 You can find a full list of the parameters in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html ScriptsDocs]. The parameters are arranged by the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#item-itemtype ItemType] parameter. You can find a list of parameters that are exclusive to specific ItemTypes [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#itemtype-specific-parameters here].
 
-== Other parameters ==
+=== Other parameters ===
 Any other parameter not in the list will be written as a key-value in the item's ModData. For example:
 {{CodeSnip
 | lang = java
@@ -79,6 +68,148 @@ print(item:getModData().MyCustomOption) -- outputs: This is custom label
 }}
 
 {{Note|type=error|This should not be used in any cases and instead a [[Lua (language)#Lookup tables|lookup table]] should be used associated to the item Type or FullType. Reason being that the custom parameter mod data will be added to every single instance of items that appear in the world, and can bloat save files with repeated informations for every items while using a [[Lua (language)#Lookup tables|lookup table]] for repeated values will not bloat save files.}}
+
+== Display name ==
+To add a name to display for your item, you need to add the item full type, that is its <code>module.id</code>, inside the [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/translation_files.html#itemname ItemName] translation file. Taking the example from above, your translation file would be:
+{{CodeSnip
+| lang = json
+| code = 
+{
+  "yourModule.yourID": "Your Item Name"
+}
+}}
+
+== Item ID ==
+[[File:Item full type.png|class=logo-dark]]
+The ID of an item script is often refered to as the ''type'', while it's full ID is the ''full type''. The ''type'' is simply the [[Scripts#ID|ID]] of the script block, while the ''full type'' is the <code>module.ID</code>. Take for example the following incomplete item definition:
+{{CodeSnip
+| lang = java
+| code =
+module MyModModule {
+    item MyItem {
+        ...
+    }
+}
+}}
+
+It's ''type'' is <code>MyItem</code> while its ''full type'' is <code>MyModModule.MyItem</code>.
+
+You can retrieve the full type of an [[InventoryItem]] from [[Lua (API)|Lua]] by using the [https://albion.codeberg.page/PZ-JavaDocs/zombie/inventory/InventoryItem.html#getFullType() getFullType] method or for an [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html Item] instance you can use [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#getFullName() getFullName].
+
+== Modifying existing item definitions ==
+There are two methods to modify existing items:
+* via [[#Soft overrides]]
+* from Java class instance of the item definition (the [[#Lua]] method)
+
+=== Soft overrides ===
+{{Main|Scripts#Soft overrides}}
+This follows the soft overrides rules defined in the main [[Scripts#Soft overrides|Scripts]] page, where you make a new definition of the item in your own mod but only add the parameters you want to modify. 
+
+For example take the following existing item definition:
+{{CodeSnip
+| lang = java
+| code = 
+module Base
+{
+    item HotDrinkClay
+    {
+        DisplayCategory = Food,
+        ItemType = base:food,
+        EatType = Popcan,
+        PourType = Mug,
+        Weight = 0.5,
+        Icon = Ceramic_Mug_Unfired,
+        GoodHot = true,
+        IsCookable = true,
+        ReplaceOnUse = Base.ClayMug,
+        MinutesToCook = 10,
+        MinutesToBurn = 50,
+        ThirstChange = -20.0,
+        UnhappyChange = -10,
+        CustomContextMenu = Drink,
+        CustomEatSound = DrinkingFromMug,
+        StaticModel = MugClay,
+        WorldStaticModel = MugClay,
+        Tags = base:alcoholicbeverage;base:lowalcohol;base:herbaltea,
+        CookingSound = BoilingFood,
+        Eattime = 160,
+    }
+}
+}}
+
+If I want to modify the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-eattime Eattime] of this item, and let's say the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-unhappychange UnhappyChange], I can simply do the following in my own [[Scripts]] file:
+{{CodeSnip
+| lang = java
+| code = 
+module Base
+{
+    /* If you're using ZedScripts, add the following annotation
+     *@soft-override
+     */
+    item HotDrinkClay
+    {
+        UnhappyChange = -50,
+        Eattime = 260,
+    }
+}
+}}
+
+There are specific parameters that may act differently based on their usual behavior. Most parameters will act nicely without any special behavior, but for example [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-tags Tags] doesn't allow you to overwrite existing tags. If you soft override tags, your newly listed tags will simply be added to the existing list of tags from the original definition, which is essentially a good thing because you are not breaking vanilla tags of this item.
+{{CodeSnip
+| lang = java
+| code = 
+module Base
+{
+    /* If you're using [[ZedScripts]], add the following annotation
+     *@soft-override
+     */
+    item HotDrinkClay
+    {
+        Tags = base:ballpeenhammer,
+    }
+}
+}}
+
+The final list of tags will then change from <code>base:alcoholicbeverage;base:lowalcohol;base:herbaltea</code> to <code>base:alcoholicbeverage;base:lowalcohol;base:herbaltea;base:ballpeenhammer</code>.
+
+=== Lua ===
+You can access and modify an item script definition from the [[Lua (API)]] by using the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html ScriptManager]. The most common one is [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html#getItem(java.lang.String) getItem] which uses the item full type to retrieve the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html Item] instance. Other useful ones also exist like [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html#getItemsTag(zombie.scripting.objects.ItemTag) getItemsByTag] and [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html#getItemsByType(java.lang.String) getItemsByType].
+
+If we try to replace the exact same parameters than in [[#Soft overrides]], it becomes the following:
+{{CodeSnip
+| lang = lua
+| code =
+local item = ScriptManager.getItem('Base.HotDrinkClay')
+
+local newValues = {
+    ['UnhappyChange'] = -50,
+    ['Eattime'] = 260,
+}
+
+for param, value in pairs(newValues) do
+    item:DoParam(param, value)
+end
+}}
+
+DoParam has two variants:
+* the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#DoParam(java.lang.String) first] takes a single string line, that is going to be the combination <code>param = value,</code> passed directly for processing
+* the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#DoParam(java.lang.String,java.lang.String) second] one, used above, takes the parameter and the value, way easier to use and less risk of wrong formatting
+
+Alternatively you can pass directly a whole script formatting by using the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#Load(java.lang.String,java.lang.String) Load] method.
+
+{{CodeSnip
+| lang = lua
+| code =
+local item = ScriptManager.getItem('Base.HotDrinkClay')
+
+-- the [[ ]] syntax is a multiline string
+item:Load('HotDrinkClay', [[
+{
+    UnhappyChange = -50,
+    Eattime = 260,
+}
+]])
+}}
 
 == Navigation ==
 {{Navbox modding}}
