@@ -1,17 +1,17 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.14.0}}
+{{Page version|42.20.0}}
 {{About|modding structure of Project Zomboid|game files of Project Zomboid|Game files|explanations of file formats|File formats}}
-[[File:Mod structure.png|thumb|class=logo-light]]
+[[File:Mod structure.png|thumb|class=logo-dark]]
 
 Local mods are recognized in two different folders which each have their own rules and structure and are both in the [[Game files#Cache folder|cache folder]]:
-*{{Code|Zomboid/mods/}} - place to put mods to install manually without using the Steam Workshop. Not recommanded for mod development.
-*{{Code|Zomboid/workshop/}} - folder used for mod development and uploading to the Steam Workshop.
+* {{Code|Zomboid/mods/}} - place to put mods to install manually without using the Steam Workshop. Not recommended for mod development.
+* {{Code|Zomboid/workshop/}} - folder used for mod development and uploading to the Steam Workshop.
 
 When downloading mods from the [[Steam Workshop]], they will be downloaded in [[#Online workshop folder|their own folders]] locally which you should **not** be working from when [[modding]]. Mods with the same [[mod.info|Mod ID]] as mods in other recognized folders, so for example in the online workshop folder and in the mods cache folder, will clash together and overwrite each others. This can lead to confusion when debugging your mods and even make it impossible to load new changes you applied to your mod when developing so make sure to not have two copies of your mods.
 
 Example default mod structures are provided by the community to directly use:
-*[[Project Zomboid Community Modding template]] - a template mod structure to use as a base for your own mods. Simply make a copy of the repository on your computer and modify the different elements for your own use.
+* [[Project Zomboid Community Modding template]] - a template mod structure to use as a base for your own mods. Simply make a copy of the repository on your computer and modify the different elements for your own use.
 
 {{Note|type=warn|Some [[Wikipedia:Operating system|operating systems]] like Linux and MacOS are case-sensitive regarding file and folder names. Make sure to use the correct casing when creating your mod structure to avoid issues for those users. (for example <code>common</code> and not <code>Common</code>)}}
 
@@ -78,7 +78,7 @@ When accessing the [[game files]], if you go in a few folders above in <code>Ste
 The folder of the mod will be named after its [[Workshop ID]].
 
 == Workshop folder ==
-The Workshop folder will use the following structure:
+The Workshop folder will use the following structure inside the [[Game files#Cache folder|cache folder]]:
 {{CodeSnip
 |code =
 📁 Zomboid/
@@ -94,10 +94,10 @@ The Workshop folder will use the following structure:
             📄 preview.png
 }}
 
-*<code>Contents/</code>: The folder will only have the <code>mods/</code> folder.
-*<code>Contents/mods/</code>: Your various mods which can be activated by the players will be put here, with each mod having their own [[mod.info]] file associated to be recognized (see [[#Mod folder]]). This is the folder uploaded to the Workshop.
-*<code>workshop.txt</code>: Informations which are needed to upload your mod are put here (see [[workshop.txt]]).
-*<code>preview.png</code>: The image used as your mod preview on the Steam Workshop. Game imposes a 256x256 resolution.
+* <code>Contents/</code>: The folder will only have the <code>mods/</code> folder.
+* <code>Contents/mods/</code>: Your various mods which can be activated by the players will be put here, with each mod having their own [[mod.info]] file associated to be recognized (see [[#Mod folder]]). This is the folder uploaded to the Workshop.
+* <code>workshop.txt</code>: Informations which are needed to upload your mod are put here (see [[workshop.txt]]).
+* <code>preview.png</code>: The image used as your mod preview on the Steam Workshop. Game imposes a 256x256 resolution and an 8-bit color depth.
 
 {{Note|Subfolders in <code>MyExampleMod/</code> which are not <code>Contents/</code> are not recognized by the game and can be used to store various files for your mod that shouldn't get uploaded. Thus you can store in it Python scripts, images, assets, etc.}}
 {{Note|<code>MyExampleMod/</code> can be used as a Git repository (GitHub, GitLab...).}}
@@ -135,7 +135,7 @@ The files of your mods are placed in the folder <code>Contents/mods/</code> alon
 📁 Contents/
     📁 mods/
         📁 MyMod1/
-            📁 common/         <--- common folder is mandatory, even if empty !
+            📁 common/
                 📁 media/
                     ...
             📁 42/
@@ -179,8 +179,8 @@ It is possible to mix both [[Build 41]] and [[Build 42]] modding structures in t
 == Common and versioning folders ==
 Common and versioning folders, introduced in [[Build 42]], help manage different mod versions per game version.
 
-*'''Versioning folders''' are useful when players stick to older game versions. You don't need one for every version. They should contain code files and [[mod.info]], as they often change with the game version.
-*'''Common folder''' stores large files (models, textures, animations) to keep mod size down.
+* '''Versioning folders''' are useful when players stick to older game versions. You don't need one for every version. They should contain code files and [[mod.info]], as they often change with the game version.
+* '''Common folder''' stores large files (models, textures, animations) to keep mod size down.
 
 These folders load with the following order:
 #Common folder
@@ -204,8 +204,9 @@ The minor version is not supported for the naming, so a folder named <code>42.1.
 43.5.1         ====> 43.5
 }}
 
+{{Note|The common and versioning folders of a mod are completely independent of other mods. If you try to [[Load order#File overwrites|overwrite]] another mod files, these folders will not play a role in it.}}
 {{Note|type=warn|Common folder is not recognized by [[Build 41]] modding structure. However, the [[Build 41]] [[Lua (API)|Lua API]] can access some files in some cases.}}
-{{Note|type=error|Common folder is mandatory, even if empty, for your mod to work !}}
+{{Note|type=error|At least one versioning or a common folder is needed for the mod to be recognized in-game.}}
 
 == Media folder ==
 Mod assets are for the most part inside this folder. Different subfolders need to be created based on the type of assets. These are usually the same as the [[Game files#Media folder|game media folder]] and based on your [[Modding#Modding fields|modding field]], you may need different ones. See each modding fields individual pages for more details on their folder structure:
@@ -215,40 +216,40 @@ Mod assets are for the most part inside this folder. Different subfolders need t
 |-
 | [[Animation]] ||
 Animations involve the storing of the [[File formats#Modeling and animation formats|animation files]], as well defining how those animations are triggered:
-*<code>anims_X</code> - stores the animation files.
-*<code>AnimSets</code> - stores the animation triggers and parameters definitions.
+* <code>anims_X</code> - stores the animation files.
+* <code>AnimSets</code> - stores the animation triggers and parameters definitions.
 |-
 | [[Lua (API)|Lua]] ||
 Most of the time, Lua modding doesn't involve game assets but simple plain code lines, however in some cases you may want to add custom UI elements and maybe need textures.
-*<code>lua</code> - stores the Lua scripts.
-*<code>ui</code> and <code>textures</code> - used for custom UI elements
+* <code>lua</code> - stores the Lua scripts.
+* <code>ui</code> and <code>textures</code> - used for custom UI elements
 |-
 | [[Mapping]] ||
-*<code>maps</code> - stores the map files and assets.
+* <code>maps</code> - stores the map files and assets.
 |-
 | [[Modeling]] ||
-*<code>models_X</code> - stores the model assets.
+* <code>models_X</code> - stores the model assets.
 |-
 | [[Texturing]] ||
-*<code>textures</code> - stores the texture assets
+* <code>textures</code> - stores the texture assets
 |-
 | [[Translations]] ||
-*<code>lua/shared/Translate</code> - translation files are put inside subfolders inside the main lua folder
+* <code>lua/shared/Translate</code> - translation files are put inside subfolders inside the main lua folder
 |-
 | [[Rendering]] ||
 Renders are indirectly linked to modding, as in most cases is a process external to Project Zomboid where you use game assets for 3D renders:
-*<code>models_X</code>
-*<code>textures</code>
-*<code>texturepacks</code> - holds the tile sprites that you will need to unpack with the [[Project Zomboid Modding Tools]]
+* <code>models_X</code>
+* <code>textures</code>
+* <code>texturepacks</code> - holds the tile sprites that you will need to unpack with the [[Project Zomboid Modding Tools]]
 But in the case where renders are used to create in-game assets, you will most likely need to access the <code>ui</code> or <code>textures</code> folders.
 |-
 | [[Scripts]] ||
 Scripts involve mainly defining properties and behaviors via text files, but in most cases involve the use of assets like [[modeling|models]], [[texturing|textures]] and sounds.
-*<code>scripts</code> - stores the script definitions.
-*<code>clothing</code> - stores clothing item definitions.
-*<code>textures</code>
-*<code>models_X</code>
-*<code>sound</code>
+* <code>scripts</code> - stores the script definitions.
+* <code>clothing</code> - stores clothing item definitions.
+* <code>textures</code>
+* <code>models_X</code>
+* <code>sound</code>
 |}
 
 === clothing ===
@@ -343,10 +344,11 @@ Below is a full example of a mod structure in Windows.
 }}
 
 == See also ==
-*[[Uploading mods]] - teaches about uploading mods.
-*[[Game files]] - accessing the game files.
-*[[Workshop.txt]] - about a file used by the in-game uploader.
-*[[mod.info]] - about the core file which defines your mod.
+* [[Uploading mods]] - teaches about uploading mods.
+* [[Game files]] - accessing the game files.
+* [[Workshop.txt]] - about a file used by the in-game uploader.
+* [[mod.info]] - about the core file which defines your mod.
+* [[Load order]] - guide about load order.
 
 == Navigation ==
 {{Navbox modding}}

@@ -1,0 +1,39 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.19}}
+{{Infobox
+| title = PZ Map Analyser
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:PZ Map Analyser - tool.png]]
+    | 1 = [[File:PZ Map Analyser - tool.png|link=]]
+    | p2 = [[File:PZ Map Analyser - chose_folder.png]]
+    | 2 = [[File:PZ Map Analyser - chose_folder.png|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | page=github:SimKDT/PZ-Map-Analyser
+        | Repository
+        }}
+    }}
+}}
+'''PZ Map Analyser''' is a [[Wikipedia:Python (language)|Python]] tool which allows anyone to list their available maps in their downloaded Workshop maps for Kentucky, KY, on a UI. You can simply launch the code, reference your [[Mod structure#Online workshop folder|online workshop folder]] for Project Zomboid and every maps will be listed. You can then check which maps you want to activate and if maps share cells, those cells will be highlighted as well as their maps in the list.
+
+{{Note|type=warn|This tool hasn't been updated for [[Build 42]] and it's easier to use [[Map Mod Manager]] which is directly integrated in-game and up-to-date.}}
+
+== See also ==
+* [[Mapping]]
+* [[Map Mod Manager]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

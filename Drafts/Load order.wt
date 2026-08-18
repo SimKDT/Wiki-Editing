@@ -1,0 +1,84 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.3}}
+'''Load order''' in [[Modding]] is often presented as important when it really isn't as issues very rarely arise from wrong load orders. The basic of it is that load order doesn't matter if no mods override each others or the same vanilla files.
+
+Making sure mods don't override the same thing can be complex when you don't know much about modding, for this you can simply try to compare mods you activate and think if they replace features of the game, or if two mods do the same thing or impact the same features. The best way would be to check the [[Mod structure#Online workshop folder|mod files]] but this can prove impossible when you have to compare with hundreds if not thousands of other mods. If you think a mod may clash with your mod, you'd be interested to check their files however.
+
+When it comes to 
+
+== Mapping ==
+[[Mapping|Maps]] are the most at risk of load order but as long as they don't share [[Mapping#Cells|cells]], there won't be any particular need for load order. Tiles depend on if another mod replaces another tile mod tiles. But even then load order cannot fix conflicts between maps and one of the two will have broken elements eitherway, you can't do anything about it but move those maps elsewhere (which isn't a solution either).
+
+Tiles can have their [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/root_files/modinfo.html#scripts-root-modinfo-tiledef tiledef ID] clash. but to reduce this risk you can chose an ID that is not yet documented in [[Tiledefs used by mods]], which lists a large amount of tiledef IDs already used.
+
+When it comes to [[Mapping#Cells|cells]] being shared between map mods, there isn't a data base currently of already shared map cells. Tools like [[Map Mod Manager]] and [[PZ Map Analyser]] allows you to verify conflicts between map mods.
+
+== Lua and Scripts ==
+[[Lua (API)|Lua]] and [[Scripts]] mods should almost never depend on load order as it is extremely easy to not have them clash with others. When they clash with each others it is either one of the following cases:
+# The modder didn't put his files at unique relative paths (see [[Lua (API)#Folder structure]] and [[Scripts#Folder structure]])
+# They are overriding files they don't have to (see [[Scripts#Soft overrides|Scripts soft overrides]] and [[Lua (language)#Decoration|Lua decorations]])
+# They had no choice but overwrite a file
+
+In the majority of cases you will be in scenario 1 or 2 and it is very easy to prevent these situations. 
+
+=== File overwrites ===
+File overwrites can often be accidental where you don't realize your files will clash with other mods. Files in the <code>media/lua</code> and <code>media/scripts</code> folder will overwrite files with the same relative path to <code>media</code>. Mods which are loaded last (below) another one will overwrite that other mod files.
+
+For example:
+{{CodeSnip
+| lang = bash
+| code =
+# first mod
+📁 media
+    📁 lua
+        📁 shared
+            📄 main.lua
+
+# second mod
+📁 media
+    📁 lua
+        📁 shared
+            📄 main.lua     # this will overwrite the first mod files 
+}}
+
+{{Note|Files being in the [[Mod structure#Common and versioning folders|common or versioning folders]] don't matter, only the currently loaded files of the mods can clash with each others. }}
+
+To prevent this, the solution is very easy: simply make a subfolder named after your mod that will contain all your mod files.
+
+{{CodeSnip
+| lang = bash
+| code =
+# first mod
+📁 media
+    📁 lua
+        📁 client
+        📁 server
+        📁 shared
+            📁 MyFirstMod
+                📄 main.lua
+
+# second mod
+📁 media
+    📁 lua
+        📁 client
+        📁 server
+        📁 shared
+            📁 MySecondMod
+                📄 main.lua     # this will overwrite the first mod files 
+}}
+
+For [[Lua (API)|Lua]] mods, the client, server and shared folders (see [[Lua (API)#Folder structure]]) will not clash between each others. Simply remember it is the relative path '''to the media folder''' that matters for file clashes for Lua and Scripts.
+
+For [[Scripts]] mods, overwriting the vanilla files is almost completely not a solution but they are automatically generated and items are almost all in the same files. The good news is that you should not have to do that thanks to methods to modify existing scripts such as [[Scripts#Soft overrides|soft overrides]] or in some cases documented methods to modify scripts from the Lua (see [[Item (scripts)#Modifying existing item definitions]] and [[CraftRecipe#Modifying existing recipes]]).
+
+== Textures, animations and models ==
+{{Stub|This section needs more information how texture, animation and model files clash with each others between mods.}}
+[[AnimSets]] files will follow the same overwriting rules as Lua and Scripts [[#File overwrites|file overwrites]].
+
+== See also ==
+* [[Mod structure]]
+
+{{Navbox modding}}
+
+{{ll|Category:Modding guides}}

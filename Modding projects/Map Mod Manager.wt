@@ -1,0 +1,42 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.3}}
+{{Infobox
+| title = Map Mod Manager
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Map Mod Manager - preview1.jpeg]]
+    |  1 = [[File:Map Mod Manager - preview1.jpeg|link=]]
+    | p2 = [[File:Map Mod Manager - preview2.jpeg]]
+    |  2 = [[File:Map Mod Manager - preview2.jpeg|link=]]
+    | p3 = [[File:Map Mod Manager - preview3.jpeg]]
+    |  3 = [[File:Map Mod Manager - preview3.jpeg|link=]]
+    | p4 = [[File:Map Mod Manager - preview4.jpeg]]
+    |  4 = [[File:Map Mod Manager - preview4.jpeg|link=]]
+    | p5 = [[File:Map Mod Manager - preview5.jpeg]]
+    |  5 = [[File:Map Mod Manager - preview5.jpeg|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3360392628
+        | Steam page
+        }}
+    }}
+}}
+'''Map Mod Manager''' provides an in-game tool to easily check for incompatibilities between [[Mapping|map]] mods. It will use check the [[Mapping#Cells|cells]] currently being shared between two map mods and indicate if they [[Load order#Mapping|conflict]] or not.
+
+== See also ==
+* [[Mapping]]
+* [[PZ Map Analyser]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}
