@@ -1,0 +1,52 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.3}}
+'''Console files''' provide information about the current state of the game, errors, warnings and other useful information for debugging. Two console files exist:
+* <code>console.txt</code> - contains the client side and singleplayer console output
+* <code>coop-console.txt</code> - contains the server side console output for multiplayer servers
+
+Locally, those files can be found in the [[Game files#Cache folder|cache folder]] of the game instance.
+
+{{CodeSnip
+| code =
+📁 Zomboid
+    📁 mods
+    📁 Workshop
+    📄 console.txt
+    📄 coop-console.txt
+}}
+
+== Logging ==
+{{Note|type=warn|Logging should not released with mods, see [[Mod optimization#Prints are the devil|Mod optimization]] for more information.}}
+The [https://albion.codeberg.page/PZ-JavaDocs/zombie/debug/DebugLog.html DebugLog] is used to log different information in the console files. To do so, three methods exist:
+* [[Lua (language)#Print|print]] - the Lua global function to simply print in the console file.
+* [https://albion.codeberg.page/PZ-JavaDocs/zombie/debug/DebugLog.html#log(zombie.debug.DebugType,java.lang.String) DebugLog.log(DebugType, String)] - the DebugLog method to log a message with a specific [[#Configuring logging|debug type]].
+* [https://albion.codeberg.page/PZ-JavaDocs/zombie/debug/DebugLog.html#log(java.lang.String) DebugLog.log(String)] - the DebugLog method to log a message with the default debug type.
+
+=== Configuring logging ===
+The game provides configurations for what is logged in the console files from the [[Lua debugger]] that you can access with the {{Key|F11}} key then <code>DebugLog</code>.
+
+The DebugLog types available are listed in the [https://albion.codeberg.page/PZ-JavaDocs/zombie/debug/DebugType.html DebugType] enum. You can set a log severity for each type, which are listed in the [https://albion.codeberg.page/PZ-JavaDocs/zombie/debug/LogSeverity.html LogSeverity] enum, with an extra not listed there <code>Unspecified</code>.
+
+== In-game console ==
+[[File:In-game console.png|thumb]]
+
+In [[Debug mode]], an active console window will be displayed in-game when launching a save. It can be hidden and shown again by pressing the <code>~</code> key for QWERTY keyboards or the <code>²</code> key for AZERTY keyboards (the key right under the <code>Esc</code> key). It can also be opened in the main menu even if it doesn't show up by default. You can type [[Lua]] commands directly inside the console window to run code.
+
+It tends to be a bit impractical to read error messages as these will be longer than the console window, [[errorMagnifier]] can prove easier to use for this purpose.
+
+== Console highlight ==
+[[File:PZ Modding Configs - preview.png|thumb]]
+Console highlight can be obtained thanks to an extension for [[Visual Studio Code]] called [https://marketplace.visualstudio.com/items?itemName=emilast.LogFileHighlighter Log File Highlighter] and a configuration file provided by [[PZ Modding Configs]].
+
+{{Clear}}
+
+== See also ==
+* [[Game files]]
+* [[Mod structure]]
+* [[PZ Modding Configs]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding guides}}

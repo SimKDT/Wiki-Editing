@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.0}}
+{{Page version|42.20.3}}
 {{About|game files of Project Zomboid|modding structure of Project Zomboid|Modding structure|explanations of file formats|File formats}}
 This page describes the '''game files''' of Project Zomboid and how to access them. This page will list where different types of files can be found.
 
@@ -13,10 +13,10 @@ The game folder holds most of the game code, files, textures, maps, models etc. 
 This should open a folder named <code>ProjectZomboid/</code> with a similar path to this:
 {{CodeSnip
 | code =
-📁 Steam/
-    📁 steamapps/
-        📁 common/
-            📁 ProjectZomboid/
+📁 Steam
+    📁 steamapps
+        📁 common
+            📁 ProjectZomboid
                 ...
 }}
 
@@ -26,8 +26,8 @@ Also check this [https://www.youtube.com/watch?v=5LCGwCk7RH4 video] which explai
 The cache folder (named <code>Zomboid</code> by default) holds most of your configuration of the game, as well as local mods, and doesn't get deleted when you uninstall the game, holding all your configurations. To access the folder in Windows, simply use the environment variable <code>%UserProfile%</code> in the file explorer. The cache folder will be located at:
 {{CodeSnip
 |code =
-📁 %UserProfile%/
-    📁 Zomboid/
+📁 %UserProfile%
+    📁 Zomboid
         ...
 }}
 
@@ -35,7 +35,7 @@ On Linux, the cache folder is located at:
 {{CodeSnip
 |code =
 📁 ~
-    📁 Zomboid/
+    📁 Zomboid
         ...
 }}
 
@@ -43,13 +43,14 @@ On Linux, the cache folder is located at:
 {{Note|You can change your cache folder with the [[Startup parameters|startup parameter]] {{Code|1=-cachedir=<String Path>}}. If the folder doesn't exist, the game will create it.}}
 
 === Console file ===
+
 The console file is the game log file which contains informations about the state of the game, errors, warnings and other useful informations for debugging. This file is created when the game is launched. [[Lua (language)#Print|Prints]] will show up in the console file.
 
 The console file is located at the following path:
 {{CodeSnip
 |code =
-📁 %UserProfile%/
-    📁 Zomboid/
+📁 %UserProfile%
+    📁 Zomboid
         📄 console.txt
 }}
 
@@ -57,11 +58,11 @@ The console file is located at the following path:
 Most of the files which you'll be interested in when modding will be located in:
 {{CodeSnip
 | code =
-📁 Steam/
-    📁 steamapps/
-        📁 common/
-            📁 ProjectZomboid/
-                📁 media/
+📁 Steam
+    📁 steamapps
+        📁 common
+            📁 ProjectZomboid
+                📁 media
                     ...
 }}
 
@@ -69,10 +70,10 @@ Most of the files which you'll be interested in when modding will be located in:
 The Java files of the game were previously located in the {{Code|zombie}} folder but are not stored in the game file folder next {{Code|media}} in the file {{Code|projectzomboid.jar}}. Tools exist to [[Decompiling game code|decompile the Java code]] to make them readable. Below is the path to the jar file:
 {{CodeSnip
 | code =
-📁 Steam/
-    📁 steamapps/
-        📁 common/
-            📁 ProjectZomboid/
+📁 Steam
+    📁 steamapps
+        📁 common
+            📁 ProjectZomboid
                 📄 projectzomboid.jar
 }}
 
