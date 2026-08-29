@@ -1,0 +1,510 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.3}}
+{{Wip|Each debug tools will be split into their own page.}}
+[[File:Debug-menu.png|thumb|120px|right|The debug menu in-game]]
+[[File:Debug Off 128.png|Closed Debug Icon|thumb|128px|right]]
+[[File:Debug On 128.png|Open Debug Icon|thumb|128px|right]]
+The '''Debug menu''' is a menu containing many debug tools which can be opened in [[debug mode]] via the [[Plumpabug the Aphid|Plumpa bug]] icon in the left tools bar. The main is separated into two tabs:
+* '''Main''' - contains mostly generic tools that users may be interested in
+* '''Dev''' - contains mostly developer tools
+
+== Main ==
+=== General debuggers ===
+A sub-menu with four additional menus:  Game, Blood, Body, Search Mode
+
+==== Game ====
+[[File:general-debuggers.png|thumb|300px|right|General debuggers Game Menu]]
+This option shows all general game options.
+{| class="wikitable theme-blue" style="width: 70%;"
+|+ General Game Options
+! Option
+! style="width: 60%;" | Description
+! Variables
+|-
+| GameSpeed
+| Adjust the game speed by moving the slider. Clicking the left and right arrows will increase/decrease the game speed by 0.1 increment at a time, or 1.0 if holding the sprint key ({{key|LShift}} by default). This value can range from 1 to 1000, with 0.1 increments.
+| default=1<br>fast-forward=5<br>fast-fast-forward=20<br>wait=40
+|-
+| Get the choppah!
+| Spawns [[Metagame#Helicopter event|the helicopter event]].
+| (button)
+|-
+| Remove the choppah!
+| Stops [[Metagame#Helicopter event|the helicopter event]].
+| (button)
+|-
+| Stop current weather
+| Stops the current [[Weather]] event.
+| (button)
+|-
+| Disable radio/tv broadcasting
+| Disables [[radio]] and [[television]] broadcasts.
+| boolean
+|-
+| Disable media line registering
+|
+| boolean
+|}
+{{clear}}
+
+==== Blood ====
+[[File:Debug-General-Blood.png|thumb|300px|right|Parts of the body for blood]]
+
+Change the amount of blood ''on the body'', randomize or zero all body parts.
+{{clear}}
+
+==== Body ====
+[[File:Debug-Player-Stats-Body.png|thumb|300px|right|Player's Body and Status Menu]]
+
+{| class="wikitable theme-blue" style="width: 70%;"
+|+ Player Stats and Body
+! Option
+! style="width: 60%;" | Description
+! Variables
+|-
+| Hunger
+| Slider that affects the [[hunger]] moodle, increases to 1 naturally.
+| min=0<br>max=1
+|-
+| Thirst
+| Slider that affects the [[thirst]] moodle, increases to 1 naturally.
+| min=0<br>max=1
+|-
+| Fatigue
+| Slider that affects the [[tired]] moodle, increases to 1 naturally.
+| min=0<br>max=1
+|-
+| Endurance
+| Slider that affects the [[endurance]] moodle, increases to 1 naturally.
+| min=0<br>max=1
+|-
+| Fitness
+| Slider that affects the [[fitness]] skill. This is a dynamic skill that will increase and decrease depending on the player's actions in 0.2 increments (per level).
+| min=-1<br>max=1
+|-
+| Drunkenness
+| Slider that affects the [[drunk]] moodle, decreases to 0 naturally. A full bottle of alcohol adds 0.41. A higher value will increase the fatigue moodle at a much higher rate.
+| min=0<br>max=100
+|-
+| Anger
+| Slider that affects the [[angry]] moodle, decreases to 0 naturally.
+| min=0<br>max=1
+|-
+| Fear
+| Slider that affects an unknown naturally static value.
+| min=0<br>max=1
+|-
+| Pain
+| Slider that affects the [[pain]] moodle, decreases to 0 naturally. ''Cannot be adjusted manually''
+| min=0<br>max=100
+|-
+| Panic
+| Slider that affects the [[panic]] moodle, decreases to 0 naturally.
+| min=0<br>max=100
+|-
+| Morale
+| Slider that decreases to 0 naturally when stress is above 0.5. When stress is below 0.5, morale will instantly become 1.0.
+| min=0<br>max=1
+|-
+| Stress
+| Slider that affects the [[stress]] moodle, decreases to 0 naturally.
+| min=0<br>max=1
+|-
+| StressFromCigarettes
+| Slider that affects the [[stress]] moodle from [[cigarettes]].
+| min=0<br>max=0.51
+|-
+| TimeSinceLastSmoke
+| Slider that affects time since last [[Cigarettes|cigarette]] was smoked.
+| min=0<br>max=10
+|-
+| BoredomLevel
+| Slider that affects the [[bored]] moodle, decreases to 0 naturally.
+| min=0<br>max=100
+|-
+| UnhappynessLevel <sup>(sic!)</sup>
+| Slider that affects the unhapiness.
+| min=0<br>max=100
+|-
+| Sanity
+| Slider that can be adjusted when the BoredomLevel is above 50.
+| min=0<br>max=1
+|-
+| Wetness
+| Slider that affects the [[wet]] moodle, decreases to 0 naturally.
+| min=0<br>max=100
+|-
+| Temperature
+| Slider that affects the player's body temperature, affecting the [[hyperthermia]] and [[hypothermia]] moodles, decreases to 0 naturally.
+| min=20<br>max=40
+|-
+| ColdDamageStage (hypo 4)
+| Slider that determines how much damage the player will take when the hypoermia moodle is at level 4.
+| min=0<br>max=1
+|-
+| OverallBodyHealth
+| Slider that affects the player's overall health.
+| min=0<br>max=100
+|-
+| CatchAColdStrength
+| Slider that affects the [[cold]] moodles, increaes to 100 naturally when above  1.0.
+| min=0<br>max=100
+|-
+| Sickness
+| Slider that determines the [[sick]] moodle. Adjusts with InfectionLevel and FakeInfectionLevel ''Cannot be adjusted manually''
+| min=0<br>max=1
+|-
+| InfectionLevel
+| Slider that affects the player's progress towards zombification, increasing rate of damage taken.
+| min=0<br>max=100
+|-
+| FakeInfectionLevel
+| Slider that affects the player's sickness, naturally occurs with the [[Traits#Negatives|hypochondriac]] trait.
+| min=0<br>max=100
+|-
+| FoodSicknessLevel
+| Slider that affects the player's sickness, naturally occurs after eating bad food.
+| min=0<br>max=100
+|-
+| Calories
+| Slider that affects the player's [[Nutrition|calories]].
+| min=-2200<br>max=3700
+|-
+| Weight
+| Slider that affects the player's [[weight]].
+| min=35<br>max=130
+|-
+| IsInfected
+| Checkbox that determines whether the player has the zombie infection.
+| boolean
+|-
+| IsFakeInfected
+| Checkbox that determines whether the player should have zombie infection symptoms without being infected.
+| boolean
+|-
+| IsOnFire
+| Checkbox that determines whether the player is on fire.
+| boolean
+|-
+| Ghost
+| Checkbox that determines whether the zombies can see the player, and zombies can be seen regardless of visibility.
+| boolean
+|-
+| God Mode
+| Checkbox that determines whether the player is in god mode. Gives the player invincibility, i.e., takes no damage, max hunger, thirst, etc.
+| boolean
+|-
+| Invisible
+| Checkbox that determines whether the player is in invisible.
+| boolean
+|}
+{{clear}}
+
+==== SearchMode ====
+[[File:Debug-SearchMode.png|thumb|300px|right|Debug Search Mode Menu]]
+
+{| class="wikitable theme-blue" style="width: 70%;"
+|+ SearchMode Debug
+! Option
+! style="width: 60%;" | Description
+! Variables
+|-
+| SearchMode Overlay
+| Activates the grey SearchMode overlay
+| boolean
+|-
+| SearchMode Activated
+| Activates Search Mode
+| boolean
+|-
+| Debug Icons
+| Display a text overlay for every foraging item on the ground.
+| boolean
+|-
+| Debug Icons Locations
+| Display direction arrows to foraging items
+| boolean
+|-
+| Debug Icons Extended Info
+| Display additional info for foraging items
+| boolean
+|-
+| Debug Icons Vision Info
+| Display Vision info
+| boolean
+|-
+| Debug Icons Vision Radius
+| Display visibility radius around foraging items
+| boolean
+|-
+| Debug Search Window Info
+| Display debug info in Search Mode window
+| boolean
+|-
+| Fade Time (Seconds)
+|
+| min 0<br> max 5
+|-
+| Target Radius (Exterior)
+|
+| min <br> max
+|-
+| Target Radius (Interior)
+|
+| min <br> max
+|-
+| Target Gradient Width (Exterior)
+|
+| min <br> max
+|-
+| Target Gradient Width (Interior)
+|
+| min <br> max
+|-
+| Target Blur (Exterior)
+|
+| min <br> max
+|}
+{{clear}}
+
+=== Cheats ===
+[[File:Debug-Cheats.png|thumb|300px|right|In game Debug Cheats Menu]]
+
+{| class="wikitable theme-blue" style="width: 70%;"
+! Option
+! style="width: 60%;" | Description
+! Variables
+|-
+| Invisible
+| Checkbox that makes you invisible to zombies and players.
+| boolean
+|-
+| God Mode
+| Checkbox that makes you immune to all damage, environmental effects, and removes all status effects.
+| boolean
+|-
+| No Clip
+| Checkbox lets you move thru walls and collision iles.
+| boolean
+|-
+| Fast Move
+| Checkbox that makes you change vertical position instantly by pressing page up or down.
+| boolean
+|-
+| Timed Action Instant
+| Checkbox that determines whether your actions are done almost instantly. *NOTE: Not all actions do support this function*
+| boolean
+|-
+| Unlimited Carry
+| Checkbox that determines whether you can carry unlimited amount of items.
+| boolean
+|-
+| Unlimited Endurance
+| Checkbox that determines whether you can carry unlimited amount of <nowiki>[[endurance]]</nowiki>.
+| boolean
+|-
+| Unlimited Ammo
+| Checkbox that determines whether you have unlimited [[ammo]].
+| boolean
+|-
+| Know All Recipes
+| Checkbox that determines whether you know all [[crafting]] and [[building]] recipes.
+| boolean
+|-
+| Build Cheat mode
+| Build anything without materials.
+| boolean
+|-
+| Agriculture Cheat mode
+| Enable debug menu for crop [[Farming]].
+| boolean
+|-
+| Fishing Cheat mode
+|Enable cheat for [[Fishing]].
+| boolean
+|-
+| Health panel Cheat mode
+| Get exact health statistics on the [[Health]] screen, and cure or create injuries.
+| boolean
+|-
+| Mechanics Cheat mode
+| Enable cheats related to [[Vehicle maintenance]].
+| boolean
+|-
+| Moveable Cheat
+| Lets you move anything Moveable object regardless of tools or skills.
+| boolean
+|-
+| Can See Everyone
+|Can see all players on the map and in the world.
+| boolean
+|-
+| Can Hear Everyone
+|Can hear all players in the voice chat.
+| boolean
+|-
+| Zombies Don't Attack.
+|Zombies do not attack you.
+| boolean
+|-
+| Brush Tool
+|Place any tile that you want.
+| boolean
+|-
+| LootZed
+|Show distribution.
+| boolean
+|-
+| LootLog
+|Output all loot spawn in console.txt
+| boolean
+|-
+| Animal Cheat
+|Enable cheats for animals.
+| boolean
+|-
+| Animal Extra Values
+|Show extra values for animal testing.
+| boolean
+|-
+|}
+{{clear}}
+
+=== Climate debuggers ===
+{{Outdated}}
+[[File:climate-control.png|thumb|300px|right|The climate control panel]]
+
+==== FX panel ====
+This is opened by selecting "Other debuggers", then "WeatherFX Panel". Here you can play around with various values such as fog intensity, precipitation levels and precipitation type. Please note that to play around with these you will need to disable the ‘Climate’ manager or the simulated daily climate will overrule your changes.
+
+''Please also note that fog enabled through this method is for testing fog masking around buildings, and won’t look as good/varied as the fog generated by the virtual climate system – as it won’t take into account color or desaturation.''
+
+==== Climate view panels ====
+The debug climate control and climate values panels can be accessed by selecting "Other debuggers", then "Weather plotter" and "Daily values" respectively.
+These panels provide a stockmarket-type graph of the current/recent weather over hours (H1), days (D1) and months (M1)
+
+To see what values are running under the bonnet use the legend/panel on the right, and values turned on will be green. The climate values panel, meanwhile, displays additional info about seasons, cloud cover, etc.
+
+These panels are overall for the provision of information, but that said when you toggle "airMass" on, when it crosses the 0 middle line you will see weather generated when airmass switches from hot/cold.
+
+==== Thunder panel ====
+This panel can be opened by selecting "Other debuggers", then "Thunderbug", but is only useful if there is a storm active. A geographical indication of where the storm is over the PZ map can be seen, as well as lightning locations.
+
+=== Craft Recipes ===
+{{stub}}
+
+=== Entities ===
+{{stub}}
+
+=== Fluids ===
+{{stub}}
+
+=== Items List ===
+[[File:Items-list-viewer.png|thumb|300px|right]]
+Allows the spawning of any item in-game to the player's inventory.
+
+=== Player's Stats ===
+[[File:Player-stats.png|thumb|300px|right]]
+Access to player traits and skills interface.
+
+=== Recipe Monitor ===
+{{stub}}
+
+=== Sandbox Settings ===
+{{stub}}
+
+=== Script Manager ===
+{{stub}}
+
+=== XUI Debugger ===
+{{stub}}
+
+== Dev ==
+[[File:Debug-dev.png|thumb|120px|right|The debug Main menu]]
+The Developer advanced tab of the debug menu.
+
+=== Anim monitor ===
+{{Stub}}
+{{Clear}}
+
+=== Animation Viewer ===
+{{Main|Animation Viewer}}
+Allows to view game's animations using a man wearing only white underwear model or the various [[animal]]s.
+{{Clear}}
+
+=== Attachment Editor ===
+{{Main|Attachment Editor}}
+Gives access to multiple tools to modify and adjust 3D model positions based on various bone attachment points on the character model and adjust them to be properly rotated, translated, or scaled per attachment bone.
+{{Clear}}
+
+=== Audio ===
+{{stub}}
+{{Clear}}
+
+=== Character Debugger ===
+{{stub}}
+
+=== Chunk Debugger ===
+{{Stub}}
+
+=== Forget Recipes ===
+{{Stub}}
+{{Clear}}
+
+=== Global Mod Data ===
+{{Stub}}
+{{Clear}}
+
+=== Global Objects ===
+{{Stub}}
+{{Clear}}
+
+=== isoRegions ===
+[[File:IsoRegionDebug.png|thumb|300px|right|The IsoRegions panel]]
+This will display all buildings (including player-made) and can be used to detect when buildings are fully closed off from the PZ map – and as such will allow fog/precipitation to surround structures, but not appear within them. PLEASE NOTE: this is a real performance hog, so may well slow down the game when turned on.
+{{Clear}}
+
+=== Map Editor ===
+{{Stub}}
+{{Clear}}
+
+=== New UI ===
+{{Stub}}
+{{Clear}}
+
+=== Stash debuggers ===
+[[File:stash-debug-ui.png|thumb|300px|right]]
+Allows the debugging of "annotated map" house stashes.
+{{Clear}}
+
+=== Unit Tests ===
+{{Stub}}
+{{Clear}}
+
+=== Vehicle Editor ===
+{{Stub}}
+Allows for editing in-game vehicles. After opening an empty scenery with vehicle model is shown, camera can be adjusted for views: Front, Rear, Side, From above, From below. On left side an menu for editing vehicle is given.
+{{Clear}}
+
+=== World Flares ===
+{{Stub}}
+{{Clear}}
+
+=== Zombie Population ===
+[[File:Zombie-population.png|thumb|300px|right]]
+Shows all zombies as coloured squares on a map. An yellow square means an active zombie and red inactive one, green square is the player. This window also shows white square outline as the player cell affecting the zomboids' AI, huge white cells affecting zombies, a number of active and inactive zombies in each cell shown in top left corner of cell with zomboids, red cells which shows chunks that contain any buildings in, area of buildings (or just floor tiles, needs more testing), borders of each room of a building and blue shapes which are any furniture or building parts such as walls - both map and player-made. Opening this window for the first time since start-up centers on player, but unfortunately does not follow player, instead view stays in place. Holding RMB (Right Mouse Button, using LMB will move whole window instead) in area of the zombie population window and moving mouse allows to move the view, you can also use scroll to zoom in/out the view.
+{{Clear}}
+
+=== Zomboid Radio ===
+{{Stub}}
+{{Clear}}
+
+== See also ==
+* [[Imgui]]
+* [[Debug scenario]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding}}

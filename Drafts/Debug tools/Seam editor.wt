@@ -1,0 +1,21 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.4}}
+{{Stub|This debug tool needs}}
+[[File:Seam editor.jpg|thumb|The Seam editor UI]]
+The '''Seam editor''' is a UI accessed by pressing {{Key|F9}} while in [[debug mode]] which is supposedly used to edit how roof tiles are connected to each other. It has yet been documented how to use this UI but is probably necessary process when [[Adding new tiles|creating roof tiles]], like with the [[Depthmap editor]] for tiledepths of tiles in general.
+
+The output is a [[scripts]] file stored at the following path, either in the vanilla [[game files]] or in your own [[Mod structure|mod]]:
+{{CodeSnip
+| code =
+📁 media
+    📄 seams.txt
+}}
+
+== See also ==
+* [[Depthmap editor]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Debug tools}}

@@ -75,8 +75,16 @@ This is a [[Template:Navbar|navbar]] used at the top of modding pages to assist 
 * Vector2 class got a new [https://albion.codeberg.page/PZ-JavaDocs/zombie/iso/Vector2.html#mul(float) multiplier method]
 * Signs seem to point to [[ActionGroup]] now finally supporting modding, with modded files getting loaded by the game. This should notably allow for modders to use GrappleZed without any manual installation, but also do advanced [[animation]].
 }}
-{{ToggleBox|title=<div style="text-align: center;">[[Build 42.20.1]] Modding News</div>|id=modding-news-hotfix|class=blue|content=
+{{ToggleBox|title=<div style="text-align: center;">[[Build 42.20.1]] and [[Build 42.20.4]] Modding News</div>|id=modding-news-hotfix|class=blue|content=
+[[Build 42.20.1]]
 * <code>json</code> extension is now allowed for [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#getFileWriter(java.lang.String,boolean,boolean) getFileWriter] (alongside <code>ini</code>, <code>cfg</code>, <code>txt</code>, <code>log</code>)
 * <code>%</code> characters now need to be escaped in the [[translation]]s (e.g. <code>%%</code> for a single <code>%</code> when resolved)
+
+[[Build 42.20.4]]
+* A new security report by Rasmus Moorats, a security researcher and penetration tester, was sent to [[The Indie Stone]] and later released publicly once these issues were fixed. You can read the blog post [https://blog.nns.ee/2026/08/26/project-zomboid-vulns/ here]
+* His blog highlights 3 key vulnerabilities that led to the removal of <code>loadstring</code> which was previously used to interpret Lua code from strings, used by modders and server owners to transmit Lua code to clients. The vulnerabilities were:
+** Lua code injection via <code>loadstring</code> in the Lua sandbox, which could be exploited to run arbitrary code on the client machine sent from the server
+** [[wikipedia:Sandbox (software development)|Sandbox]] escape via the use of <code>ZomboidFileSystem.updateScript</code> to create files bypassing the mod's [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#getFileWriter(java.lang.String,boolean,boolean) extension file writing limitation] which calls the private method <code>ZomboidFileSystem.normalizeToPath</code>
+** <code>ZomboidFileSystem.normalizeToPath</code> vulnerability which led to the ability to write files outside of the intended [[Game files|game directories]], basically anywhere on the computer
 }}
 }}<includeonly/>

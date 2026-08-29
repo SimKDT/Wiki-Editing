@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.2}}
+{{Page version|42.20.3}}
 {{About|the Lua API|a guide to learn how to code with Lua|Lua (language)}}
 Project Zomboid allows modders to program functionalities via a [[Java]] implementation of '''[[Lua (language)|Lua]]''' called Kahlua, which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and allows the use of exposed Java class and methods from Lua scripts.
 
@@ -32,18 +32,12 @@ Events.OnZombieUpdate.Add(OnZombieUpdate)
 In this case, the variable {{Code|zombie}} is an [https://projectzomboid.com/modding/zombie/characters/IsoZombie.html IsoZombie] with various methods that can be used on it. Sometimes it involves creating one yourself with a [[#Constructor]] or directly retrieving the list of objects. Most classes can have multiple instances, like in the case of IsoZombie.
 
 === Parent and subclasses ===
-All Java classes are a subclass to another class, and might also be the parent to subclasses. For example, if we continue on the example of IsoZombie, its parent classes are:
-{{CodeSnip
-| code =
-java.lang.Object
-└── zombie.entity.GameEntity
-    └── zombie.iso.IsoObject
-        └── zombie.iso.IsoMovingObject
-            └── zombie.characters.IsoGameCharacter
-                └── zombie.characters.IsoZombie
-}}
+[[File:Lua (API) - subclasses.png|class=logo-dark|right|500px|The parent and subclass relationship between Java classes with IsoZombie as an example.]]
+All Java classes are a subclass to another class, and might also be the parent to subclasses. On the side here, you can see a representation of this relationship, with an example of the IsoZombie class and its parent and subclasses. 
 
-As such, IsoZombie will inherit all of the fields and methods from its parent classes.
+Subclasses inherit all the public and protected methods and fields from their parent class, while also having their own unique methods and fields, possibly overriding some of the inherited methods. In the [[JavaDocs]], subclasses are listed in the "Direct Known Subclasses" section of the class page. The hierarchy tree with parents is shown at the top of the class page and its inherited methods and fields are listed in the "Method Summary" and "Field Summary" sections of the class page.
+
+{{Clear}}
 
 === Nested classes ===
 A subclass inherits another class, while a '''nested class''' is defined directly in a class and as such has access to even private methods and fields from its original class. In the [[JavaDocs]], nested classes are listed in the “Nested Class Summary” section of the class page. Nested classes are written as <code>ClassName.NestedClassName</code>.

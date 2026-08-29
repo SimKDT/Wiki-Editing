@@ -19,3 +19,7 @@ items:
       input: Latex/Item full type/Item full type.pdf
       output: Latex/Item full type/Item full type.png
     dpi: 200
+  - files:
+      input: Latex/Lua API/subclasses/subclasses.pdf
+      output: Latex/Lua API/subclasses/Lua (API) - subclasses.png
+    dpi: 200

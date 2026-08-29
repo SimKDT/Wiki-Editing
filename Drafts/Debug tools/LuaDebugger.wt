@@ -1,0 +1,83 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.4}}
+[[File:LuaDebugger.jpg|thumb|The Lua Debugger UI]]
+The '''Lua debugger''' is a UI which can be accessed by pressing {{Key|F11}} or which will open when an [[error]] occurs while in [[debug mode]]. It is primarly use as a debugging tool for modders, allowing them to inspect the Lua code and variables in real time via the use of breakpoints or when the error triggers.
+
+The UI is actually composed a few sub-UIs:
+* Top [[#Menu bar|menu bar]] contains buttons to access many debugging tools, features and options as well as the buttons to step forward or continue the execution of the code.
+* [[#Lua files|Lua files]] selector and reloader displays all the loaded Lua files and allows you to [[Hot reloading|hot-reload]] them without having to restart the game.
+* [[#Lua file inspector|Lua file inspector]] displays the content of the selected Lua file and allows you to set breakpoints on any line or reload the file.
+* [[#Coroutine inspection|Coroutine inspection]] displays the list of scope locals and the callstacks.
+* [[#Watch window|Watch window]]
+
+{{Note|type=warn|When your game loading fails very early, the UI can be broken and show white boxes instead of the font characters. It hasn't been yet documented what kind of early failure can cause this however.}}
+
+== Menu bar ==
+[[File:LuaDebugger - menu bar.jpg|1000px]]
+
+The menu bar contains many buttons which will be described below in their order from left to right.
+
+=== Map ===
+{{Stub|section=true|The UI doesn't seem to do much however, so it's unclear what it is used for.}}
+
+Opens a map UI which is similar to the [[Zombie Population]] debug UI, showing you the map in black with all the [https://albion.codeberg.page/PZ-JavaDocs/zombie/iso/BuildingDef.html BuildingDef] instances, the [[Mapping#Cells|256x256 cells]] and the [[IsoPlayer|player]] active cell (see [https://albion.codeberg.page/PZ-JavaDocs/zombie/iso/IsoObject.html#getCell() getCell]).
+
+=== Options ===
+A huge UI which allows you to activate a lot of different debugging visual options. When an option has been modified, it will be highlighted in yellow so you can easily deactivate them back. The options are grouped in categories.
+
+Making a complete list of what all of these options do would be useful, but is currently not done. Taking a peak at the names of these options can possibly help you find something useful based on what you are [[modding]].
+
+The option handler is the class [https://albion.codeberg.page/PZ-JavaDocs/zombie/debug/DebugOptions.html DebugOptions].
+
+{{Note|These options are saved between game sessions, but deactivated automatically when the game is not in [[debug mode]].}}
+
+=== DebugLog ===
+Used to configure the console log output. For more information, see [[Console]].
+
+=== Errors ===
+Simply a UI showing the error messages you received and their stacktrace. Generally you might find [[ErrorMagnifier]] far easier to read and use.
+
+=== Error buttons ===
+These are multiple buttons which allow you to handle the errors and continue running the game. The first one "Break On Error" will stop the Lua debugger from opening when an error occurs, but if you open the UI again it will get reset to the default state.
+
+The second and third buttons are not exactly clear what they use. If you figure it out, feel free to edit this page and add the information.
+
+The fourth one is "Continue" which will continue the execution of the code after an error has occurred. Basically quiting this UI and continuing the game.
+
+=== Font size ===
+The last button on the very right, by default set to <code>Medium</code>, allows you to swap between three font sizes: <code>Small</code>, <code>Medium</code> and <code>Large</code>. This will change the whole Lua debugger UI font size to adjust to your screen size and resolution.
+
+== Lua files ==
+[[File:LuaDebugger - Lua files.jpg|thumb]]
+A UI which displays all the loaded [[Lua (API)|Lua]] files in the game. You can select a file to inspect it in the [[#Lua file inspector|Lua file inspector]] and when hovering a specific file a button on the right of it will appear to [[Hot reloading|hot-reload]] the Lua file.
+{{Clear}}
+
+== Lua file inspector ==
+[[File:LuaDebugger - Lua file inspector.jpg|thumb]]
+A UI which displays the content of the selected [[#Lua files|Lua file]]. You can scroll through the file and double {{Key|mouse|left}} click on a line to set a breakpoint.
+
+{{Note|type=warn|The breakpoints tend to not reset when double clicking on a line, leaving you stuck in the UI permanently until restarting the game sometimes.}}
+{{Clear}}
+
+== Coroutine inspection ==
+[[File:LuaDebugger - Coroutine inspection.jpg|thumb]]
+This UI displays the list of scope locals and the callstacks when in a breakpoint or when an [[error]] occurs. The locals are displayed on the left and the callstacks on the right. When selecting a local, you can inspect its values which will show up in the object callstack on the bottom.
+
+{{Note|type=warn|The UI can be rough to use honestly and it's often unclear what is going on in it.}}
+{{Clear}}
+
+== Watch window ==
+[[File:LuaDebugger - Watch window.jpg|thumb]]
+{{Stub|section=true|It is unclear how this UI can be used. Supposedly it is used to watch variables and their values, but there's no buttons or context menu to add variables to watch. Feel free to edit this page if you figure out how to use it.}}
+{{Clear}}
+
+== See also ==
+* [[Imgui]]
+* [[Debug mode]]
+* [[Debug scenario]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Debug tools}}

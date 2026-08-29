@@ -1,0 +1,127 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.4}}
+{{Wip}}
+[[File:Steam debug mode general launch options.png|300px|right|thumb|Entering <code>-debug</code> in the [[Steam]]'s launch options]]
+'''Debug mode''' is a modified game state in [[Project Zomboid]]. In this mode, the player has access to multiple developer tools which can spawn items, enable various cheats, teleport the player to any destination, and way more.
+
+To enable debug mode, add <code>-debug</code> to the game's [[startup parameters]] prior to booting the game. Various debugging tools will then be available in the game:
+* [[Debug scenario]]s
+* [[Debug menu]]
+* [[Lua debugger]]
+* [[#Contextual menus|Debug contextual menus]]
+<!-- * [[Debug contextual menus]] -->
+
+== Function tools ==
+The '''function tools''' are mostly tools and editors which can be accessed using {{Key|Fn}} keys. Below is a table with the editor tools associated to their respective keybinds.
+{| class="wikitable"
+! Keybind !! Editor tool
+|-
+| {{Key|F2}} || [[In-game map editor]]
+|-
+| {{Key|F3}} || Unloads the character models. Your player shadow is still here and zombies will become shadow zombies.
+|-
+| {{Key|F6}} || Animation states and variables UI.
+|-
+| {{Key|F7}} || [[Vehicle editor]]
+|-
+| {{Key|shift}} + {{Key|F7}} || [[Attachment editor]]
+|-
+| {{Key|F8}} || [[Annotated map editor]]
+|-
+| {{Key|F9}} || [[Seam editor]]
+|-
+| {{Key|shift}} + {{Key|F9}} || [[Depthmap editor]]
+|-
+| {{Key|F11}} || [[Lua debugger]]
+|}
+
+== Contextual menus ==
+:[[File:Debug On 128.png|thumb|128px|right]]
+There are new contextual menus available in the debug mode available from right click menu.  Debug related right click menu's and information are marked with the green bug icon.
+
+=== Main ===
+{{Stub}}
+
+=== UIs ===
+{{Stub}}
+
+=== Objects ===
+Available only when clicking some [[tiles]].
+{{Stub}}
+
+=== Zombies ===
+{{Stub}}
+
+=== Brush Tool Manager ===
+{{Stub}}
+
+=== Copy tile ===
+This option allows to copy and then paste a [[tile]] that is right clicked. There is a submenu to select tile, handy if multiple tiles are present in the spot. A tile ID is also shown.
+
+=== Destroy tile ===
+This option allows to destroy a [[tile]] that is right clicked, similar to the [[sledgehammer]], except it works on any kind of tiles. There is a submenu to select tile, handy if multiple tiles are present in the spot. A tile ID is also shown.
+
+=== Item ===
+
+==== Edit Item ====
+{{Stub}}
+
+==== Destroy Item ====
+Allows to destroy item permanently, similar to trash cans.
+
+== Map options ==
+{{Stub}}
+
+== Command console ==
+Also known as '''Lua Console''' in [[options]].
+{{Stub}}
+
+== Lua Debugger ==
+The '''Lua Debugger''' can be accessed by pressing {{Key|F11}} by default (which can be rebound in [[options]]); breaking into debugger at the next available [[Lua]] entry point. A list of all loaded Lua files are displayed on the right, with the currently selected file above the list. The line highlighted green is the entry point to the debugger, allowing for quick in-game debugging.
+
+=== Map Debugger ===
+The map debugger is opened by clicking the "Map" button at the top. The player can teleport to the location of the cursor, by pressing {{Key|T}}. There is no prompt to inform the user of the teleport; after closing the debugger, the player will have teleported.
+
+=== Options ===
+{{Stub}}
+Within the Lua Debugger menu there is an '''options''' menu with a long drop down, you can select from a variety of sources to help you find further information about your current session. Be careful with these options because some of them might cause your client to freeze and continuously crash upon launch. If this happens you can set the offending option to false in C:\Users\Username\Zomboid\debug-options.init.
+
+=== DebugLog ===
+See [[Console#Configuring logging]] for more information.
+
+=== Errors ===
+{{Stub}}
+
+=== Current Coroutine ===
+{{Stub}}
+
+=== Lua file browser ===
+{{Stub}}
+
+=== Watch Window ===
+{{Stub}}
+
+=== Lua Files ===
+You can use the in-game Lua file browser to search for the .lua file you're modifying and select it where it will be updated in the above window. If you make changes to the file, you can hit the "reload file" button and it will attempt to apply the changes you made in-game, though this is often an unreliable way to test recently updated code.
+
+== Gallery ==
+<gallery>
+File:Modding finding items mod mods military base 0.png|Finding items in debug mode [[Military Research Facility]]
+File:Modding finding items mod mods military base.png|Finding items in debug mode [[Military Research Facility]]
+File:Modding finding items mod mods military base 3.png|Finding items in debug mode [[Military Research Facility]]
+File:Modding finding items mod mods military base 4.png|Finding items in debug mode [[Military Research Facility]]
+File:Modding finding items mod mods military base 5.png|Finding items in debug mode [[Military Research Facility]]
+File:Modding finding items mod mods military base 6.png|Finding items in debug mode [[Military Research Facility]]
+</gallery>
+
+== See also ==
+* [[Imgui]]
+* [[Debug scenario]]
+* [[Debug menu]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding}}
+{{ll|Category:Debug tools}}

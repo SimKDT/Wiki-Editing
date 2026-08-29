@@ -1,0 +1,36 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.4}}
+{{Stub|This debug tool needs more detail on how to use it. Possibly typing out what Crater explains in his video tutorial would be a good start.}}
+[[File:Depthmap editor.jpg|thumb|The Depthmap editor UI]]
+The '''Depthmap editor''' is a UI accessed by pressing {{Key|shift}} + {{Key|F9}} while in [[debug mode]] which is used to edit the tiledepths of tiles. Tile depths are used to provide an equivalent to a normal map for a tile, telling the game how to render each pixel of the tile in the XYZ directions. This allows the game to have rules between tiles on how to render each others when colliding in comparison to the old layer system that [[Build 41]] used, but also how to render items, characters and objects that collide with the tile properly.
+
+The tile depth is created by first applying geometries on the tile, by using the tile depth editor tool. 3 types of geometries are available which are simply [[scripts]] blocks:
+*[https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/box.html box]
+*[https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/cylinder.html cylinder]
+*[https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/polygon.html polygon]
+
+All the geometries of tiles are stored inside the [[scripts]] file [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/root-tilegeometry.html tileGeometry.txt].
+
+The following files will be used to store the depthmap geometries and the sprite assignments for the tiles, either in the vanilla [[game files]] or in your own [[Mod structure|mod]]:
+{{CodeSnip
+| code =
+📁 media
+    📄 tileDepthTextureAssignments.txt
+    📄 tileGeometry.txt
+}}
+
+== Video guide ==
+{{Video
+| id = e0hcX1UWMD8
+| image = Project Zomboid - Depthmap Tutorial.webp
+| name = Project Zomboid - Depthmap Tutorial [B42+]
+}}
+
+== See also ==
+* [[Seam editor]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Debug tools}}

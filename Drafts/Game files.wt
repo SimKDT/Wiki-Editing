@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.3}}
+{{Page version|42.20.4}}
 {{About|game files of Project Zomboid|modding structure of Project Zomboid|Modding structure|explanations of file formats|File formats}}
 This page describes the '''game files''' of Project Zomboid and how to access them. This page will list where different types of files can be found.
 
@@ -23,15 +23,22 @@ This should open a folder named <code>ProjectZomboid/</code> with a similar path
 Also check this [https://www.youtube.com/watch?v=5LCGwCk7RH4 video] which explains two different methods of finding the files.
 
 == Cache folder ==
-The cache folder (named <code>Zomboid</code> by default) holds most of your configuration of the game, as well as local mods, and doesn't get deleted when you uninstall the game, holding all your configurations. To access the folder in Windows, simply use the environment variable <code>%UserProfile%</code> in the file explorer. The cache folder will be located at:
+The cache folder (often referred to as the main {{Path|Zomboid}} directory) contains save files, player settings, local mods, and log outputs. It doesn't get deleted when you uninstall the game, holding all your configurations.
+
+{{Note|Deleting this folder can sometimes fix some game issues, however this will delete your game settings and saves, which you can backup before doing so.}}
+{{Note|You can change your cache folder with the [[Startup parameters|startup parameter]] {{Code|1=-cachedir=<String Path>}}. If the folder doesn't exist, the game will create it.}}
+
+=== Windows ===
+To access the folder in Windows, simply use the environment variable <code>%UserProfile%</code> in the file explorer. The cache folder will be located at:
 {{CodeSnip
 |code =
 📁 %UserProfile%
     📁 Zomboid
-        ...
+        ...	
 }}
 
-On Linux, the cache folder is located at:
+=== Linux ===
+Project Zomboid is Linux native, as such the cache folder will be located in the home directory of the user:
 {{CodeSnip
 |code =
 📁 ~
@@ -39,20 +46,23 @@ On Linux, the cache folder is located at:
         ...
 }}
 
-{{Note|Deleting this folder can sometimes fix some game issues, however this will delete your game settings and saves, which you can backup before doing so.}}
-{{Note|You can change your cache folder with the [[Startup parameters|startup parameter]] {{Code|1=-cachedir=<String Path>}}. If the folder doesn't exist, the game will create it.}}
-
-=== Console file ===
-
-The console file is the game log file which contains informations about the state of the game, errors, warnings and other useful informations for debugging. This file is created when the game is launched. [[Lua (language)#Print|Prints]] will show up in the console file.
-
-The console file is located at the following path:
+If for some reasons you are using the Proton compatibility layer to run the game, the cache folder will be located here:
 {{CodeSnip
 |code =
-📁 %UserProfile%
-    📁 Zomboid
-        📄 console.txt
+📁 Steam
+    📁 steamapps
+        📁 compatdata
+            📁 108600
+                📁 pfx
+                    📁 drive_c
+                        📁 users
+                            📁 steamuser
+                                📁 Zomboid
+                                    ...
 }}
+
+=== Console files ===
+The console files will be located in the cache folder, see [[Console]].
 
 == Media folder ==
 Most of the files which you'll be interested in when modding will be located in:

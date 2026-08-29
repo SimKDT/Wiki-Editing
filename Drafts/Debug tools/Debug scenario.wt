@@ -1,0 +1,51 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.3}}
+[[File:Debug-scenario.png|thumb|300px|UI of the debug scenario list]]
+'''Debug scenarios''' are a list of predefined save states which can be launched from the main menu when in [[debug mode]].  Each scenarios have a set of conditions and settings which can be used to quickly setup the save state. Every scenarios are stored inside the global table <code>debugScenarios</code> (client side only), defined from the Lua files stored inside <code>media/lua/client/DebugUIs/Scenarios</code>, which means you can create your own debug scenarios.
+
+== Available scenarios ==
+{{Stub|A description of what each scenario does and what it is used for would be useful.}}
+* Aiteron's Debug Scenario
+* Basic Debug Scenario
+* Bob Kate House Start
+* Carpentry
+* Fen's Range Day
+* LIFE 1 - START
+* LIFE 2 - END
+* LIFE 2 - POLICE STATION
+* LIFE 2 - START
+* LIFE 3 - FINAL HOUSE ARRIVE
+* LIFE 3 - FINAL HOUSE SURVIVE
+* LIFE 3 - FISHING
+* LIFE 3 - GARAGE
+* LIFE 3 - ROADTRIP
+* LIFE 3 - START AND ESCAPE
+* MP 1 - STADION
+* MarkR
+* Patrick's Debug Scenario
+* Sasha Debug Scenario
+* Steve Profile
+* Swiming pool
+* The Mall
+* Turbo Green Test
+* Turbo Save Test
+* Water
+* Water2
+* Water5
+* Water6
+* WaterDelta
+* WaterDelta2
+* Whole Lotta Weapon
+
+== Debug scenario parameters ==
+{{Stub|Definitions of the parameters used in the debug scenarios would be useful. Preferably should be done in the [[Rosetta Project|PZ Lua Stubdata]].}}
+
+== See also ==
+* [[Imgui]]
+* [[Debug mode]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Debug tools}}
