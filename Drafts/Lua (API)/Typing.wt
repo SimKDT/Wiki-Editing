@@ -1,13 +1,17 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.12.3}}
+{{Page version|42.20.4}}
 '''Typings''' are type annotations used to indicate the types of variables, function parameters, and return values in a programming language. In Lua, typings are often added using comments to provide additional information about the expected types of values, without clashing with the Lua interpreter itself. Those typings are a very powerful to identify potential errors in your code before running it, as well as to get better autocompletion suggestions in your IDE.
 
 A typings system for Lua is provided by language server extensions:
-*[[LuaLs]] - Lua Language Server by Sumneko, which uses LuaCATS annotations for typing.
-*[[EmmyLua]] - EmmyLua plugin for various IDEs, which uses EmmyLua annotations for typing.
+* [[EmmyLua]] {{Sup|recommended|orange}} - EmmyLua plugin for various IDEs, which uses EmmyLua annotations for typing.
+* [[LuaLs]] - Lua Language Server by Sumneko, which uses LuaCATS annotations for typing.
 
 Those two extensions use the same syntax for typings, but EmmyLua has some additional features and annotations. It is suggested to use typings with [[Visual Studio Code]] if you are new but those extensions are also sometimes available for other IDEs.
+
+You can find the LuaLs documentation for typings [https://luals.github.io/wiki/annotations/ here], which is also valid for EmmyLua but with missing elements.
+
+For proper typing support, you need to install [[Umbrella (modding)|Umbrella]] and set it up with your IDE.
 
 == Syntax ==
 Typings in Lua are defined using special comments that start with three dashes {{Code|lang=lua|---}} (in most cases) followed by an annotation keyword. For example:
