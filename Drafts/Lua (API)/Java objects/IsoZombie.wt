@@ -1,34 +1,37 @@
-{{Header|Modding|Java objects}}
-{{Page version|42.3.1}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.2}}
 '''IsoZombie''' is the class [[Zombie|zombies]] use.
 
-==Java doc==
+== Java doc ==
 {{Main|Java documentation}}
 [https://projectzomboid.com/modding/zombie/characters/IsoZombie.html IsoZombie]
 
-==Related Lua events==
+== Related Lua events ==
 Direct Lua events:
-*[[OnZombieCreate]]
-*[[OnZombieDead]]
-*[[OnZombieUpdate]]
+* [[OnZombieCreate]]
+* [[OnZombieDead]]
+* [[OnZombieUpdate]]
 
 Indirect Lua events:
-*[[OnWeaponHitCharacter]] - triggers when an [[IsoPlayer]] hits an [[IsoGameCharacter]], so an [[IsoZombie]] as well as an [[IsoPlayer]].
+* [[OnWeaponHitCharacter]] - triggers when an [[IsoPlayer]] hits an [[IsoGameCharacter]], so an [[IsoZombie]] as well as an [[IsoPlayer]].
 
-==Technical note==
-===Object Pooling===
+== Technical note ==
+
+=== Zombie inventory ===
+Zombies do not get an inventory until they die. If you want to add items to a zombie inventory, you need to do it [[OnZombieDead]].
+
+=== Object Pooling ===
 IsoZombie is a type of class subject to [[Object Pooling]]. This means the instance of IsoZombie is not destroyed when the zombie gets killed or unloaded from the world, but it's recycled to be used later again. This is done for performance reasons to not have to constantly recreate instances of an object which is very impactful in the case of Project Zomboid due to the amount of zombies which can be loaded in at once (imagine loading in the LV Mall zombies without this small optimization boost).
 
 Since [[Build 42]], whenever an IsoZombie instance gets reused to load in a zombie, the event [[OnZombieCreate]] is triggered and can be used to initialize various aspects of zombies.
 
 The problem of [[Object Pooling]] is that associating data specifically to an instance of IsoZombie will be shuffled around different zombie entities whenever the zombie that had this set of data gets unloaded and another zombie reuses this IsoZombie instance. This is problematic to have persistent data attached to a specific zombies and currently no way was found on how to properly identificate zombies after they have been unloaded and reloaded in.
 
-The only method of identification which exists involves the [[PersistentOutfitID]] and has a problem of uniqueness, meaning zombies can share this ID and thus it doesn't properly allow for unique zombie identification.
-
-===Zombie updates===
+=== Zombie updates ===
 Zombies are updated every ticks when visible to the player, but when not currently visible, they are updated less often to save performances.
 
-==Accessing zombies==
+== Accessing zombies ==
 Accessing zombies can be achieved with the various [[#Related Lua events|related lua events]] or with other means. A common useful way to retrieve zombies is by using the <code>getZombieList</code> method from [[IsoCell]]. This method returns a [[ArrayList]] of all zombies currently loaded in the '''player''' cell (and not the world cell !).
 
 {{CodeSnip
@@ -59,13 +62,13 @@ for i = 0, movingObjects:size() - 1 do repeat -- using technique to allow contin
 until true end
 }}
 
-==Spawning zombies==
+== Spawning zombies ==
 Different methods exist to spawn a zombie in. The main thing to watch for is syncing client and server side the spawn of the zombie.
 
-===Clientside===
+=== Clientside ===
 {{Stub|section=true}}
 
-===Serverside===
+=== Serverside ===
 Spawning zombies server side can be achieved by using [[VirtualZombieManager]].
 
 Here is a small example which allows spawning zombies inside of the room of a container getting new loot added to it (fresh or respawned):
@@ -75,29 +78,36 @@ Here is a small example which allows spawning zombies inside of the room of a co
 local n_z = 1 --# of zombies to spawn (int)
 local function onFillContainer(_roomName, _containerType, container)
     if instanceof(container:getParent(), "BaseVehicle") then return end
-    
+
     local sq = container:getSourceGrid()
     if not sq then return end
-    
+
     local sq_room = sq:getRoom()
     if not sq_room then return end
-    
+
     local sq_roomDef = sq_room:getRoomDef()
     if not sq_roomDef then return end
-        
+
     VirtualZombieManager.instance:addZombiesToMap(n_z, sq_roomDef, false) --boolean for allow dead zombies
 end
 Events.OnFillContainer.Add(onFillContainer)
 }}
 
-==Zombie taking damage==
+== Zombie identification ==
+{{Note|First read about [[#Object Pooling]] to understand why zombie identification is a problem.}}
+
+Two methods of identification are currently known
+* the first involves the [[PersistentOutfitID]] and has a problem of uniqueness, meaning zombies can share this ID and thus it doesn't properly allow for unique zombie identification.
+* the second involves setting the zombie as [https://albion.codeberg.page/PZ-JavaDocs/zombie/characters/IsoZombie.html#setReanimatedPlayer(boolean) reanimated]. The zombie data will persist on reload and will be unique to the zombie. However this method should not be used for large amounts of zombies at the risk of causing save bloat as Project Zomboid cannot handle saving too many zombies. This method uses the system of a [[Zombie (moodle)|zombified]] player that should keep its loot when killed.
+
+== Zombie taking damage ==
 When a zombie gets hit, right before getting hit, the event [[OnWeaponHitCharacter]] is triggered. The damage value however is wrong and doesn't represent the actual damage the zombie will take. The actual damage the zombie will take is calculated via a list of factors.
 
 After the zombie gets hit, the event [[OnWeaponHitXp]] triggers.
 
 Everytime a zombie gets hit, a hit counter gets incremented, which increases the next hit damage. This counter is called <code>hitTime</code> and can be accessed with <code>zombie:getHitTime()</code> and set with <code>zombie:setHitTime()</code>.
 
-===Foot stomp and handpush===
+=== Foot stomp and handpush ===
 [[OnWeaponHitCharacter]] gives the weapon but in the case of pushing and foot stomping a zombie, it gives the same weapon <code>"Base.BareHands"</code>. To make the difference between a stomp and a push, you can use:
 {{CodeSnip
 | lang = lua
@@ -127,7 +137,7 @@ Events.OnWeaponHitCharacter.Add(OnWeaponHitCharacter)
 
 Note that the damage value you get when pushing won't actually damage the player. Like stated above, the damage value is wrong and is bad indicator most of the time if the zombie takes damage or not.
 
-===Stop zombie taking damage===
+=== Stop zombie taking damage ===
 To stop a zombie from taking damage, you can use the following code:
 {{CodeSnip
 | lang = lua
@@ -145,7 +155,7 @@ You can check if the zombie will avoid the next hit damage by using <code>zombie
 
 Alternatively, you can also use <code>noDamage</code> which can be accessed with <code>zombie:getNoDamage()</code> and set with <code>zombie:setNoDamage()</code>.
 
-===Stopping a zombie hit reaction===
+=== Stopping a zombie hit reaction ===
 After the hit, the zombie gets a hit reaction. This hit reaction can be stopped by setting the hit reaction to nothing. This can be done by using the following code:
 {{CodeSnip
 | lang = lua
@@ -176,7 +186,7 @@ end
 Events.OnWeaponHitXp.Add(OnWeaponHitXp)
 }}
 
-===Make player unable to push zombie===
+=== Make player unable to push zombie ===
 In the same way, to make a player unable to push a zombie, you can use:
 {{CodeSnip
 | lang = lua
@@ -192,7 +202,7 @@ end
 Events.OnWeaponHitXp.Add(OnWeaponHitXp)
 }}
 
-===Stop knife jaw stabs===
+=== Stop knife jaw stabs ===
 To make a knife jaw stab not kill a zombie, you can intercept it before the hit damages the zombie and make the zombie unable to take damage. The zombie will still play the animation of the knife jawstab however and it will be locked in place during the animation.
 {{CodeSnip
 | lang = lua
@@ -211,7 +221,7 @@ end
 Events.OnWeaponHitCharacter.Add(OnWeaponHitCharacter)
 }}
 
-==Zombie attacking==
+== Zombie attacking ==
 Currently, no proper event exists to detect when a zombie attacks. This can however be checked with the following code:
 {{CodeSnip
 | lang = lua
@@ -244,24 +254,59 @@ Events.OnZombieUpdate.Add(OnZombieUpdate)
 }}
 
 The attack outcome is related to the current animation of the zombie, which is composed of 2 steps:
-*The start of the attack.
-*The result of the attack.
+* The start of the attack.
+* The result of the attack.
 
 <code>zombie:getVariableString("AttackOutcome")</code> retrieves the current attack outcome of the zombie. The attack outcome is a string which can be:
-*<code>""</code> - no attack.
-*<code>"start"</code> - the zombie starts an attack.
-*<code>"success"</code> - the zombie lands its attack.
-*<code>"fail"</code> - the zombie misses its attack.
+* <code>""</code> - no attack.
+* <code>"start"</code> - the zombie starts an attack.
+* <code>"success"</code> - the zombie lands its attack.
+* <code>"fail"</code> - the zombie misses its attack.
 
 <code>"success"</code> can however be misleading as the zombie can still miss the attack and still have this outcome. Use <code>target:getHitReaction()</code> to confirm the target is reacting to an attack, meaning the zombie probably landed its attack. Alternatively, this also allows verifying the type of attack the zombie just landed, if it was a bite, for example.
 
 The code above detects a variation in attack outcome and triggers at <code>"start"</code>, <code>"success"</code> and <code>"fail"</code>. This can be used to detect when a zombie attacks.
 
-==Zombie clothings==
+== Zombie clothings ==
 Due to how performance heavy storing every single zombie current items is, the inventory of a zombie doesn't really exist until it is dead. Thus clothings can't be accessed the same way as for an [[IsoPlayer]] and instead are saved in their current outfit in the form of a [[PersistentOutfitID]].
 
 You can access the current outfit of a zombie with <code>zombie:getOutfitName()</code> and set it with <code>zombie:dressInNamedOutfit("<outfit_name>")</code>.
 
 Alternatively, you can also access the items of the outfit of a zombie by accessing its ItemVisuals. It allows you to modify what item the zombie is currently wearing, how bloody or dirty they are, how many holes etc. See [[ItemVisuals]] but note that any modification to ItemVisuals will be lost when the zombie gets unloaded and reloaded in and thus modifying those need to be achieved everytime the zombie loads in.
 
+== Custom zombie model ==
+There exists two methods to get a custom zombie model to be used on a zombie.
+
+=== Clothing ===
+This method involves using [[#Zombie clothings]] to add a full body clothing piece which will stay below the other clothing. The problem with this method is that the zombie skin will be hidden under the full body suit, meaning that any skin textures clothing (shirts, pants, socks, shoes, etc) will be invisible. You may also get some clipping issues with the clothing if your model is bigger than the original character model.
+
+There are two main ways to handle this:
+* if your zombie shouldn't / doesn't have to keep the original clothing, you can do it with an outfit replacement ([https://albion.codeberg.page/PZ-JavaDocs/zombie/characters/IsoZombie.html#dressInNamedOutfit(java.lang.String) dressInNamedOutfit(outfitName)]). The double advantage is the simplicity of this solution and the fact the zombie will stay dressed in this outfit when reloading the area it is in.
+* if you need to keep the original clothing, then you'll want to use [[ItemVisuals]] to add a new clothing piece. The clothing piece will not persist after reloading the area the zombie is in, so you'll need to [[#Zombie identification|identify]] the zombie and reapply the clothing piece everytime it loads in.
+
+=== Model swap ===
+With the introduction of animals, a method [https://albion.codeberg.page/PZ-JavaDocs/zombie/characters/IsoGameCharacter.html#setIsAnimal(boolean) setIsAnimal] was also introduced which weirdly enough is available for IsoGameCharacter and so for IsoZombie.
+
+Below is a full example of a Deathclaw model being used on a zombie ([https://discord.com/channels/136501320340209664/232196827577974784/1535798053154455582 source]:
+{{CodeSnip
+| lang = lua
+| code =
+local visual = zombie:getHumanVisual()
+
+local model = loadSkinnedZomboidModel(
+    "DeathclawRoot",       -- arbitrary identifier
+    "Skinned/Deathclaw",   -- the model path (relative to models_X folder ?)
+    "Deathclaw_d"          -- the texture path (relative to textures/Body folder ?)
+)
+
+visual:setForceModel(model)
+
+zombie:setIsAnimal(true)
+zombie:resetModel() -- setIsAnimal set to true is required
+zombie:setIsAnimal(false) -- you need to make sure to turn it back to false or this crashes the game
+}}
+
+== Navigation ==
 {{Navbox Java objects}}
+
+{{ll|Category:Java objects}}

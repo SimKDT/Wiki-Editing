@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.0}}
+{{Page version|42.20.2}}
 {{About|an overview about modding|PZwiki project|PZwiki:Project Modding}}
 [[File:SpiffosWorkshop.png|link=https://steamcommunity.com/app/108600/workshop/|frame|right|Spiffo's Workshop is the home of [[Project Zomboid]] mods on [[Steam]]]]
 Modding is the process of creating new content by creating [[mods]] for a game. For Project Zomboid, modding is a natively integrated part of the game with a mod manager and an API to allow modders to create a various quantity of content, from simple items to complex systems. Mods are usually uploaded to the [[Spiffo's Workshop]] which serves as the official method for sharing mods with the community.
@@ -141,11 +141,17 @@ Unlisted external guides are listed below:
 |-
 ! Tutorial !! Type !! Description !! Author !! Last updated
 |-
+| [[Sit-Down Sunday]]
+| Modding presentations
+| Modders teaching others about their modding and game dev knowledge in relation to PZ modding.
+| [[PZ Modding Community]]
+| {{#dateformat:2026-08-02|ymd}}
+|-
 | [https://www.youtube.com/playlist?list=PL91PT-Vd7Vhp_eBA8pE4hCXPcrxHWgr_E PZ Modding Video Guides]
 | General guide
 | Video guides for modding Project Zomboid, covering various aspects of modding.
 | [[User:SirDoggyJvla|SimKDT]]
-| {{#dateformat:2025-11-19|ymd}}
+| {{#dateformat:2026-03-07|ymd}}
 |-
 | [https://github.com/demiurgeQuantified/PZModdingGuides PZ Modding Guides]
 | General guide

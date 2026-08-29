@@ -1,0 +1,66 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Infobox
+| title = Sit-Down Sunday
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Sit-Down Sunday - logo.png]]
+    | 1 = [[File:Sit-Down Sunday - logo.png|link=]]
+    | p2 = [[File:Sit-Down Sunday - first event.png]]
+    | 2 = [[File:Sit-Down Sunday - first event.png|link=]]
+    | p3 = [[File:Sit-Down Sunday - second event.png]]
+    | 3 = [[File:Sit-Down Sunday - second event.png|link=]]
+    | p4 = [[File:Sit-Down Sunday - third event.png]]
+    | 4 = [[File:Sit-Down Sunday - third event.png|link=]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | page=PZ Modding Community
+        | PZ Modding Community
+        }}
+        {{Infobox/socials
+        | type=youtube
+        | link=https://www.youtube.com/playlist?list=PLOrltm0Cof3w
+        | Youtube playlist
+        }}
+    }}
+}}
+'''Sit-Down Sunday''' is a community event organized by the [[PZ Modding Community]] where modders or experienced game devs can come and share their knowledge to other experienced and inexperienced modders. The event is held on a Sunday on the Discord server of the modding community and is recorded and reuploaded for those who could not attend (currently on [https://www.youtube.com/@SimKDT SimKDT's channel]). Anyone is welcome to join the event and ask questions to the speakers. If you have something interesting you want to share, you can propose yourself as a speaker for any date of your choice for a presentation in english.
+
+The following subjects have been covered in the past events:
+* Low-poly modeling, topology
+* Modeling and texturing a gun
+* Modding documentation, setting up a modding environment and modding resources
+
+There are no limitations in how you present your subject, of the time you take, or the subject you want to present, as long as it's related to modding.
+
+== Videos ==
+{{Video
+|id=U8aOKBiXanM
+|image=Sit-Down Sunday - 11th of January 2026 - Topology and low poly.webp
+|name=Sit-Down Sunday - 11th of January 2026 - Topology and low poly
+|float=left
+}}
+{{Video
+|id=IU0b8Rtz1uI
+|image=Sit-Down Sunday - 28th of June 2026 - Modeling and texturing.webp
+|name=Sit-Down Sunday - 28th of June 2026 - Modeling and texturing
+|float=left
+}}
+{{Video
+|id=6CCdLyoo4qk
+|image=Sit-Down Sunday - 2nd of August 2026 - The modding environment.webp
+|name=Sit-Down Sunday - 2nd of August 2026 - The modding environment
+|float=left
+}}
+{{Clear}}
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Miscellaneous projects}}
+{{ll|Category:Modding projects}}
