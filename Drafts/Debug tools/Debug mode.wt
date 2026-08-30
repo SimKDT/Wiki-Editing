@@ -10,7 +10,20 @@ To enable debug mode, add <code>-debug</code> to the game's [[startup parameters
 * [[Debug menu]]
 * [[Lua debugger]]
 * [[#Contextual menus|Debug contextual menus]]
+* And more...
 <!-- * [[Debug contextual menus]] -->
+
+== Activating debug mode ==
+To activate debug mode, the usual way is to add <code>-debug</code> to the game's [[startup parameters]] in [[Steam]]:
+# Right-click the game in the ''Steam Library'', a menu will pop up.
+# Click ''Properties''. A new modal window will appear.
+# By default the 'general' tab in the modal window should be opened, but if not, click it.
+# Look under ''Launch Options'' → ''Selected Launch Option''. 
+# Add <code>-debug</code> to the field.
+# Close the window and launch the game.
+# You should notice the menu has some extra elements, notably with the ''Reset Lua'' button on the bottom right, and the [[Debug scenario]]s available in the middle of the menu.
+
+{{Note|For a more in-depth guide, you will want to read [[Startup parameters#Usage|Startup parameters]].}}
 
 == Function tools ==
 The '''function tools''' are mostly tools and editors which can be accessed using {{Key|Fn}} keys. Below is a table with the editor tools associated to their respective keybinds.
@@ -69,51 +82,6 @@ This option allows to destroy a [[tile]] that is right clicked, similar to the [
 
 ==== Destroy Item ====
 Allows to destroy item permanently, similar to trash cans.
-
-== Map options ==
-{{Stub}}
-
-== Command console ==
-Also known as '''Lua Console''' in [[options]].
-{{Stub}}
-
-== Lua Debugger ==
-The '''Lua Debugger''' can be accessed by pressing {{Key|F11}} by default (which can be rebound in [[options]]); breaking into debugger at the next available [[Lua]] entry point. A list of all loaded Lua files are displayed on the right, with the currently selected file above the list. The line highlighted green is the entry point to the debugger, allowing for quick in-game debugging.
-
-=== Map Debugger ===
-The map debugger is opened by clicking the "Map" button at the top. The player can teleport to the location of the cursor, by pressing {{Key|T}}. There is no prompt to inform the user of the teleport; after closing the debugger, the player will have teleported.
-
-=== Options ===
-{{Stub}}
-Within the Lua Debugger menu there is an '''options''' menu with a long drop down, you can select from a variety of sources to help you find further information about your current session. Be careful with these options because some of them might cause your client to freeze and continuously crash upon launch. If this happens you can set the offending option to false in C:\Users\Username\Zomboid\debug-options.init.
-
-=== DebugLog ===
-See [[Console#Configuring logging]] for more information.
-
-=== Errors ===
-{{Stub}}
-
-=== Current Coroutine ===
-{{Stub}}
-
-=== Lua file browser ===
-{{Stub}}
-
-=== Watch Window ===
-{{Stub}}
-
-=== Lua Files ===
-You can use the in-game Lua file browser to search for the .lua file you're modifying and select it where it will be updated in the above window. If you make changes to the file, you can hit the "reload file" button and it will attempt to apply the changes you made in-game, though this is often an unreliable way to test recently updated code.
-
-== Gallery ==
-<gallery>
-File:Modding finding items mod mods military base 0.png|Finding items in debug mode [[Military Research Facility]]
-File:Modding finding items mod mods military base.png|Finding items in debug mode [[Military Research Facility]]
-File:Modding finding items mod mods military base 3.png|Finding items in debug mode [[Military Research Facility]]
-File:Modding finding items mod mods military base 4.png|Finding items in debug mode [[Military Research Facility]]
-File:Modding finding items mod mods military base 5.png|Finding items in debug mode [[Military Research Facility]]
-File:Modding finding items mod mods military base 6.png|Finding items in debug mode [[Military Research Facility]]
-</gallery>
 
 == See also ==
 * [[Error]]

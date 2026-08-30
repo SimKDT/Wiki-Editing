@@ -1,19 +1,21 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.18.0}}
+{{Page version|42.20.4}}
 '''Mapping''' in Project Zomboid consist of creating new maps which are either standalone to the vanilla [[Knox Country]] or directly inserted inside it. This is done by creating a new map cell, which is a 300x300 tile area in [[Build 41]] and 256x256 in [[Build 42]] (see [[#Cells]] for more information). Replacing an existing cell is done by overriding the existing one, which means that the entire cell must be replaced, including its terrain data and any structures within it. This means it is not possible to simply place a single building in an existing cell without remaking all the surrounding buildings as well.
 
 You can access a full view render of the [[Knox Country]] map via the [[Project Zomboid Map Project]].
 
 == Mapping tools ==
 No releases of the [[Mapping tools (official)|official mapping tools]] have been made for [[Build 42]] but these tools are a public project on GitHub which can be compiled by anyone and are fully usable to make maps. The best is to use one of the available community made tools which are based more or less on the official Build 42 mapping tools:
-* [[Mapping tools (Alree)]] - Created by Alree, they are a fork of the [[Build 41]] official mapping tools and implemented changes from before the April 2025 build of the official Build 42 tools. While a good option, its parent project not being the Build 42 official tools means it may miss some of the latest changes and improvements made to the official tools, but it is still a good and widely used option for mapping in Build 42.
+* [[Mapping tools (Alree)]] - Created by Alree, they are a fork of the [[Build 41]] official mapping tools and implement changes from the official Build 42 tools.
 * [[Mapping tools (Community Edition)]] - Created by Crater, it is a direct fork of the Build 42 official tools and merges some elements from Alree's tools while also adding improvements on top of that.
 
 {{Note|While the official mapping tools for Build 42 are not yet released, the community tools still provide a reliable way to create maps for Build 42, without any serious problems that should arise from moving to the official tools in the future.}}
 
 [[The Indie Stone]] stated in the [[NEXT STEPS 2]] blog post that the mapping tools should be released after the stable release planned for [[Build 42.20.0]] has received hotfixes and such:
 {{Quote|author=[[The Indie Stone]] in the [[NEXT STEPS 2]] blog post|text=After we hit Stable, once hot fixing and such is over, we will be releasing both our latest mapping tools (WorldZed, TileZed, etc.) and our in-house animation editor and integration tool, AnimZed. We believe that having greater control over animations will be of huge benefit to modders looking to unleash their creativity.}}
+
+An unofficial compilation of the official mapping tools is often distributed by the creator of the [[Mapping tools (Alree)]] on Google Drive links. The latest in date can be found [https://drive.google.com/file/d/1fCPFylQbRagLkFqFS1nrk1bGFjlMV0VA/view?usp=drive_link here]. They do not support that version and simply raw compile it, without providing any changes or bug fixes to it.
 
 [[File:Mapping tools - diagram.png|center|800px|class=logo-dark]]
 

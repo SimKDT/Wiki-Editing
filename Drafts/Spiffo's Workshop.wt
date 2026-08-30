@@ -1,6 +1,5 @@
 {{LangSwitch}}
-{{Navbar_modding}}
-{{Page version|42.11.0}}
+{{Navbar modding}}
 {{Infobox
 | title = Spiffo's Workshop
 | class = theme-blue
@@ -55,17 +54,17 @@ Steam/
 {{Note|type=warn|Local mods should not be put inside this folder. For that, see the [[Mods#Manual local installation|Mods]] page.}}
 
 == Rating system ==
-The Steam Workshop features a review system where players can give an upvote or a downvote to a mod. A star rating system comes along, allowing mods to be rated from 1 to 5 stars. In theory, 1 to 5 stars could be shown but in pratice this is actually impossible and only a minimum of 3 stars can be achieved, up to 5 stars.
+The Steam Workshop features a review system where players can give an upvote or a downvote to a mod. A star rating system comes along, allowing mods to be rated from 1 to 5 stars. In theory, 1 to 5 stars could be shown but in practice this is actually impossible and only a minimum of 3 stars can be achieved, up to 5 stars.
 
 Based on a study by the [[Unofficial Modding Discord]]<ref>[https://docs.google.com/spreadsheets/d/1L2xuLMsr92zEuP4mFmWDOipKStj3E1rktOMaizFFjsY/edit?pli=1&gid=0#gid=0 Science for Steam] - [https://chuckleberry-finn.github.io/ Chuckleberry Finn]</ref>, it was determined that the number of stars requires a set specific amount of upvotes and downvotes to reach a certain star rating, '''not based on the ratio of upvotes to downvotes'''. Below are some of the results of the study for the amount of upvotes for no downvotes to reach each star rating:
 * 3 stars: 25 upvotes
 * 4 stars: 26 upvotes
 * 5 stars: 150 upvotes
 
-The exact impact of downvotes is unclear, but it seems as a rule of thumb that one downvote adds 2 upvotes to the required amount to reach the next star rating. This theory doesn't seem to work for the 3 stars rating and in some cases of large amounts of downvotes.
+[https://steamcommunity.com/sharedfiles/filedetails/?id=3691688872 This Steam guide] from Garry's Mod goes in-depth on the calculation of the rating system.
 
 == See also ==
-*https://thejaviertc.github.io/steam-workshop-stats/user - a tool to check the stats of items from Steam modders.
+* https://thejaviertc.github.io/steam-workshop-stats/user - a tool to check the stats of items from Steam modders.
 
 == References ==
 <references/>
