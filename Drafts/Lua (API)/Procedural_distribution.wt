@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.3|2=405935}}
+{{Page version|42.20.4}}
 '''Procedural distribution''' explains how the loot system of the game works and how you can add your own loot to the procedural distribution.
 
 Tools exist to make it easier to manage distributions in your mods:
@@ -183,6 +183,7 @@ local myDistribution = {
 local ProceduralDistributions_list = ProceduralDistributions.list
 local table_insert = table.insert
 
+---@param distrib table<string, {items: table<number, string|number>?, junk: table<number, string|number>?}>
 local function insertInDistribution(distrib)
     -- iterate through every given distributions
     for k,v in pairs(distrib) do
@@ -194,16 +195,16 @@ local function insertInDistribution(distrib)
         local ProceduralDistributions_list_k_items = ProceduralDistributions_list_k.items
         if items then
             for i = 1,#items do
-                table_insert(ProceduralDistributions_list_k_items,items[i])
+                ProceduralDistributions_list_k_items[#ProceduralDistributions_list_k_items+1] = items[i]
             end
         end
 
         -- insert junk
         local junk = v.junk
         local ProceduralDistributions_list_k_junk = ProceduralDistributions_list_k.junk
-        if junk then
+        if junk and ProceduralDistributions_list_k_junk then
             for i = 1,#junk do
-                table_insert(ProceduralDistributions_list_k_junk,junk[i])
+                ProceduralDistributions_list_k_junk[#ProceduralDistributions_list_k_junk+1] = junk[i]
             end
         end
     end

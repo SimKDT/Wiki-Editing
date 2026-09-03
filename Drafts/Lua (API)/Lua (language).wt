@@ -1,16 +1,17 @@
-{{Header|Modding|Modding guides}}
-{{Page version|42.3.1}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{About|the Lua language|API to learn how to hook to Project Zomboid by using Lua|Lua (API)}}
 '''Lua''' is a language heavily used in '''Project Zomboid'''. Its knowledge is handy if one plans to do any [[modding]] or just understand how the game works. It must be noted that Project Zomboid doesn't uses the last versions of Lua but instead a modified version of [https://www.lua.org/manual/5.1/ Lua 5.1]. The page explains the general knowledge needed of the Lua language to get started in programming in Lua but for specificities regarding the API, see the [[Lua (API)]] page.
 
-==What is Lua?==
+== What is Lua? ==
 Lua is a powerful, fast, surprisingly lovely and simple scripting language. It is easily embedded into Java code (which Project Zomboid is written in) and thus was an ideal choice for the Indie Stone to introduce to the modding community. Lua appeared from the 0.2.0 test versions onwards, resulting in some fantastic mods. Some of the initial mods have gone on to be implemented as part of the vanilla game (Stormy's [https://web.archive.org/web/20130509044157/http:/www.theindiestone.com/community/viewtopic.php?f=33&t=6544 Reloading Mod], RobertJohnson's [https://web.archive.org/web/20121105020204/http:/theindiestone.com/community/viewtopic.php?f=31&t=8926 Farming Mod] and [https://web.archive.org/web/20120831072028/http:/theindiestone.com/community/viewtopic.php?f=31&t=8968 Camping Mod]).
 
-==Getting started==
-===Tools===
+== Getting started ==
+
+=== Tools ===
 To starting writing in Lua, it is suggested to use a text editor that supports Lua syntax highlighting, and even better a proper [https://en.wikipedia.org/wiki/Integrated_development_environment IDE] to organize your projects and more easily manage files. The most popular and suggested IDE is [[Visual Studio Code]] due to existing tools that add Project Zomboid Lua support.
 
-===Learning Lua===
+=== Learning Lua ===
 Due to its simplicity, Lua is a language easily picked up by both programmers and non-programmers alike. You can find many resources online that can help you learn it a bit better.
 
 Alternatively, you can test some Lua codes by utilizing a Lua interpreter such as [https://onecompiler.com/lua OneCompiler]. Of course, keep in mind that features beyond the standard Lua 5.1 may not work and some differences can exist with the original Lua 5.1, and of course no access to Project Zomboid's [[Lua (API)]] exists in this outside interpreter.
@@ -19,11 +20,11 @@ The following sections will explain in detail the various aspects of Lua that yo
 
 {{Note|It is recommanded to read the article [[Mod optimization]] to understand how to optimize your mods and make them run faster. Things that are available in Project Zomboid Lua can have important performance impact such as prints or even functions.}}
 
-==Print==
+== Print ==
 The print function is used to output text to the console. This is useful for debugging purposes, as it allows you to see the values of variables and the flow of your code. The print function can take any number of arguments, which will be concatenated together and output to the console. For example:
 {{CodeSnip
 | lang = lua
-| code = 
+| code =
 print("Hello World!") -- Output: Hello World!
 
 -- alternatively
@@ -34,7 +35,7 @@ This code will output "Hello World!" in the console. In Project Zomboid, this wi
 
 {{Note|type=error|Printing too much text can slow down the game immensely, see [[Mod optimization#Prints are the devil|printing performance impact]]. After printing too much in the console, this can also lead to a major console file size which can be counted in gigabytes.}}
 
-==Variables==
+== Variables ==
 Variables are used to store data that can be accessed and modified throughout your code. Variables can store a variety of data types, such as numbers, strings, and tables. Variables in Lua are dynamically typed, meaning that you do not need to specify the type of a variable when you declare it. For example:
 {{CodeSnip
 | lang = lua
@@ -55,7 +56,7 @@ local age = person.age -- age now references the age entry in the person table
 
 In this example, the `person` table contains two entries: `name` and `age`. The variables `name` and `age` are then assigned the values of the corresponding entries in the `person` table. This allows you to easily access and manipulate the data stored in the table.
 
-===Local and global===
+=== Local and global ===
 Variables can be declared as local or global. Local variables are only accessible within the scope in which they are declared, while global variables are accessible throughout Project Zomboid. For example:
 {{CodeSnip
 | lang = lua
@@ -71,7 +72,7 @@ In this example, <code>x</code> is a global variable, while <code>y</code> is a 
 
 {{Note|type=warn|It is recommended to use local variables as much as possible to avoid polluting the global scope of your file. This will help you avoid conflicts with other mods and the game itself. If you need to access variables defined in a file from another file, use [[#Modules]].}}
 
-===Data types===
+=== Data types ===
 Lua has several data types that can be stored in variables. The most common data types are numbers, strings, and tables. Numbers can be integers or floating-point numbers, strings are sequences of characters enclosed in quotes, and tables are collections of key-value pairs. For example:
 {{CodeSnip
 | lang = lua
@@ -96,7 +97,7 @@ local numbers = {1, 2, 3, 4, 5}
 print(type(numbers)) -- Output: table
 }}
 
-===Arithmetic operators===
+=== Arithmetic operators ===
 Lua supports several arithmetic operators that can be used to perform mathematical operations on numbers. The most common arithmetic operators are addition (+), subtraction (-), multiplication (*), division (/), and modulus (%). For example:
 {{CodeSnip
 | lang = lua
@@ -110,7 +111,7 @@ local quotient = x / y -- quotient is 0.5
 local remainder = x % y -- remainder is 10
 }}
 
-===Precedence and associativity===
+=== Precedence and associativity ===
 Arithmetic operators in Lua follow the standard rules of precedence and associativity. Operators with higher precedence are evaluated before operators with lower precedence. Operators with the same precedence are evaluated from left to right. For example:
 {{CodeSnip
 | lang = lua
@@ -120,7 +121,7 @@ local result = 10 + 20 * 2 -- result is 50
 
 In this example, the multiplication operator (*) has higher precedence than the addition operator (+), so it is evaluated first. The result is then added to 10 to get the final result of 50.
 
-===Boolean operators===
+=== Boolean operators ===
 Lua also supports boolean operators that can be used to perform logical operations on boolean values. The most common boolean operators are `and`, `or`, and `not`. For example:
 {{CodeSnip
 | lang = lua
@@ -134,7 +135,7 @@ result = not x -- result is false
 
 {{Note|<code>false</code> and <code>nil</code> are considered as false in Lua, while <code>true</code> and any other value are considered as true.}}
 
-===Relational operators===
+=== Relational operators ===
 Lua supports several relational operators that can be used to compare values. The most common relational operators are `==` (equal), `~=` (not equal), `<` (less than), `>` (greater than), `<=` (less than or equal to), and `>=` (greater than or equal to). For example:
 {{CodeSnip
 | lang = lua
@@ -149,7 +150,7 @@ result = x > y -- result is false
 result = x >= y -- result is false
 }}
 
-===Length operator===
+=== Length operator ===
 The length operator <code>#</code> can be used to get the length of a string or the number of elements in a table. For example:
 {{CodeSnip
 | lang = lua
@@ -165,7 +166,7 @@ print(#numbers) -- Output: 5
 
 This operator will not count keys-values in a table, but only the values in an array-like table.
 
-==Tables==
+== Tables ==
 Tables are a fundamental data structure in Lua that can be used to store and organize data. Tables can store a variety of data types, including numbers, strings, and other tables. Tables can be indexed by keys, which can be strings, numbers, or other data types, or act as pseudo arrays. For example:
 {{CodeSnip
 | lang = lua
@@ -176,6 +177,7 @@ print(person.name) -- Output: John
 print(person.age) -- Output: 30
 
 -- array like table
+-- they are 1-indexed, meaning the first element is at index 1, not 0 like other languages
 local numbers = {1, 2, 3, 4, 5}
 print(numbers[1]) -- Output: 1
 print(numbers[2]) -- Output: 2
@@ -190,7 +192,40 @@ Tables can be used to store and organize data in a structured way, making it eas
 
 {{Note|type=warn|All tables are technically key-tables which is why "arrays" (<code>{5,6,"hello"}</code>) are pseudo-arrays. This makes them more costly than actual arrays but it is possible to create true arrays by using the <code>table.newarray()</code> function (see [[Mod optimization#Array tables|proper array tables]]).}}
 
-===Table Iteration===
+=== Inserting values into tables ===
+You can insert new values inside a table in two different ways. The first way is to use the <code>table.insert</code> function, which allows you to insert a value inside an array-like table:
+{{CodeSnip
+| lang = lua
+| code =
+local numbers = {1, 2, 3, 4, 5}
+table.insert(numbers, 6) -- insert 6 at the end of the table
+}}
+
+A more efficient way of doing this is to directly assign a value to the next index of the table:
+{{CodeSnip
+| lang = lua
+| code =
+local numbers = {1, 2, 3, 4, 5}
+numbers[#numbers + 1] = 6 -- #numbers equals 5, so 5+1 inserts the new value right after the last value in the table
+}}
+
+The other way to insert values is for a key-value table, which is done by directly assigning a value to a key in the table:
+{{CodeSnip
+| lang = lua
+| code =
+local person = {name = "John", age = 30}
+person.address = "New York" -- insert a new key-value pair into the table
+print(person.address) -- Output: New York
+}}
+
+Technically, both table types can be mixed, but it is not recommended to do so, and instead you should have separate tables for each type of data structure.
+{{CodeSnip
+| lang = lua
+| code =
+local mixedTable = {1, 2, 3, name = "John", age = 30}
+}}
+
+=== Table Iteration ===
 Tables can be iterated over using the <code>pairs</code> and <code>ipairs</code> functions. The <code>pairs</code> function iterates over the key-value pairs in a table, while the <code>ipairs</code> function iterates over the values in a table with integer keys. For example:
 {{CodeSnip
 | lang = lua
@@ -208,19 +243,24 @@ for index, value in ipairs(numbers) do
 end
 }}
 
-{{Note|<code>pairs</code> can also be used to iterate over arrays but it will also iterate over the keys which are not integers if you mixed both.}}
+<code>pairs</code> will actually also iterate over integer keys, but it will not guarantee the order of the iteration.
 
-'''However''', for arrays, it is recommended to not use any of these functions and instead use a simple for loop. This is because the <code>ipairs</code> and <code>pairs</code> function are very costly in terms of performance (see [[Mod optimization#pairs and ipairs|pairs and ipairs optimization]]).
+{{Note|type=warn|<code>ipairs</code> and <code>pairs</code> are performance heavy, see [[Mod optimization#pairs and ipairs|pairs and ipairs optimization]].}}
+
+For arrays, it is recommended to not use any of these functions and instead use a simple for loop using the [[#Length operator|table size]]. 
 {{CodeSnip
 | lang = lua
 | code =
 local numbers = {1, 2, 3, 4, 5}
+
+-- we manually retrieve the values
 for i = 1, #numbers do
-    print(i, numbers[i])
+    local value = numbers[i]
+    print(i, value)
 end
 }}
 
-===Lookup tables===
+=== Lookup tables ===
 Lookup tables are tables that are used to map keys to values. They can be used to store data that can be accessed quickly and efficiently. They can notably be extremely efficient when needing to check for specific values or associations, providing a fast way to retrieve corresponding values on conditions. Lookup tables can also be used to emulate basic support for enums in Lua. For example:
 {{CodeSnip
 | lang = lua
@@ -274,7 +314,7 @@ local status = healthStatus[health]
 print("Health status:", status or "Unknown") -- Output the health status
 }}
 
-==Functions==
+== Functions ==
 Functions are blocks of code that can be called and executed at any point in your program. Functions can take arguments, perform operations, and return values. Functions in Lua are first-class citizens, meaning that they can be assigned to variables, passed as arguments to other functions, and returned from other functions. For example:
 {{CodeSnip
 | lang = lua
@@ -300,8 +340,8 @@ Functions can also be assigned to variables, passed as arguments to other functi
 
 {{Note|type=warn|Functions overhead can be performance heavy, see [[Mod optimization#The less function calls, the better|functions optimization tips]].}}
 
-===Decoration===
-Decorating a function is a way to add additional functionality to a function without modifying its original code. This can be done by wrapping the function in another function that adds the desired functionality. For example:
+=== Decoration ===
+Decorating a function (also known as hooking) is a way to add additional functionality to a function without modifying its original code. This can be done by wrapping the function in another function that adds the desired functionality. For example:
 {{CodeSnip
 | lang = lua
 | code =
@@ -341,7 +381,7 @@ end
 
 This can be applied to any functions defined by the game or by other mods to add additional functionality without modifying the original code. It is '''HIGHLY''' recommended to use this method to avoid conflicts with other mods if you don't purely need to overwrite base functionalities.
 
-==Nil==
+== Nil ==
 The <code>nil</code> value is used to represent the absence of a value. Variables that have not been assigned a value are automatically set to <code>nil</code>. For example:
 {{CodeSnip
 | lang = lua
@@ -380,7 +420,7 @@ end
 
 However, it is important to note that <code>nil</code> is not the same as <code>false</code> (<code>nil ~= false</code>). <code>nil</code> is used to represent the absence of a value, while <code>false</code> is a boolean value that represents false.
 
-===Nil and tables===
+=== Nil and tables ===
 You can remove a value in a key-table by setting it to <code>nil</code>. This will remove the key-value pair from the table. For example:
 {{CodeSnip
 | lang = lua
@@ -426,7 +466,7 @@ end
 
 <code>pairs</code> on the other hand will not break and will iterate over all the values in the table. To remove values from an array-like table, it is recommended to use <code>table.remove</code> instead as this will move every subsequent element down in the array, maintaining the integrity of the indices and allowing <code>ipairs</code> and <code>#</code> to work as intended.
 
-==For loops==
+== For loops ==
 For loops are used to iterate over a sequence of values and perform operations on each value. For loops in Lua can be used to iterate over arrays, tables, and other sequences of values. For example:
 {{CodeSnip
 | lang = lua
@@ -453,17 +493,17 @@ For loops in Lua can be used to iterate over a range of values, with an optional
 {{CodeSnip
 | lang = lua
 | code =
-for i = 1, 5 do 
+for i = 1, 5 do
     repeat
         if i == 3 then
             break
         end
-        print(i) -- Output: 1, 2
-    until true 
+        print(i) -- Output: 1, 2, 4, 5
+    until true
 end
 }}
 
-===Custom iterators===
+=== Custom iterators ===
 You can create [https://www.lua.org/pil/7.1.html custom iterators] in Lua by defining a custom iterator function. {{Code|ipairs}} is a built-in iterator function with the following shape:
 {{CodeSnip
 | lang = lua
@@ -490,7 +530,7 @@ function my_iterator(t, index)
     local nextValue = t[nextIndex]
     if nextValue ~= nil then
         -- make sure that every numbers are doubled
-        if type(nextValue) == "number" then 
+        if type(nextValue) == "number" then
             nextValue = nextValue * 2
         end
         return nextIndex, nextValue
@@ -500,7 +540,7 @@ end
 
 When the iterator function returns {{Code|nil}}, the iteration stops.
 
-==While loops==
+== While loops ==
 While loops are used to repeat a block of code while a condition is true. While loops in Lua can be used to repeat a block of code until a condition is false. For example:
 {{CodeSnip
 | lang = lua
@@ -525,12 +565,12 @@ while i <= 5 do
             break
         end
         print(i) -- Output: 1, 2, 4, 5
-    until true 
+    until true
     i = i + 1
 end
 }}
 
-==Repeat until==
+== Repeat until ==
 Repeat until loops are used to repeat a block of code until a condition is true. Repeat until loops in Lua can be used to repeat a block of code until a condition is true. For example:
 {{CodeSnip
 | lang = lua
@@ -560,7 +600,7 @@ for i = 1, 5 do
 end
 }}
 
-==Conditional statements (if)==
+== Conditional statements (if) ==
 Conditional statements are used to execute different blocks of code based on the value of a condition. Conditional statements in Lua can be used to execute different blocks of code based on the value of a condition. For example:
 {{CodeSnip
 | lang = lua
@@ -577,7 +617,7 @@ end
 
 Conditional statements in Lua can be used to execute different blocks of code based on the value of a condition. Conditional statements can be used to create branching logic in your code, allowing you to handle different cases and scenarios. But for this last case, you can utilize key-value tables to create a switch-case like structure.
 
-==Switch-case using tables==
+== Switch-case using tables ==
 Lua does not have a built-in switch-case statement like some other languages, but you can achieve similar functionality using key-value tables. For example:
 {{CodeSnip
 | lang = lua
@@ -612,7 +652,7 @@ func() -- Output: Unknown action
 
 In this example, the `actions` table contains functions for different actions. The `action` variable is used to look up the corresponding function in the `actions` table. If the action is not found, the `default` function is used. This allows you to create a switch-case like structure using tables.
 
-==Do end blocks==
+== Do end blocks ==
 Do end blocks are used to create a block of code that can be executed as a single unit. For example:
 {{CodeSnip
 | lang = lua
@@ -627,7 +667,7 @@ end
 
 However this block is mostly used to limit the scope of variables and functions. This is useful to avoid polluting the global scope of your file with variables that are only used in a specific block of code.
 
-==Modules==
+== Modules ==
 Modules are used to organize and encapsulate code into reusable units. Modules in Lua can be used to organize and encapsulate code into reusable units. Modules can contain functions, variables, and other data that can be accessed and used by other parts of your code. For example:
 {{CodeSnip
 | lang = lua
@@ -665,7 +705,7 @@ print(result) -- Output: 30
 print(mymodule.PI) -- Output: 3.14159
 }}
 
-==String manipulation==
+== String manipulation ==
 Strings are used to store and manipulate text data. Strings in Lua can be used to store and manipulate text data. Strings can be concatenated using the <code>..</code> operator. For example:
 {{CodeSnip
 | lang = lua
@@ -699,15 +739,15 @@ print(message) -- Output: Hello, John! You are 30 years old.
 
 This can even be used alongside [[Translations]] files to have dynamic text translated in different language.
 
-==Tips and tricks==
-*Check [[Mod optimization]] to learn how to optimize your mods and make them run faster.
+== Tips and tricks ==
+* Check [[Mod optimization]] to learn how to optimize your mods and make them run faster.
 
-===Readability===
-*Ask yourself if you read your code in a year, would you understand it? If not, you should improve it's readability.
-*Use proper indentation to make your code more readable.
-*Use descriptive variable and function names to make your code easier to understand.
-*Use comments to explain your code and document your functions.
-*Limiting making nested indentation is suggested. You can use guard clauses to avoid them:
+=== Readability ===
+* Ask yourself if you read your code in a year, would you understand it? If not, you should improve it's readability.
+* Use proper indentation to make your code more readable.
+* Use descriptive variable and function names to make your code easier to understand.
+* Use comments to explain your code and document your functions.
+* Limiting making nested indentation is suggested. You can use guard clauses to avoid them:
 {{CodeSnip
 | lang = lua
 | code =
@@ -721,6 +761,11 @@ if not condition then return end
 -- do stuff             <--- one less indentation level
 }}
 
+== See also ==
+* https://learnxinyminutes.com/lua/ - a guide to learning Lua
+* https://onecompiler.com/lua - an online Lua compiler
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Modding guides}}

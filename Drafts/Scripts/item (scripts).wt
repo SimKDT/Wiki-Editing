@@ -1,7 +1,7 @@
 {{Title|item (scripts)}}
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.3|2=1389641}}
+{{Page version|42.20.4}}
 {{Infobox
 | title = item
 | class = theme-blue
@@ -210,6 +210,115 @@ item:Load('HotDrinkClay', [[
 }
 ]])
 }}
+
+== Item model ==
+Setting up an item model will be done different whenever the item is a [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-itemtype HandWeapon] or not. The following parameters will have to be used:
+* For HandWeapon items, you need to use [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-weaponsprite WeaponSprite].
+* For other items, you need to use [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-staticmodel StaticModel] for the item attached to the player (in hands for example, or in the back) and [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-worldstaticmodel WorldStaticModel] for the item placed in the world.
+
+{{Note|Alternatively, you can use [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-staticmodelsbyindex StaticModelsByIndex] and [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-worldstaticmodelsbyindex WorldStaticModelsByIndex] to set multiple model variants for the same item.}}
+
+To set those up, you will need to setup at least one [[model (scripts)|model script]]. Take the following model and texture file structure:
+{{CodeSnip
+| code =
+📁 media
+    📁 models_X
+        📁 yourMod
+            📄 yourModelFile.glb
+    📁 textures
+        📁 yourMod
+            📄 yourTextureFile.png
+}}
+
+The model script will then be:
+{{CodeSnip
+| lang = java
+| code =
+module yourModule
+{
+    model yourModel
+    {
+        mesh = yourMod/yourModelFile,
+        texture = yourMod/yourTextureFile,
+    }
+}
+}}
+
+You can reference this model script inside the relevant item script parameters to setup up the model that were mentioned above:
+{{CodeSnip
+| lang = java
+| code =
+module yourModule
+{
+    item yourItem
+    {
+        ItemType = base:normal,
+        StaticModel = yourModule.yourModel,
+        WorldStaticModel = yourModule.yourModel,
+        ...
+    }
+}
+}}
+
+And for weapons:
+{{CodeSnip
+| lang = java
+| code =
+module yourModule
+{
+    item yourItem
+    {
+        ItemType = base:handweapon,
+        WeaponSprite = yourModule.yourModel,
+        ...
+    }
+}
+}}
+
+Check the documentation of these parameters for more details on what can be achieved.
+
+=== Attachment points ===
+Whenever you want your item to be physically visible in the player hands, attached on its back or belt, or adjust the rotation and position of the model when placed on the ground, you will have to setup an [[attachment (scripts)|attachment script]] inside your item [[mode (scripts)|model scripts]]. You can adjust the translation position of the item using the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/attachment.html#scripts-attachment-offset offset] parameter and the rotation using the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/attachment.html#scripts-attachment-rotate rotate] parameter. This can more easily be achieved using the [[Attachment editor]].
+
+If we take our previous model definition, the most common attachment scripts will be the following:
+{{CodeSnip
+| lang = java
+| code =
+module yourModule
+{
+    model yourModel
+    {
+        mesh = yourMod/yourModelFile,
+        texture = yourMod/yourTextureFile,
+
+        /* Bip01_Prop1 is for the right hand
+         * while Bip01_Prop2 is for the left hand
+         * you don't have to define both an offset and rotate
+         * and you can also define neither of them if the model is already well placed
+        */
+        attachment Bip01_Prop1
+        {
+            offset = x y z, /* you will need to adjust those value */
+            rotate = x y z, /* the rotations are in degrees */
+        }
+
+        /* here you can modify the rotation and offset of the model */
+        attachment world
+        {
+            ... /* do your things here */
+        }
+
+        /* other slots are often simply used to 
+         * refer to an attachment point on the player model 
+        */
+        attachment back
+        {
+            ...
+        }
+    }
+}
+}}
+
 
 == Navigation ==
 {{Navbox modding}}

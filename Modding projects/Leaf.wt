@@ -1,17 +1,21 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.12.2}}
+{{Page version|42.20.4}}
 {{Infobox
 | title = Leaf
 | class = theme-blue
 | 
+    {{Infobox/image
+    | p1 = [[File:Leaf - icon.png]]
+    }}
+
     {{Infobox/section
     | id = 2
     | 1 = Main links
     | 2 =
         {{Infobox/socials
         | type=github
-        | link=https://github.com/aoqia194/leaf-installer
+        | page=github:aoqia194/leaf-installer
         | Installer
         }}
     }}
@@ -22,8 +26,13 @@
     | 2 =
         {{Infobox/socials
         | type=github
-        | link=https://github.com/aoqia194/leaf-example-mod
+        | page=github:aoqia194/leaf-example-mod
         | Example mod
+        }}
+        {{Infobox/socials
+        | type=github
+        | page=github:aoqia194/leaf-api
+        | Leaf API
         }}
     }}
 
@@ -33,37 +42,38 @@
     | 2 = 
         {{Infobox/socials
         | type=github
-        | link=https://github.com/aoqia194/leaf-loader
+        | page=github:aoqia194/leaf-loader
         | Leaf - Loader (mod loader)
         }}
         {{Infobox/socials
         | type=github
-        | link=https://github.com/aoqia194/leaf-filament
+        | page=github:aoqia194/leaf-filament
         | Leaf - Filament (utility)
         }}
         {{Infobox/socials
         | type=github
-        | link=https://github.com/aoqia194/leaf-loom
+        | page=github:aoqia194/leaf-loom
         | Leaf - Loom (dev tools)
         }}
         {{Infobox/socials
         | type=github
-        | link=https://github.com/aoqia194/leaf-yarn
+        | page=github:aoqia194/leaf-yarn
         | Leaf - Yarn (dev tools)
         }}
         {{Infobox/socials
         | type=github
-        | link=https://github.com/aoqia194/leaf/
+        | page=github:aoqia194/leaf/
         | Leaf - PZ manifests (dev)
         }}
     }}
 }}
-'''Leaf''' is a fork of [https://fabricmc.net/ FabricMC]'s toolchain, mostly known as ''Fabric'' used in [[Wikipedia:Minecraft|Minecraft]] modding, for direct usage for Project Zomboid Java modding. The project aims to implement a Java modding API for Project Zomboid by having the users simply download Leaf, giving them the ability to download mods directly from the Steam Workshop which will be loaded when launching the game. This tackles a common issue with Java mods which requires them to update their Java files every game updates and thus needs users to manually download the Java mods every single game updates.
+'''Leaf''' is a fork of [https://fabricmc.net/ FabricMC]'s toolchain, mostly known as ''Fabric'' used in [[Wikipedia:Minecraft|Minecraft]] modding, for direct usage for Project Zomboid Java modding. The project aims to implement a Java modding API for Project Zomboid by having the users simply download Leaf, giving them the ability to download mods directly from the Steam Workshop which will be loaded when launching the game. This tackles a common issue with Java mods which requires them to update their Java files every game updates and thus needs users to manually download the Java mods every single game updates, but also means you will have to pay attention to what you are subscribing to.
 
-Since the internal structure is the same as ''Fabric'', most if not all of their guides can directly be used. This will exclude anything from Fabric API since Leaf currently doesn't have one or need one. Guides that revolve around Minecraft-specific Java code and systems will not work for Project Zomboid.
+Since the internal structure is the same as ''Fabric'', most if not all of their guides can directly be used. This will exclude anything from Fabric API, since Leaf doesn't use Fabric API and instead has it's own specifically for Project Zomboid. Guides that revolve around Minecraft-specific Java code and systems will not work for Project Zomboid due to these being separate games, however generic/non-game-specific guides may work perfectly fine.
 
 == Installation ==
-Installating Leaf is as simple as downloading and running the installer linked in the infobox above. On Windows, you can simply run it by double-clicking it, which requires you to have [[Java]] installed. On Linux, you can run it via the terminal with the command:
+[[File:Leaf - Installer.png|thumb]]
+Installing Leaf is as simple as downloading and running the installer linked in the infobox above. On Windows, you can simply run it by double-clicking it, which requires you to have [[Java]] installed (may require [[https://johann.loefflmann.net/en/software/jarfix/index.html JarFix]] if double-clicking doesn't work). On Linux, you can run it via the terminal with the command:
 {{CodeSnip
 | lang = bash
 | code =
