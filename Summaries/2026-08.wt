@@ -1,25 +1,25 @@
-Hello, SimKDT here for the August 2026 modding wiki summary. This month is a very large summary as I had plenty of time to work on stuff, but we also received quite a few contributions.
+Hello, SimKDT here for the August 2026 modding wiki summary. This month is a very large summary, as I had plenty of time to work on stuff, but we also received quite a few contributions.
 
-After the release of [[Build 42.20.0]], we receive 4 hotfixes ([[Build 42.20.1]], [[Build 42.20.2]], [[Build 42.20.3]], [[Build 42.20.4]]) adressing some issues notably related to modding:
+After the release of [[Build 42.20.0]], we received 4 hotfixes ([[Build 42.20.1]], [[Build 42.20.2]], [[Build 42.20.3]], and [[Build 42.20.4]]) addressing some issues notably related to modding:
 * They readded support for writing json files
 * [[Translation]] files should now use <code>%%</code> to write the % character (this is due to the need to [[wikipedia:Escape sequence|escape]] the character)
-* The <code>loadstring</code> and <code>loadstream</code> methods which were by a lot of servers have now been removed from the game for security reasons. A lot of uses of these methods can be replaced by [[Networking#Commands|commands]]
+* The <code>loadstring</code> and <code>loadstream</code> methods, which were used by plenty of servers, have now been removed from the game for security reasons. Plenty of uses of these methods can be replaced by [[Networking#Commands|commands]].
 
-These are only hotfixes, but it is likely we'll receive bug fixing updates in the near future, after which we should hopefully see the release of the [[Mapping]] tools as well [[AnimZed]].
+These are only hotfixes, but it is likely we'll receive bug-fixing updates in the near future, after which we should hopefully see the release of the [[Mapping]] tools as well as [[AnimZed]].
 
-The creation of custom models for zombies have now been documented in [[IsoZombie#Custom zombie model|IsoZombie]]. A new method was found by a modder where you can actually set a custom model to a zombie, without doing it via the clothing method, and fully done in [[Lua (API)|Lua]], to set custom models to different zombies. You can find the details on this new trick in [[IsoZombie#Model swap]].
+The creation of custom models for zombies has now been documented in [[IsoZombie#Custom zombie model|IsoZombie]]. A new method was discovered by a modder where you can actually set a custom model to a zombie without doing it via the clothing method, and it's fully done in [[Lua (API)|Lua]] to set custom models to different zombies. You can find the details on this new trick in [[IsoZombie#Model swap]].
 
-The 2nd of August 2026 I held a [[Sit-Down Sunday]] session to introduce new people to modding, providing explanation of the documentation system and how to contribute to it. A wiki page [[Sit-Down Sunday]] was made to document the project held by the [[PZ Modding Community]]. If you want to hold a similar session yourself on a subject related to modding, feel free to contact us on the Discord server.
+On the 2nd of August 2026, I held a [[Sit-Down Sunday]] session to introduce new people to modding, providing an explanation of the documentation system and how to contribute to it. A wiki page, [[Sit-Down Sunday]], was made to document the project held by the [[PZ Modding Community]]. If you want to hold a similar session yourself on a subject related to modding, feel free to contact us on the Discord server.
 
-After this, the [[Getting started with modding]] wiki page was greatly improved to bring some clarity and better guidance for new modders, taking on the stuff I explained in that Sit-Down Sunday session. One interesting addition for me is the [[Getting started with modding#Sources of truth|Sources of truth]] section where I classified the documentations that you can find on modding into a trust hierarchy. If you don't agree with this, feel free to provide your feedback on the [[Talk:Getting_started_with_modding|talk page]] or other means of communication ([[Modding#Communities]]).
+After this, the [[Getting started with modding]] wiki page was greatly improved to bring some clarity and better guidance for new modders taking on the stuff I explained in that Sit-Down Sunday session. One interesting addition for me is the [[Getting started with modding#Sources of truth|Sources of truth]] section, where I classified the documentations that you can find on modding into a trust hierarchy. If you don't agree with this, feel free to provide your feedback on the [[Talk:Getting_started_with_modding|talk page]] or other means of communication ([[Modding#Communities]]).
 
 [[File:Sources of truth.png|right|500px|class=logo-light]]
 
 The [[Item (scripts)]] page received a significant update, with guides to implement some basic elements for items ([[Item (scripts)#Modifying existing item definitions|Modifying existing item defs]] and [[Item (scripts)#Item model|item models]]) and details on the [[Item (scripts)#Item ID|Item ID]].
 
-A page about [[Load order]] was also made, to document how load order doesn't affect the majority of mods, and how it can affect some mods and setups in specific conditions.
+A page about [[Load order]] was also made to document how load order doesn't affect the majority of mods and how it can affect some mods and setups in specific conditions.
 
-A large amount of work was made on updating the [[Debug mode]] page, to split each debug tools into their own respective wiki pages:
+A large amount of work was done on updating the [[Debug mode]] page to split each debug tool into its own respective wiki pages:
 * [[Lua debugger]]
 * [[Console]]
 * [[Debug menu]]
@@ -27,7 +27,7 @@ A large amount of work was made on updating the [[Debug mode]] page, to split ea
 * [[Depthmap editor]]
 * [[Seam editor]]
 
-This is something [[User:Jupiter|Jupiter]] contributed a bit too, and expressed wanting to contribute more to it. Keybinds to access those debug tools can notably be used to find the pages themselves (some may still be missing however). Similarly, a page was created on [[errors]] to try and document the most common errors that the game can produce, most notably when modding and doing mistakes (currently only errors about [[Error#Lua|Lua]]).
+This is something [[User:Jupiter|Jupiter]] contributed a bit to and expressed wanting to contribute more to it. Keybinds to access those debug tools can notably be used to find the pages themselves (some may still be missing, however). Similarly, a page was created on [[errors]] to try and document the most common errors that the game can produce, most notably when modding and making mistakes (currently only errors about [[Error#Lua|Lua]]).
 
 A new tool to help making translation was made by the [[PZ Modding Community]], called [[PZ Translator]]. It allows users to translate mods from a webpage, automatically creating a fork, translation branch, and pull request to your mod's [[wikipedia:GitHub|GitHub]] repository.
 
@@ -35,15 +35,15 @@ This month, I was did some work on the [[Rosetta Project|PZ Rosetta Sources]] to
 
 [[File:Rosetta Project - webapp concept.png]]
 
-The [[Leaf]] project is seeing some development to update the project to the recent versions of the game. It is now usable for the current version of the game and feedback for it is welcome. In the meantime, a stable tool [[ZombieBuddy]] also provides a stable [[Java]] modding solution.
+The [[Leaf]] project is seeing some development to update the project to the recent versions of the game. It is now usable for the current version of the game, and feedback for it is welcome. In the meantime, a stable tool, [[ZombieBuddy]], also provides a stable [[Java]] modding solution.
 
-This month, we saw the drama regarding [[Project Zomboid Map Project|PZMap]] by [[User:Calvy|Calvy]]. A lot of misunderstandings and miscommunications led to it for the most part and the situation has been resolved, with Indifferent Brocoli now hosting the project. Lots of unofficial projects have sprung up as a result, and a page listing them under the same wiki page will be worked on in the future. If you have created such a tool, don't hesitate to contact us so we can list it.
+This month, we saw the drama regarding [[Project Zomboid Map Project|PZMap]] by [[User:Calvy|Calvy]]. A lot of misunderstandings and miscommunications led to it for the most part, and the situation has been resolved, with Indifferent Broccoli now hosting the project. Lots of unofficial projects have sprung up as a result, and a page listing them under the same wiki page will be worked on in the future. If you have created such a tool, don't hesitate to contact us so we can list it.
 
-The modding wiki saw some contributors provide AI generated edits. The wiki admins and project leaders want to remind that AI generated edits are not allowed on the wiki and that you agree with that or not is not our problem, it is the rule. As such those contributors will not be listed at the bottom here as their edits have been almost completely reverted.
+The modding wiki saw some contributors provide AI generated edits. The wiki admins and project leaders want to remind you that AI-generated edits are not allowed on the wiki and that whether you agree with that or not is not our problem; it is the rule. As such, those contributors will not be listed at the bottom here, as their edits have been almost completely reverted.
 
 Smaller changes:
-* The guide to [[Creating a flier mod|creating a flier mod]] is now marked as outdated. If you are interested to update it, please don't hesitate.
-* A new method to modify a [[craftRecipe]] inputs was found, with the old one no longer working, you can find details about it [[craftRecipe#Adding new inputs|here]].
+* The guide to [[Creating a flier mod|creating a flier mod]] is now marked as outdated. If you are interested in updating it, please don't hesitate.
+* A new method to modify a [[craftRecipe]] inputs was found, with the old one no longer working; you can find details about it [[craftRecipe#Adding new inputs|here]].
 * The [[Lua (API)]] received some corrections regarding [[Lua (API)#Accessing fields|accessing fields]] since this is no longer possible since [[Build 42.15.0]].
 * The feedback form is back in pink in the [[Template:Navbar modding|modding navbar]] since it seems no one sees it anymore
 * Clarified some parts of [[Procedural distributions]]
@@ -52,15 +52,15 @@ Smaller changes:
 * [[Lua (language)]] received some clarifications about table manipulations
 
 Thanks to the various users contributing to the modding wiki this month:
-* [[User:Birget|Birget]], [[User:Sheep610|Sheep610]] and [[User:Unknownhost|Unknownhost]] - documented [[Tiledefs used by mods|tiledefs IDs]] of mods
-* [[User:Toxic|Toxic]] - added a new common problem to [[Common modding issues]] (that page isn't complete however)
-* [[User:LilWolgo]] - did some tweaks to [[Game time]]
-* [[User:Timers|Timers]] - fixed some typos
-* [[User:StarkTruffle|StarkTruffle]] - added some details to [[Mod structure]] regarding the preview.png image to [[Uploading mods|upload mods]]
-* [[User:MarisFrance|MarisFrance]] - contributed to the [[Java]] page, by providing details about [[Java#Manual class replacement|manual class replacement]]
-* [[User:ChuckleberryFinn|ChuckleberryFinn]] - documented a new helper tool for [[Steam Uploader]]
-* Previously mentioned [[User:Jupiter|Jupiter]] - contributed to [[Debug mode]], and also created a page [[Free Community Graphical Assets]] to document projects that provide free community graphical assets that you can use in your own mods and projects.
-* [[User:Tchernobill|Tchernobill]] - added extra links that are useful in [[Mods]]
-* [[User:Bad At Zomboid|Bad At Zomboid]] - contributed to [[Lua event]] by adding an order of execution for the early game and save loading events
-* [[User:MuYun|MuYun]] - created a translation for the [[Modding]] page ([[Modding/ru]])
-* [[User:Aoqia|Aoqia]] - contributed to the [[Startup parameters]] page, to document more missed startup parameters from the JVM.
+* [[User:Birget|Birget]], [[User:Sheep610|Sheep610]] and [[User:Unknownhost|Unknownhost]] - documented [[Tiledefs used by mods|tiledefs IDs]] of mods.
+* [[User:Toxic|Toxic]] - added a new common problem to [[Common modding issues]] (that page isn't complete, however).
+* [[User:LilWolgo]] - did some tweaks to [[Game time]].
+* [[User:Timers|Timers]] - fixed some typos.
+* [[User:StarkTruffle|StarkTruffle]] - added some details to [[Mod structure]] regarding the preview.png image to [[Uploading mods|upload mods]].
+* [[User:MarisFrance|MarisFrance]] - contributed to the [[Java]] page by providing details about [[Java#Manual class replacement|manual class replacement]].
+* [[User:ChuckleberryFinn|ChuckleberryFinn]] - documented a new helper tool for [[Steam Uploader]].
+* Previously mentioned [[User:Jupiter|Jupiter]] - contributed to [[Debug mode]] and also created a page, [[Free Community Graphical Assets]], to document projects that provide free community graphical assets that you can use in your own mods and projects.
+* [[User:Tchernobill|Tchernobill]] - added extra links that are useful in [[Mods]].
+* [[User:Bad At Zomboid|Bad At Zomboid]] - contributed to [[Lua event]] by adding an order of execution for the early game and save loading events.
+* [[User:MuYun|MuYun]] - created a translation for the [[Modding]] page ([[Modding/ru]]).
+* [[User:Aoqia|Aoqia]] - contributed to the [[Startup parameters]] page to document more missed startup parameters from the JVM.
