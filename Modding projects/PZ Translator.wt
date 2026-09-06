@@ -1,0 +1,29 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.4}}
+{{Infobox
+| title = PZ Translator
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | link=https://project-zomboid-community-modding.github.io/tools/mod-translator/
+        | Tool link
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:Project-Zomboid-Community-Modding/Project-Zomboid-Community-Modding.github.io
+        | Repository
+        }}
+    }}
+}}
+'''PZ Translator''' is a web tool which you can provide to any users to have them translate your mods from a webpage, and automatically creating a fork, translation branch and pull request to your mod's [[wikipedia:GitHub|GitHub]] repository. The tool is provided by the [[PZ Modding Community]].
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

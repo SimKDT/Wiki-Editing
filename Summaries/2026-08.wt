@@ -1,4 +1,4 @@
-Hello, SimKDT here for the August 2026 modding wiki summary.
+Hello, SimKDT here for the August 2026 modding wiki summary. This month is a very large summary as I had plenty of time to work on stuff, but we also received quite a few contributions.
 
 After the release of [[Build 42.20.0]], we receive 4 hotfixes ([[Build 42.20.1]], [[Build 42.20.2]], [[Build 42.20.3]], [[Build 42.20.4]]) adressing some issues notably related to modding:
 * They readded support for writing json files
@@ -28,6 +28,12 @@ A large amount of work was made on updating the [[Debug mode]] page, to split ea
 * [[Seam editor]]
 
 This is something [[User:Jupiter|Jupiter]] contributed a bit too, and expressed wanting to contribute more to it. Keybinds to access those debug tools can notably be used to find the pages themselves (some may still be missing however). Similarly, a page was created on [[errors]] to try and document the most common errors that the game can produce, most notably when modding and doing mistakes (currently only errors about [[Error#Lua|Lua]]).
+
+A new tool to help making translation was made by the [[PZ Modding Community]], called [[PZ Translator]]. It allows users to translate mods from a webpage, automatically creating a fork, translation branch, and pull request to your mod's [[wikipedia:GitHub|GitHub]] repository.
+
+This month, I was did some work on the [[Rosetta Project|PZ Rosetta Sources]] to try and improve the [[JavaDocs]] documentation. And at the same time [[User:Albion|albion]] who works on the [[Rosetta Project]] and manages the unofficial JavaDocs is starting work on a tool to possibly improve community based documentations.
+
+[[File:Rosetta Project - webapp concept.png]]
 
 The [[Leaf]] project is seeing some development to update the project to the recent versions of the game. It is now usable for the current version of the game and feedback for it is welcome. In the meantime, a stable tool [[ZombieBuddy]] also provides a stable [[Java]] modding solution.
 
