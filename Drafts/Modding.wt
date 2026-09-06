@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.2}}
+{{Page version|42.20.4}}
 {{About|an overview about modding|PZwiki project|PZwiki:Project Modding}}
 [[File:SpiffosWorkshop.png|link=https://steamcommunity.com/app/108600/workshop/|frame|right|Spiffo's Workshop is the home of [[Project Zomboid]] mods on [[Steam]]]]
 Modding is the process of creating new content by creating [[mods]] for a game. For Project Zomboid, modding is a natively integrated part of the game with a mod manager and an API to allow modders to create a various quantity of content, from simple items to complex systems. Mods are usually uploaded to the [[Spiffo's Workshop]] which serves as the official method for sharing mods with the community.
@@ -9,12 +9,12 @@ Modding is the process of creating new content by creating [[mods]] for a game. 
 {{Main|TIS Modding Guides#Build 42 MP unstable release}}
 ''Last updated: 11th of December 2025''
 
-The Indie Stone has recently released an ''unstable'' version of Project Zomboid which adds back multiplayer in the game. They provided the modding community with modding instructions to applying the new networking changes to existing mods that you can find [https://theindiestone.com/forums/index.php?/topic/88499-modding-migration-guide-4213/ here]. If you don't have a TIS Forum account to download them, you find copies of these files [https://github.com/pz-wiki-modding/Archive.Project-Zomboid-Modding/tree/main/TIS%20guides/B42%20unstable%20MP here].
+The Indie Stone has recently released an ''unstable'' version of Project Zomboid which adds back multiplayer in the game. They provided the modding community with modding instructions to applying the new networking changes to existing mods that you can find [[forums:topic/88499-modding-migration-guide-4213/|here]]. If you don't have a TIS Forum account to download them, you find copies of these files [[github:pz-wiki-modding/Archive.Project-Zomboid-Modding/tree/main/TIS guides/B42 unstable MP|here]].
 
 == Terms & Conditions ==
-By playing Project Zomboid, you agree to the '''[https://projectzomboid.com/blog/support/terms-conditions/ Terms & Conditions]'''.
+By playing Project Zomboid, you agree to the '''[[pz:blog/support/terms-conditions/|Terms & Conditions]]'''.
 
-By modding Project Zomboid, you also agree with the '''[https://projectzomboid.com/blog/modding-policy/ Modding Policy]'''.
+By modding Project Zomboid, you also agree with the '''[[pz:blog/modding-policy/|Modding Policy]]'''.
 
 === Key restrictions ===
 * The Indie Stone reserves the right to implement any features in the game, irrespective of whether mods exist that accomplish the same goal.

@@ -183,7 +183,7 @@ local myDistribution = {
 local ProceduralDistributions_list = ProceduralDistributions.list
 local table_insert = table.insert
 
----@param distrib table<string, {items: table<number, string|number>?, junk: table<number, string|number>?}>
+---@param distrib table<string, {items: table<number, string{{!}}number>?, junk: table<number, string{{!}}number>?}>
 local function insertInDistribution(distrib)
     -- iterate through every given distributions
     for k,v in pairs(distrib) do
