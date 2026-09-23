@@ -1,0 +1,49 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.20.4}}
+{{Infobox
+| title = Gunworks
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Gunworks - icon.gif]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | page=github:Gunworks-Gang/Gunworks-Gang
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3722064198
+        | Workshop page
+        }}
+    }}
+}}
+'''Gunworks''' is a framework for creating custom guns with special features and behaviors. It provides a lot of systems to manage gun mechanics, attachments, and custom behaviors:
+* Ammunition system
+* Visual animations for weapon cycling, racking and ammo-count visuals
+* Bayonet system
+* Custom stats for attachments
+* Dynamic attachments (different states for attachments)
+** Folding bipod
+** Folding stock
+* Magazine system for multiple valid magazine types
+* Prevent removal of specific attachments
+* Railing system
+* Rate of fire for custom RPM, burst and spread tuning
+* Stat factory helppers
+* Underbarrel system for grenade launchers, shotguns and other alternate weapon modes
+* Explosive system for throwable explosives and explosive ammo with custom arcs and detonation behaviors
+* Distribution functions for adding, removing and tuning weapons, parts and ammo in loot tables
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

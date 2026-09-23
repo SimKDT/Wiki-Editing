@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.0}}
+{{Page version|42.20.4}}
 {{About|a modding project|the item|Umbrella}}
 {{Infobox
 | title = Umbrella
@@ -23,7 +23,7 @@
         }}
         {{Infobox/socials
         | type=github
-        | link=https://github.com/PZ-Umbrella/Umbrella
+        | page=github:PZ-Umbrella/Umbrella
         | GitHub repository
         }}
     }}
@@ -34,12 +34,12 @@
     | 2 =
         {{Infobox/socials
         | type=github
-        | link=https://github.com/PZ-Umbrella/Umbrella/releases/tag/unstable
+        | page=github:PZ-Umbrella/Umbrella/releases/tag/unstable
         | Unstable release (Build 42)
         }}
         {{Infobox/socials
         | type=github
-        | link=https://github.com/PZ-Umbrella/Umbrella/releases/tag/stable
+        | page=github:PZ-Umbrella/Umbrella/releases/tag/stable
         | Stable release (Build 41)
         }}
     }}
@@ -79,7 +79,7 @@ Your configuration file structure should look something like this:
     "workspace": {
         "library": ["C:\\Documents\\Umbrella-main\\library"],
         "workspaceRoots": [
-            "Contents/mods/YourMod/42/media/lua"
+            "Contents/mods/**/**/media/lua"
         ]
     },
     "runtime": {
@@ -97,7 +97,7 @@ Your configuration file structure should look something like this:
 </syntaxhighlight>
 }}
 
-{{Note|You can also create an [https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html environment variable] on your computer to easily reference Umbrella's library folder. For example:
+{{Note|You can also create an [https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html system environment variable] on your computer to easily reference Umbrella's library folder. (pay attention to put it in system and not user tab). For example:
 {{CodeSnip
 | lang = json
 | code =
@@ -105,7 +105,16 @@ Your configuration file structure should look something like this:
     "library": ["$PZ_UMBRELLA"]
 }
 }}
-With the {{Code|$PZ_UMBRELLA}} variable pointing to {{Code|C:\Documents\Umbrella\library}}
+
+With the {{Code|PZ_UMBRELLA}} system variable pointing to {{Code|C:\Documents\Umbrella\library}}.
+
+On Linux, you can define the system environment variable like so:
+{{CodeSnip
+| lang = bash
+| code =
+export PZ_UMBRELLA="/path/to/Umbrella/library"
+}}
+You may have to do it either in <code>~/.bashrc</code>, <code>~/.profile</code> or <code>~/.bash_profile</code>.
 }}
 
 {{Note|If EmmyLua is not respecting your workspace root and still analyses other version folders, you can ignore them (or any other directory) like so:
@@ -119,6 +128,7 @@ With the {{Code|$PZ_UMBRELLA}} variable pointing to {{Code|C:\Documents\Umbrella
 }}
 
 {{Note|type=error|Do '''NOT''' use Visual Studio Code workspaces to contain multiple projects using EmmyLua. EmmyLua will only load the first top-level {{Code|.emmyrc.json}} config and will '''ignore the other configs'''. This is not an Umbrella issue, but an issue with EmmyLua}}
+
 
 === LuaLs ===
 Install the [[LuaLs|Lua extension by Sumneko]] as well as [https://git-scm.com/downloads git] for it to work. You can download the Lua extension from the [[Visual Studio Code|VSCode]] extensions marketplace directly in the IDE. See [https://code.visualstudio.com/docs/editor/extension-marketplace Extension Marketplace documentation] if you're having trouble downloading extensions.

@@ -5,6 +5,23 @@
 
 You can access a full view render of the [[Knox Country]] map via the [[Project Zomboid Map Project]].
 
+== Video guides ==
+Below are the two most recommended video guide series for mapping that exist, but more are documented in [[#See also]].
+
+{{Video
+|id=OJlnzwNAym0&list=PL9c7w_YTJlV_R0mgP-Rwb1i56SudS30XV
+|image=Zomboid Map Making Quick Guide - thumbnail.webp
+|name=Zomboid Map Making Quick Guide
+|float=left
+}}
+
+{{Video
+|id=zKMrQsxyXTQ&list=PLc7_sQ-Tb6e3siC4Cwu4JfxuqJZkGO6sy
+|image=Daddy Dirkie Dirks zomboid mapping tutorials - thumbnail.webp
+|name=Daddy Dirkie Dirks zomboid mapping tutorials
+|float=left
+}}
+{{Clear}}
 == Mapping tools ==
 No releases of the [[Mapping tools (official)|official mapping tools]] have been made for [[Build 42]] but these tools are a public project on GitHub which can be compiled by anyone and are fully usable to make maps. The best is to use one of the available community made tools which are based more or less on the official Build 42 mapping tools:
 * [[Mapping tools (Alree)]] - Created by Alree, they are a fork of the [[Build 41]] official mapping tools and implement changes from the official Build 42 tools.

@@ -13,7 +13,7 @@ On the 2nd of August 2026, I held a [[Sit-Down Sunday]] session to introduce new
 
 After this, the [[Getting started with modding]] wiki page was greatly improved to bring some clarity and better guidance for new modders taking on the stuff I explained in that Sit-Down Sunday session. One interesting addition for me is the [[Getting started with modding#Sources of truth|Sources of truth]] section, where I classified the documentations that you can find on modding into a trust hierarchy. If you don't agree with this, feel free to provide your feedback on the [[Talk:Getting_started_with_modding|talk page]] or other means of communication ([[Modding#Communities]]).
 
-[[File:Sources of truth.png|right|500px|class=logo-light]]
+[[File:Sources of truth.png|thumb|class=logo-light]]
 
 The [[Item (scripts)]] page received a significant update, with guides to implement some basic elements for items ([[Item (scripts)#Modifying existing item definitions|Modifying existing item defs]] and [[Item (scripts)#Item model|item models]]) and details on the [[Item (scripts)#Item ID|Item ID]].
 
@@ -33,7 +33,7 @@ A new tool to help making translation was made by the [[PZ Modding Community]], 
 
 This month, I was did some work on the [[Rosetta Project|PZ Rosetta Sources]] to try and improve the [[JavaDocs]] documentation. And at the same time [[User:Albion|albion]] who works on the [[Rosetta Project]] and manages the unofficial JavaDocs is starting work on a tool to possibly improve community based documentations.
 
-[[File:Rosetta Project - webapp concept.png]]
+[[File:Rosetta Project - contribution app concept.png]]
 
 The [[Leaf]] project is seeing some development to update the project to the recent versions of the game. It is now usable for the current version of the game, and feedback for it is welcome. In the meantime, a stable tool, [[ZombieBuddy]], also provides a stable [[Java]] modding solution.
 

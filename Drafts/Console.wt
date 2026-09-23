@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.20.3}}
+{{Page version|42.20.4}}
 '''Console files''' provide information about the current state of the game, errors, warnings and other useful information for debugging. Two console files exist:
 * <code>console.txt</code> - contains the client side and singleplayer console output
 * <code>coop-console.txt</code> - contains the server side console output for multiplayer servers
@@ -27,6 +27,8 @@ The [https://albion.codeberg.page/PZ-JavaDocs/zombie/debug/DebugLog.html DebugLo
 The game provides configurations for what is logged in the console files from the [[Lua debugger]] that you can access with the {{Key|F11}} key then <code>DebugLog</code>.
 
 The DebugLog types available are listed in the [https://albion.codeberg.page/PZ-JavaDocs/zombie/debug/DebugType.html DebugType] enum. You can set a log severity for each type, which are listed in the [https://albion.codeberg.page/PZ-JavaDocs/zombie/debug/LogSeverity.html LogSeverity] enum, with an extra not listed there <code>Unspecified</code>.
+
+You configuration of DebugLog is stored inside the <code>debuglog.cfg</code> file inside the [[Game files#Cache folder|cache folder]]. You can regenerate this file with default configuration by deleting it and saving in the DebugLog menu with no changes. When that file is not available, the game uses the <code>debuglog.ini</code> file as a fallback.
 
 == In-game console ==
 [[File:In-game console.png|thumb]]

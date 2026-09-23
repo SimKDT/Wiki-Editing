@@ -2,7 +2,7 @@
 {{Navbar modding}}
 {{Page version|42.20.4}}
 {{Infobox
-| title = PZ Translator
+| title = Mod Translation Contributor
 | class = theme-blue
 | 
     {{Infobox/section
@@ -20,7 +20,7 @@
         }}
     }}
 }}
-'''PZ Translator''' is a web tool which you can provide to any users to have them translate your mods from a webpage, and automatically creating a fork, translation branch and pull request to your mod's [[wikipedia:GitHub|GitHub]] repository. The tool is provided by the [[PZ Modding Community]].
+The '''Mod Translation Contributor''' is a web tool which you can provide to any users to have them translate your mods from a webpage, and automatically creating a fork, translation branch and pull request to your mod's [[wikipedia:GitHub|GitHub]] repository. The tool is provided by the [[PZ Modding Community]].
 
 == Navigation ==
 {{Navbox modding}}
