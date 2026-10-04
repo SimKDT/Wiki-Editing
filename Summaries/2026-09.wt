@@ -1,0 +1,60 @@
+Hello everyone, SimKDT here for the September 2026 modding wiki summary. I have been very busy this month on a project I'm presenting further down in this summary so this is going to be a small summary due to the small amount of edits. However it stays interesting with very cool things to explore.
+
+This month notably saw the release of [[Build 42.21.0]] which didn't bring much. See the following for a detailed summary of what can be or could possibly be of interest to modding:
+{{ToggleBox|title=<div style="text-align: center;">[[Build 42.21.0]] Modding News</div>|id=modding-news|class=blue|content=
+* <code>loadstring</code> and <code>loadstream</code> functions were added back.
+* New [[registries|registry system]] for keybinds <code>KeybindId</code>. Every actions now have a specific identifier.
+** You can notably use it to check when a specific action keybind is pressed.
+** Global method variants <code>isKeyDown</code>, <code>wasKeyDown</code> and <code>isKeyPressed</code> using those instead of a string.
+** New methods in <code>Core</code> class to add keybinds <code>addKeyBinding</code> (variant to the one taking a string, can now take a <code>KeybindId</code> instead).
+* New method <code>createCorpseZombie</code> in [https://albion.codeberg.page/PZ-JavaDocs/zombie/VirtualZombieManager.html VirtualZombieManager].
+* New exposed classes:
+** <code>KeybindId</code>
+** <code>GridSquareEdgeFacingDirection</code>
+** <code>GridSquareEdge</code>
+** <code>TradingState</code>
+* New methods related to usernames length limits: <code>getMinUsernameLength</code> and <code>getMaxUsernameLength</code>.
+* Two new [[Lua event]]s:
+** <code>LogLevelPerk</code>
+** <code>OnTileObjectAdded</code>
+* Lots of logic relatic to IsoGridSquare and neighbours have been updated.
+** <code>isWallTo</code>, <code>isWindowTo</code>
+** <code>getEast</code>, <code>getWest</code>, <code>getNorth</code>, <code>getSouth</code>
+** <code>isEastOf</code>, <code>isWestOf</code>, <code>isNorthOf</code>, <code>isSouthOf</code>
+** <code>isDiagonalTo</code>
+** <code>getOppositeSquare</code> (using new <code>GridSquareEdge</code> class)
+** And a lot more. A lot of these were already present in some shape or form but there's likely a lot of new stuff like these to explore.
+* <code>getRectsBounds</code> for <code>IsoRoom</code> instances.
+* New [[Console#Configuring logging|DebugType]]s: <code>ClientCommand</code>, <code>VehicleClientCommand</code>, <code>UnitTest</code>.
+* New tile property (IsoPropertyType) <code>CarSlowFactor</code>.
+* New <code>nearWallCrouching</code> [[animation]] variable.
+* New methods in <code>IsoGameCharacter</code>: 
+** <code>transmitHaloNote</code>
+** <code>isSitting</code> (ground, <code>isSitOnGround</code>, and furniture, <code>isSittingOnFurniture</code>)
+** <code>setNearWallCrouching</code>, <code>isNearWallCrouching</code>
+* New method in <code>IsoAnimal</code>: <code>delete</code> (supposedly removes the animal from the game).
+* Having timed action instant cheat on now allows for instant item equip in hands.
+}}
+
+This month we had the chance to get two new [[Sit-Down Sunday]] sessions on the [[PZ Modding Community]] Discord:
+* One made by Marz where he showcases how to implement guns in the game focusing on the [[Scripts]] and [[Lua (API)|Lua API]] sides, as well as showcasing some parts of his [[Gunworks]] framework.
+* One made by [https://steamcommunity.com/profiles/76561198192471225 Paddlefruit] at the time of writing this summary about animations with his [[Community Rig]] and showcasing other newly documented [[modding projects]]: [[Online Asset Library]] and [[PZ Forest Generator]].
+
+In the same vein, I also made a new video guide on [https://www.youtube.com/watch?v=dnxM5jdpWsg using breakpoints] for the [[Lua (API)|Lua API]] and [[Java]] parts.
+
+Now onto something I've been working on for the whole month: [[ZedScripts]] rework. Previously, it was simply a [[Visual Studio Code]] extension but it has now been moved to being a [[wikipedia:Language Server Protocol|language server protocol (LSP)]]. This allows it to provide the same features but in a standard way that can be used by any [[Wikipedia:Integrated development environment|IDE]] that support LSPs, which notably includes the modding community's preferred editors like [[Visual Studio Code]] and [[IntelliJ IDEA]], but also other editors like [[wikipedia:Vim (text editor)|Vim]].
+
+What does this change for you modders ? Not much hopefully, as I reimplemented most features and will continue to implement missing ones and implement even new ones in the future. You now have extra generalized workspace and global configurations for your mods to normalize the datasets to use for validation or rules for each projects that will be normalized between different modders that work on your projects.
+
+In the future, thanks to it having been implemented as a [https://pypi.org/project/ZedScripts/ Python package], it could easily be used as a full-fledged parser for [[Scripts]] files.
+
+In [[Mapping]], I linked some of the most followed tutorials at the top of the page for easy access for new mappers. This follows the new approach I took notably in [[Lua (API)]], [[Scripts]] and [[Mod structure]].
+
+[[Leaf]], a fork of Fabric notably used in [[wikipedia:Minecraft|Minecraft]], has been getting a lot of attention lately, with [[User:Aoqia|Aoqia]] having become pretty active on the project this month, and a few modders picking up interest in it, as well as contributing in small parts themselves. This also comes at a time where [[ZombieBuddy]] become unavailable for the newly released [[Build 42.21.0]] due to some issues with it however it seems it isn't dead, with the author still contributing to it so an update is possibly coming. But coming back to Leaf now, it received some cleanup and improvements in its documentation, and the repositories have been moved to a [https://github.com/LeafPZ GitHub organization] to notably improve navigation between the large amount of repositories and resources available for the project.
+
+Thanks to the various users contributing to the modding wiki this month:
+* [[User:Eivinas|Eivinas]] and [[User:Unknownhost|Unknownhost]] - documented [[Tiledefs used by mods|tiledefs IDs]] of mods.
+* [[User:Texaliuz|Texaliuz]] - not exactly modding related but they made the [[Template:BugBox|BugBox template]] possible to translate for other languages, which appears a few times in modding wiki pages.
+* [[User:Jupiter|Jupiter]] - contributed to [[User Interface]].
+* [[User:Albion|Albion]] - bumped their own projects version ([[Unofficial JavaDocs (Build 42)]] and [[Umbrella (modding)]].
+* [[User:Aoqia|Aoqia]] - already mentioned above but contributed to the [[Leaf]] page.

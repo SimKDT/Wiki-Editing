@@ -1,7 +1,7 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.13.1}}
-{{About|a [[Visual Studio Code]] extension for Project Zomboid modding|the outdated extension of similar name|Zed Script|script modding|Scripts}}
+{{Page version|42.21.0}}
+{{About|a LSP for modding Project Zomboid|the outdated extension of similar name|Zed Script|script modding|Scripts}}
 {{Infobox
 | title = ZedScripts
 | class = theme-blue
@@ -17,28 +17,56 @@
     | 4 = [[File:ZedScripts - preview3.png|link=]]
     }}
 
+
     {{Infobox/section
     | id = 1
-    | 1 = Links
+    | 1 = LSP
     | 2 = 
         {{Infobox/socials
-        | link=https://marketplace.visualstudio.com/items?itemName=SimKDT.project-zomboid-scripts
+        | type = pypi
+        | link=https://pypi.org/project/ZedScripts/
+        | PyPI package
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/ZedScripts-LSP/releases
+        | Manual download
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/ZedScripts-LSP
+        | Repository
+        }}
+    }}
+    {{Infobox/section
+    | id = 1
+    | 1 = Visual Studio Code extension
+    | 2 = 
+        {{Infobox/socials
+        | type=vscode
+        | link=https://marketplace.visualstudio.com/items?itemName=SimKDT.ZedScripts
         | Visual Studio marketplace
         }}
         {{Infobox/socials
         | type = github
-        | link=https://github.com/SirDoggyJvla/pz-syntax-extension
+        | page=github:PZ-Wiki-Modding/ZedScripts-VSCode/releases
+        | Manual download
+        }}
+        {{Infobox/socials
+        | type = github
+        | page=github:PZ-Wiki-Modding/ZedScripts-VSCode
         | Repository
         }}
     }}
 }}
-'''ZedScripts''' is a continuation of the [[Project Zomboid Script Support]] extension for [[Visual Studio Code]] that provides highlighting and diagnostics for [[Scripts]] syntax. The extension utilizes the data provided by the [[PZ Scripts Data]] repository to stay up-to-date with the latest script blocks and parameters without requiring the need for an update of the extension itself, for the simplest data. It also provides direct links to the parameters pages on the wiki for easy reference while scripting.
+'''ZedScripts''' is a [[wikipedia:Language Server Protocol|language server protocol (LSP)]] for the [[Scripts]] syntax. It parses the script files in one or more workspaces and provided libraries in configuration files to tokenize and create tree structures of your scripts to finally provide features like syntax highlighting, code completion, and diagnostics.
 
-== Installation ==
-To use the Project Zomboid Scripts extension, simply search in the Visual Studio Code extension menu for [https://marketplace.visualstudio.com/items?itemName=SimKDT.project-zomboid-scripts “ZedScripts” by SimKDT]. Install it and manually set the language of the script files by clicking on the language mode button in the bottom right corner of Visual Studio Code and selecting ''ZedScripts'', or with the command "Change Language Mode" when pressing Ctrl + Shift + P.
+It allows [[Wikipedia:Integrated development environment|IDE]]s such as [[Visual Studio Code]], [[IntelliJ IDEA]] or even [[wikipedia:Vim (text editor)|Vim]] to interact with the script files more intelligently, providing real-time feedback and assistance during development.
 
-== Contributing ==
-You can add or modify the data used by this extension by contributing to the [[PZ Scripts Data]] repository. If there are missing script block definitions or parameters, you can open a pull request or an issue on the repository to suggest changes. In the same way, a lot of parameters have not yet been documented with descriptions, types etc due to the large amount of them, so don't hesitate to add any missing information!
+== Usage ==
+{{Note|You can find detailed documentation on the [[github:PZ-Wiki-Modding/ZedScripts-LSP|ZedScripts-LSP GitHub page]].}}
+
+The easiest method to use it is by installing [[Visual Studio Code]] and then installing the [https://marketplace.visualstudio.com/items?itemName=SimKDT.ZedScripts “ZedScripts” extension by SimKDT]. Script files should automatically get detected as ''ZedScripts'' files as long as they follow a correct [[Mod structure|modding structure]].
 
 == Navigation ==
 {{Navbox modding}}
