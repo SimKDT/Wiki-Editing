@@ -1,0 +1,39 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.21.0}}
+{{Infobox
+| title = Online Asset Library
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Online Asset Library - preview.webp]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | page=github:Paddlefruit/ProjectZomboid_BlenderAssets
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | link=https://paddlefruit.github.io/ProjectZomboid_BlenderAssets/
+        | Library link (don't open)
+        }}
+    }}
+}}
+'''Online Asset Library''' is a library of models from Project Zomboid and remodels of tiles used for [[Rendering|3D rendering]] inside [[wikipedia:Blender|Blender]]. The library link to provide Blender for access to the library assets is the following link, which should not be opened directly:
+
+https://paddlefruit.github.io/ProjectZomboid_BlenderAssets/
+
+== See also ==
+* [[Character rigs]]
+* [[PZ Forest Generator]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding projects}}
+{{ll|Category:External tools}}

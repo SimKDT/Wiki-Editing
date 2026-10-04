@@ -1,0 +1,48 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.21.0}}
+{{Infobox
+| title = PZ Forest Generator
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:PZ Forest Generator - preview1.webp]]
+    |  1 = [[File:PZ Forest Generator - preview1.webp|link=]]
+    | p2 = [[File:PZ Forest Generator - preview2.webp]]
+    |  2 = [[File:PZ Forest Generator - preview2.webp|link=]]
+    | p3 = [[File:PZ Forest Generator - preview3.webp]]
+    |  3 = [[File:PZ Forest Generator - preview3.webp|link=]]
+    | p4 = [[File:PZ Forest Generator - preview4.webp]]
+    |  4 = [[File:PZ Forest Generator - preview4.webp|link=]]
+    | p5 = [[File:PZ Forest Generator - preview5.webp]]
+    |  5 = [[File:PZ Forest Generator - preview5.webp|link=]]
+    | p6 = [[File:PZ Forest Generator - preview6.webp]]
+    |  6 = [[File:PZ Forest Generator - preview6.webp|link=]]
+    | p7 = [[File:PZ Forest Generator - preview7.webp]]
+    |  7 = [[File:PZ Forest Generator - preview7.webp|link=]]
+    | p8 = [[File:PZ Forest Generator - preview8.webp]]
+    |  8 = [[File:PZ Forest Generator - preview8.webp|link=]]
+    | p9 = [[File:PZ Forest Generator - preview9.webp]]
+    |  9 = [[File:PZ Forest Generator - preview9.webp|link=]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | page=Online Asset Library
+        }}
+    }}
+}}
+'''PZ Forest Generator''' is a geometry node tool in [[wikipedia:Blender]] to generate Project Zomboid forests for [[Rendering|renders]], and is distributed inside the [[Online Asset Library]].
+
+== See also ==
+* [[Character rigs]]
+* [[Online Asset Library]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding projects}}
+{{ll|Category:External tools}}

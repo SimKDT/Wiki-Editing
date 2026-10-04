@@ -33,58 +33,38 @@ This is a [[Template:Navbar|navbar]] used at the top of modding pages to assist 
   |{{ll|Translation}}
   |{{ll|Modding projects}}
   }}
-|content={{ToggleBox|title=<div style="text-align: center;">[[Build 42.20.0]] Modding News</div>|id=modding-news|class=blue|content=
-* New language code: [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/language_codes.html#strew STREW] (joke language), [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/language_codes.html#es-cl ES_CL], [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/language_codes.html#es-mx ES_MX]
-* New translation files: mostly for the game, not modding related
-* <code>language.txt</code> files changed to JSON based format <code>language.json</code>, see [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/translation_files.html#language here].
-* Lots of new world generation files for the [[Lua (API)|Lua]] in <code>media/lua/server/WorldGen</code>
-* New function <code>LuaTableUtil:insertAllUniqueElementsFromJavaList(list, array)</code> to insert elements of ArrayLists into a Lua table
-* Some new [[Procedural distributions]] and rooms, added to [https://pz-wiki-modding.github.io/PZ-API-Docs/mapping.html PZ API Docs]
-* A bunch of new getters and setters for [[Java]] have been added, if you have requests for more, please ask in the [https://discord.com/channels/136501320340209664/1476602902607954043 #mod_portal] channel of the official [[Discord#Official server|Discord server]].
-* New [https://albion.codeberg.page/PZ-JavaDocs/zombie/ui/UIElement.html#drawTextWithBackground(zombie.ui.UIFont,java.lang.String,double,double,double,double,double,double,double,double,double,double,double,double) drawTextWithBackground] method for UI making.
-* Vehicles seem to have had a lot of logic and organization changes, possibly more tools for modders to play with.
-* Newly exposed classes are:
-** <code>CraftRecipe.XpAward</code>
-** <code>StreetPoints</code>
-** <code>Transform</code>
-** <code>VirtualVehicle</code>
-** <code>WorldMapStreet</code>
-* [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#getFileWriter(java.lang.String,boolean,boolean) getFileWriter] now is limited to writing files with specific extensions:
-** <code>ini</code>
-** <code>cfg</code>
-** <code>txt</code>
-** <code>log</code>
-** Interestingly enough, [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#getModFileWriter(java.lang.String,java.lang.String,boolean,boolean) getModFileWriter] didn't get any limitations.
-* New [[Networking|sync]] methods were added:
-** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendHitZombie(zombie.characters.IsoPlayer) sendHitZombie] (interestingly, instantly marked as deprecated ?)
-** Faction related methods:
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#acceptFactionInvite(zombie.characters.Faction,java.lang.String,java.lang.String,boolean) acceptFactionInvite]
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionChangeOwner(zombie.characters.Faction,java.lang.String) sendFactionChangeOwner]
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionChangeTag(zombie.characters.Faction) sendFactionChangeTag]
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionChangeTitle(zombie.characters.Faction,java.lang.String) sendFactionChangeTitle]
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionCreate(java.lang.String,java.lang.String) sendFactionCreate]
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionDisband(zombie.characters.Faction) sendFactionDisband]
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendFactionRemoveMember(zombie.characters.Faction,java.lang.String) sendFactionRemoveMember]
-** Foraging related methods:
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendForageRequestZone(zombie.characters.IsoPlayer,java.lang.String) sendForageRequestZone]
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendForagePool(zombie.characters.IsoPlayer,java.lang.String,se.krka.kahlua.vm.KahluaTable) sendForagePool]
-*** [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#sendForageSpot(zombie.characters.IsoPlayer,java.lang.String) sendForageSpot]
+|content={{ToggleBox|title=<div style="text-align: center;">[[Build 42.21.0]] Modding News</div>|id=modding-news|class=blue|content=
+* <code>loadstring</code> and <code>loadstream</code> functions were added back.
+* New [[registries|registry system]] for keybinds <code>KeybindId</code>. Every actions now have a specific identifier.
+** You can notably use it to check when a specific action keybind is pressed.
+** Global method variants <code>isKeyDown</code>, <code>wasKeyDown</code> and <code>isKeyPressed</code> using those instead of a string.
+** New methods in <code>Core</code> class to add keybinds <code>addKeyBinding</code> (variant to the one taking a string, can now take a <code>KeybindId</code> instead).
+* New method <code>createCorpseZombie</code> in [https://albion.codeberg.page/PZ-JavaDocs/zombie/VirtualZombieManager.html VirtualZombieManager].
+* New exposed classes:
+** <code>KeybindId</code>
+** <code>GridSquareEdgeFacingDirection</code>
+** <code>GridSquareEdge</code>
+** <code>TradingState</code>
+* New methods related to usernames length limits: <code>getMinUsernameLength</code> and <code>getMaxUsernameLength</code>.
 * Two new [[Lua event]]s:
-** RequestMedicalCheck
-** AcceptedMedicalCheck
-* Vector2 class got a new [https://albion.codeberg.page/PZ-JavaDocs/zombie/iso/Vector2.html#mul(float) multiplier method]
-* Signs seem to point to [[ActionGroup]] now finally supporting modding, with modded files getting loaded by the game. This should notably allow for modders to use GrappleZed without any manual installation, but also do advanced [[animation]].
-}}
-{{ToggleBox|title=<div style="text-align: center;">[[Build 42.20.1]] and [[Build 42.20.4]] Modding News</div>|id=modding-news-hotfix|class=blue|content=
-[[Build 42.20.1]]
-* <code>json</code> extension is now allowed for [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#getFileWriter(java.lang.String,boolean,boolean) getFileWriter] (alongside <code>ini</code>, <code>cfg</code>, <code>txt</code>, <code>log</code>)
-* <code>%</code> characters now need to be escaped in the [[translation]]s (e.g. <code>%%</code> for a single <code>%</code> when resolved)
-
-[[Build 42.20.4]]
-* A new security report by Rasmus Moorats, a security researcher and penetration tester, was sent to [[The Indie Stone]] and later released publicly once these issues were fixed. You can read the blog post [https://blog.nns.ee/2026/08/26/project-zomboid-vulns/ here]
-* His blog highlights 3 key vulnerabilities that led to the removal of <code>loadstring</code> which was previously used to interpret Lua code from strings, used by modders and server owners to transmit Lua code to clients. The vulnerabilities were:
-** Lua code injection via <code>loadstring</code> in the Lua sandbox, which could be exploited to run arbitrary code on the client machine sent from the server
-** [[wikipedia:Sandbox (software development)|Sandbox]] escape via the use of <code>ZomboidFileSystem.updateScript</code> to create files bypassing the mod's [https://albion.codeberg.page/PZ-JavaDocs/zombie/Lua/LuaManager.GlobalObject.html#getFileWriter(java.lang.String,boolean,boolean) extension file writing limitation] which calls the private method <code>ZomboidFileSystem.normalizeToPath</code>
-** <code>ZomboidFileSystem.normalizeToPath</code> vulnerability which led to the ability to write files outside of the intended [[Game files|game directories]], basically anywhere on the computer
+** <code>LogLevelPerk</code>
+** <code>OnTileObjectAdded</code>
+* Lots of logic relatic to IsoGridSquare and neighbours have been updated.
+** <code>isWallTo</code>, <code>isWindowTo</code>
+** <code>getEast</code>, <code>getWest</code>, <code>getNorth</code>, <code>getSouth</code>
+** <code>isEastOf</code>, <code>isWestOf</code>, <code>isNorthOf</code>, <code>isSouthOf</code>
+** <code>isDiagonalTo</code>
+** <code>getOppositeSquare</code> (using new <code>GridSquareEdge</code> class)
+** And a lot more. A lot of these were already present in some shape or form but there's likely a lot of new stuff like these to explore.
+* <code>getRectsBounds</code> for <code>IsoRoom</code> instances.
+* New [[Console#Configuring logging|DebugType]]s: <code>ClientCommand</code>, <code>VehicleClientCommand</code>, <code>UnitTest</code>.
+* New tile property (IsoPropertyType) <code>CarSlowFactor</code>.
+* New <code>nearWallCrouching</code> [[animation]] variable.
+* New methods in <code>IsoGameCharacter</code>: 
+** <code>transmitHaloNote</code>
+** <code>isSitting</code> (ground, <code>isSitOnGround</code>, and furniture, <code>isSittingOnFurniture</code>)
+** <code>setNearWallCrouching</code>, <code>isNearWallCrouching</code>
+* New method in <code>IsoAnimal</code>: <code>delete</code> (supposedly removes the animal from the game).
+* Having timed action instant cheat on now allows for instant item equip in hands.
 }}
 }}<includeonly/>
