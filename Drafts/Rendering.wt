@@ -1,37 +1,80 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-'''Rendering''' is the process of generating a 2D image from a 3D model by means of a 3D software. [[Wikipedia:Blender|Blender]] is one of the most popular in the Project Zomboid community, but there are many others available. Rendering is indirectly linked to [[modding]], as it is only used to create images to be used in your mod presentation, or inside various medias in-game such as [[flier]]s in [[Build 42]].
+<translate>
+<!--T:1-->
+'''Rendering''' is the process of generating a 2D image from a 3D model by means of a 3D software. [[Wikipedia:Blender|Blender]] is one of the most popular in the Project Zomboid community, but there are many others available. Rendering is indirectly linked to {{ll|modding}}, as it is mostly used to create images to be used in your mod presentation, or inside various medias in-game such as {{ll|flier}}s in {{ll|Build 42}}.
 
-The process usually involves getting the game assets in the 3D software, which is decently covered in [[File formats#Importing assets]], but some game assets like tiles are only 2D sprites without actual 3D models. This involves a different process, where you recreate the 3D model shape and adjust the UV map to fit the 2D texture.
+<!--T:2-->
+The process usually involves getting the game assets in the 3D software, which is decently covered in {{ll|File formats#Importing assets}}, but some game assets like tiles are only 2D sprites without actual 3D models. This involves a different process, where you recreate the 3D model shape and adjust the UV map to fit the 2D texture.
 
-To get started, it is recommended that you follow the two part tutorial by [https://www.youtube.com/@sqzpz SQz] on the subject:
-* [https://www.youtube.com/watch?v=31H54TpJjSA Part 1: How To Set Up a Character from Project Zomboid in Blender for Animation] - a walkthrough guide on setting up a character for 3D rendering; also see [[Animation#Available rigs|Animation]] for available rigs for animating.
-* [https://www.youtube.com/watch?v=b5aqvZpMe7o Part 2: How To Add Further Details to Your Project Zomboid Character in Blender] - goes more in-depth on creating a 3D PZ like scene and adding more details.
+== Getting started == <!--T:7-->
+A serie of video guides have been made by [https://www.youtube.com/@sqzpz SQz] and are often used as a reference for learning how to render Project Zomboid in [[wikipedia:Blender|Blender]], however it has now became a bit outdated. The [[Community rig]] provides an easy to use tool in Blender for managing and dressing up a character, setting its body texture, model, hair etc. The [[Online Asset Library]] also provides different tiles made as 3D assets directly usable in Blender. When it comes to retrieving every clothing of the game, if you don't plan on using the Community rig which does it for you, you can learn how to import the assets in [[Importing assets]].
 
-You can find rigs to facilitate posing characters for rendering on the page [[Animation rigs]].
+A better in-depth guide on how to use those tools was made in the [[Sit-Down Sunday]] of the 4th of October, 2026, presented by the creator of the [[Community rig]] and [[Online Asset Library]], Paddlefruit.
 
-== See also ==
-* [[Creating a flier mod]] - a guide on creating a flier mod, which can utilize rendered images.
-* [[Animation]] - a guide on creating custom animations for the game, as well as available rigs.
-* [[Importing assets]] - a resource page on importing the 3D game assets into Blender.
+{{Video
+|id=y-yg0l6s6yE
+|image=Sit-Down Sunday - 4th of October 2026 - Blender Toolkit - thumbnail.webp
+|name=Sit-Down Sunday - 4th of October 2026 - Blender Toolkit
+|float=left
+}}
+{{Clear}}
+In any case, you can find the two part tutorial by SQz below which are still good tutorials besides the outdated points:
 
-{| class="wikitable theme-blue sortable" style="text-align: center;
+{{Video
+|id=31H54TpJjSA
+|image=How To Set Up a Character from Project Zomboid in Blender for Animation - thumbnail.webp
+|name=How To Set Up a Character from Project Zomboid in Blender for Animation
+|float=left
+}}
+{{Video
+|id=b5aqvZpMe7o
+|image=How To Add Further Details to Your Project Zomboid Character in Blender - thumbnail.webp
+|name=How To Add Further Details to Your Project Zomboid Character in Blender
+|float=left
+}}
+{{Clear}}
+
+The following video guide explains how to transform 2D sprites into 3D models using Blender.
+
+{{Video
+|id=8ZkrE24SBV4
+|image=2D Zomboid into 3D Blender - thumbnail.webp
+|name=2D Zomboid into 3D Blender
+}}
+
+== See also == <!--T:11-->
+
+<!--T:12-->
+* {{ll|Creating a flier mod}} - a guide on creating a flier mod, which can utilize rendered images.
+* {{ll|Animation}} - a guide on creating custom animations for the game, as well as available rigs.
+* {{ll|Importing assets}} - a resource page on importing the 3D game assets into Blender.
+
+<!--T:13-->
+{| class="wikitable theme-blue sortable"
 |+ style="white-space:nowrap" | External tutorials
 |-
 ! Tutorial !! Description !! Author !! Last updated
 |-
-| SQz rendering tutorial [https://www.youtube.com/watch?v=31H54TpJjSA part 1] and [https://www.youtube.com/watch?v=b5aqvZpMe7o part 2]
-| A two part tutorial on setting up a character for rendering in Blender, and adding more details to the scene.
-| SQz
-| {{#dateformat:2023-09-02|ymd}}
+| [https://www.youtube.com/watch?v=y-yg0l6s6yE Sit-Down Sunday - 4th of October 2026 - Blender Toolkit]
+| A [[Sit-Down Sunday]] episode on using the [[Blender Toolkit]], [[Online Asset Library]] and [[PZ Forest Generator]] in Blender.
+| Paddlefruit
+| {{#dateformat:2026-10-04|ymd}}
 |-
 | [https://www.youtube.com/watch?v=8ZkrE24SBV4 2D Zomboid into 3D Blender]
 | A tutorial on how to recreate a 3D model from a 2D sprite.
 | Darkmoriarti
 | {{#dateformat:2026-07-06|ymd}}
+|-
+| SQz rendering tutorial [https://www.youtube.com/watch?v=31H54TpJjSA part 1] and [https://www.youtube.com/watch?v=b5aqvZpMe7o part 2]
+| A two part tutorial on setting up a character for rendering in Blender, and adding more details to the scene. The tutorial however has become a bit outdated, see [[#Getting started]] for the details.
+| SQz
+| {{#dateformat:2023-09-02|ymd}}
 |}
 
-== Navigation ==
+== Navigation == <!--T:14-->
+</translate>
+
 {{Navbox modding}}
 
 {{ll|Category:Modding}}

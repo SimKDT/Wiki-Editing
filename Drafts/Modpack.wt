@@ -1,0 +1,15 @@
+<languages />
+{{Navbar modding}}
+<translate>
+'''Modpacks''' or the act of '''modpacking''' involves taking multiple mods and combining them into a single mod that is then distributed as a unified [[Steam Workshop]] item. The objective is to provide users, and more importantly servers, with stable mod versions as any update to mods used on servers require the server to restart to update said mods to allow users with the updated versions to join the server.
+
+This pratice is by default both not allowed and discouraged by the official modding policy. Before [[Build 42]], this pratice was notably harmful to the original mods as this was often done wrongly, which led to the mod's packed [[Load order|clashing]] with the original mods, and led to confusing and nonsensical bug reports to the original mod creators when the problem didn't come from their version of the mod. 
+
+For more information about the official policies that limit this pratice, see the [[Modding#Terms & Conditions|Terms & Conditions]] of modding.
+
+== Navigation ==
+</translate>
+
+{{Navbox modding}}
+
+{{ll|Category:Modding}}

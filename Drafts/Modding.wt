@@ -1,5 +1,5 @@
 <languages />
-{{Navbar modding}}
+{{Navbar_modding|no-news=}}
 {{Page version|42.21.0}}
 {{About|an overview about modding|PZwiki project|PZwiki:Project Modding}}
 <translate>
@@ -7,17 +7,10 @@
 <!--T:1-->
 [[File:SpiffosWorkshop.png|link=https://steamcommunity.com/app/108600/workshop/|frame|right|Spiffo's Workshop is the home of [[Project Zomboid]] mods on {{ll|Steam}}]]
 Modding is the process of creating new content by creating {{ll|mods}} for a game. For Project Zomboid, modding is a natively integrated part of the game with a mod manager and an API to allow modders to create a various quantity of content, from simple items to complex systems. Mods are usually uploaded to the {{ll|Spiffo's Workshop}} which serves as the official method for sharing mods with the community.
-
-== Latest information on MP unstable release == <!--T:2-->
-</translate>
-
-{{Main|TIS Modding Guides#Build 42 MP unstable release}}
-<translate>
-<!--T:3-->
-''Last updated: 11th of December 2025''
-
-<!--T:4-->
-The Indie Stone has recently released an ''unstable'' version of Project Zomboid which adds back multiplayer in the game. They provided the modding community with modding instructions to applying the new networking changes to existing mods that you can find {{ll|forums:topic/88499-modding-migration-guide-4213/|here}}. If you don't have a TIS Forum account to download them, you find copies of these files {{ll|github:pz-wiki-modding/Archive.Project-Zomboid-Modding/tree/main/TIS guides/B42 unstable MP|here}}.
+{{Clear}}
+== Latest modding news ==
+You have found something interesting for modding and want to document it ? Feel free to contribute to the modding news from the [[:Template:ModdingNews|Modding News template]].
+{{ModdingNews}}
 
 == Terms & Conditions == <!--T:5-->
 
@@ -36,6 +29,23 @@ By modding Project Zomboid, you also agree with the '''{{ll|pz:blog/modding-poli
 </translate> <translate><!--T:10--> [https://projectzomboid.com/blog/modding-policy/ modding policy]</translate><translate><!--T:11-->
 , which may be updated from time to time with any technical requirements regarding how PZ mods must work.
 * Project Zomboid modders are free to receive monetary/gift donations from the players who use their releases, and appreciate the time and effort put into them. However, having mods created exclusively for those who choose to donate (or separate ‘in-mod’ content and bonuses) is not allowed. Mod creators cannot sell modifications to Project Zomboid.
+
+=== Know your rights ===
+
+When you create a mod, you own it! Whenever it has been released or not, you retain the rights associated to it, and as such anyone reposting your mod without your rights by default expose themselves to potential legal actions from your end. Often this will simply be a DMCA takedown notice that you can file to Steam for example.
+
+Below are some useful resources and tips on how to protect your rights as a mod creator:
+* The modding policy already details some basic rights that modders have by default, notably:
+** It is not because you do not sell your work, that anyone can freely modify or distribute it without your permission.
+** [[The Indie Stone]] will not use your mod without your permission first but they reserve the rights to implement any general ideas or features irrespective of whether mods exist that accomplish the same goal.
+** Any public or semi-private [[Modpack|modpack]] must have clear permissions and licensing for all included mods, ensuring that the original mod creators have granted the necessary rights for redistribution and modification.
+** If your mod is abandonned and broken, any modder willing to take over its maintenance must have done everything in their power to contact the original creator and obtain the necessary permissions before proceeding with the maintenance, if no clear licensing or permissions are provided by the original creator. You must also contact the Project Zomboid Steam's moderation team to inform them of the situation and of your intentions.
+* Licensing your mod clearly is a good idea. If you want anyone to be able to use, modify, or distribute your mod, or specify any specific restrictions, make sure to write it down somewhere. This is usually done through a license file included with your mod, or in your mod's repository. You can learn more about the different types of licenses available on [https://choosealicense.com/ choosealicense.com].
+* [[The Indie Stone]] provides template images in [[BBCode]] that you can use in your mod's [[Steam Workshop|Steam]] description to license your mod easily. You can find these templates in the official forums [[forums:topic/2530-mod-permissions/|here]]. The available templates are as follows:
+** Free-For-All - anyone can modify and distribute without restrictions. Credit is optional but appreciated.
+** Credit where it's due - anyone can modify and distribute your mod, but they must give you proper credit for your work within the files of the mod.
+** Ask For Permission - anyone can modify and distribute your mod, but they must obtain your explicit permission before doing so.
+** On Lockdown - no one is allowed to modify or distribute your mod.
 
 == Commissions == <!--T:12-->
 

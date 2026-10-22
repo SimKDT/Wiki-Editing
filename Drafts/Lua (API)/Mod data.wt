@@ -1,9 +1,11 @@
 <languages />
 {{Navbar modding}}
-{{Page version|42.13.1}}
+{{Page version|42.21.0}}
 <translate>
-<!--T:1-->
-'''Mod data''' tables are used to persistently store Lua data. Mod data tables are regular Lua tables; they do not have any special semantics or functionality. Only plain old data (strings, booleans, numbers, and tables) can be stored persistently.
+
+
+'''Mod data''' tables are used to store persistent Lua data in key/value pairs and are saved automatically. They're regular Lua tables without any special behavior; you read and write them like any other table, and the game saves it for you.
+
 
 <!--T:2-->
 In other games, to have persistent data it is often required that you manually save your data when the save gets closed, but in Project Zomboid, you '''should not do that''' because the game handles the saving of the mod data. You should simply use the mod data as a {{ll|Lua (language)#Tables|table}} that will persist between sessions. If data you are using doesn't need to be persistent, you can simply use a {{ll|Lua (language)#Modules|module}}.
@@ -12,13 +14,76 @@ In other games, to have persistent data it is often required that you manually s
 {{Note|type=error|Accessing mod data during the event {{ll|OnSave}} will not access the save mod data but the next session mod data. This means if you store anything during the {{ll|OnSave}} event, these data will possibly be there in the next session, as long as you don't close the game.}}
 
 <translate>
+== What can be stored ==
+* Keys can only be strings or numbers.
+* Values can be strings, numbers, booleans and tables of those.
+* Anything else, like [[InventoryItem]], [[IsoPlayer]], userdata and functions, are dropped when the data is saved or synced. To refer to a game object, store an ID. Alternatively, coordinates may be used but is flawed and not recommended ([[Multiplayer]] issues, object moving, finding the object later ...).
+* Metatables aren't saved either.
+* Every mod shares the same table on an object. '''Name space your keys''' under your mod name so you don't overwrite someone else's data.
+{{CodeSnip
+| lang = lua
+| code =
+local modData = obj:getModData()
+modData.TinFoil = modData.TinFoil or {}
+modData.TinFoil = { lined = true, by = player:getUsername() }
+}}
+
+== Mod data kinds ==
+{| class="wikitable"
+|+
+! Kind !! Getter !! Saved with !! Sync with
+|-
+| Object
+| {{Code|obj:getModData()|lang=lua}}
+| the object
+| {{Code|obj:transmitModData()|lang=lua}}
+|-
+| Player
+| {{Code|player:getModData()|lang=lua}}
+| the player
+| {{Code|player:transmitModData()|lang=lua}}
+|-
+| Item
+| {{Code|item:getModData()|lang=lua}}
+| the item
+| {{Code|syncItemModData(player, item)|lang=lua}} server only
+|-
+| Square
+| {{Code|square:getModData()|lang=lua}}
+| the square
+| {{Code|square:transmitModData()|lang=lua}}
+|-
+| Vehicle Part
+| {{Code|part:getModData()|lang=lua}}
+| the vehicle
+| {{Code|vehicle:transmitPartModData(part)|lang=lua}}
+|}
+All of these also have hasModData(), which returns true if the table exists and isn't empty.
+
+== Multiplayer Considerations ==
+Mod data is not synced automatically when you change it. The server and every client has their own copy and any changes stay on the machine that made it until something syncs them.
+
+* Mod data is server authoritative. Only the server's copy is saved. A client writing mod data only changes its own copy and is lost on a reconnect or chunk reload.
+* Every sync sends the entire table and the receiver replaces it's copy.
+* No event fires when object mod data is changed, with the exception of [[OnWaterAmountChange]].
+* Clients can overwrite mod data without any checks. The best practice is to have the client ask the server with a [[Networking#Commands|sendClientCommand]], and let the server change and sync the data.
+* Mod data carries with the owner. When a server sends an object or an item, or a client loads a chunk, mod data comes with it.
+
+== Mistakes To Avoid ==
+Reading mod data with {{Code|getModData()|lang=lua}} creates an empty table if object doesn't have one. When you're only reading, check {{Code|hasModData()|lang=lua}} first. It's only true if the object already has mod data and it isn't empty. This keeps you from leaving empty mod data tables on every object your code looks at.
+{{CodeSnip
+| lang = lua
+| code =
+local function isUsed(obj)
+    return obj:hasModData() and obj:getModData().TinFoil and obj:getModData().TinFoil.lined
+end
+}}
+
 == Object Mod Data == <!--T:3-->
 
 <!--T:4-->
-Any IsoObject has mod data, typically referred to as ''object mod data'' for disambiguation. Object mod data belongs to an instance of an object, such as a specific player or tile. Object mod data can be retrieved using
-</translate> {{Code|object:getModData()|lang=lua}}<translate>
-<!--T:5-->
-.
+Any IsoObject has mod data, typically referred to as ''object mod data'' for disambiguation. Object mod data belongs to an instance of an object, such as a specific player or tile. Object mod data can be retrieved using {{Code|object:getModData()|lang=lua}}.
+
 </translate>
 {{CodeSnip
 | lang = lua
@@ -70,8 +135,6 @@ Events.OnWeaponHitCharacter.Add(function(attacker, target, weapon, damage)
 end)
 }}
 
-{{Note|type=warn|In online {{ll|multiplayer}}, GlobalModData is not saved on clients (client-only save), so it will not persist on reconnect!}}
-
 <translate>
 == Networking == <!--T:10-->
 
@@ -86,8 +149,7 @@ from the client to the server, or vice versa. However, you have to manually inte
 == External links == <!--T:16-->
 
 <!--T:17-->
-*</translate> <translate><!--T:18--> [https://github.com/MrBounty/PZ-Mod---Doc/blob/main/How%20to%20use%20global%20modData.md Global mod data guide]</translate> <translate>
-<!--T:19-->
+* [https://github.com/MrBounty/PZ-Mod---Doc/blob/main/How%20to%20use%20global%20modData.md Global mod data guide]
 - notably explains more in details the available functions and the networking aspects.
 
 == Navigation == <!--T:20-->

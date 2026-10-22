@@ -128,7 +128,7 @@ The Workshop folder will use the following structure inside the {{ll|Game files#
 * <code>Contents/</code>: The folder will only have the <code>mods/</code> folder.
 * <code>Contents/mods/</code>: Your various mods which can be activated by the players will be put here, with each mod having their own {{ll|mod.info}} file associated to be recognized (see {{ll|#Mod folder}}). This is the folder uploaded to the Workshop.
 * <code>workshop.txt</code>: Informations which are needed to upload your mod are put here (see {{ll|workshop.txt}}).
-* <code>preview.png</code>: The image used as your mod preview on the Steam Workshop. Game imposes a 256x256 resolution and an 8-bit color depth.
+* <code>preview.png</code>: The image used as your mod preview on the Steam Workshop. Game imposes a maximum 512x512 resolution and an 8-bit color depth.
 </translate>
 
 {{Note|Subfolders in <code>MyExampleMod/</code> which are not <code>Contents/</code> are not recognized by the game and can be used to store various files for your mod that shouldn't get uploaded. Thus you can store in it Python scripts, images, assets, etc.}}
@@ -342,79 +342,187 @@ The <code>sound</code> folder is used to store sound files. The files need to be
 == Example == <!--T:46-->
 
 <!--T:47-->
-Below is a full example of a mod structure in Windows.
+Below are two examples of mod structures in Windows.
 </translate>
-{{CodeSnip
+{{CodeBox|class=blue|id=simple-example|collapsed=false
+|title=Simple example
+|{{CodeSnip
 | code =
-📁 %UserProfile%/
-    📁 Zomboid/
-        📁 Workshop/
-            📁 MyMod/
+📁 %UserProfile%
+    📁 Zomboid
+        📁 Workshop
+            📁 MyMod
                 📄 workshop.txt                        <--- automatically generated when uploading
-                📄 preview.png                         <--- 256x256 image
-                📁 Contents/
-                    📁 mods/
-                        📁 MyMod1/
+                📄 preview.png                         <--- 512x512 image
+                📁 Contents
+                    📁 mods
+                        📁 MyMod1
+                            📄 mod.info
+                            📄 poster.png
+                            📄 icon.png
+                            📁 42.0.0
+                            │   📁 media
+                            │       📁 AnimSets
+                            │           ...
+                            │       📁 lua
+                            │           📁 client
+                            │               ...
+                            │           📁 server
+                            │               ...
+                            │           📁 shared
+                            │               ...
+                            │       📁 scripts
+                            │           ...
+                            │       ...
+                            │   📄 mod.info
+                            │   📄 poster.png
+                            │   📄 icon.png
+                            📁 common               <--- shared resources for all versions, store large files here
+                                📁 media
+                                    📁 anims_X
+                                        ...
+                                    📁 models_X
+                                        ...
+                                    ...
+}}
+}}
+
+{{CodeBox|class=blue|id=multiple-mods-example
+|title=Multiple mods example
+|{{CodeSnip
+| code =
+📁 %UserProfile%
+    📁 Zomboid
+        📁 Workshop
+            📁 MyMod
+                📄 workshop.txt                        <--- automatically generated when uploading
+                📄 preview.png                         <--- 512x512 image
+                📁 Contents
+                    📁 mods
+                        📁 My cool mod                 <--- primary mod
                         │   📄 mod.info
                         │   📄 poster.png
                         │   📄 icon.png
-                        │   📁 42.0.0/                 <--- will be loaded for versions above 42.0.0
-                        │   │   📁 media/
-                        │   │       📁 AnimSets/
+                        │   📁 42.0.0
+                        │       📁 media
+                        │           ...
+                        │       📄 mod.info
+                        │       📄 poster.png
+                        │       📄 icon.png
+                        📁 My even cooler mod          <--- secondary mod
+                            📄 mod.info
+                            📄 poster.png
+                            📄 icon.png
+                            📁 42.0.0
+                                📁 media
+                                    ...
+                                📄 mod.info
+                                📄 poster.png
+                                📄 icon.png
+}}
+}}
+
+{{CodeBox|class=blue|id=41-42-example
+|title=Build 42 mixed with Build 41 example
+|{{CodeSnip
+| code =
+📁 %UserProfile%
+    📁 Zomboid
+        📁 Workshop
+            📁 MyMod
+                📄 workshop.txt                        <--- automatically generated when uploading
+                📄 preview.png                         <--- 512x512 image
+                📁 Contents
+                    📁 mods
+                        📁 MyMod1
+                            📄 mod.info
+                            📄 poster.png
+                            📄 icon.png
+                            📁 42.0.0                 <--- will be loaded for versions above 42.0.0
+                            │   📁 media
+                            │       ...
+                            │   📄 mod.info
+                            │   📄 poster.png
+                            │   📄 icon.png
+                            📁 media                  <--- Build 41 only folder, not used in Build 42
+                                ...
+}}
+}}
+
+{{CodeBox|class=blue|id=complete-example
+|title=Complete example
+|{{CodeSnip
+| code =
+📁 %UserProfile%
+    📁 Zomboid
+        📁 Workshop
+            📁 MyMod
+                📄 workshop.txt                        <--- automatically generated when uploading
+                📄 preview.png                         <--- 512x512 image
+                📁 Contents
+                    📁 mods
+                        📁 My cool mod
+                        │   📄 mod.info
+                        │   📄 poster.png
+                        │   📄 icon.png
+                        │   📁 42.0.0                 <--- will be loaded for versions above 42.0.0
+                        │   │   📁 media
+                        │   │       📁 AnimSets
                         │   │           ...
-                        │   │       📁 lua/
-                        │   │           📁 client/
+                        │   │       📁 lua
+                        │   │           📁 client
                         │   │               ...
-                        │   │           📁 server/
+                        │   │           📁 server
                         │   │               ...
-                        │   │           📁 shared/
+                        │   │           📁 shared
                         │   │               ...
-                        │   │       📁 scripts/
+                        │   │       📁 scripts
                         │   │           ...
                         │   │       ...
                         │   │   📄 mod.info
                         │   │   📄 poster.png
                         │   │   📄 icon.png
-                        │   📁 42.X.Y/                 <--- will be loaded instead of older versions (42.0.0 for example will not load), for game versions compatibility if needed
+                        │   📁 42.X.Y                 <--- will be loaded instead of older versions (42.0.0 for example will not load), for game versions compatibility if needed
                         │   │   ...
-                        │   📁 common/                 <--- mandatory, mod won't be detected without it
-                        │   │   📁 media/
-                        │   │       📁 anims_X/
+                        │   📁 common
+                        │   │   📁 media
+                        │   │       📁 anims_X
                         │   │           ...
-                        │   │       📁 models_X/
+                        │   │       📁 models_X
                         │   │           ...
                         │   │       ...
-                        │   📁 media/                  <--- Build 41 only folder, not used in Build 42
-                        │       📁 anims_X/
+                        │   📁 media                  <--- Build 41 only folder, not used in Build 42
+                        │       📁 anims_X
                         │           ...
-                        │       📁 AnimSets/
+                        │       📁 AnimSets
                         │           ...
-                        │       📁 lua/
-                        │           📁 client/
+                        │       📁 lua
+                        │           📁 client
                         │               ...
-                        │           📁 server/
+                        │           📁 server
                         │               ...
-                        │           📁 shared/
+                        │           📁 shared
                         │               ...
-                        │       📁 models_X/
+                        │       📁 models_X
                         │           ...
-                        │       📁 scripts/
+                        │       📁 scripts
                         │           ...
-                        📁 MyMod2/                     <--- secondary mod, optional if needed
+                        📁 My even cooler mod        <--- secondary mod, optional if needed
                             📄 mod.info
                             📄 poster.png
                             📄 icon.png
-                            📁 42.0.0/
+                            📁 42.0.0
                                 📄 mod.info
                                 📄 poster.png
                                 📄 icon.png
                                 ...
-                            📁 42.X.Y/
+                            📁 42.X.Y
                                 ...
-                            📁 common/
+                            📁 common
                                 ...
-                            📁 media/
+                            📁 media
                                 ...
+}}
 }}
 
 <translate>
