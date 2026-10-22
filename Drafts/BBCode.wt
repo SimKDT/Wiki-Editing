@@ -1,5 +1,5 @@
-{{LangSwitch}}
-{{Navbar_modding}}
+<languages />
+{{Navbar modding}}
 {{Infobox
 | title = BBCode
 | class = theme-blue
@@ -10,14 +10,24 @@
     | Steam formatting guide
     }}
 }}
-'''[[Wikipedia:BBCode|BBCode]]''' is a form of markup language used to format posts in many message boards and forums. It allows users to add elements like bold text, italics, links, and images to their messages using a simple tag-based syntax. It can be recognized by its use of square brackets to enclose tags, such as `[b]` for bold text. It is used by [[Steam]] to format posts in the Steam Community.
+<translate>
+<!--T:1-->
+'''[[Wikipedia:BBCode|BBCode]]''' is a form of markup language used to format posts in many message boards and forums. It allows users to add elements like bold text, italics, links, and images to their messages using a simple tag-based syntax. It can be recognized by its use of square brackets to enclose tags, such as `[b]` for bold text. It is used by {{ll|Steam}} to format posts in the Steam Community.
 
-== See also ==
-*[https://steamcommunity.com/sharedfiles/filedetails/?id=2807121939 Comprehensive Formatting Help] - a deeper guide on BBCode than the official Steam one, explaining how to render videos directly in text for example.
-*[https://steamcommunity.com/sharedfiles/filedetails/?id=1245720477 Embed Images and Buttons in Artwork Descriptions] - a guide on using BBCode for Artwork descriptions, on profiles etc.
-*[https://bijx.github.io/Steam-Markup-Generator/ Steam Markup Generator] - a tool to edit and render in real time Steam's BBCode.
+== See also == <!--T:2-->
 
-== Navigation ==
+<!--T:3-->
+* </translate> <translate><!--T:4--> [https://steamcommunity.com/sharedfiles/filedetails/?id=2807121939 Comprehensive Formatting Help]</translate> <translate><!--T:5-->
+- a deeper guide on BBCode than the official Steam one, explaining how to render videos directly in text for example.
+*</translate> <translate><!--T:6--> [https://steamcommunity.com/sharedfiles/filedetails/?id=1245720477 Embed Images and Buttons in Artwork Descriptions]</translate> <translate><!--T:7-->
+- a guide on using BBCode for Artwork descriptions, on profiles etc.
+*</translate> <translate><!--T:8--> [https://bijx.github.io/Steam-Markup-Generator/ Steam Markup Generator]</translate> <translate>
+<!--T:9-->
+- a tool to edit and render in real time Steam's BBCode.
+
+== Navigation == <!--T:10-->
+</translate>
+
 {{Navbox modding}}
 
 {{ll|Category:Modding guides}}
