@@ -1,0 +1,39 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.21}}
+{{Infobox
+| title = Target Square: On Load Commands
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Target Square On Load Commands - preview.jpeg]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2969455858
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=github
+        | page=github:Poltergeist-ix/TargetSquareOnLoad
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=github
+        | page=github:Poltergeist-ix/TargetSquareOnLoad/tree/main/Contents/mods/TargetSquareOnLoad
+        | Documentation
+        }}
+    }}
+}}
+'''Target Square: On Load Commands''' adds a new [[Lua event]] that triggers when a specific square is loaded. It uses the [https://albion.codeberg.page/PZ-JavaDocs/zombie/globalObjects/SGlobalObjects.html SGlobalObjects] systems to register [https://albion.codeberg.page/PZ-JavaDocs/zombie/globalObjects/GlobalObject.html GlobalObject]s at specific coordinates that will then later be loaded in with chunks and trigger functions provided by modders. This can notably be used to place an item, a new tile, any kind of object, or simply interact with the world only when that specific coordinate get loaded in.
+{{Clear}}
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}
