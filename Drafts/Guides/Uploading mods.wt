@@ -1,0 +1,45 @@
+<languages />
+{{Navbar modding}}
+{{Page version|42.20.2}}
+<translate>
+<!--T:1-->
+This page will explain the process of '''uploading mods''' to the Steam Workshop with the in-game uploader, as well as documenting alternative methods and uploaders that give more control over what you do.
+</translate>
+
+{{Note|type=warn|When uploading a mod with files deleted from the previous version, users will not have these files removed automatically and might get version mismatch errors. You can simply leave the files in but replace the content to leave them empty.}}
+
+<translate>
+== In-game uploader == <!--T:2-->
+
+<!--T:3-->
+The in-game uploader can be accessed from the main menu in the Workshop menu, then ''"Create and update items"''. This menu will show every valid mod in your {{ll|Mod structure#Workshop folder|Workshop folder}} and allow you to upload them to the Steam Workshop.
+
+<!--T:4-->
+After selecting which mod to upload/update, you will be prompted with a menu to set the mod's title, description, tags, and visibility. The preview image is also visible here. The next step will open a menu showing the title of the mod on the workshop and the workshop ID used. If no {{ll|Workshop ID}} is set, the game will ask to create a new one or to use an existing one. You can edit the patch note, which will be uploaded on the workshop page with the mod. You can click ''"Upload to Steam Workshop now!"'' to upload the mod. The workshop page description will receive two new elements at the end of it when uploading:
+</translate>
+{{CodeSnip
+| code =
+Workshop ID: <workshop_id>
+Mod ID: <mod_id>
+}}
+
+{{Note|The in-game uploader will '''overwrite''' the entire workshop description with the one set in the uploader. If you want to keep the description of your mod, you will need to copy it before uploading! A solution to this problem is anytime you update your mod, copy the description from the Steam Workshop page and paste it in the uploader's description field. Make sure to remove the workshop and mod ID at the end of the copied description, or you will end up uploading duplicates of it.}}
+{{Note|type=warn|You can find a description of the result codes in the [https://partner.steamgames.com/doc/api/steam_api#EResult Steamworks SDK API reference]. These are rarely too descriptive of the actual problem but they can help you find out what could be wrong.}}
+
+<translate>
+== Alternative uploaders == <!--T:5-->
+
+<!--T:6-->
+* {{ll|SteamCMD#Uploading Workshop items|SteamCMD}} – the official {{ll|Steam}} command line tool that allows you to upload mods with a build configuration file. This method is more complex but allows for more control over the upload process and its content.
+*
+</translate> <translate><!--T:7--> [https://github.com/TechnologicNick/SteamChangePreview SteamChangePreview tool]</translate> <translate>
+<!--T:8-->
+– allows you to bypass the limitations of the in-game uploader to be able to upload different-sized preview images for your mod on its Steam page. It notably allows you to upload a non-square image, a higher resolution image, or an animated preview image.
+* {{ll|Steam Uploader}} – an external uploader that provides the ability to update different elements on a Workshop page independently or multiple ones together (description, preview, content…).
+
+== Navigation == <!--T:9-->
+</translate>
+
+{{Navbox modding}}
+
+{{ll|Category:Modding guides}}
