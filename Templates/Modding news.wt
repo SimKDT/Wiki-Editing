@@ -2,6 +2,8 @@
 {{Documentation|doc=
 This provides one or more toggle boxes to display the latest modding news on the wiki. This is most notably used in {{ll|Template:Navbar modding}} to easily show users the latest updates and changes related to modding with an easy access from any modding pages to not miss them.
 
+Latest modding news are retrieved manually from a diff comparison between the previous update files and the latest update files. The [[Decompiling game code|decompiled java files]] are examined as well as the [[Game files#Media folder|media folder]]. 
+
 == Usage ==
 {{tlx|ModdingNews}}
 {{ModdingNews}}
@@ -9,39 +11,68 @@ This provides one or more toggle boxes to display the latest modding news on the
 == See also ==
 {{ll|Template:ToggleBox}}
 }}
-</noinclude><includeonly>{{ToggleBox|title=<div style="text-align: center;">[[Build 42.21.0]] Modding News (September 24th, 2026)</div>|id=modding-news|class=blue|content=
+</noinclude><includeonly>{{ToggleBox|title=<div style="text-align: center;">[[Build 42.22.0]] Modding News (October 27th, 2026)</div>|id=modding-news|class=blue|content=
 ''The following modding changes are provided unofficially by parsing the latest [[game files]] for interesting changes that may affect modding or be useful to modders.''
 
-* <code>loadstring</code> and <code>loadstream</code> functions were added back.
-* New [[registries|registry system]] for keybinds <code>KeybindId</code>. Every actions now have a specific identifier.
-** You can notably use it to check when a specific action keybind is pressed.
-** Global method variants <code>isKeyDown</code>, <code>wasKeyDown</code> and <code>isKeyPressed</code> using those instead of a string.
-** New methods in <code>Core</code> class to add keybinds <code>addKeyBinding</code> (variant to the one taking a string, can now take a <code>KeybindId</code> instead).
-* New method <code>createCorpseZombie</code> in [https://albion.codeberg.page/PZ-JavaDocs/zombie/VirtualZombieManager.html VirtualZombieManager].
-* New exposed classes:
-** <code>KeybindId</code>
-** <code>GridSquareEdgeFacingDirection</code>
-** <code>GridSquareEdge</code>
-** <code>TradingState</code>
-* New methods related to usernames length limits: <code>getMinUsernameLength</code> and <code>getMaxUsernameLength</code>.
-* Two new [[Lua event]]s:
-** <code>LogLevelPerk</code>
-** <code>OnTileObjectAdded</code>
-* Lots of logic relatic to IsoGridSquare and neighbours have been updated.
-** <code>isWallTo</code>, <code>isWindowTo</code>
-** <code>getEast</code>, <code>getWest</code>, <code>getNorth</code>, <code>getSouth</code>
-** <code>isEastOf</code>, <code>isWestOf</code>, <code>isNorthOf</code>, <code>isSouthOf</code>
-** <code>isDiagonalTo</code>
-** <code>getOppositeSquare</code> (using new <code>GridSquareEdge</code> class)
-** And a lot more. A lot of these were already present in some shape or form but there's likely a lot of new stuff like these to explore.
-* <code>getRectsBounds</code> for <code>IsoRoom</code> instances.
-* New [[Console#Configuring logging|DebugType]]s: <code>ClientCommand</code>, <code>VehicleClientCommand</code>, <code>UnitTest</code>.
-* New tile property (IsoPropertyType) <code>CarSlowFactor</code>.
-* New <code>nearWallCrouching</code> [[animation]] variable.
-* New methods in <code>IsoGameCharacter</code>: 
-** <code>transmitHaloNote</code>
-** <code>isSitting</code> (ground, <code>isSitOnGround</code>, and furniture, <code>isSittingOnFurniture</code>)
-** <code>setNearWallCrouching</code>, <code>isNearWallCrouching</code>
-* New method in <code>IsoAnimal</code>: <code>delete</code> (supposedly removes the animal from the game).
-* Having timed action instant cheat on now allows for instant item equip in hands.
+* <code>.bik</code> video files can now be loaded from modded files! These can most notably be used by custom maps to show previews of their map in the spawn selection menu.
+* New [[ActionGroup|action groups]] and [[AnimState|anim states]] for animations:
+** climbLadder
+** climbLadderDown
+** forceopendoorleft
+** forceopendoorright
+** forceopengaragedoor
+** forceopenwindow
+* New ButcheringUtil method: {{Code|lang=lua|ButcheringUtil.hasBucket}}
+* <code>.bank</code> sound files moved from <code>media/sound/banks/Desktop</code> to <code>media/sound/banks</code>
+* Tile definition files moved from <code>media</code> to <code>media/tile_definitions</code>
+* New IsoGameCharacter methods which could prove useful:
+** {{Code|lang=java|IsoGameCharacter.forceOpenWindowOrDoor}}
+** {{Code|lang=java|IsoGameCharacter.getClimbLadderDown}}
+** {{Code|lang=java|IsoGameCharacter.isClimbingLadder}}
+** {{Code|lang=java|IsoGameCharacter.isClimbingDownLadder}}
+** {{Code|lang=java|IsoGameCharacter.getClimbZ}}
+** {{Code|lang=java|IsoGameCharacter.faceThisEdgeElement}}
+** {{Code|lang=java|IsoGameCharacter.getPrimaryHandMask}} and {{Code|lang=java|IsoGameCharacter.getSecondaryHandMask}}
+** {{Code|lang=java|IsoGameCharacter.setPrimaryHandMask}} and {{Code|lang=java|IsoGameCharacter.setSecondaryHandMask}}
+** {{Code|lang=java|IsoGameCharacter.canPerformHandToHandCombat}} (moved from IsoPlayer)
+** {{Code|lang=java|IsoGameCharacter.canPerformHandToHandCombatWithPrimary}} and {{Code|lang=java|IsoGameCharacter.canPerformHandToHandCombatWithSecondary}}
+** {{Code|lang=java|IsoGameCharacter.dropHandItemForHandToHand}}
+** {{Code|lang=java|IsoGameCharacter.isNotHoldingHandWeapon}}
+** {{Code|lang=java|IsoGameCharacter.isHeadCameraZ}} and {{Code|lang=java|IsoGameCharacter.setHeadCameraZ}}
+** {{Code|lang=java|IsoGameCharacter.getBaseForceOpenChance}}
+** {{Code|lang=java|IsoGameCharacter.exertForForcing}}
+* New IsoPlayer methods which could prove useful:
+** {{Code|lang=java|IsoPlayer.isPlayer}} (static method, can pass any object instance)
+** {{Code|lang=java|IsoPlayer.syncClothing}}
+** {{Code|lang=java|IsoPlayer.findPlayerMP}} (seems to provide a method to find a specific player based on comparison parameters), example usage in new method {{Code|lang=java|IsoPlayer.anyPlayerMP}}
+** {{Code|lang=java|IsoPlayer.isClimbLoop}}
+* New IsoPropertyTypes:
+** {{Code|lang=java|IsoPropertyType.LADDER_N}}
+** {{Code|lang=java|IsoPropertyType.LADDER_S}}
+** {{Code|lang=java|IsoPropertyType.LADDER_E}}
+** {{Code|lang=java|IsoPropertyType.LADDER_W}}
+* New InventoryItem methods which could prove useful:
+** {{Code|lang=java|InventoryItem.isAvailableFluidContainer}}
+** {{Code|lang=java|InventoryItem.isHeavyItem}}
+** {{Code|lang=java|InventoryItem.canPerformHandToHandWithItem}}
+** {{Code|lang=java|InventoryItem.awardMaintenanceXP}}
+* Other random class notable methods:
+** {{Code|lang=java|IsoMovingObject.getFallZ}}
+** {{Code|lang=java|IsoObject.isType}}
+* New cheat available in the [[Lua debugger]]: IgnoreFalling
+* Newly exposed classes:
+** {{Code|lang=java|ForceOpenState}}
+** {{Code|lang=java|ForceOpenState.ForcingType}}
+** {{Code|lang=java|ILockableDoor}}
+** {{Code|lang=java|IForceableDoor}}
+** {{Code|lang=java|IForceablePortal}}
+** {{Code|lang=java|GridSquareEdgeElement}}
+* Global methods:
+** {{Code|lang=java|isPlayerProfileReceived}}
+** {{Code|lang=java|deletePlayerSave}} (removed)
+** {{Code|lang=java|createStory}} (removed)
+** {{Code|lang=java|rejectMedicalCheck}}
+* New animnode conditions and events, see [[github:PZ-Wiki-Modding/pz-animsets-parser/commit/6f8cc42f2d5b890fae1ed048dd446862e5c71517|here]] for the details.
+* New item tags and sound keys, see [[github:PZ-Wiki-Modding/pz-java-parser/commit/d6bf6e480d621c887912d58338dff8bc9fa54f76|here]] for the details.
+* New [[Lua event]]: <code>OnElectricityChanged</code>
 }}<includeonly/>
