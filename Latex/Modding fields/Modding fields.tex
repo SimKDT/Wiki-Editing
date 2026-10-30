@@ -1,0 +1,27 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage{tikz}
+\usepackage[sfdefault]{roboto}
+\usepackage[T1]{fontenc}
+\usetikzlibrary{shapes.misc, positioning, arrows.meta, fit, calc, mindmap}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    grow cyclic,
+    text width=2.7cm,
+    align=flush center,
+    level 1/.append style={level distance=3cm,sibling angle=90},
+    level 2/.style={level distance=3cm,sibling angle=45}
+]
+    \node{Getting started}
+        child { node {
+            Modding fields
+        }}
+        child { node {
+            Modding fields
+        }}
+    ;
+\end{tikzpicture}
+
+
+\end{document}

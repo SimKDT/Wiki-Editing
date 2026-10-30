@@ -100,7 +100,7 @@ By default, <code>{{CodeSnip/param|4=destroy}}</code> is used. Some {{ll|#Flags|
 <translate>
 <!--T:10-->
 Below is a list of flags that can be used:
-{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+{| class="wikitable theme-blue mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | Equipping items
 ! Flag !! Description
 |-
@@ -112,7 +112,7 @@ Below is a list of flags that can be used:
 |}
 
 <!--T:11-->
-{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+{| class="wikitable theme-blue mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | Special conditions
 ! Flag !! Description
 |-
@@ -126,11 +126,20 @@ Below is a list of flags that can be used:
 | style="min-width: 600px;"| Item won't be put back in the container it was taken from (usually bottles that need to be opened).
 |-
 | style="min-width: 200px;"| <code>IsExclusive</code>
-| style="min-width: 600px;"| Whenever multiple possible inputs are available but only a single type can be used, to not mix multiple different items.
+| style="min-width: 600px;"| 
+Whenever multiple possible inputs are available but only a single type can be used, to not mix multiple different items. 
+
+In the following craftRecipe snippet two planks or two logs are valid inputs, but not one plank and one log:
+{{CodeSnip
+| code = 
+inputs {
+    item 2 [Base.Plank;Base.Log] flags[IsExclusive],
+}
+}}
 |}
 
 <!--T:12-->
-{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+{| class="wikitable theme-blue mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | Food conditions
 ! Flag !! Description
 |-
@@ -151,7 +160,7 @@ Below is a list of flags that can be used:
 |}
 
 <!--T:13-->
-{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+{| class="wikitable theme-blue mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | Fluids
 ! Flag !! Description
 |-
@@ -175,7 +184,7 @@ Below is a list of flags that can be used:
 |}
 
 <!--T:14-->
-{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+{| class="wikitable theme-blue mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | Item condition
 ! Flag !! Description
 |-
@@ -220,7 +229,7 @@ Below is a list of flags that can be used:
 |}
 
 <!--T:15-->
-{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+{| class="wikitable theme-blue mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | Inheriting items
 ! Flag !! Description
 |-
@@ -259,7 +268,7 @@ Below is a list of flags that can be used:
 |}
 
 <!--T:16-->
-{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+{| class="wikitable theme-blue mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | Unknown
 ! Flag !! Description
 |-

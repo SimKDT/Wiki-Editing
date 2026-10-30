@@ -1,0 +1,47 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.21.0}}
+{{Infobox
+| title = Zed's Better Workshop Upload
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Zed's Better Workshop Upload - icon.jpeg]]
+    |  1 = [[File:Zed's Better Workshop Upload - icon.jpeg|link=]]
+    | p2 = [[File:Zed's Better Workshop Upload - preview1.gif]]
+    |  2 = [[File:Zed's Better Workshop Upload - preview1.gif|link=]]
+    | p3 = [[File:Zed's Better Workshop Upload - preview2.gif]]
+    |  3 = [[File:Zed's Better Workshop Upload - preview2.gif|link=]]
+    | p4 = [[File:Zed's Better Workshop Upload - preview3.jpeg]]
+    |  4 = [[File:Zed's Better Workshop Upload - preview3.jpeg|link=]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3619913448
+        | Steam Workshop page
+        }}
+        {{Infobox/socials
+        | type=github
+        | page=github:zed-0xff/ZBetterWorkshopUpload
+        | GitHub repository
+        }}
+    }}
+}}
+'''Zed's Better Workshop Upload''' is a [[ZombieBuddy]] mod that enhances the in-game Steam Workshop uploader, providing extra features:
+* The description can be pulled from a file via a <code>@include()</code> directive
+* Automatic filtering of common unwanted files
+** Configurable via an exclusion patterns file via mod options <code>.workshopignore</code>
+* Preview of files that will be uploaded before submission
+* Sorted workshop items list (alphabetically)
+* Escape key goes on the previous page
+{{Clear}}
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

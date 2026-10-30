@@ -1,6 +1,6 @@
 <languages />
 {{Navbar modding}}
-{{Page version|42.20.2}}
+{{Page version|42.21.0}}
 <translate>
 <!--T:1-->
 This page will explain the process of '''uploading mods''' to the Steam Workshop with the in-game uploader, as well as documenting alternative methods and uploaders that give more control over what you do.
@@ -36,6 +36,15 @@ Mod ID: <mod_id>
 <!--T:8-->
 – allows you to bypass the limitations of the in-game uploader to be able to upload different-sized preview images for your mod on its Steam page. It notably allows you to upload a non-square image, a higher resolution image, or an animated preview image.
 * {{ll|Steam Uploader}} – an external uploader that provides the ability to update different elements on a Workshop page independently or multiple ones together (description, preview, content…).
+* {{ll|Zed's Better Workshop Upload}} - an improved in-game uploader.
+
+== About updating a mod ==
+When updating a mod, you should consider not updating your mod too often. The reason is that servers that use your mod will have to restart to apply the new version, for players to be able to join the server and too many updates in a small period of time (e.g., multiple times per day) can be disruptive to the multiplayer experience.
+
+As such to update your mod, you should do the following:
+* Avoid frequent updates, do larger ones and only keep small updates for critical fixes.
+* If needed to do frequent updates for some reasons (testing), try to schedule them at times that less players are active on servers, that is during the week instead of the weekend. This is a big ask due to yourself probably being available the most at times when players are active.
+* Properly test your changes before pushing updates, don't end up with a broken mod which requires frequent patching on your end.
 
 == Navigation == <!--T:9-->
 </translate>

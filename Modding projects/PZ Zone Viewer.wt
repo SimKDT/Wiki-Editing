@@ -1,0 +1,29 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.21.0}}
+{{Infobox
+| title = PZ Zone Viewer
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:PZ Zone Viewer - preview.png]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | page=github:katupia/pz-zone-viewer
+        | GitHub repository
+        }}
+    }}
+}}
+'''PZ Zone Viewer''' is a small desktop app which turns parking-stall zones into [https://pzmap.org/ pzmap.org] links for easy visualization of the zones. 
+{{Clear}}
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External projects}}
+{{ll|Category:Modding projects}}
