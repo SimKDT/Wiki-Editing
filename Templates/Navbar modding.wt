@@ -27,6 +27,7 @@ This is a [[Template:Navbar|navbar]] used at the top of modding pages to assist 
 </noinclude><includeonly>{{Navbar/sandbox
 |title={{ll|Modding}} ({{ll|:Category:Modding|☰}})<BR><span style="color: #ff00e6;">Give your feedback on the Modding Wiki [https://docs.google.com/forms/d/e/1FAIpQLSdxBWwKUcNP_KbzmmWo1eNc2QkpWk5dTj4PMhuNLY9_dc4IEw/viewform?usp=header here]!</span>
 |links={{#invoke:Join|join|sep=&#32;&bull;&#32;
+  |{{ll|Getting started with modding}} ({{ll|:Category:Modding guides|☰}})
   |{{ll|Scripts}} ({{ll|:Category:Scripts|☰}})
   |{{ll|Lua (API)}} ({{ll|:Category:Lua (API)|☰}})
   |{{ll|Java}} ({{ll|:Category:Java|☰}})
