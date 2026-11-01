@@ -1,7 +1,7 @@
 <languages />
 {{Navbar scripts}}
 {{Page version|42.10.0}}
-{{Wip}}
+{{Stub}}
 <translate>
 
 <!--T:1-->
@@ -37,7 +37,7 @@ In comparison, the game world coordinates use:
 | style="padding: 10px;text-align: center;"| {{ll|extents}}
 | Dimensions of the physical parallelepiped that the player interacts with (X Y Z). (Vehicle dimensions that affect how close a player can approach the vehicle model). Can be configured in Vehicle Editor.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 extents = 0.7582 0.5934 1.8462,
 }}
@@ -45,7 +45,7 @@ extents = 0.7582 0.5934 1.8462,
 | style="padding: 10px;text-align: center;"| {{ll|shadowExtents}}
 | Defines the shadow dimensions under the vehicle. (X Z)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 shadowExtents = 0.7582 1.8462,
 }}
@@ -53,7 +53,7 @@ shadowExtents = 0.7582 1.8462,
 | style="padding: 10px;text-align: center;"| {{ll|shadowOffset}}
 | Defines the shadow offset under the vehicle. (X Z)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 shadowOffset = 0.0000 0.0000,
 }}
@@ -61,7 +61,7 @@ shadowOffset = 0.0000 0.0000,
 | style="padding: 10px;text-align: center;"| {{ll|physicsChassisShape}}
 | Dimensions of the vehicle's physical parallelepiped that interacts with the environment (X Y Z) (excluding the player)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 physicsChassisShape = 0.7582 0.5934 1.8462,
 }}
@@ -69,7 +69,7 @@ physicsChassisShape = 0.7582 0.5934 1.8462,
 | style="padding: 10px;text-align: center;"| {{ll|extentsOffset}}
 | Not used in game at this moment.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 extentsOffset = 1.0 1.0,
 }}
@@ -77,7 +77,7 @@ extentsOffset = 1.0 1.0,
 | style="padding: 10px;text-align: center;"| {{ll|mass}}
 | Sets the vehicle weight. Affects the vehicle's physics behavior.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 mass = 650,
 }}
@@ -85,7 +85,7 @@ mass = 650,
 | style="padding: 10px;text-align: center;"| {{ll|offRoadEfficiency}}
 | Affects the chance of parts breaking when off-road.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 offRoadEfficiency = 0.8,
 }}
@@ -93,7 +93,7 @@ offRoadEfficiency = 0.8,
 | style="padding: 10px;text-align: center;"| {{ll|centerOfMassOffset}}
 | Defines the vehicle's center of mass.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 centerOfMassOffset = 0.0000 0.3077 0.0000,
 }}
@@ -101,7 +101,7 @@ centerOfMassOffset = 0.0000 0.3077 0.0000,
 | style="padding: 10px;text-align: center;"| {{ll|engineForce}}
 | Affects the vehicle's engine power.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 engineForce = 3600,
 }}
@@ -109,7 +109,7 @@ engineForce = 3600,
 | style="padding: 10px;text-align: center;"| {{ll|engineIdleSpeed}}
 | Affects the vehicle's speed in idle state.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 engineIdleSpeed = 120,
 }}
@@ -117,7 +117,7 @@ engineIdleSpeed = 120,
 | style="padding: 10px;text-align: center;"| {{ll|gearRatioCount}}
 | Sets the number of gears in the vehicle. (Does not affect the vehicle's maximum speed).
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 gearRatioCount = 4,
 }}
@@ -125,7 +125,7 @@ gearRatioCount = 4,
 | style="padding: 10px;text-align: center;"| {{ll|textureRust}}
 | Sets the rust texture for the vehicle.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 textureRust = Vehicles/Veh_Rust,
 }}
@@ -133,7 +133,7 @@ textureRust = Vehicles/Veh_Rust,
 | style="padding: 10px;text-align: center;"| {{ll|textureMask}}
 | Sets the mask texture for the vehicle. Used to set the display of changes on certain parts of the vehicle (rust, blood, damage)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 textureMask = Vehicles/vehicle_smallcar_mask,
 }}
@@ -141,7 +141,7 @@ textureMask = Vehicles/vehicle_smallcar_mask,
 | style="padding: 10px;text-align: center;"| {{ll|textureLights}}
 | Sets the texture of vehicle lights.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 textureLights = Vehicles/vehicle_smallcar_lights,
 }}
@@ -149,7 +149,7 @@ textureLights = Vehicles/vehicle_smallcar_lights,
 | style="padding: 10px;text-align: center;"| {{ll|textureDamage1Overlay}}
 | Sets the texture for blood.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 textureDamage1Overlay = Vehicles/Veh_Blood_Mask,
 }}
@@ -157,7 +157,7 @@ textureDamage1Overlay = Vehicles/Veh_Blood_Mask,
 | style="padding: 10px;text-align: center;"| {{ll|textureDamage1Shell}}
 | Sets the texture for damage. Usually used to display light damage.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 textureDamage1Shell = Vehicles/Veh_Damage1,
 }}
@@ -165,7 +165,7 @@ textureDamage1Shell = Vehicles/Veh_Damage1,
 | style="padding: 10px;text-align: center;"| {{ll|textureDamage2Overlay}}
 | Sets the texture for blood. Usually the same texture as textureDamage1Overlay is used.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 textureDamage2Overlay = Vehicles/Veh_Blood_Hvy,
 }}
@@ -173,7 +173,7 @@ textureDamage2Overlay = Vehicles/Veh_Blood_Hvy,
 | style="padding: 10px;text-align: center;"| {{ll|textureDamage2Shell}}
 | Sets the texture for damage. Usually used to display heavy damage.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 textureDamage2Shell = Vehicles/Veh_Damage2,
 }}
@@ -181,7 +181,7 @@ textureDamage2Shell = Vehicles/Veh_Damage2,
 | style="padding: 10px;text-align: center;"| {{ll|textureShadow}}
 | Sets the texture for the shadow under the vehicle.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 textureShadow = Vehicles/CustomShadowTexture,
 }}
@@ -189,7 +189,7 @@ textureShadow = Vehicles/CustomShadowTexture,
 | style="padding: 10px;text-align: center;"| {{ll|steeringClamp}}
 | Modifier affecting the vehicle's turning angle.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 steeringClamp = 0.3,
 }}
@@ -197,7 +197,7 @@ steeringClamp = 0.3,
 | style="padding: 10px;text-align: center;"| {{ll|suspensionStiffness}}
 | Sets suspension stiffness. (Physics param)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 suspensionStiffness = 30,
 }}
@@ -205,7 +205,7 @@ suspensionStiffness = 30,
 | style="padding: 10px;text-align: center;"| {{ll|suspensionDamping}}
 | Sets suspension damping. (Physics param)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 suspensionDamping = 2.88,
 }}
@@ -213,7 +213,7 @@ suspensionDamping = 2.88,
 | style="padding: 10px;text-align: center;"| {{ll|suspensionCompression}}
 | Sets suspension compression. (Physics param)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 suspensionCompression = 2.83,
 }}
@@ -221,7 +221,7 @@ suspensionCompression = 2.83,
 | style="padding: 10px;text-align: center;"| {{ll|suspensionRestLength}}
 | Sets suspension rest length. (Physics param)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 suspensionRestLength = 0.2,
 }}
@@ -229,7 +229,7 @@ suspensionRestLength = 0.2,
 | style="padding: 10px;text-align: center;"| {{ll|maxSuspensionTravelCm}}
 | Sets max suspension travel cm. (Physics param)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 maxSuspensionTravelCm = 10,
 }}
@@ -237,7 +237,7 @@ maxSuspensionTravelCm = 10,
 | style="padding: 10px;text-align: center;"| {{ll|wheelFriction}}
 | Wheel friction modifier. (Physics param)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 wheelFriction = 1.6f,
 }}
@@ -245,7 +245,7 @@ wheelFriction = 1.6f,
 | style="padding: 10px;text-align: center;"| {{ll|stoppingMovementForce}}
 | Sets stopping movement force. (Physics param)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 stoppingMovementForce = 2.0f,
 }}
@@ -253,7 +253,7 @@ stoppingMovementForce = 2.0f,
 | style="padding: 10px;text-align: center;"| {{ll|maxSpeed}}
 | Sets max speed. (Physics param)
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 maxSpeed = 70f,
 }}
@@ -261,7 +261,7 @@ maxSpeed = 70f,
 | style="padding: 10px;text-align: center;"| {{ll|isSmallVehicle}}
 | Sets variable that used in zombie behavior logic.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 isSmallVehicle = false,
 }}
@@ -269,7 +269,7 @@ isSmallVehicle = false,
 | style="padding: 10px;text-align: center;"| {{ll|spawnOffsetY}}
 | Height at which the vehicle spawns.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 spawnOffsetY = 0.19392952,
 }}
@@ -277,7 +277,7 @@ spawnOffsetY = 0.19392952,
 | style="padding: 10px;text-align: center;"| {{ll|engineLoudness}}
 | Vehicle loudness modifier.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 engineLoudness = 55,
 }}
@@ -285,7 +285,7 @@ engineLoudness = 55,
 | style="padding: 10px;text-align: center;"| {{ll|engineQuality}}
 | Sets the engine quality. Affects the chance to start the vehicle, the chance to hotwire the vehicle. If the engine quality is less than 65 - then the weather will affect the engine start chance.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 engineQuality = 60,
 }}
@@ -297,7 +297,7 @@ engineQuality = 60,
 * 2 - Heavy Duty.
 * 3 - Sport.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 mechanicType = 1,
 }}
@@ -305,7 +305,7 @@ mechanicType = 1,
 | style="padding: 10px;text-align: center;"| {{ll|forcedColor}}
 | Sets force vehicle color values (HSV). Values: from 0.0 to 1.0. All vehicles will spawn with this color.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 forcedColor = 0.3 0.5 0.0,
 }}
@@ -313,7 +313,7 @@ forcedColor = 0.3 0.5 0.0,
 | style="padding: 10px;text-align: center;"| {{ll|engineRPMType}}
 | Sound of vehicle engine. The sound is set in the sound block from the vehicle block.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 engineRPMType = firebird,
 }}
@@ -321,7 +321,7 @@ engineRPMType = firebird,
 | style="padding: 10px;text-align: center;"| {{ll|template}}
 | Loads template. Allows loading a specific part of template code.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 template = Trunk/part/TruckBed,
 }}
@@ -329,7 +329,7 @@ template = Trunk/part/TruckBed,
 | style="padding: 10px;text-align: center;"| {{ll|template!}}
 | Loads template. Loads as if the template is part of the script code.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 template! = SmallCar,
 }}
@@ -337,7 +337,7 @@ template! = SmallCar,
 | style="padding: 10px;text-align: center;"| {{ll|engineRepairLevel}}
 | Required mechanics skill level for repairing the vehicle's engine.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 engineRepairLevel = 4,
 }}
@@ -345,7 +345,7 @@ engineRepairLevel = 4,
 | style="padding: 10px;text-align: center;"| {{ll|playerDamageProtection}}
 | Damage modifier for the player inside the vehicle.
 | {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 playerDamageProtection = 1.2,
 }}
@@ -658,7 +658,7 @@ Below is an example of all the different scripts involved in defining a vehicle.
 | title = Vehicle script example (source: [https://theindiestone.com/forums/index.php?/topic/24408-how-to-create-new-vehicle-mods/ How to create new vehicle mods])
 | content =
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 
 module Base
@@ -1065,11 +1065,7 @@ module Base
 <translate>
 == See also == <!--T:53-->
 
-<!--T:54-->
-*
-</translate> <translate><!--T:55--> [https://theindiestone.com/forums/index.php?/topic/24408-how-to-create-new-vehicle-mods/ How to create new vehicle mods]</translate> <translate>
-<!--T:56-->
-- an official guide from {{ll|The Indie Stone}} on how to create new vehicle mods.
+* [https://theindiestone.com/forums/index.php?/topic/24408-how-to-create-new-vehicle-mods/ How to create new vehicle mods] - an official guide from {{ll|The Indie Stone}} on how to create new vehicle mods.
 
 == Navigation == <!--T:57-->
 </translate>

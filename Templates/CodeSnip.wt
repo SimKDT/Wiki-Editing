@@ -1,0 +1,221 @@
+<noinclude>
+{{Documentation|doc =
+This template is an alternate way of using <code><[[mw:Extension:SyntaxHighlight|syntaxhighlight]]></code> with some added functionality.
+
+== Usage ==
+This template is used to show syntax-highlighted text.
+
+This may be used for articles with segments of code extracted from the game files.
+
+=== Parameters ===
+;<code>1</code> <code>code</code>
+:The code to be displayed.
+;<code>2</code> <code>lang</code>
+:Defines the programming language for the syntax highlighting. Highlighting uses the [https://pygments.org/languages/ pygments library]. Default to <code>text</code>. A custom lexer <code>zedscripts</code> is also implemented in the [[MediaWiki:Common.js]] for [[Scripts]] syntax highlighting.
+;<code>source</code>
+:Name of the source file. Some script files will automatically determine the <code>path</code>.
+;<code>path</code>
+:The file path of the source file. Will not display if <code>source</code> is empty. Default to <code>ProjectZomboid\media\scripts\</code>.
+;<code>line</code>
+:If <code>true</code>, line numbers will be displayed.
+;<code>start</code>
+:Line number to start at. <code>line</code> must be defined.
+;<code>retrieved</code>
+:If <code>true</code>, will add {{tll|Retrieved}}. Refer to that template for parameters.
+
+== Examples ==
+=== HTML language example ===
+<pre>
+{{CodeSnip
+| lang = html
+| code = 
+<div style="font-weight:bold; color:#3434ff;">
+    Some text goes here.<br>More text here
+</div>
+}}
+</pre>
+{{CodeSnip
+| lang = html
+| code = 
+<div style="font-weight:bold; color:#3434ff;">
+    Some text goes here.<br>More text here
+</div>
+}}
+
+=== Source example ===
+<pre>
+{{CodeSnip|source=newitems.txt}}
+</pre>
+{{CodeSnip|source=newitems.txt}}
+
+=== Source and file path example ===
+<pre>
+{{CodeSnip
+| source = IsoPlayer.class
+| path = ProjectZomboid\zombie\characters
+}}
+</pre>
+{{CodeSnip|source=IsoPlayer.class|path=ProjectZomboid\zombie\characters}}
+
+=== Item code with source and zedscripts language ===
+<pre>
+{{CodeSnip
+| lang = zedscripts
+| source = items_weapons.txt
+| code =
+item Glue
+{
+    DisplayCategory = Material,
+    Weight	=	0.1,
+    Type	=	Drainable,
+    UseDelta	=	0.2,
+    UseWhileEquipped	=	FALSE,
+    DisplayName	=	Glue,
+    Icon	=	Glue,
+    Tooltip = Tooltip_FixItems,
+    SurvivalGear = TRUE,
+    WorldStaticModel = Glue,
+    Tags = Glue,
+}
+}}
+</pre>
+{{CodeSnip
+| lang = zedscripts
+| source = items_weapons.txt
+| code =
+item Glue
+{
+    DisplayCategory = Material,
+    Weight	=	0.1,
+    Type	=	Drainable,
+    UseDelta	=	0.2,
+    UseWhileEquipped	=	FALSE,
+    DisplayName	=	Glue,
+    Icon	=	Glue,
+    Tooltip = Tooltip_FixItems,
+    SurvivalGear = TRUE,
+    WorldStaticModel = Glue,
+    Tags = Glue,
+}
+}}
+
+=== Java code with source and path defined ===
+<pre>
+{{CodeSnip
+| lang = java
+| source = RDSPrisonEscape.class
+| path = ProjectZomboid\zombie\randomizedWorld\randomizedDeadSurvivor
+| code =
+public RDSPrisonEscape() {
+    this.name = "Prison Escape";
+    this.setChance(3);
+    this.setMaximumDays(90);
+    this.setUnique(true);
+}
+}}
+</pre>
+{{CodeSnip
+| lang = java
+| source = RDSPrisonEscape.class
+| path = ProjectZomboid\zombie\randomizedWorld\randomizedDeadSurvivor
+| code =
+public RDSPrisonEscape() {
+    this.name = "Prison Escape";
+    this.setChance(3);
+    this.setMaximumDays(90);
+    this.setUnique(true);
+}
+}}
+
+=== Item code with source, zedscripts language, line number and {{tll|Retrieved}} ===
+<pre>
+{{CodeSnip
+| lang = zedscripts
+| line = true
+| start = 92
+| source = items.txt
+| retrieved = true
+| version = 41.78.16
+| code =
+item BucketEmpty
+{
+    DisplayCategory = WaterContainer,
+    Weight	=	1,
+    CanStoreWater	=	TRUE,
+    Type	=	Normal,
+    DisplayName	=	Bucket,
+    Icon	=	MetalBucket,
+    ReplaceOnUseOn = WaterSource-BucketWaterFull,
+    MetalValue = 20,
+    RainFactor = 1,
+    Tooltip = Tooltip_item_RainFromGround,
+    EatType = Bucket,
+    SurvivalGear = TRUE,
+    WorldStaticModel = Bucket_Ground,
+}
+}}
+</pre>
+{{CodeSnip
+| lang = zedscripts
+| line = true
+| start = 92
+| source = items.txt
+| retrieved = true
+| version = 41.78.16
+| code =
+item BucketEmpty
+{
+    DisplayCategory = WaterContainer,
+    Weight	=	1,
+    CanStoreWater	=	TRUE,
+    Type	=	Normal,
+    DisplayName	=	Bucket,
+    Icon	=	MetalBucket,
+    ReplaceOnUseOn = WaterSource-BucketWaterFull,
+    MetalValue = 20,
+    RainFactor = 1,
+    Tooltip = Tooltip_item_RainFromGround,
+    EatType = Bucket,
+    SurvivalGear = TRUE,
+    WorldStaticModel = Bucket_Ground,
+}
+}}
+
+{{Translation guide|<syntaxhighlight lang="html">
+{{#switch: {{{1|}}}
+| source = Source:
+| #default = {{Error|translation}}
+}}
+</syntaxhighlight>
+''Note: the [[Template:Retrieved|retrieved]] template may also need to be translated.''}}
+
+== See also ==
+*{{ll|Template:Code}}
+*{{ll|Template:CodeBox}}
+*{{ll|Template:Retrieved}}
+}}
+{{ll|Category:Templates}}
+</noinclude><includeonly>{{#if:{{{source|}}}|'''{{tt|name=CodeSnip|default=Source:|arg1=source}}''' <code>{{#if:{{{path|}}}|{{{path}}}|{{#switch:{{{source}}}
+| clothing_bags.txt | clothing_body.txt | clothing_hats.txt | clothing_jacket.txt | clothing_jewellery.txt | clothing_others.txt | clothing_pants.txt | clothing_shirts.txt | clothing_shoes.txt | clothing_suits.txt | clothing_underwear.txt = ProjectZomboid\media\scripts\clothing
+| vehiclesitems.txt | vehiclesfixing.txt = ProjectZomboid\media\scripts\vehicles
+| #default = ProjectZomboid\media\scripts
+  }}
+}}\<span style="color: #3434ff;">{{{source}}}</span></code>
+}}
+{{yesno|{{{retrieved|}}}|yes={{Retrieved|version={{{version|}}}|hidecat={{{hidecat|}}}|date={{{date|}}}|version_link={{{version_link|}}}}}
+}}{{#if: {{{code|{{{1|}}}}}}
+  | {{yesno|{{{line|}}}
+    | yes = {{#tag:syntaxhighlight <!-- line attribute -->
+      |{{{code|{{{1}}}}}} <!-- content -->
+      |lang="{{#ifeq:{{{lang|{{{2|text}}}}}}|zedscripts|text|{{{lang|{{{2|text}}}}}}}}" <!-- attribute1 -->
+      |line= <!-- attribute2 -->
+      |start="{{{start|}}}" <!-- attribute3 -->
+      |class="{{#ifeq:{{{lang|{{{2|text}}}}}}|zedscripts|zedscripts|}}"
+    }}
+    | no = {{#tag:syntaxhighlight <!-- no line attribute -->
+      |{{{code|{{{1}}}}}} <!-- content -->
+      |lang="{{#ifeq:{{{lang|{{{2|text}}}}}}|zedscripts|text|{{{lang|{{{2|text}}}}}}}}" <!-- attribute1 -->
+      |class="{{#ifeq:{{{lang|{{{2|text}}}}}}|zedscripts|zedscripts|}}"
+    }}
+  }}
+}}</includeonly>

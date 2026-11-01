@@ -73,16 +73,16 @@ A module block needs to be defined at the start of the script files, unless it i
 . It can be used for your own scripts:
 </translate>
 {{CodeSnip
-| lang = Java
+| lang = zedscripts
 | code =
 module Base {
     ...
 }
 }}
 {{CodeSnip
-| lang = Java
+| lang = zedscripts
 | code =
-// alternative syntax
+/* alternative syntax */
 module Base
 {
     ...
@@ -94,7 +94,7 @@ module Base
 A custom module name can also be defined:
 </translate>
 {{CodeSnip
-| lang = Java
+| lang = zedscripts
 | code =
 module MyModule {
     ...
@@ -129,7 +129,7 @@ By importing custom modules, you give your scripts direct access to the elements
 ). By default, the <code>Base</code> module is already imported, so importing it doesn't make any sense.
 </translate>
 {{CodeSnip
-| lang = Java
+| lang = zedscripts
 | code =
 module MyModule {
     imports {
@@ -177,10 +177,12 @@ A {{ll|craftRecipe|craftRecipe}} block must be defined inside a</translate> {{Co
 block and {{ll|inputs (scripts)|inputs}} block must have a craftRecipe block as parent:
 </translate>
 {{CodeSnip
-| lang = Java
+| lang = zedscripts
 | code =
-module MyModule { // parent of craftRecipe block
-    craftRecipe MyRecipe { // parent of inputs block
+/* parent of craftRecipe block */
+module MyModule {
+    /* parent of inputs block */
+    craftRecipe MyRecipe {
         inputs {
             ...
         }
@@ -203,7 +205,7 @@ Some script blocks require an ID to be defined, usually mandatory, but sometimes
 ).
 </translate>
 {{CodeSnip
-| lang = Java
+| lang = zedscripts
 | code =
 module MyModule {
     item MyItem {
@@ -229,7 +231,7 @@ When defining a script block which already exists, such as an {{ll|item (scripts
 Take an item definition with fake parameters as an example <code>Parameter1</code>, <code>Parameter2</code> and <code>Parameter3</code>:
 </translate>
 {{CodeSnip
-| lang = Java
+| lang = zedscripts
 | code =
 module Base {
     item MyItem {
@@ -245,7 +247,7 @@ module Base {
 {{ll|item (scripts)|Item}} scripts will support soft overrides, so if you define the same item again with only <code>Parameter2</code> changed, the other parameters will be kept and that specific parameter will be updated:
 </translate>
 {{CodeSnip
-| lang = Java
+| lang = zedscripts
 | code =
 module MyMod {
     item MyItem {

@@ -1,0 +1,1679 @@
+/* CSS placed here will be applied to all skins */
+
+/* pz-theme */
+:root {
+  --color-mw-base: var(--color-base, #000); /* --color-base is default for vector-2022 and citizen */
+  --color-mw-light: #ffffff; /* light font for use on dark backgrounds */
+  --color-mw-link: var(--color-progressive, #0645ad); /* --color-progressive is default for vector-2022 and citizen */
+  --color-mw-link--hover: var(--color-progressive--hover, --color-mw-link); /* --color-progressive--hover is default for vector-2022 and citizen */
+  --color-mw-link-subtle: var(--color-subtle, #577bc1);
+  --color-effect-neg: #b65535;
+  --color-effect-pos: #4ad031;
+  --color-pz-subtle: #ccc;
+  --background-pz-red-0: #7b1317; /* red: highlight */
+  --background-pz-red-1: #4b0c0e; /* red: normal */
+  --background-pz-red-2: #3d0b0c; /* red: darker */
+  --background-pz-red-3: #320c0d; /* red: darkest */
+  --background-pz-blue-0: #1b6ab1; /* blue: highlight */
+  --background-pz-blue-1: #033361; /* blue: normal */
+  --background-pz-blue-2: #052a4e; /* blue: darker */
+  --background-pz-blue-3: #072440; /* blue: darkest */
+  --background-mw-0: #e5e5e5; /* heading */
+  --background-mw-1: #f8f9fa; /* normal */
+  --background-mw-2: #f9f9f9; /* odd */
+  --background-mw-3: #f2f2f2; /* even */
+  --background-mw-4: var(--border-color-base, #a2a9b1); /* border-color-base is default <hr> for citizen and vector-2022 */
+  --background-message-error: #fee7e6;
+  --background-message-warn: #fef6e7;
+  --background-message-info: #d2e5ff;
+  --background-message-success: #e8fce5;
+  --border-mw-color-base: #a2a9b1;
+  --border-mw-color-red: #460c10;
+  --border-mw-color-blue: #0f304a;
+  --border-mw: 1px solid var(--border-mw-color-base);
+  --border-red: 1px solid var(--border-mw-color-red);
+  --border-blue: 1px solid var(--border-mw-color-blue);
+  --border-message-error: 1px solid #d33;
+  --border-message-warn: 1px solid #fc3;
+  --border-message-info: 1px solid #aaaaaa;
+  --border-message-success: 1px solid #4d2;
+  --border-radius: 0.5em;
+  --shadow-mw: 0 0 0.5em 0.1em #00000080;
+  --transition-pz-hover: all 0.2s linear;
+
+  --color-mw: var(--background-mw-1); /* DEPRECATED */
+  --color-red: var(--background-pz-red-1); /* DEPRECATED */
+  --color-red-1: var(--background-pz-red-2); /* DEPRECATED */
+  --color-red-2: var(--background-pz-red-3); /* DEPRECATED */
+  --color-blue: var(--background-pz-blue-1); /* DEPRECATED */
+  --color-blue-1: var(--background-pz-red-2); /* DEPRECATED */
+  --color-blue-2: var(--background-pz-red-3); /* DEPRECATED */
+  --color-mw-border: var(--border-mw-color-base); /* DEPRECATED */
+  --link-mw: var(--color-mw-link); /* DEPRECATED */
+  --link-red: var(--color-mw-link); /* DEPRECATED */
+  --link-blue: var(--color-mw-link); /* DEPRECATED */
+}
+
+/* Provide pixel art support, from https://stackoverflow.com/a/8888964/ */
+.cycle-img img,
+ul.mw-search-results > li.mw-search-result img,
+.gallery .gallerybox div.thumb img,
+.filehistory a img,
+#mw-fileduplicatesearch-icon img,
+.mw-datatable td img,
+.pixelart img,
+img.pixelart {
+    image-rendering: optimizeSpeed;             /* Legal fallback */
+    image-rendering: -moz-crisp-edges;          /* Firefox        */
+    image-rendering: -o-crisp-edges;            /* Opera          */
+    image-rendering: -webkit-optimize-contrast; /* Safari         */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed  */
+    image-rendering: pixelated;                 /* CSS4 Proposed  */
+    image-rendering: crisp-edges;               /* CSS4 Proposed  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+           */
+}
+
+/* 
+Remove switch to vector skin sidebar message. 
+display should be changed on skins that should have it displayed.
+*/
+#n-vector-opt-out {
+    display: none;
+    font-weight: bold;
+}
+
+/* Remove text decoration on link */
+.no-decoration a:hover {
+    text-decoration: none;
+}
+
+/* Toggle for collapsible templates */
+div.toggle::after {
+    content: "";
+    position: absolute;
+    top: 1.1em;
+    right: 0.9em;
+    width: 0.7em;
+    height: 0.7em;
+    border-right: 2px solid var(--color-mw-base);
+    border-top: 2px solid var(--color-mw-base);
+    transform: rotate(-45deg);
+}
+div.mw-collapsed + div.toggle::after {
+    position: absolute;
+    top: 0.8em;
+    border-right: 2px solid var(--color-mw-base);
+    border-bottom: 2px solid var(--color-mw-base);
+    border-top: none;
+    transform: rotate(45deg);
+}
+div.toggle.small::after {
+    font-size: 0.9em;
+}
+
+/* TEMPORARY CLASS: change link colour for mw collapsible toggle */
+td.mw-collapse-data-color > span > a {
+    color: #ffffff; 
+    text-decoration: none; 
+}
+
+/* Clearer background color for wikitable */
+table.wikitable > tr > th,
+table.wikitable > * > tr > th {
+  background-color: var(--background-mw-0);
+}
+table.wikitable tr {
+	background-color: var(--background-mw-1);
+}
+/* max width for smaller displays */
+@media screen and (max-width: 720px) {
+    table.wikitable {
+        width: 100%;
+    }
+}
+/* rounded corners wikitable */
+table.wikitable {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: var(--border-mw);
+    border-radius: var(--border-radius);
+    background: none;
+    padding: 0;
+}
+/* override default wikitable borders */
+table.wikitable th, table.wikitable td { 
+    border: none;
+}
+table.wikitable thead + tbody {
+    border-top: var(--border-mw);
+}
+table.wikitable tr th,.wikitable tr td {
+    border-top: var(--border-mw);
+    border-right: var(--border-mw);
+}
+table.wikitable tr th:last-child,.wikitable tr td:last-child {
+     border-right: none;
+}
+table.wikitable tr:first-of-type th,.wikitable tr:first-of-type td {
+    border-top: 0
+}
+table.wikitable tr:first-of-type th:first-child,
+table.wikitable tr:first-of-type td:first-child {
+    border-top-left-radius: var(--border-radius);
+}
+table.wikitable tr:first-of-type th:last-child,
+table.wikitable tr:first-of-type td:last-child {
+    border-top-right-radius: var(--border-radius);
+}
+table.wikitable tr:last-of-type th:first-child,
+table.wikitable tr:last-of-type td:first-child {
+    border-bottom-left-radius: var(--border-radius);
+}
+table.wikitable tr:last-of-type th:last-child,
+table.wikitable tr:last-of-type td:last-child {
+    border-bottom-right-radius: var(--border-radius);
+}
+/* remove some rounded corners for sortable wikitable  */
+table.wikitable.sortable > tr:first-child > td:first-child,
+table.wikitable.sortable > * > tr:first-child > td:first-child {
+    border-top-left-radius: 0;
+}
+table.wikitable.sortable > tr:first-child > td:last-child,
+table.wikitable.sortable > * > tr:first-child > td:last-child {
+    border-top-right-radius: 0;
+}
+table.wikitable.sortable > tr:last-child > th:first-child,
+table.wikitable.sortable > * > tr:last-child > th:first-child {
+    border-bottom-left-radius: 0;
+}
+table.wikitable.sortable > tr:last-child > th:last-child,
+table.wikitable.sortable > * > tr:last-child > th:last-child {
+    border-bottom-right-radius: 0;
+}
+/* remove border if collapsed and has caption */
+table.wikitable.mw-collapsed:has(caption) {
+    border: none;
+}
+/* Custom table styles */
+table.wikitable.theme-red > tr > th,
+table.wikitable.theme-red > * > tr > th {
+  background-color: var(--background-pz-red-1);
+  color: var(--color-mw-light);
+}
+table.wikitable.theme-red > tr > th,table.wikitable.theme-red > * > tr > th > button {
+    color: var(--color-mw-light)
+}
+table.wikitable.theme-blue > tr > th,
+table.wikitable.theme-blue > * > tr > th {
+  background-color: var(--background-pz-blue-1);
+  color: var(--color-mw-light);
+}
+table.wikitable.theme-blue > tr > th,table.wikitable.theme-blue > * > tr > th > button {
+    color: var(--color-mw-light)
+}
+/* Use inverted (white) sort arrows for red and blue themes */
+table.wikitable.theme-red.jquery-tablesorter th.headerSort,
+table.wikitable.theme-blue.jquery-tablesorter th.headerSort{
+    background-image: url(/w/resources/src/jquery.tablesorter.styles/images/sort_both_inverted.svg)
+}
+table.wikitable.theme-red.jquery-tablesorter th.headerSortUp {
+	background-image: url(/w/resources/src/jquery.tablesorter.styles/images/sort_up_inverted.svg)
+}
+table.wikitable.theme-red.jquery-tablesorter th.headerSortDown {
+	background-image: url(/w/resources/src/jquery.tablesorter.styles/images/sort_down_inverted.svg)
+}
+/* Highlight targetted table row */
+table.wikitable tr:target,
+.highlight-target:target {
+    background-color: #ffffcc;
+}
+
+/* Sticky column */
+.sticky-column th:first-child, 
+.sticky-column td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    background-color: var(--background-mw-1);
+}
+/* Prevent elements without rowspan from overlapping the sticky column */
+.sticky-column th:not([rowspan]),
+.sticky-column td:not([rowspan]) {
+    z-index: 1; 
+}
+
+/* Horizontal scrolling */
+.scroll-x {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+/* Button style */
+table.button {
+}
+table.button td {
+    background-color: #68191b;
+    border: 2px solid #000000;
+    color: #ffffff;
+}
+table.button td:hover {
+    background-color: #b22328;
+}
+td.button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.button a {
+    text-decoration: none; 
+}
+
+/* Make the list of references smaller */
+ol.references {
+	font-size: 100%;
+} 
+.references-small {
+	font-size: 90%; 
+}   
+
+/* VALIDATOR NOTICE: the following is correct, but the W3C validator doesn't accept it */
+/* -moz-* is a vendor-specific extension (CSS 2.1 4.1.2.1) */
+/* column-count is from the CSS3 module "CSS Multi-column Layout" */
+/* Please ignore any validator errors caused by these two lines */
+.references-2column {
+	font-size: 90%;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2; 
+}
+
+/* Highlight clicked reference in blue to help navigation */
+ol.references > li:target, sup.reference:target, cite:target {
+	background-color: #ddeeff;
+}
+
+/* Ensure refs in table headers and the like aren't bold or italic */
+sup.reference {
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Styling for citations */
+cite {
+	font-style: normal;
+	word-wrap: break-word;
+}
+
+/* For linked citation numbers and document IDs, where
+	 the number need not be shown on a screen or a handheld,
+	 but should be included in the printed version */
+@media screen, 
+handheld, 
+projection {
+	cite *.printonly {
+		display: none;
+	}
+}
+
+/* Style rules for media list templates */
+div.medialist {
+	min-height: 50px;
+	margin: 1em;
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+div.medialist ul {
+	list-style-type: none;
+	 list-style-image: none;
+	margin: 0;
+}
+div.medialist ul li {
+	padding-bottom: 0.5em;
+}
+div.medialist ul li li {
+	font-size: 91%;
+	padding-bottom: 0;
+}
+
+/* Colored watchlist numbers */
+.mw-plusminus-pos {
+	color: #006400;
+}
+
+/* dark green */
+.mw-plusminus-neg {
+	color: #8b0000;
+}
+
+/* dark red */
+.rellink,
+.dablink {
+	font-style: italic;
+	padding-left: 2em;
+}
+.rellink i,
+.dablink i {
+	font-style: normal;
+}
+
+/* Style for horizontal UL lists */
+.horizontal ul {
+	padding: 0;
+	margin: 0;
+}
+.horizontal li {
+	padding: 0 0.6em 0 0.4em;
+	display: inline;
+	border-right: 1px solid;
+}
+.horizontal li:last-child {
+	border-right: none;
+	padding-right: 0;
+}
+
+/* When <div class="nonumtoc"> is used on the table of contents,
+	the ToC will display without numbers */
+.nonumtoc .tocnumber {
+	display: none;
+}
+.nonumtoc #toc ul,
+.nonumtoc .toc ul {
+	line-height: 1.5em;
+	list-style: none;
+	margin:
+	.3em 0 0;
+	padding: 0;
+}
+.nonumtoc #toc ul ul, 
+.nonumtoc
+.toc ul ul {
+	 margin: 0 0 0 2em; 
+}
+
+/* Prevent line breaks in silly places:
+	1) links when we don't want them to
+	2) HTML formulae
+	3) Ref tags with group names <ref group="Note"> --> "[Note 1]" */
+.nowraplinks a, span.texhtml, sup.reference a {
+	white-space: nowrap;
+}
+
+.thumbinner {
+	min-width: 100px;
+}
+
+/* Inline divs in ImageMaps (code borrowed from de.wiki) */
+.imagemap-inline div {
+	display: inline;
+}
+
+/* Increase the height of the image upload box */
+#wpUploadDescription {
+	height: 13em;
+}
+
+/* Reduce line-height for <sup> and <sub> */
+sup, sub {
+	line-height: 1em; }
+
+/* Prevent floating boxes from overlapping any category listings,
+	file histories, edit previews, and edit [Show changes] views */
+#mw-subcategories, #mw-pages, #mw-category-media,
+#filehistory, #wikiPreview, #wikiDiff {
+	clear: both;
+}
+
+/* Div based "warning" style system messages (system messages). */
+div.mw-warning-with-logexcerpt, 
+div.mw-lag-warn-high, 
+div.mw-cascadeprotectedwarning {
+	clear: both;
+	margin: 0.2em 0;
+	border: 1px solid var(--border-message-warn);
+	background: var(--background-message-warn);
+	padding: 0.25em 0.9em;
+}
+/* Div based "system" style messages (system messages). */
+div.mw-lag-warn-normal, 
+div.noarticletext, 
+div.fmbox-system {
+	clear: both;
+	margin: 0.2em 0;
+	border: 1px solid var(--border-message-info);
+	background: var(--background-message-info);
+	padding: 0.25em 0.9em;
+}
+
+/* Selectively hide headers in WikiProject banners */
+.wpb .wpb-header             { display: none; }
+.wpbs-inner .wpb .wpb-header { display: block; }     /* for IE */
+.wpbs-inner .wpb .wpb-header { display: table-row; } /* for real browsers */
+.wpbs-inner .wpb-outside     { display: none; }      /* hide things that should only display outside shells */
+
+/* Allow limiting of which header levels are shown in a TOC;
+	<div class="toclimit-3">, for instance, will limit to
+	showing ==headings== and ===headings=== but no further
+	(as long as there are no =headings= on the page, which
+	there shouldn't be according to the MoS).  */
+.toclimit-2 .toclevel-2,
+.toclimit-3 .toclevel-3,
+.toclimit-4 .toclevel-4,
+.toclimit-5 .toclevel-5,
+.toclimit-6 .toclevel-6,
+.toclimit-7 .toclevel-7 {
+	display: none;
+}
+
+/* Numbered lists (ordered) */
+/* Use #, ##, ### wikitext to produce the usual system of numbered lists (1, 2, 3; then a, b, c; then i, ii, iii) */
+ol { 
+	list-style-type: decimal; 
+}
+ol li > ol { 
+	list-style-type: lower-alpha; 
+}
+ol li > ol li > ol { 
+	list-style-type: lower-roman; 
+}
+
+/* Bulleted lists (unordered) */
+/* Use *, **, *** wikitext to produce the usual system of bulleted lists (•; then ◦; then ▪) */
+ul { 
+	list-style-image: none;
+	list-style-type: disc;
+}
+ul li > ul { 
+	list-style-type: circle;
+}
+ul li > ul li > ul { 
+	list-style-type: square;
+}
+
+/* Regional logos
+.mw-wiki-logo:lang(en-gb) {
+	background-image: url(https://pzwiki.net/w/images/3/37/Spiffo_rummage.png) !important;
+} */
+
+/* Custom CSS for code */
+pre.code {
+    background-color: #f8f9fa;
+    border: 1px solid #eaecf0;
+    color: var(--color-mw-base);
+    line-height: 1.3;
+    padding: 1em;
+    tab-size: 4;
+}
+pre.code span.comment {
+    color: #408080;
+    font-style: italic;
+}
+pre.code span.function {
+    color: #0000ff;
+}
+pre.code span.keyword {
+    color: #008000;
+    font-weight: bold;
+}
+span.obsolete {
+    color: #ff0000;
+}
+.equation {
+    font-size: 1.2em;
+    font-family: 'Cambria Math', 'STIX Two Math', 'Times New Roman', serif;
+}
+
+/* Code style with no border/background */
+.pz-code {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Monospace;
+    font-size: 0.8em;
+}
+
+/* Template:Section */
+div.pz-section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-mw-1);
+  border: var(--border-mw);
+  border-radius: calc(var(--border-radius) * 2);
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: var(--shadow-mw);
+}
+div.pz-section.theme-red {
+  border: var(--border-red);
+}
+div.pz-section.theme-blue {
+  border: var(--border-blue);
+}
+div.pz-section > h2 {
+  text-align: center;
+  margin: 0;
+  padding: calc(var(--border-radius) / 2);
+}
+div.pz-section.theme-red > h2 {
+  background-color: var(--background-pz-red-1);
+  color: var(--color-mw-light);
+}
+div.pz-section.theme-blue > h2 {
+  background-color: var(--background-pz-blue-1);
+  color: var(--color-mw-light);
+}
+div.pz-section > div {
+  flex-grow: 1;
+  padding: var(--border-radius);
+}
+div.pz-section > div h3 {
+  text-align: center;
+  border-bottom: var(--border-mw);
+}
+
+/* Responsive layout */
+/* TODO: remove after "pz-responsive" replaced with "pz-container" */
+div.pz-responsive {
+  width: 100%;
+  display: flex;
+}
+div.pz-responsive > div {
+  display: flex;
+  flex-direction: column;
+}
+div.pz-responsive > div:first-child {
+  flex-basis: 70%;
+  margin-right: 10px;
+}
+div.pz-responsive > div:last-child {
+  flex-basis: 30%;
+}
+div.pz-responsive > div > div {
+  margin-bottom: 10px;
+}
+div.pz-responsive > div > div:last-child {
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+/** Responsive images **/
+div.pz-responsive img {
+  width: 100%;
+  height: auto;
+}
+/** Mobile layout **/
+@media screen and (max-width: 1280px) {
+  div.pz-responsive {
+    flex-direction: column;
+  }
+  div.pz-responsive > div:first-child {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Template:Mbox */
+div.mbox {
+    position: relative;
+    display: flex;
+    border: var(--border-mw);
+    border-radius: var(--border-radius);
+    background-color: var(--background-mw-1);
+    margin-bottom: 0.5em;
+    padding-left: var(--border-radius);
+    overflow: hidden;
+    align-items: stretch;
+}
+
+div.mbox > div:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--border-radius);
+    background-color: var(--background-mw-1);
+}
+
+div.mbox > div:first-child + div {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin: var(--border-radius) 0;
+    padding: 0 var(--border-radius);
+    text-align: center;
+}
+
+div.mbox > div:first-child + div img {
+    max-width: 64px;
+    height: auto;
+}
+
+div.mbox > div:nth-child(2):has(~ div .mw-collapsed) img {
+    max-width: 32px;
+}
+
+div.mbox > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding: calc(var(--border-radius) / 2) var(--border-radius);
+}
+
+/* Template:Infobox */
+div.infobox {
+  float: right;
+  clear: right;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: var(--background-mw-1);
+  border: var(--border-mw);
+  border-radius: calc(var(--border-radius) * 2);
+  margin: 0.5em 0 0.5em 1em;
+  box-shadow: var(--shadow-mw);
+  overflow: hidden;
+  font-size: 88%;
+}
+div.infobox.theme-red {
+	border-color: var(--background-pz-red-1);
+}
+div.infobox.theme-blue {
+	border-color: var(--background-pz-blue-1);
+}
+div.infobox > div:first-child {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: calc(var(--border-radius) / 2);
+}
+div.infobox.theme-red > div:first-child  {
+    color: var(--color-mw-light);
+    background-color: var(--background-pz-red-1);
+}
+div.infobox.theme-blue > div:first-child  {
+    color: var(--color-mw-light);
+    background-color: var(--background-pz-blue-1);
+}
+div.infobox div.infobox-image {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+div.infobox div.infobox-image > div.infobox-preview {
+  display: none; /* handled with js */
+  margin: 0 auto;
+}
+div.infobox div.infobox-image > div.infobox-preview:first-child {
+  display: block; /* First preview visible by default */
+}
+div.infobox div.infobox-image > div.infobox-preview img {
+  max-width: 200px;
+  height: auto;
+}
+div.infobox div.infobox-image > div.infobox-caption {
+  text-align: center;
+  font-style: italic;
+}
+div.infobox div.infobox-image > div.infobox-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px;
+  flex-wrap: wrap;
+}
+div.infobox div.infobox-image > div.infobox-gallery img {
+  border: var(--border-mw);
+  border-radius: var(--border-radius);
+  padding: 1px;
+  width: auto;
+  max-height: 32px;
+  cursor: pointer;
+}
+div.infobox div.infobox-image > div.infobox-gallery img:hover {
+  background: var(--background-mw-2);
+  box-shadow: 0 0 0.25em var(--border-mw-color-base);
+}
+div.infobox div.infobox-image > div.infobox-gallery img.selected {
+  background: var(--background-mw-2);
+  box-shadow: 0 0 0.25em var(--border-mw-color-base) inset;
+}
+div.infobox div.infobox-section {
+    position: relative;
+}
+div.infobox div.infobox-section > div:first-child {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: calc(var(--border-radius) / 2);
+    transition: var(--transition-pz-hover);
+}
+div.infobox.theme-red div.infobox-section > div:first-child  {
+    color: var(--color-mw-light);
+    background-color: var(--background-pz-red-1);
+}
+div.infobox.theme-blue div.infobox-section > div:first-child  {
+    color: var(--color-mw-light);
+    background-color: var(--background-pz-blue-1);
+}
+div.infobox div.infobox-section > div.mw-collapsible {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 2px;
+}
+div.infobox div.infobox-section > div.toggle::after {
+  border-color: var(--color-mw-light);
+}
+div.infobox.theme-red div.infobox-section > div:first-child:hover,
+div.infobox.theme-red div.infobox-section:has(> div.toggle:hover) > div:first-child {
+    background-color: var(--background-pz-red-0);
+}
+div.infobox.theme-blue div.infobox-section > div:first-child:hover,
+div.infobox.theme-blue div.infobox-section:has(> div.toggle:hover) > div:first-child {
+    background-color: var(--background-pz-blue-0)
+}
+div.infobox div.infobox-item {
+  display: flex;
+}
+div.infobox div.infobox-item > div {
+  color: var(--color-base);
+  padding: 0 0.5em;
+  overflow:auto; /* temporary fix for long values (item_id) */
+}
+div.infobox div.infobox-item > div:first-child {
+  width: 40%;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+  background-color: var(--background-mw-3);
+}
+div.infobox div.infobox-item > div:first-child img {
+  width: 1.5em;
+  height: 1.5em;
+}
+div.infobox div.infobox-item > div:first-child img.auto-size {
+  width: auto;
+  height: auto;
+}
+
+/* Template:Documentation */
+div.documentation {
+    display: flex;
+    flex-direction: column;
+}
+div.documentation > div {
+    padding: var(--border-radius);
+}
+div.documentation > div:first-child,
+div.documentation > div:last-child {
+    border: var(--border-mw);
+    padding: var(--border-radius);
+}
+div.documentation > div:not(:first-child):not(:last-child) {
+    border-right: var(--border-mw);
+    border-left: var(--border-mw);
+}
+div.documentation > div:first-child {
+    background-color: var(--background-mw-2);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+div.documentation > div:first-child > span:first-child {
+    margin-right: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+div.documentation > div:first-child > span:nth-child(2) {
+    font-size: 0.875em;
+}
+div.documentation > div:first-child img {
+    max-width: 2em;
+    max-height: 2em;
+}
+div.documentation > div:first-child + div {
+    background-color: var(--background-mw-1);
+}
+div.documentation > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2em;
+    align-items: stretch;
+    background-color: var(--background-mw-2);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    font-size: 0.875em;
+}
+div.documentation > div:last-child > div {
+    flex: 1 1 0;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+div.documentation > div:last-child > div:first-child {
+    text-align: left;
+}
+div.documentation > div:last-child > div:last-child {
+    text-align: right;
+    font-style: italic;
+}
+
+/* Template:Header */
+div.header {
+  display: flex;
+  padding: 0.5em 0;
+  margin-bottom: 0.5em;
+  border-radius: var(--border-radius);
+}
+div.header.theme-red {
+  background-color: var(--background-pz-red-1);
+  border: var(--border-red);
+  color: var(--color-mw-light);
+}
+div.header.theme-blue {
+  background-color: var(--background-pz-blue-1);
+  border: var(--border-blue);
+  color: var(--color-mw-light);
+}
+div.header > div:first-child {
+  font-weight: bold;
+  padding: 0 0.5em;
+}
+div.header > div:last-child {
+  flex-grow: 1;
+  padding: 0 0.5em;
+}
+div.header.theme-red > div:first-child {
+  border-right: 1px solid var(--color-mw-light);
+}
+div.header.theme-blue > div:first-child {
+  border-right: 1px solid var(--color-mw-light);
+}
+
+/* Template:Mask */
+.mask {
+  filter: blur(3px);
+  transition: filter 0.2s linear;
+}
+.mask:hover {
+  filter: blur(0);
+}
+
+/* Template:Navbox */
+div.navbox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-mw-1);
+    border: var(--border-mw);
+    border-radius: var(--border-radius);
+    margin: 0.5em auto;
+    overflow: hidden;
+}
+div.navbox.theme-red {
+    border: var(--border-red);
+}
+div.navbox.theme-blue {
+    border: var(--border-blue);
+}
+div.navbox > div:first-child {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: calc(var(--border-radius) / 2) var(--border-radius); /* <!-- */
+    transition: var(--transition-pz-hover);
+}
+div.navbox.theme-red > div:first-child {
+    background-color: var(--background-pz-red-1);
+    color: var(--color-mw-light);
+}
+div.navbox.theme-blue > div:first-child {
+    background-color: var(--background-pz-blue-1);
+    color: var(--color-mw-light);
+}
+/* second-level of navbox */
+div.navbox div.navbox > div:first-child {
+    font-size: 1.0em;
+    margin-top: 0.2em;
+}
+div.navbox.theme-red div.navbox > div:first-child {
+    background-color: var(--background-pz-red-2);
+}
+div.navbox.theme-blue div.navbox > div:first-child {
+    background-color: var(--background-pz-blue-2);
+}
+/* third-level of navbox */
+div.navbox div.navbox div.navbox > div:first-child {
+    font-size: 0.9em;
+    margin: 0;
+}
+div.navbox.theme-red div.navbox div.navbox > div:first-child {
+    background-color: var(--background-pz-red-3);
+}
+div.navbox.theme-blue div.navbox div.navbox > div:first-child {
+    background-color: var(--background-pz-blue-3);
+}
+/* hover effect */
+div.navbox.theme-red div.navbox div.navbox > div:first-child:hover:not(:has(a:hover)),
+div.navbox.theme-red div.navbox > div:first-child:hover:not(:has(a:hover)),
+div.navbox.theme-red > div:first-child:hover:not(:has(a:hover)) {
+    background-color: var(--background-pz-red-0);
+}
+div.navbox.theme-blue div.navbox div.navbox > div:first-child:hover:not(:has(a:hover)),
+div.navbox.theme-blue div.navbox > div:first-child:hover:not(:has(a:hover)),
+div.navbox.theme-blue > div:first-child:hover:not(:has(a:hover)) {
+    background-color: var(--background-pz-blue-0);
+}
+/* toggle */
+div.navbox.theme-red > div.toggle::after,
+div.navbox.theme-blue > div.toggle::after {
+    border-color: var(--color-mw-light);
+}
+/* rows and items */
+div.navbox > div.mw-collapsible {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 2px;
+}
+div.navbox div.navbox-row {
+    background-color: var(--background-mw-3);
+    text-align: center;
+}
+div.navbox > div.mw-collapsible .navbox {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0;
+    margin: 0;
+}
+div.navbox > div.mw-collapsible div.navbox-section {
+    display: flex;
+    gap: 2px;
+}
+div.navbox > div.mw-collapsible div.navbox-item > div > p {
+    margin: 0.4em 0;
+}
+div.navbox > div.mw-collapsible div.navbox-section > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-grow: 1;
+}
+div.navbox > div.mw-collapsible div.navbox-section > div:first-child + div {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.navbox > div.mw-collapsible div.navbox-item {
+    display: flex;
+    gap: 2px;
+}
+div.navbox > div.mw-collapsible div.navbox-item > div:first-child {
+    width: 20%;
+    min-width: 100px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-mw-3);
+    font-weight: bold;
+    text-align: center;
+}
+div.navbox > div.mw-collapsible div.navbox-item > div:last-child {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.9em;
+}
+
+/* Template:Navbox/sandbox */
+/* To be moved to 'navbox' once moved out of sandbox. Used in Module:Navbox */
+div.navbox2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-mw-1);
+    border: var(--border-mw);
+    border-radius: var(--border-radius);
+    margin: 0.5em auto;
+    overflow: hidden;
+    text-align: center;
+}
+div.navbox2.theme-red {
+    border: var(--border-red)
+}
+div.navbox2.theme-blue {
+    border: var(--border-blue)
+}
+div.navbox2 > div:first-child {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: calc(var(--border-radius) / 2) var(--border-radius);
+    transition: var(--transition-pz-hover)
+}
+div.navbox2.theme-red > div:first-child {
+    background-color: var(--background-pz-red-1);
+    color: var(--color-mw-light)
+}
+div.navbox2.theme-blue > div:first-child {
+    background-color: var(--background-pz-blue-1);
+    color: var(--color-mw-light)
+}
+div.navbox2.theme-red > div:first-child:hover:not(:has(a:hover)) {
+    background-color: var(--background-pz-red-0)
+}
+div.navbox2.theme-blue > div:first-child:hover:not(:has(a:hover)) {
+    background-color: var(--background-pz-blue-0)
+}
+div.navbox2 > div.mw-collapsible {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 2px
+}
+div.navbox2 div.navbox2-group {
+    background-color: var(--background-mw-3);
+    transition: var(--transition-pz-hover)
+}
+div.navbox2 div.navbox2-group:hover {
+    background-color: var(--background-mw-4);
+}
+div.navbox2 > div.mw-collapsible div.navbox2-section > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-grow: 1
+}
+div.navbox2 div.navbox2-list {
+    font-size: 0.9em;
+    padding: 2px
+}
+
+/* Scale image on hover */
+.scale-image img {
+    transition: all 0.2s ease-in-out;
+}
+.scale-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Bump image on hover */
+/* Used on main page for quick links */
+.media-bump img {
+    display: inline-block;
+    transition: var(--transition-pz-hover);
+}
+.media-bump div:hover img {
+    transform: translateY(-4px);
+}
+.media-bump div:hover a {
+    text-decoration: underline;
+}
+.media-bump div:hover a:not(.new) {
+    color: var(--color-mw-link--hover)
+}
+
+/* Images should be responsive */
+/* Image will resize based on container size, instead of being static. */
+.res-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Template:Togglebox */
+div.togglebox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    margin: 0.5em auto;
+    transition: var(--transition-pz-hover);
+}
+div.togglebox.theme-red {
+    background-color: var(--background-pz-red-1)
+}
+div.togglebox.theme-blue {
+    background-color: var(--background-pz-blue-1)
+}
+div.togglebox.theme-red:has(> div:first-child:hover):not(:has(a:hover)),
+div.togglebox.theme-red:has(> div.toggle:hover):not(:has(a:hover)) {
+    background-color: var(--background-pz-red-0);
+}
+div.togglebox.theme-blue:has(> div:first-child:hover):not(:has(a:hover)),
+div.togglebox.theme-blue:has(> div.toggle:hover):not(:has(a:hover)) {
+    background-color: var(--background-pz-blue-0);
+}
+div.togglebox > div:first-child {
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    padding: var(--border-radius);
+}
+div.togglebox.theme-red > div:first-child {
+    color: var(--color-mw-light)
+}
+div.togglebox.theme-blue > div:first-child {
+    color: var(--color-mw-light)
+}
+div.togglebox > div.mw-collapsible {
+    background-color: var(--background-mw-1);
+    border-radius: var(--border-radius);
+    padding: 0 var(--border-radius);
+    margin: 0 0.5em 0.5em;
+}
+div.togglebox.theme-red > div.mw-collapsible { /* ToggleBox content div red */
+    /* background-color: var(--background-mw-1); */
+}
+div.togglebox.theme-blue > div.mw-collapsible { /* ToggleBox content div blue */
+    /* background-color: var(--background-mw-1); */
+}
+div.togglebox > div.toggle::after {
+    border-color: var(--color-mw-light)
+}
+
+/* used in Project Zomboid Wiki and PZwiki:Community Portal */
+div.pz-container {
+  width: 100%;
+  display: flex;
+  gap: 0.5em;
+}
+div.pz-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+div.pz-container > div:first-child {
+  flex-basis: 70%;
+}
+div.pz-container > div:last-child {
+  flex-basis: 30%;
+}
+div.pz-container > div > div:last-child {
+  flex-grow: 1;
+}
+div.pz-container img {
+  width: auto;
+  height: auto;
+}
+@media screen and (max-width: 1280px) {
+  div.pz-container {
+    flex-direction: column;
+  }
+}
+
+/* Template:Userbox showcase */
+div.userbox-showcase {
+  min-width: 240px;
+  float: right;
+  clear: right;
+  margin: 0 0 1em 0.5em;
+  border: var(--border-blue);
+  border-radius: calc(var(--border-radius) * 2);
+  overflow: hidden;
+}
+div.userbox-showcase > div {
+  padding: var(--border-radius);
+}
+div.userbox-showcase > div:first-child {
+  text-align: center;
+  background-color: var(--background-pz-blue-1);
+  color: var(--color-mw-light);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+div.userbox-showcase > div:first-child a {
+  color: var(--link-blue);
+}
+div.userbox-showcase > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: var(--border-radius);
+  background-color: var(--background-mw-1);
+}
+
+/* Template: Userbox */
+div.userbox {
+  display: flex;
+  min-height: 40px;
+  max-width: 240px;
+  border: var(--border-mw);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin: 0.5em;
+}
+div.userbox > div {
+  padding: var(--border-radius);
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+div.userbox > div:first-child {
+  text-align: center;
+  font-weight: bold;
+  flex-basis: 32px;
+  flex-shrink: 0;
+  border-right: var(--border-mw);
+  justify-content: center;
+  min-width: 48px;
+}
+div.userbox > div:first-child img {
+  max-width: 32px;
+  height: auto;
+}
+div.userbox > div:last-child {
+  flex-grow: 1;
+  font-size: 0.75em;
+  padding: 0 var(--border-radius);
+}
+div.userbox.awards {
+  display: block;
+}
+div.userbox.awards > div:first-child {
+  float: left;
+}
+div.userbox-showcase > div:last-child > div.userbox {
+  margin: 0;
+}
+
+/* Template:Navbar */
+div.navbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: var(--border-radius);
+  border-radius: calc(2 * var(--border-radius));
+}
+div.navbar > a {
+  padding: var(--border-radius);
+  border-radius: var(--border-radius);
+  border: var(--border-mw);
+  background-color: var(--background-mw-2);
+  transition: all 0.2s linear;
+  text-decoration: none;
+}
+div.navbar.theme-red > a {
+  background-color: var(--background-pz-red-1);
+  border: var(--border-red);
+}
+div.navbar.theme-blue > a {
+  background-color: var(--background-pz-blue-1);
+  border: var(--border-blue);
+}
+div.navbar > a:first-child {
+  font-weight: bold;
+}
+div.navbar > a:hover {
+  border-radius: calc(var(--border-radius) * 2);
+}
+div.navbar > a:hover:not(.mw-selflink) {
+    transform: translateY(-4px);
+}
+div.navbar.theme-red > a:hover:not(.mw-selflink) {
+    background-color: var(--background-pz-red-0); /* light red */
+    color: var(--color-mw-link-subtle);
+}
+div.navbar.theme-blue > a:hover:not(.mw-selflink) {
+    background-color: var(--background-pz-blue-0); /* light blue */
+    color: var(--color-mw-link-subtle);
+}
+div.navbar > a.mw-selflink {
+  border-radius: calc(var(--border-radius) * 2);
+  color: var(--color-mw-light);
+}
+div.navbar.theme-red > a.mw-selflink {
+  background-color: var(--background-pz-red-3); /* dark red */
+}
+div.navbar.theme-blue > a.mw-selflink {
+  background-color: var(--background-pz-blue-3); /* dark blue */
+}
+
+/* Future replacement of navbar */
+div.navbar2 {
+	background: var(--background-mw-1);
+	border-bottom: 4px solid var(--background-mw-4);
+	padding: 5px 20px;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+div.navbar2 > div:first-child {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+div.navbar2 hr {
+	border-top: 1px solid var(--background-mw-4);
+	margin: 4px auto;
+	width: 98%;
+}
+div.navbar2 > div:last-child > p {
+    margin: 0.5em 0;
+}
+
+/* Don't show In other languages when editing pages on Vector skins, until we find better solution */
+#p-lang {
+  display: none;
+}
+
+/* Template:Key */
+kbd.keyboard-key {
+  border: var(--border-mw);
+  border-radius: 0.2em;
+  box-shadow: 0.1em 0.2em 0.2em var(--background-mw-3);
+  background-image: linear-gradient(to bottom, var(---background-mw-2), var(--background-mw-2), var(--background-mw-2));
+  padding: 0.1em 0.3em;
+  font-family: inherit;
+  font-size: 0.85em;
+}
+
+/* Template:Quote */
+.quote {
+    display: flex;
+    font-family: 'Georgia', 'Times New Roman', 'Times', serif;
+}
+.quote .quote-mark {
+    font-weight: bold;
+    font-size: 4em;
+    height: 1em;
+}
+.quote .quote-text {
+    margin: 0.5em;
+    padding-left: 0.5em;
+    border-left: var(--border-mw);
+    font-style: italic;
+}
+.quote .quote-author {
+    text-align: right;
+}
+
+/* Mediawiki:Sitenotice */
+.sitenotice-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--padding-page);
+    color: var(--color-pz-base);
+    text-align: center;
+}
+.sitenotice-card > div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.sitenotice-card .image-container-left {
+    margin-right: 1rem;
+    flex-grow: 0;
+}
+.sitenotice-card .image-container-right {
+    margin-left: 1rem;
+    flex-grow: 0;
+}
+@media screen and (max-width: 720px) {
+    .sitenotice-card .image-container-left,
+    .sitenotice-card .image-container-right {
+        display: none;
+    }
+}
+
+/* gallery lists - used on tile pages */
+div.gallery-list {
+    display: block;
+    text-align: center;
+}
+div.gallery-list > div {
+    display: inline-block;
+    margin: 0.5em;
+}
+
+/* itemlist boxes - Template:Item_list */
+div.itemlist {
+    display: inline-block;
+    border: var(--border-mw);
+    border-radius: var(--border-radius);
+    height: 96px;
+    width: 96px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0.2em 0.1em;
+    position: relative;
+}
+div.itemlist p {
+    margin: 0;
+}
+div.itemlist div.itemlist-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+}
+div.itemlist div.itemlist-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: 0.7em;
+    margin: 0.2em;
+}
+div.itemlist div.itemlist-title > p {
+    margin: 0.2em;
+}
+div.itemlist:hover {
+    border-color: var(--color-mw-link);
+}
+div.itemlist:hover.itemlist-dropdown {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+div.itemlist div.itemlist-data {
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    margin-left: -1px;
+    width: 98px;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    background-color: var(--background-mw-1);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border: 1px solid var(--color-mw-link);
+    border-top: var(--border-mw);
+    visibility: hidden;
+    opacity: 0;
+}
+div.itemlist div.itemlist-data img {
+    width: 24px;
+    height: auto;
+}
+div.itemlist:hover div.itemlist-data {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Template:LangSwitch */
+div.langswitch {
+    background: var(--background-mw-1);
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+    border-radius: var(--border-radius);
+    color: var(--color-pz-subtle)
+}
+div.langswitch > p {
+    margin: 0;
+}
+div.langswitch a:not(:hover).new span {
+    color: var(--color-pz-subtle)
+}
+div.langswitch a.selflink span {
+    color: var(--color-mw-base);
+}
+
+/* Template:Info */
+.tooltip-info {
+    position: relative;
+    display: inline-block;
+}
+.tooltip-info img.tooltip-info-img {
+    width: 16px;
+    height: auto;
+    cursor: help;
+    transition: filter 0.3s ease;
+}
+.tooltip-info img.tooltip-info-img:hover,
+.tooltip-info img.tooltip-info-img:focus {
+    filter: brightness(0.6);
+}
+.tooltip-info img.tooltip-info-img:hover + .tooltip-info-text, 
+.tooltip-info img.tooltip-info-img:focus + .tooltip-info-text {
+    visibility: visible;
+}
+.tooltip-info-text {
+    visibility: hidden;
+    position: absolute;
+    background-color: var(--background-mw-1);
+    padding: 5px;
+    border: var(--border-mw);
+    border-radius: var(--border-radius);
+    white-space: nowrap;
+    z-index: 1;
+    font-size: 88%;
+}
+
+/* mobile friendly formatting for lists */
+.list-columns {
+    column-width: 200px;
+    column-fill: balance;
+    max-width: 800px;
+    column-gap: 1em;
+}
+
+/* plain lists - removes character before each item */
+div.list-plain > ul > li {
+    list-style-type: none;
+}
+
+/* switch to vector skin sidebar message */
+#n-vector-opt-out a {
+    font-weight: bold;
+}
+
+/* image cycling (common.js) */
+.cycle-img span[typeof="mw:File"],
+.cycle-img > p:has(span[typeof="mw:File"]) {
+    display: none;
+}
+/* Show active image */
+.cycle-img > span[typeof="mw:File"].cycle-active,
+.cycle-img > p.cycle-active:has(span[typeof="mw:File"]) {
+    display: inline;
+}
+/* Show first image until js initialises */
+.cycle-img:not(:has(> .cycle-active)) > span[typeof="mw:File"]:first-child,
+.cycle-img:not(:has(> .cycle-active)) > p:first-child:has(span[typeof="mw:File"]) {
+    display: inline;
+}
+/* Fix images that have an extra paragraph breaking spacing */
+.cycle-img > p {
+    margin: 0px;
+}
+
+/* Template:Video */
+.video-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 425px;
+}
+div.video-align-left {
+    display: flex;
+    justify-content: left;
+    margin-right: 20px
+}
+div.video-align-right {
+    display: flex;
+    justify-content: right;
+    margin-left: 20px
+}
+div.video-align-center {
+    display: flex;
+    justify-content: center
+}
+.video-thumbnail {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+.video-title {
+    position: absolute;
+    padding: 10px 15px;
+    color: var(--color-mw-light);
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    pointer-events: none;
+}
+.video-footer {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: var(--color-mw-light);
+    font-size: 0.7em;
+    background: rgba(0,0,0,0.5);
+    padding: 3px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+.video-info {
+    opacity: 0;
+    left: auto;
+    right: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+.video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-mw-light);
+    font-size: 5em;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+.video-thumbnail:hover .video-overlay,
+.video-thumbnail:hover .video-info,
+.video-thumbnail:hover .video-play {
+    opacity: 1;
+}
+@media (max-width: 639px) {
+    .video-container {
+        max-width:100%
+    }
+    div.video-align-left> div.video-container,
+    div.video-align-right > div.video-container {
+        margin: 0;
+    }
+}
+
+/* Special:Statistics */
+tr.statistics-group-suppress, tr.statistics-group-emailconfirmed, tr.statistics-group-checkuser-temporary-account-viewer {
+    display: none;
+}
+
+/* Fix white background overwriting inherit for dark themes in File previews. */
+html.skin-theme-clientpref-night #file img,
+html.skin-theme-clientpref-os #file img {
+    background-color: inherit;
+}

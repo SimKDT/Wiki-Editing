@@ -8,14 +8,12 @@
 The <code>itemMapper</code> parameter allows input items to be mapped to an output item. This is useful when you want to use a specific item in the recipe, but the player can use different items that are equivalent. This can alternatively be used for crafts that are the same for different types of objects. Mappers involve {{ll|inputs}} and {{ll|outputs}} as well as a whole new parameter <code>itemMapper</code>. To map items you need to use the following format:
 </translate>
 {{CodeSnip
-| lang = html
+| lang = zedscripts
 | code =
-inputs
-{
+inputs {
     item 1 <item table> mappers[mapperID],
 }
-outputs
-{
+outputs {
     item 1 mapper:mapperID,
 }
 itemMapper mapperID
@@ -31,15 +29,13 @@ itemMapper mapperID
 It is also possible to have two different inputs be used in the mapper:
 </translate>
 {{CodeSnip
-| lang = html
+| lang = zedscripts
 | code =
-inputs
-{
+inputs {
     item 1 <item table> mappers[mapperID],
     item 1 <item table> mappers[mapperID],
 }
-outputs
-{
+outputs {
     item 1 mapper:mapperID,
 }
 itemMapper mapperID
@@ -63,14 +59,12 @@ Creating a recipe which allows the user to open or close an umbrella needs to ta
 For example, if you want to use a closed umbrella in a recipe, but the player can use any color of closed umbrella, you can use the following code:
 </translate>
 {{CodeSnip
-| lang = lua
+| lang = zedscripts
 | code =
-inputs
-{
+inputs {
     item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue;Base.ClosedUmbrellaRed;Base.ClosedUmbrellaTINTED;Base.ClosedUmbrellaWhite] mappers[umbrellaElla] flags[InheritColor;Prop1],
 }
-outputs
-{
+outputs {
     item 1 mapper:umbrellaElla,
 }
 itemMapper umbrellaElla

@@ -49,9 +49,10 @@ for crafting it.
 For example:
 </translate>
 {{CodeSnip
-| lang = cpp
+| lang = zedscripts
 | code = 
-module yourModule /* or Base */
+/* Vanilla game uses Base */
+module yourModule
 {
     craftRecipe yourRecipeID
     {
@@ -88,9 +89,10 @@ in the translation file key and only the craftRecipe ID.
 To create a new crafting recipe, simply use the following entry in a script file:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
-module yourModule /* or Base */
+/* Vanilla game uses Base */
+module yourModule
 {
     craftRecipe <RecipeID>
     {
@@ -318,18 +320,18 @@ Below are listed methods to modify an existing craftRecipe {{ll|itemMapper}}s.
 This method needs the mod to define a craftRecipe with the same name as the one to add new {{ll|itemMapper}} entries. Only the itemMapper or overlayMapper entries need to be added the craftRecipe, which will not overwrite the original craftRecipe but add new entries to it. Simply make sure that your item gets added to the {{ll|inputs}} either by adding it manually or if the input uses {{ll|tags (item parameter)|item tags}}, that your item has the same tags.
 </translate>
 {{CodeSnip
-| lang = lua
+| lang = zedscripts
 | code =
 craftRecipe DrySmallLeather
+{
+    itemMapper DryLeatherSmall
     {
-        itemMapper DryLeatherSmall
-        {
-            Base.RaccoonLeather_Spiffo_Fur_Tan = Base.RaccoonLeather_Spiffo_Fur_Tan_Wet,
-        }
-        overlayMapper
-        {
-            Base.RaccoonLeather_Spiffo_Fur_Tan_Wet = DeerLeather,
-        }
+        Base.RaccoonLeather_Spiffo_Fur_Tan = Base.RaccoonLeather_Spiffo_Fur_Tan_Wet,
+    }
+    overlayMapper
+    {
+        Base.RaccoonLeather_Spiffo_Fur_Tan_Wet = DeerLeather,
+    }
 }
 }}
 
@@ -450,7 +452,7 @@ may also be a possible solution to hide the recipe from the crafting menu (doesn
 Here's an example of a craftRecipe with some parameters defined:
 </translate>
 {{CodeSnip
-| lang = cpp
+| lang = zedscripts
 | code = 
 craftRecipe SawLogs
 {
@@ -476,7 +478,7 @@ craftRecipe SawLogs
 Or:
 </translate>
 {{CodeSnip
-| lang = cpp
+| lang = zedscripts
 | code = 
 craftRecipe CarveWhistle
 {
@@ -506,7 +508,7 @@ craftRecipe CarveWhistle
 And a more advanced one:
 </translate>
 {{CodeSnip
-| lang = cpp
+| lang = zedscripts
 | code = 
 craftRecipe RefillHurricaneLantern
 {

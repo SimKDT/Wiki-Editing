@@ -1,7 +1,7 @@
 {{Title|inputs}}
 <languages />
 {{Navbar modding}}
-{{Page version|42.21.0}}
+{{Page version|42.22.0}}
 {{Main|CraftRecipe}}
 <translate>
 <!--T:1-->
@@ -11,21 +11,20 @@ The <code>inputs</code> parameter defines the ingredients needed to craft an ite
 Inputs are listed one after the other and follow the format examples below:
 </translate>
 {{CodeSnip/custom|code=
-inputs
-{{CodeSnip/symbol|&#123;}}
-:{{CodeSnip/comment|-- simplest form}}
+inputs {{CodeSnip/symbol|&#123;}}
+:{{CodeSnip/comment|/* simplest form */}}
 :item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}},
 
-:{{CodeSnip/comment|-- simplest form, different quantity for some items}}
+:{{CodeSnip/comment|/* simplest form, different quantity for some items */}}
 :item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|1=2}}:{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}},
 
-:{{CodeSnip/comment|-- with tags}}
+:{{CodeSnip/comment|/* with tags */}}
 :item {{CodeSnip/param|quantity}} tags{{CodeSnip/symbol|[}}{{CodeSnip/param|3=tag1}};{{CodeSnip/param|3=tag2}}...{{CodeSnip/symbol|]}},
 
-:{{CodeSnip/comment|-- combining tags with item table}}
+:{{CodeSnip/comment|/* combining tags with item table */}}
 :item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}} tags{{CodeSnip/symbol|[}}{{CodeSnip/param|3=tag1}};{{CodeSnip/param|3=tag2}}...{{CodeSnip/symbol|]}},
 
-:{{CodeSnip/comment|-- with mode, mappers and flags}}
+:{{CodeSnip/comment|/* with mode, mappers and flags */}}
 :item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}} mode:{{CodeSnip/param|4=mode}} mappers{{CodeSnip/symbol|[}}{{CodeSnip/param|5=mapperID}}{{CodeSnip/symbol|]}} flags{{CodeSnip/symbol|[}}{{CodeSnip/param|6=flag1}};{{CodeSnip/param|6=flag2}}...{{CodeSnip/symbol|]}},
 
 :{{CodeSnip/comment|...}}
@@ -48,7 +47,7 @@ inputs
 | style="text-align:center" | <code>{{CodeSnip/param|2=item}}</code> table
 | Items are listed in a table by separating them with a semicolon (<code>;</code>). The table can contain multiple items which the player can use for this specific input. The items need to have their full type noted in the list. For example, <code>Base.ClosedUmbrellaBlack</code> is the black closed umbrella item. For a custom module it would have to be <code>YourModuleName.YourItemID</code>.
 {{CodeSnip
-| lang = lua
+| lang = zedscripts
 | code =
 item 1 [Base.SmallKnife],
 item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue],
@@ -61,7 +60,7 @@ You can also use <code>{{CodeSnip/symbol|[}}*{{CodeSnip/symbol|]}}</code> for th
 <!--T:6-->
 You can have different input amounts for different items in the table by adding <code>{{CodeSnip/param|1=quantity}}:</code> in front of the item ID which needs to have a different {{CodeSnip/param|1=quantity}} value than the default one. For example:
 {{CodeSnip
-| lang = lua
+| lang = zedscripts
 | code =
 item 1 [Item1;2:Item2;10:Item3],
 }}
@@ -73,7 +72,7 @@ item 1 [Item1;2:Item2;10:Item3],
 For example, <code>Base.SmallKnife</code> has the tags:
 <code>Tags = {{CodeSnip/param|3=CutPlant}};{{CodeSnip/param|3=SharpKnife}};{{CodeSnip/param|3=ButcherAnimal}};{{CodeSnip/param|3=HasMetal}};{{CodeSnip/param|3=Blade}};{{CodeSnip/param|3=Sharpenable}};{{CodeSnip/param|3=KillAnimal}}</code> which define specific uses of the knife so you can identify it with the most relevant tag for your recipe.
 {{CodeSnip
-| lang = lua
+| lang = zedscripts
 | code =
 item 1 tags[base:sharpknife],
 }}
@@ -283,10 +282,9 @@ inputs {
 </translate>
 
 {{CodeSnip
-| lang = lua
+| lang = zedscripts
 | code =
-inputs
-{
+inputs {
     item 1 tags[base:ripclothingcotton] flags[AllowDestroyedItem;IsNotWorn],
     item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue] mappers[umbrellaElla],
     item 1 [Base.Hammer] mode:keep flags[Prop1],

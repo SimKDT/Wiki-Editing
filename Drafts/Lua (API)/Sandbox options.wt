@@ -1,6 +1,6 @@
 <languages />
 {{Navbar scripts}}
-{{Page version|42.21.0}}
+{{Page version|42.22.0}}
 {{About|creating custom sandbox options (modding)|an explanation of options in the 'sandbox' game mode|Custom Sandbox}}
 <translate>
 <!--T:1-->
@@ -28,7 +28,7 @@ The rest of the file is a list of sandbox options, each defined by an
 {{ll|Scripts}} file. All blocks will follow the following structure:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 option ModName.OptionName
 {
@@ -57,7 +57,7 @@ The <code>type</code> parameter defines the type of the option which replaces <c
 | Booleans are used for options that can be either true or false.
 | 
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 type = boolean,
 default = <true/false>,
@@ -67,7 +67,7 @@ default = <true/false>,
 | Integers are used for options that can be any whole number.
 |
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 type = integer,
 default = <number>,
@@ -79,7 +79,7 @@ max = <number>,
 | Doubles are used for options that can be any float number.
 |
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 type = double,
 default = <number>,
@@ -91,7 +91,7 @@ max = <number>,
 | Strings are used for options that can be any text. For an empty string by default, use <code>default = ,</code>.
 |
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 type = string,
 default = <text>,
@@ -101,7 +101,7 @@ default = <text>,
 | Enums are used for options that can be one of a list of predefined values.
 |
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 type = enum,
 default = <value>,
@@ -113,7 +113,7 @@ numValues = <number>,
 For example:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 option MyMod.MyOption
 {
@@ -148,7 +148,7 @@ Sandbox options are put in the following file:
 The different sandbox options need extra parameters first:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 option ModName.OptionName
 {

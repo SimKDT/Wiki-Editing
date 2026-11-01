@@ -1,7 +1,7 @@
 {{Title|item (scripts)}}
 <languages />
 {{Navbar scripts}}
-{{Page version|42.20.4}}
+{{Page version|42.22.0}}
 {{Infobox
 | title = item
 | class = theme-blue
@@ -47,7 +47,7 @@ The item block is used to create items in the game, from weapons to food and clo
 To get started, create a simple item structure by setting that parameter up correctly, then add more parameters as you need. For example, for a normal item:
 </translate>
 {{CodeSnip
-| lang = cpp
+| lang = zedscripts
 | code = 
 module yourModule
 {
@@ -77,7 +77,7 @@ You can find a full list of the parameters in the
 Any other parameter not in the list will be written as a key-value in the item's ModData. For example:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 MyCustomOption = This is custom label,
 }}
@@ -116,7 +116,7 @@ translation file. Taking the example from above, your translation file would be:
 The ID of an item script is often refered to as the ''type'', while it's full ID is the ''full type''. The ''type'' is simply the {{ll|Scripts#ID|ID}} of the script block, while the ''full type'' is the <code>module.ID</code>. Take for example the following incomplete item definition:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 module MyModModule {
     item MyItem {
@@ -154,7 +154,7 @@ This follows the soft overrides rules defined in the main {{ll|Scripts#Soft over
 For example take the following existing item definition:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code = 
 module Base
 {
@@ -192,11 +192,11 @@ If I want to modify the
 , I can simply do the following in my own {{ll|Scripts}} file:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code = 
 module Base
 {
-    /* If you're using ZedScripts, add the following annotation
+    /* If you're using {{ll|ZedScripts}}, add the following annotation
      *@soft-override
      */
     item HotDrinkClay
@@ -209,13 +209,10 @@ module Base
 
 <translate>
 <!--T:40-->
-There are specific parameters that may act differently based on their usual behavior. Most parameters will act nicely without any special behavior, but for example
-</translate> <translate><!--T:41--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-tags Tags]</translate> <translate>
-<!--T:42-->
-doesn't allow you to overwrite existing tags. If you soft override tags, your newly listed tags will simply be added to the existing list of tags from the original definition, which is essentially a good thing because you are not breaking vanilla tags of this item.
+There are specific parameters that may act differently based on their usual behavior. Most parameters will act nicely without any special behavior, but for example [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-tags Tags] doesn't allow you to overwrite existing tags. If you soft override tags, your newly listed tags will simply be added to the existing list of tags from the original definition, which is essentially a good thing because you are not breaking vanilla tags of this item.
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code = 
 module Base
 {
@@ -324,7 +321,7 @@ To set those up, you will need to setup at least one {{ll|model (scripts)|model 
 The model script will then be:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 module yourModule
 {
@@ -341,7 +338,7 @@ module yourModule
 You can reference this model script inside the relevant item script parameters to setup up the model that were mentioned above:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 module yourModule
 {
@@ -360,7 +357,7 @@ module yourModule
 And for weapons:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 module yourModule
 {
@@ -389,7 +386,7 @@ parameter. This can more easily be achieved using the {{ll|Attachment editor}}.
 If we take our previous model definition, the most common attachment scripts will be the following:
 </translate>
 {{CodeSnip
-| lang = java
+| lang = zedscripts
 | code =
 module yourModule
 {

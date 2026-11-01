@@ -48,10 +48,7 @@ To get a list of available mannequins, see {{ll|Mannequin_(scripts)#Available_ma
 == Parameters == <!--T:4-->
 
 <!--T:5-->
-You can find a full list of the parameters in the
-</translate> <translate><!--T:6--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/mannequin.html ScriptsDocs]</translate><translate>
-<!--T:7-->
-.
+You can find a full list of the parameters in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/mannequin.html ScriptsDocs].
 </translate>
 
 {{Note|Animal models and textures can be used in mannequins ! For the {{ll|outfit}} parameter, you can use the {{Code|Naked}} outfit but some clothing items can be used by animals such as hats.}}
@@ -93,6 +90,7 @@ Below is the list of available mannequins in the vanilla game:
 *<code>MaleLeather</code>
 </div>
 
+{{Clear}}
 == Navigation == <!--T:10-->
 </translate>
 

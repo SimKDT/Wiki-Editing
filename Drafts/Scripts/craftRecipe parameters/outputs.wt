@@ -1,19 +1,18 @@
 {{Title|outputs}}
 <languages />
 {{Navbar modding}}
-{{Page version|42.5.1}}
+{{Page version|42.22.0}}
 {{Main|CraftRecipe}}
 <translate>
 <!--T:1-->
 The <code>outputs</code> parameter defines the items that will be created when the recipe is finished. Outputs are listed one after the other and follow the format below:
 </translate>
 {{CodeSnip/custom|code=
-outputs
-{{CodeSnip/braces|l}}
-:{{CodeSnip/comment|-- simple item output}}
+outputs {{CodeSnip/braces|l}}
+:{{CodeSnip/comment|/* simple item output */}}
 :item {{CodeSnip/param|quantity}} {{CodeSnip/param|2=item}},
 
-:{{CodeSnip/comment|-- using mappers}}
+:{{CodeSnip/comment|/* using mappers */}}
 :item {{CodeSnip/param|quantity}} mapper:{{CodeSnip/param|5=mapperID}},
 
 :{{CodeSnip/comment|...}}
@@ -36,7 +35,7 @@ outputs
 | style="text-align:center" | <code>{{CodeSnip/param|2=item}}</code>
 | The output item is unique for an output line. The items need to have their full type noted in the list. For example, <code>Base.ClosedUmbrellaBlack</code> is the black closed umbrella item. For a custom module it would have to be <code>YourModuleName.YourItemID</code>.
 {{CodeSnip
-| lang = lua
+| lang = zedscripts
 | code =
 item 1 Base.SmallKnife
 item 1 Base.ClosedUmbrellaBlack,
@@ -96,7 +95,7 @@ Below is the full list of flags that can be used:
 </translate>
 
 {{CodeSnip
-| lang = lua
+| lang = zedscripts
 | code =
 outputs
 {

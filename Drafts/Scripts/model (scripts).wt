@@ -1,7 +1,7 @@
 {{Title|model (scripts)}}
 <languages />
 {{Navbar scripts}}
-{{Page version|42.19.0}}
+{{Page version|42.22.0}}
 {{Infobox
 | title = model
 | class = theme-blue
@@ -38,7 +38,7 @@
 Used to define a model properties so it can be used in other elements of the game, most notably in {{ll|item (scripts)|item}} and {{ll|vehicle (scripts)|vehicle}}. The basic structure of a model block is as follows:
 </translate>
 {{CodeSnip
-| lang = cpp
+| lang = zedscripts
 | code = 
 module YourModule {
   model YourModel {
@@ -64,7 +64,7 @@ You can find a full list of the parameters in the
 </translate>
 
 {{CodeSnip
-| lang = Java
+| lang = zedscripts
 | code =
 model Burger
 {

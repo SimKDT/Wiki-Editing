@@ -1,7 +1,7 @@
 {{Title|evolvedrecipe (scripts)}}
 <languages />
 {{Navbar scripts}}
-{{Page version|42.19.0}}
+{{Page version|42.22.0}}
 {{Infobox
 | title = evolvedrecipe
 | class = theme-blue
@@ -38,26 +38,21 @@
 Defines a dynamic recipe where items can be added in as ingredients in multiple steps. This is notably used to define soups, stews or beverages that can accept multiple combination of ingredients. Stats from each {{ll|item (scripts)|items}} are added to the final product.
 
 <!--T:2-->
-For an item to be accepted in a specific evolvedrecipe, it needs to have the parameter
-</translate> <translate><!--T:3--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#item-evolvedrecipe EvolvedRecipe]</translate> <translate><!--T:4-->
-which lists every evolved recipes it can be used in and in what quantity.
+For an item to be accepted in a specific evolvedrecipe, it needs to have the parameter [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#item-evolvedrecipe EvolvedRecipe] which lists every evolved recipes it can be used in and in what quantity.
 
 == Parameters == <!--T:5-->
 
 <!--T:6-->
-You can find a full list of the parameters in the</translate> <translate><!--T:7--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/evolvedrecipe.html ScriptsDocs]</translate><translate>
-<!--T:8-->
-.
+You can find a full list of the parameters in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/evolvedrecipe.html ScriptsDocs].
 
 == Example == <!--T:9-->
 </translate>
 
 {{CodeSnip
-| lang = cpp
+| lang = zedscripts
 | code = 
 module Base {
-    evolvedrecipe Sandwich
-    {
+    evolvedrecipe Sandwich {
         BaseItem = Base.BreadSlices,
         MaxItems = 4,
         ResultItem = Base.Sandwich,
@@ -68,8 +63,7 @@ module Base {
         Cookable = true,
     }
 
-    item Processedcheese
-    {
+    item Processedcheese {
         EvolvedRecipe = Sandwich:5;Burger:5;Hotdog:5;Rice:5;Pasta:5;Bread:5;Omelette:5;Toast:5,
         ...
     }

@@ -58,66 +58,62 @@ You can find a full list of the parameters in the</translate> <translate><!--T:1
 </translate>
 
 {{CodeSnip
-| lang = lua
+| lang = zedscripts
 | code =
 fluid Test
-    {
-        Color           = 1.000 : 0.894 : 0.769, , -- The color value here must be an RGB01 value ( Decimal ranges from 0 to 1. Alpha (transparency) input is not supported.
-        ColorReference  = Red, -- You can also use a plaintext color reference.
-        DisplayName     = FLUID_TEST,
+{
+    /* The color value here must be an RGB01 value ( Decimal ranges from 0 to 1. Alpha (transparency) input is not supported */
+    Color           = 1.000 : 0.894 : 0.769, ,
+    /* You can also use a plaintext color reference. */
+    ColorReference  = Red,
+    DisplayName     = FLUID_TEST,
 
-        Categories
-        {
-
-            Beverage,
-            Industrial,
-        }
-
-        -- Optional stuff:
-
-        -- reference a filter script:
-        BlendWhiteList  = MyFluidFilter,
-        BlendBlackList  = MyFluidFilter,
-
-        BlendWhiteList -- You can define whether this fluid can or cannot be blended with others.
-        {
-            whitelist = true,
-            fluids
-            {
-                Water,
-            }
-            categories
-            {
-                Beverage,
-            }
-        }
-
-        Properties
-        {
-            fatigueChange           = 0,
-            hungerChange            = 0,
-            stressChange            = 0,
-            thirstChange            = 0,
-            unhappyChange           = 0,
-            calories                = 0,
-            carbohydrates           = 0,
-            lipids                  = 0,
-            proteins                = 0,
-            alcohol                 = 0,
-            fluReduction            = 0,
-            painReduction           = 0,
-            enduranceChange         = 0,
-            foodSicknessChange      = 0,
-        }
-
-        Poison
-        {
-            maxEffect       = None, -- Acceptable values: None, Low(Unconfirmed/Untested), Medium, Extreme, Deadly,
-            minAmount       = 0, -- Minimum poison effect. Any decimal value from 0 to 1.0
-            diluteRatio     = 0, -- The ratio of this poison and how diluted it becomes when added to other fluids.
-        }
-
+    Categories {
+        Beverage,
+        Industrial,
     }
+
+    /* Optional stuff: */
+
+    /* reference a filter script: */
+    BlendWhiteList  = MyFluidFilter,
+    BlendBlackList  = MyFluidFilter,
+
+    /* You can define whether this fluid can or cannot be blended with others */
+    BlendWhiteList {
+        whitelist = true,
+        fluids {
+            Water,
+        }
+        categories {
+            Beverage,
+        }
+    }
+
+    Properties {
+        fatigueChange           = 0,
+        hungerChange            = 0,
+        stressChange            = 0,
+        thirstChange            = 0,
+        unhappyChange           = 0,
+        calories                = 0,
+        carbohydrates           = 0,
+        lipids                  = 0,
+        proteins                = 0,
+        alcohol                 = 0,
+        fluReduction            = 0,
+        painReduction           = 0,
+        enduranceChange         = 0,
+        foodSicknessChange      = 0,
+    }
+
+    Poison {
+        maxEffect       = None, -- Acceptable values: None, Low(Unconfirmed/Untested), Medium, Extreme, Deadly,
+        minAmount       = 0, -- Minimum poison effect. Any decimal value from 0 to 1.0
+        diluteRatio     = 0, -- The ratio of this poison and how diluted it becomes when added to other fluids.
+    }
+
+}
 }}
 
 <translate>

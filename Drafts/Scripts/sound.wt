@@ -1,7 +1,7 @@
 {{Title|sound (scripts)}}
 <languages />
 {{Navbar scripts}}
-{{Page version|42.19.0}}
+{{Page version|42.22.0}}
 {{Infobox
 | title = sound
 | class = theme-blue
@@ -40,16 +40,13 @@ Makes one or more sound clips available for use in the game. Multiple clips can 
 == Parameters == <!--T:2-->
 
 <!--T:3-->
-You can find a full list of the parameters in the
-</translate> <translate><!--T:4--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/sound.html ScriptsDocs]</translate><translate>
-<!--T:5-->
-.
+You can find a full list of the parameters in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/sound.html ScriptsDocs].
 
 == Example == <!--T:6-->
 </translate>
 
 {{CodeSnip
-| lang = cpp
+| lang = zedscripts
 | code = 
 module yourModule {
   sound yourSound {
