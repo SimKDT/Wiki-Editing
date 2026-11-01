@@ -65,10 +65,7 @@ Key value pairs are used to define the parameters of the script elements, with t
 
 <translate>
 === Module block === <!--T:17-->
-</translate>
 
-{{Main|module (scripts)}}
-<translate>
 <!--T:18-->
 A module block needs to be defined at the start of the script files, unless it is a {{ll|sandbox options}} script. The base game module is
 </translate> {{Code|Base}}<translate><!--T:19--> , which means most entries will have the full ID</translate> {{Code|Base.ItemName}}<translate>
@@ -124,10 +121,7 @@ module.
 
 <translate>
 === Imports block === <!--T:26-->
-</translate>
 
-{{Main|imports (scripts)}}
-<translate>
 <!--T:27-->
 By importing custom modules, you give your scripts direct access to the elements from these modules, and you can use item IDs directly without the module prefix (for example, you can use
 </translate> {{Code|ThatModItem}} <translate><!--T:28--> instead of</translate> {{Code|ThatModule.ThatModItem}}<translate>
