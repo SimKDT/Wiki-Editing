@@ -1,0 +1,42 @@
+Hello everyone, SimKDT here for the October 2026 modding wiki summary. Very small month in terms of edits as I continue major work on [[ZedScripts]], the biggest part being a discussion on the latest blog post by [[The Indie Stone]].
+
+This month saw the release of [[Build 42.22.0]], and with it, an official message by [[The Indie Stone]] on the newly developing [[Java]] modding scene, most notably launched by the apparition of several Java mods that transform the game's perspective to 3D (PZ3D, Viewpoint...). The development of these mods have appeared thanks to two main factors:
+* [[ZombieBuddy]] provides a Java mod loader which allows patching of the game's bytecode, enabling the creation and integration of complex mods directly within the game's engine instead of modifying existing class files.
+* AI-fueled modding led to quicker development of mods that hook to deep parts of the game's engine, as well as the ability for anyone without any prior knowledge to output ''functional'' mods
+
+However, this rapid development brings up a few concerns which are notably expressed by [[The Indie Stone]] in their latest official blog post [[pz:blog/news/2026/10/a-note-on-java-mods-and-modding/|A Note On Java Mods and Modding]] and that add up to create an ticking bomb waiting to explode:
+* [[Java]] modding allows any mods to do '''anything''' they want on your computer, giving them unrestricted access to your system and potentially compromising your security.
+** In itself, this doesn't mean you will download a malicious mod, but it does mean the possibility exists.
+** The proposed solution is to download only mods that can be reversed engineered (decompiled) back to their source code, which is made public by the mod developers themselves.
+** While this is a good practice, realistically you are not going to ask non-technical users to decompile a mod themselves and read code to verify that it is safe.
+** Add on top of that the fact the [[Steam Workshop]] and PZ's mod usage is historically designed to be very user-friendly and accessible, allowing anyone to click subscribe on a mod and run it the minute after, it makes downloading malicious mods much easier and more likely to happen.
+* While AI modding gave the ability for anyone to create mods without prior technical knowledge, only going from raw ideas, it has major risks for the modding ecosystem.
+** AI generated mods are extremely often of lower quality compared to handcrafted ones by developers who understand the game's engine and mechanics deeply. This makes them particularly badly optimized and prone to bugs. You can see an example of common mistakes made by AI on PZ modding [[Getting started with modding#Example|here]].
+** AI-generated mods are faster to make, and anyone can produce them, which leads to a flood of new mods entering the ecosystem at an unprecedented rate. This is notably what the Steam's game market is suffering from right now ([https://www.reddit.com/r/Steam/comments/1xhoug7/valve_addresses_flood_of_ai_games_on_steam_and_ai/ read here]).
+** This flood means that well-made mods are harder to come by because they take more time and effort to create, and they can easily get lost among the numerous low-quality AI-generated mods.
+** This also means that malicious mods can easily slip through the massive influx of new mods, making it more challenging to identify and avoid them.
+
+In the last summary for September 2026, I mentioned a new Sit-Down Sunday by Paddlefruit presenting his animation [[Blender Toolkit]] for Project Zomboid, which was happening at the same time as writing that summary. The VOD for that session is now available, listed in [[Sit-Down Sunday]].
+
+The [[Rendering]] page received a cleanup to add more context to the SQz video guides to rendering Project Zomboid in [[wikipedia:Blender|Blender]] which are now fairly outdated on a lot of points thanks to the previously mentioned [[Blender Toolkit]] being available now.
+
+[[User:JBDiablo|JBDiablo]] added new ''What can be stored'' and ''Mistakes to avoid'' sections to the [[Mod data]] page, providing some extra details to manipulating global and object mod data.
+
+The [[Mod structure]] got a cleanup on its examples section, where different level of examples are now listed independently, replacing the previously massive example which was very confusing for new modders due to being so big.
+
+The modding news from new builds which I manually find in the game code and write by hand have been moved from the [[:Template:Navbar modding]] to a new template [[:Template:ModdingNews]], which is then used in the modding navigation bar, to be easily reusable anywhere, most notably in a new section [[Modding#Latest modding news]]. It is now easier to contribute to the modding news by editing this template directly. In the same theme, a page about [[Modpack|modpacking]] has created to explain this practice and the risks that involve it.
+
+The [[Modding]] page received a second new section ''Know your rights'' which provides tips and tricks to the terms and conditions of modding. Give it a read at least once to be on the page, and if you have more tips and tricks that you know of, don't hesitate to list them there.
+
+A new [[Modding by example]] project by [[User:Aoqia|aoqia]] has been initiated, where they will aim to provide examples on how to mod specific aspects of Project Zomboid directly with a practical application. No examples have yet to be documented there however.
+
+To improve navigation of the modding wiki, a new navigation bar has been created to replace the main modding navbar, for [[Scripts]] related pages ([[:Template:Navbar scripts]]). This will be applied to other modding fields in the future as well.
+
+Smaller changes:
+* The [[Target Square]] API and [[PZ Zone Viewer]] projects received a wiki page.
+* [[Zed's Better Workshop Upload]] also received a wiki page, and got linked in [[Uploading mods#Alternative uploaders]].
+
+Thanks to the various users contributing to the modding wiki this month:
+* [[User:Linksyyy|Linksyyy]] - bumped the [[Scripts]] page from [[Build 42.20.3]] to [[Build 42.21.0]]
+* [[User:Athurios|Athurios]] - created a page [[IsExclusive]] to document an [[inputs (scripts)|inputs flag]] which is now moved into the main page alongside other inputs flags documentations.
+* Previously mentioned contributions by [[User:JBDiablo|JBDiablo]] and [[User:Aoqia|aoqia]]
