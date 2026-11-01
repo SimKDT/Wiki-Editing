@@ -1,20 +1,35 @@
-{{LangSwitch}}
-{{Navbar modding}}
-{{Page version|42.20.3}}
-'''Scripts''', also referred to as ''zedscripts'', are a format for modding in Project Zomboid which is used to implement new items, recipes, sounds, vehicles and more. Scripts do not follow a normalized typing format and are a fully custom syntax with rules of their own, even varying between the different types of scripts. The script files are usually located in the folder {{Code|media/scripts}} in the [[game files]] or the [[Mod structure|mod folder]].
+<languages />
+{{Navbar scripts}}
+{{Page version|42.21.0}}
+<translate>
+<!--T:1-->
+'''Scripts''', also referred to as ''zedscripts'', are a format for modding in Project Zomboid which is used to implement new items, recipes, sounds, vehicles and more. Scripts do not follow a normalized typing format and are a fully custom syntax with rules of their own, even varying between the different types of scripts. The script files are usually located in the folder
+</translate> {{Code|media/scripts}} <translate>
+<!--T:2-->
+in the {{ll|game files}} or the {{ll|Mod structure|mod folder}}.
+</translate>
 
 {{Note|type=warn|Scripts are not a programming language, but mostly a custom format to define data for game elements which are parsed and cached inside the Java.}}
 
-== Video guide ==
+<translate>
+== Video guide == <!--T:3-->
+</translate>
+
 {{Video
 |id=KErJoD9GuRc
 |image=PZ Modding Guides - Introduction to Scripts.png
 |name=PZ Modding Guides - Introduction to Scripts
 }}
 
-== Folder structure ==
+<translate>
+== Folder structure == <!--T:4-->
+</translate>
+
 {{Main|Mod structure}}
-'''Scripts''' are put inside the <code>scripts</code> folder and are used to define items, models, vehicles etc. There is no specific organization of scripts compared to the [[Lua (API)|Lua]]. The only rule is that the script files must end with the extension <code>.txt</code>. Various script blocks can be used and spread across multiple script files in different subfolders.
+<translate>
+<!--T:5-->
+'''Scripts''' are put inside the <code>scripts</code> folder and are used to define items, models, vehicles etc. There is no specific organization of scripts compared to the {{ll|Lua (API)|Lua}}. The only rule is that the script files must end with the extension <code>.txt</code>. Various script blocks can be used and spread across multiple script files in different subfolders.
+</translate>
 {{CodeSnip
 | code =
 📁 media/
@@ -27,19 +42,39 @@
 
 {{Note|It is preferable to put your script files inside a subfolder named after your mod to reduce clash issues with other mods.}}
 
-== Scripts syntax ==
-The files need to be saved with the {{Code|.txt}} extension and follow a set of rules which should be the same for every script blocks as of [[Build 42]]. Script entries follow a block structure, similar to [[Lua (language)#Tables|Lua tables]], usually defined by the characters {{Code|{ }} and {{Code|} }}.
+<translate>
+== Scripts syntax == <!--T:6-->
 
-Comments follow the Java multiline comment syntax, starting with {{Code|/*}} and ending with {{Code|*/}}. Comments can be placed anywhere in the script, even inside blocks. Single line {{Code|//}} comments do not work and should not be used.
+<!--T:7-->
+The files need to be saved with the
+</translate> {{Code|.txt}} <translate><!--T:8--> extension and follow a set of rules which should be the same for every script blocks as of {{ll|Build 42}}. Script entries follow a block structure, similar to {{ll|Lua (language)#Tables|Lua tables}}, usually defined by the characters</translate> {{Code|{ }} <translate><!--T:9--> and</translate> {{Code|} }}<translate><!--T:10-->
+.
 
-Key value pairs are used to define the parameters of the script elements, with the syntax {{Code|1=Key = Value,}}. The comma at the end of each key value pair line is mandatory, even for the last line in a block. Some parameters do not need to be present for a script block to work.
+<!--T:11-->
+Comments follow the Java multiline comment syntax, starting with</translate> {{Code|/*}} <translate><!--T:12--> and ending with</translate> {{Code|*/}}<translate><!--T:13--> . Comments can be placed anywhere in the script, even inside blocks. Single line</translate> {{Code|//}} <translate><!--T:14-->
+comments do not work and should not be used.
+
+<!--T:15-->
+Key value pairs are used to define the parameters of the script elements, with the syntax</translate> {{Code|1=Key = Value,}}<translate>
+<!--T:16-->
+. The comma at the end of each key value pair line is mandatory, even for the last line in a block. Some parameters do not need to be present for a script block to work.
+</translate>
 
 {{Note|type=warn|Scripts can be inconsistent in some cases and some syntax rules which are present in this section may not apply to all script blocks. Refer to the specific script block documentation for more details.}}
 {{Note|type=error|Make sure to not forget commas at the end of each key value pair lines, as this will cause the script to not be parsed correctly.}}
 
-=== Module block ===
+<translate>
+=== Module block === <!--T:17-->
+</translate>
+
 {{Main|module (scripts)}}
-A module block needs to be defined at the start of the script files, unless it is a [[sandbox options]] script. The base game module is {{Code|Base}}, which means most entries will have the full ID {{Code|Base.ItemName}}. It can be used for your own scripts:
+<translate>
+<!--T:18-->
+A module block needs to be defined at the start of the script files, unless it is a {{ll|sandbox options}} script. The base game module is
+</translate> {{Code|Base}}<translate><!--T:19--> , which means most entries will have the full ID</translate> {{Code|Base.ItemName}}<translate>
+<!--T:20-->
+. It can be used for your own scripts:
+</translate>
 {{CodeSnip
 | lang = Java
 | code =
@@ -57,7 +92,10 @@ module Base
 }
 }}
 
+<translate>
+<!--T:21-->
 A custom module name can also be defined:
+</translate>
 {{CodeSnip
 | lang = Java
 | code =
@@ -67,44 +105,83 @@ module MyModule {
 }}
 
 {{Note|If you use the vanilla module, make sure to use unique naming for your script entries to not clash with other mods. One trick is to add a prefix related to your mod name ({{Code|MyMod_MyItemID}}).}}
-{{Note|type=warn|The module block should not be used for [[sandbox options]] scripts.}}
+{{Note|type=warn|The module block should not be used for {{ll|sandbox options}} scripts.}}
 
-To reference a script object, it is suggested to always use the module prefix, which is the module name followed by a dot. For example, if you define an item in the {{Code|MyModule}} module, you can reference it as {{Code|MyModule.MyItem}}. If you don't use the module prefix, the game will search in the following order:
+<translate>
+<!--T:22-->
+To reference a script object, it is suggested to always use the module prefix, which is the module name followed by a dot. For example, if you define an item in the
+</translate> {{Code|MyModule}} <translate><!--T:23--> module, you can reference it as</translate> {{Code|MyModule.MyItem}}<translate><!--T:24-->
+. If you don't use the module prefix, the game will search in the following order:
 * The current module.
-* The [[#Imports block|imported modules]].
-* The {{Code|Base}} module.
+* The {{ll|#Imports block|imported modules}}.
+* The</translate> {{Code|Base}} <translate>
+<!--T:25-->
+module.
 * Every other module.
+</translate>
 
 {{Note|type=error|This behavior is inconsistent in the various script types and as such it is recommended to always use the module prefix when referencing script objects. If you are having problems, try to put your script in the {{Code|Base}} module instead of a custom one.}}
 
-=== Imports block ===
+<translate>
+=== Imports block === <!--T:26-->
+</translate>
+
 {{Main|imports (scripts)}}
-By importing the Base module or any other module, you give your scripts direct access to the elements from these modules, and you can use item IDs directly without the module prefix (for example, you can use {{Code|Nails}} instead of {{Code|Base.Nails}}).
+<translate>
+<!--T:27-->
+By importing custom modules, you give your scripts direct access to the elements from these modules, and you can use item IDs directly without the module prefix (for example, you can use
+</translate> {{Code|ThatModItem}} <translate><!--T:28--> instead of</translate> {{Code|ThatModule.ThatModItem}}<translate>
+<!--T:29-->
+). By default, the <code>Base</code> module is already imported, so importing it doesn't make any sense.
+</translate>
 {{CodeSnip
 | lang = Java
 | code =
 module MyModule {
     imports {
-        Base
-        OtherMod
+        OtherMod,
     }
 }
 }}
 
+<translate>
+<!--T:30-->
+Read more about it in the
+</translate> <translate><!--T:31--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/imports.html ScriptsDocs]</translate><translate>
+<!--T:32-->
+.
+</translate>
+
 {{Note|type=warn|It is suggested to not use the imports blocks, but to directly use the module prefix when referencing script objects.}}
 
-=== VSCode syntax highlighting ===
-To have syntax highlighting and diagnostics for Project Zomboid scripts in [[Visual Studio Code]], which will help in reading and writing script files, you can install the extension [[ZedScripts]].
+<translate>
+=== VSCode syntax highlighting === <!--T:33-->
 
-== Properties ==
-{{Note|type=warn|This is new and not every script blocks are fully documented yet both in the [[Scripts Data]] and on the Wiki.}}
+<!--T:34-->
+To have syntax highlighting and diagnostics for Project Zomboid scripts in {{ll|Visual Studio Code}}, which will help in reading and writing script files, you can install the extension {{ll|ZedScripts}}.
+
+== Properties == <!--T:35-->
+</translate>
+
+{{Note|type=warn|This is new and not every script blocks are fully documented yet both in the {{ll|Scripts Data}} and on the Wiki.}}
+<translate>
+<!--T:36-->
 Script blocks can have specific sets of properties depending on their type. A property defines syntax rules and conditions for the script block as well as how the game should handle it.
 
-=== Parent blocks ===
-Some script blocks need to be defined inside specific parent blocks, most commonly the {{Code|module}} block.
+=== Parent blocks === <!--T:37-->
 
-==== Example ====
-A [[craftRecipe|craftRecipe]] block must be defined inside a {{Code|module}} block and [[inputs (scripts)|inputs]] block must have a craftRecipe block as parent:
+<!--T:38-->
+Some script blocks need to be defined inside specific parent blocks, most commonly the
+</translate> {{Code|module}} <translate><!--T:39-->
+block.
+
+==== Example ==== <!--T:40-->
+
+<!--T:41-->
+A {{ll|craftRecipe|craftRecipe}} block must be defined inside a</translate> {{Code|module}} <translate>
+<!--T:42-->
+block and {{ll|inputs (scripts)|inputs}} block must have a craftRecipe block as parent:
+</translate>
 {{CodeSnip
 | lang = Java
 | code =
@@ -117,11 +194,20 @@ module MyModule { // parent of craftRecipe block
 }
 }}
 
-=== Children blocks ===
+<translate>
+=== Children blocks === <!--T:43-->
+
+<!--T:44-->
 Some script blocks can contain other script blocks inside them, called children blocks. These children blocks can be mandatory or optional depending on the script type.
 
-=== ID ===
-Some script blocks require an ID to be defined, usually mandatory, but sometimes optional based on the parent block. The ID is used to reference the script block in other scripts or in the [[Lua (API)|Lua]]. For example, [[item (scripts)|items]] use what is called a ''full type'' or full ID, which is composed of the module name and the item ID separated by a dot ({{Code|MyModule.MyItem}}).
+=== ID === <!--T:45-->
+
+<!--T:46-->
+Some script blocks require an ID to be defined, usually mandatory, but sometimes optional based on the parent block. The ID is used to reference the script block in other scripts or in the {{ll|Lua (API)|Lua}}. For example, {{ll|item (scripts)|items}} use what is called a ''full type'' or full ID, which is composed of the module name and the item ID separated by a dot (
+</translate>{{Code|MyModule.MyItem}}<translate>
+<!--T:47-->
+).
+</translate>
 {{CodeSnip
 | lang = Java
 | code =
@@ -132,14 +218,22 @@ module MyModule {
 }
 }}
 
-=== File overrides ===
+<translate>
+=== File overrides === <!--T:48-->
+
+<!--T:49-->
 Naming a file with the same relative path as another will override all script definitions of the original file. This is usually not a good solution as most vanilla scripts are now in huge script files together, so you can't override a single script and have other mods also do it.
 
-=== Soft overrides ===
-When defining a script block which already exists, such as an [[item (scripts)#Soft overrides|item]] or a [[craftRecipe]], based on the type of script, the game will either override the whole block, or merge the new definition with the existing one. This process is called a ''soft override''. Script blocks which support soft overrides will be marked as such on their specific documentation page.
+=== Soft overrides === <!--T:50-->
 
-==== Example ====
+<!--T:51-->
+When defining a script block which already exists, such as an {{ll|item (scripts)#Soft overrides|item}} or a {{ll|craftRecipe}}, based on the type of script, the game will either override the whole block, or merge the new definition with the existing one. This process is called a ''soft override''. Script blocks which support soft overrides will be marked as such on their specific documentation page.
+
+==== Example ==== <!--T:52-->
+
+<!--T:53-->
 Take an item definition with fake parameters as an example <code>Parameter1</code>, <code>Parameter2</code> and <code>Parameter3</code>:
+</translate>
 {{CodeSnip
 | lang = Java
 | code =
@@ -152,7 +246,10 @@ module Base {
 }
 }}
 
-[[item (scripts)|Item]] scripts will support soft overrides, so if you define the same item again with only <code>Parameter2</code> changed, the other parameters will be kept and that specific parameter will be updated:
+<translate>
+<!--T:54-->
+{{ll|item (scripts)|Item}} scripts will support soft overrides, so if you define the same item again with only <code>Parameter2</code> changed, the other parameters will be kept and that specific parameter will be updated:
+</translate>
 {{CodeSnip
 | lang = Java
 | code =
@@ -163,71 +260,82 @@ module MyMod {
 }
 }}
 
-== Script blocks ==
-Script blocks are the different kind of elements that can be defined in scripts. Each type has its own block structure name, and its own set of parameters that you can find in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts.html ScriptsDocs].
+<translate>
+== Script blocks == <!--T:55-->
 
+<!--T:56-->
+Script blocks are the different kind of elements that can be defined in scripts. Each type has its own block structure name, and its own set of parameters that you can find in the
+</translate> <translate><!--T:57--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts.html ScriptsDocs]</translate><translate><!--T:58-->
+.
+
+<!--T:59-->
 Below is an incomplete list of some of the most important script blocks you will encounter in modding:
 {| class="wikitable sortable theme-blue"
 ! Parameter name !! Description
 |-
-| [[character_profession_definition|character_profession_definition]] ||
+| {{ll|character_profession_definition|character_profession_definition}} ||
 Used to define a new character profession.
 |-
-| [[character_trait_definition|character_trait_definition]] ||
+| {{ll|character_trait_definition|character_trait_definition}} ||
 Used to define a new character trait.
 |-
-| [[craftRecipe]] ||
-Used to define a [[Crafting|recipe]] in [[Build 42]].
+| {{ll|craftRecipe}} ||
+Used to define a {{ll|Crafting|recipe}} in {{ll|Build 42}}.
 |-
-| [[entity]] ||
-Used to define a buildable in [[Build 42]], like walls, fences, furnitures and more. It is composed of different sub-blocks.
+| {{ll|entity}} ||
+Used to define a buildable in {{ll|Build 42}}, like walls, fences, furnitures and more. It is composed of different sub-blocks.
 |-
-| [[Evolvedrecipe (scripts)|Evolved Recipe]] ||
+| {{ll|Evolvedrecipe (scripts)|Evolved Recipe}} ||
 Used to define recipes which can have a different set of ingredients and adapt the resulting item based on the ingredients used. Usually used for food recipes.
 |-
-| [[Fixing (scripts)|Fixing]] ||
-Used to define how items can be repaired or fixed.
+| {{ll|Fluid (scripts)|Fluid}} ||
+Used to define a fluid in {{ll|Build 42}}.
 |-
-| [[Fluid (scripts)|Fluid]] ||
-Used to define a fluid in [[Build 42]].
+| {{ll|Item (scripts)|item}} ||
+Used to define items, such as {{ll|weapon}}s, {{ll|clothing}}, {{ll|food}} and more.
 |-
-| [[Item (scripts)|item]] ||
-Used to define items, such as [[weapon]]s, [[clothing]], [[food]] and more.
+| {{ll|Mannequin (scripts)|mannequin}} ||
+Used to define a mannequin type, notably used in {{ll|Mapping}} to create custom mannequins in the world.
 |-
-| [[Mannequin (scripts)|mannequin]] ||
-Used to define a mannequin type, notably used in [[Mapping]] to create custom mannequins in the world.
-|-
-| [[Model (scripts)|model]] ||
+| {{ll|Model (scripts)|model}} ||
 Used to define a model, such as its 3D model, texture, animations and more. These models can then be used in other scripts.
 |-
-| [[perk (scripts)|perk]] ||
-Used to implement the basic of a new perk with its name, category and XP values. It needs to be defined inside a specific file in the [[Mod structure#Media folder]] {{Code|media/perks.txt}}.
+| {{ll|perk (scripts)|perk}} ||
+Used to implement the basic of a new perk with its name, category and XP values. It needs to be defined inside a specific file in the {{ll|Mod structure#Media folder}} {{Code|media/perks.txt}}.
 |-
-| [[physicsHitReaction]] ||
+| {{ll|physicsHitReaction}} ||
 Used to define the physics reaction a bullet or bomb imposes to objects.
 |-
-| [[Sandbox options]] ||
-Sandbox options are different from the other script blocks as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
+| {{ll|Sandbox options}} ||
+Sandbox options are different from the other script blocks as they should not have a module block. They are used to define custom sandbox options which can be used in the {{ll|Lua (API)}}.
 |-
-| [[Sound (scripts)|Sound]] ||
-Used to define sound parameters, such as volume, pitch and more. These sounds can then be used in other scripts or called from the [[Lua (API)|Lua API]].
+| {{ll|Sound (scripts)|Sound}} ||
+Used to define sound parameters, such as volume, pitch and more. These sounds can then be used in other scripts or called from the {{ll|Lua (API)|Lua API}}.
 |-
-| [[template]] ||
-Used to create repeatable script definitions which can then be referenced to in script blocks of the same type. Currently only used to create [[vehicle (scripts)|vehicle scripts]] templates.
+| {{ll|template}} ||
+Used to create repeatable script definitions which can then be referenced to in script blocks of the same type. Currently only used to create {{ll|vehicle (scripts)|vehicle scripts}} templates.
 |-
-| [[Vehicle (scripts)|Vehicle]] ||
+| {{ll|Vehicle (scripts)|Vehicle}} ||
 Used to define a vehicle, which consists of a complex set of different scripts.
 |}
 
-== Trivia ==
-The reason scripts exist in the form they are in and not as json or other data formats is because they were originally created to be a scripting language, allowing modders to create more complex behaviors. It was then replaced by [[Lua (API)|Lua]] but stayed as a data definition format. You can find early references of its scripting capabilities in this archived guide [https://github.com/pz-wiki-modding/Archive.Project-Zomboid-Modding/tree/main/Scripts/Origins_of_scripts here] (this guide is useless and outdated, do not follow it!).
+== Trivia == <!--T:60-->
 
-== See also ==
-* [[ZedScripts]]
-* [[Zomboid Script Generator]]
-* [[PZ Scripts Data]]
+<!--T:61-->
+The reason scripts exist in the form they are in and not as json or other data formats is because they were originally created to be a scripting language, allowing modders to create more complex behaviors. It was then replaced by {{ll|Lua (API)|Lua}} but stayed as a data definition format. You can find early references of its scripting capabilities in this archived guide</translate> <translate><!--T:62--> [https://github.com/pz-wiki-modding/Archive.Project-Zomboid-Modding/tree/main/Scripts/Origins_of_scripts here]</translate> <translate>
+<!--T:63-->
+(this guide is useless and outdated, do not follow it!).
 
-== Navigation ==
+== See also == <!--T:64-->
+
+<!--T:65-->
+* {{ll|ZedScripts}}
+* {{ll|Zomboid Script Generator}}
+* {{ll|PZ Scripts Data}}
+
+== Navigation == <!--T:66-->
+</translate>
+
 {{Navbox modding}}
 
 {{ll|Category:Modding}}
