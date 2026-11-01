@@ -1,7 +1,7 @@
 {{Title|model (scripts)}}
-{{LangSwitch}}
-{{Navbar modding}}
-{{Page version|42.19.0|2=822669}}
+<languages />
+{{Navbar scripts}}
+{{Page version|42.19.0}}
 {{Infobox
 | title = model
 | class = theme-blue
@@ -16,24 +16,27 @@
     | 1 = Properties
     | 2 =
         {{Infobox/row
-        | 1 = [[Scripts#Parent blocks|Parent blocks]]
-        | 2 = [[module (scripts)|module]]<br>[[vehicle (scripts)|vehicle]]<br>[[part (scripts)|part]]
+        | 1 = {{ll|Scripts#Parent blocks|Parent blocks}}
+        | 2 = {{ll|module (scripts)|module}}<br>{{ll|vehicle (scripts)|vehicle}}<br>{{ll|part (scripts)|part}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Children blocks|Children blocks]]
-        | 2 = [[attachment (scripts)|attachment]]
+        | 1 = {{ll|Scripts#Children blocks|Children blocks}}
+        | 2 = {{ll|attachment (scripts)|attachment}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#ID|ID]]
-        | 2 = Any except when parent is:<br>[[vehicle (scripts)|vehicle]]
+        | 1 = {{ll|Scripts#ID|ID}}
+        | 2 = Any except when parent is:<br>{{ll|vehicle (scripts)|vehicle}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Soft overrides|Soft overrides]]
+        | 1 = {{ll|Scripts#Soft overrides|Soft overrides}}
         | 2 = Need testing
         }}
     }}
 }}
-Used to define a model properties so it can be used in other elements of the game, most notably in [[item (scripts)|item]] and [[vehicle (scripts)|vehicle]]. The basic structure of a model block is as follows:
+<translate>
+<!--T:1-->
+Used to define a model properties so it can be used in other elements of the game, most notably in {{ll|item (scripts)|item}} and {{ll|vehicle (scripts)|vehicle}}. The basic structure of a model block is as follows:
+</translate>
 {{CodeSnip
 | lang = cpp
 | code = 
@@ -45,12 +48,21 @@ module YourModule {
 }
 }}
 
-[[attachment (scripts)|attachment]] blocks can also be added to the model definition to specify how the model should be placed, rotated and scaled when attached to a parent model.
+<translate>
+<!--T:2-->
+{{ll|attachment (scripts)|attachment}} blocks can also be added to the model definition to specify how the model should be placed, rotated and scaled when attached to a parent model.
 
-== Parameters ==
-You can find a full list of the parameters in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/model.html ScriptsDocs].
+== Parameters == <!--T:3-->
 
-== Example ==
+<!--T:4-->
+You can find a full list of the parameters in the
+</translate> <translate><!--T:5--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/model.html ScriptsDocs]</translate><translate>
+<!--T:6-->
+.
+
+== Example == <!--T:7-->
+</translate>
+
 {{CodeSnip
 | lang = Java
 | code =
@@ -70,7 +82,10 @@ model Burger
 }
 }}
 
-== Navigation ==
+<translate>
+== Navigation == <!--T:8-->
+</translate>
+
 {{Navbox modding}}
 
 {{ll|Category:Scripts}}

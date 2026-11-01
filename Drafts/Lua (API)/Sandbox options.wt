@@ -1,21 +1,32 @@
-{{LangSwitch}}
-{{Navbar modding}}
-{{Page version|42.19.0}}
+<languages />
+{{Navbar scripts}}
+{{Page version|42.21.0}}
 {{About|creating custom sandbox options (modding)|an explanation of options in the 'sandbox' game mode|Custom Sandbox}}
-'''Sandbox options''' allow users to tweak how they want to experience the game, which mods can also utilize. In comparison to [[ModOptions]], these settings apply to every player, but like these, you have access to different types of options. They use [[Scripts]] syntax.
+<translate>
+<!--T:1-->
+'''Sandbox options''' allow users to tweak how they want to experience the game, which mods can also utilize. In comparison to {{ll|ModOptions}}, these settings apply to every player, but like these, you have access to different types of options. They use {{ll|Scripts}} syntax.
 
+<!--T:2-->
 Mods sandbox options are defined in a file named <code>sandbox-options.txt</code> with the following folder structure:
+</translate>
 {{CodeSnip
 | code =
 📁 media
     📄 sandbox-options.txt
 }}
 
-{{Note|To get more information on the modding folder structure and the media folder, see the [[Mod structure]] page.}}
+{{Note|To get more information on the modding folder structure and the media folder, see the {{ll|Mod structure}} page.}}
 
+<translate>
+<!--T:3-->
 The file starts with the parameter <code>VERSION = 1,</code> which is used by the game to recognize which method needs to be used to read the sandbox option file. It's used by developers in case they change the way this file reads in future updates. Unless you know what you are doing, you shouldn't change this value.
 
-The rest of the file is a list of sandbox options, each defined by an [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/option.html option] [[Scripts]] file. All blocks will follow the following structure:
+<!--T:4-->
+The rest of the file is a list of sandbox options, each defined by an
+</translate> <translate><!--T:5--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/option.html option]</translate> <translate>
+<!--T:6-->
+{{ll|Scripts}} file. All blocks will follow the following structure:
+</translate>
 {{CodeSnip
 | lang = java
 | code =
@@ -28,11 +39,16 @@ option ModName.OptionName
 }
 }}
 
+<translate>
+<!--T:7-->
 You can choose any name for <code>ModName</code> and <code>OptionName</code> without spaces, but it is usually your mod name and a logical option name for easier identification. Accessing the option value in Lua will be done with <code>SandboxVars.ModName.OptionName</code>.
 
+<!--T:8-->
 You can set <code>pageName</code> to a custom page name of your choosing to create new tabs in the Sandbox Options menu.
 
-== Option types ==
+== Option types == <!--T:9-->
+
+<!--T:10-->
 The <code>type</code> parameter defines the type of the option which replaces <code><optionType></code> in the example code above. The following lists every type and their various parameters:
 {| class="wikitable theme-blue"
 ! Option type !! Description !! Parameters
@@ -93,7 +109,9 @@ numValues = <number>,
 }}
 |}
 
+<!--T:11-->
 For example:
+</translate>
 {{CodeSnip
 | lang = java
 | code =
@@ -106,10 +124,15 @@ option MyMod.MyOption
 }
 }}
 
-== Translations ==
-You can also add [[Translations]] for your options in the translation folder. This is also needed if you want to give your option a proper name in the game.
+<translate>
+== Translations == <!--T:12-->
 
+<!--T:13-->
+You can also add {{ll|Translations}} for your options in the translation folder. This is also needed if you want to give your option a proper name in the game.
+
+<!--T:14-->
 Sandbox options are put in the following file:
+</translate>
 {{CodeSnip
 | code =
 📁 media
@@ -120,7 +143,10 @@ Sandbox options are put in the following file:
                     📄 Sandbox.json
 }}
 
+<translate>
+<!--T:15-->
 The different sandbox options need extra parameters first:
+</translate>
 {{CodeSnip
 | lang = java
 | code =
@@ -133,9 +159,13 @@ option ModName.OptionName
 }
 }}
 
+<translate>
+<!--T:16-->
 Both <code><pageName></code> and <code><ModName>_<OptionName></code> are used with the translation system to give a proper name to the option in the game. The <code><pageName></code> is the name of the page where the option will be displayed in the game, while <code><ModName>_<OptionName></code> is the translation key for the option name.
 
+<!--T:17-->
 The translations are defined in the translation file with the following structure:
+</translate>
 {{CodeSnip
 | lang=json
 | code =
@@ -147,14 +177,22 @@ The translations are defined in the translation file with the following structur
 }
 }}
 
-It's important to note that the tooltip translation is optional, but it's recommended to add it for better understanding of the option. You can also use [[ISRichTextPanel]] tags in the tooltip, which means you can add images and colors in the sandbox options but also have custom text formating.
+<translate>
+<!--T:18-->
+It's important to note that the tooltip translation is optional, but it's recommended to add it for better understanding of the option. You can also use {{ll|ISRichTextPanel}} tags in the tooltip, which means you can add images and colors in the sandbox options but also have custom text formating.
+</translate>
 
 {{Note|type=warn|If you don't add the translation parameters, they can't appear in-game, but if the translation doesn't exist in the translation files, it will simply appear with the string in the translation parameters.}}
 
-=== Enumeration translation ===
+<translate>
+=== Enumeration translation === <!--T:19-->
+
+<!--T:20-->
 Enumeration options need to have their values translated in the translation file. The translation tag in the translation file for all values needs to be <code>"Sandbox_<ModName>_<OptionName>_option<value>": "Enum name"</code>.
 
+<!--T:21-->
 For example:
+</translate>
 {{CodeSnip
 | lang=json
 | code =
@@ -164,8 +202,12 @@ For example:
 }
 }}
 
-== Sandbox options in the Lua ==
+<translate>
+== Sandbox options in the Lua == <!--T:22-->
+
+<!--T:23-->
 You can access the value of a sandbox option in Lua by using the <code>SandboxVars</code> table. The table is structured as follows:
+</translate>
 {{CodeSnip
 | lang = lua
 | code =
@@ -173,14 +215,20 @@ local optionValue = SandboxVars.ModName.OptionName
 print(optionValue) -- This will print the value of OptionName
 }}
 
+<translate>
+<!--T:24-->
 Alternatively you can also access it by using:
+</translate>
 {{CodeSnip
 | lang = lua
 | code =
 getSandboxOptions():getOptionByName("ModName.OptionName"):getValue()
 }}
 
+<translate>
+<!--T:25-->
 You can also modify the value of a sandbox option in Lua by using the <code>setValue</code> function:
+</translate>
 {{CodeSnip
 | lang = lua
 | code =
@@ -196,10 +244,18 @@ sandboxOptions:sendToServer()
 
 {{Note|{{Code|toLua}} sends the option changes to the Java, and not the Lua.}}
 
-== External links ==
-* [https://github.com/demiurgeQuantified/PZModdingGuides/blob/main/guides/SandboxOptions.md Sandbox Options guide] by Albion
+<translate>
+== External links == <!--T:26-->
 
-== Navigation ==
+<!--T:27-->
+*
+</translate> <translate><!--T:28--> [https://github.com/demiurgeQuantified/PZModdingGuides/blob/main/guides/SandboxOptions.md Sandbox Options guide]</translate> <translate>
+<!--T:29-->
+by Albion
+
+== Navigation == <!--T:30-->
+</translate>
+
 {{Navbox modding}}
 
 {{ll|Category:Modding guides}}

@@ -1,6 +1,6 @@
 {{Title|mannequin (scripts)}}
-{{LangSwitch}}
-{{Navbar modding}}
+<languages />
+{{Navbar scripts}}
 {{Page version|42.19.0}}
 {{Infobox
 | title = mannequin
@@ -16,35 +16,50 @@
     | 1 = Properties
     | 2 =
         {{Infobox/row
-        | 1 = [[Scripts#Parent blocks|Parent blocks]]
-        | 2 = [[module (scripts)|module]]
+        | 1 = {{ll|Scripts#Parent blocks|Parent blocks}}
+        | 2 = {{ll|module (scripts)|module}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Children blocks|Children blocks]]
+        | 1 = {{ll|Scripts#Children blocks|Children blocks}}
         | 2 = 
         }}
         {{Infobox/row
-        | 1 = [[Scripts#ID|ID]]
+        | 1 = {{ll|Scripts#ID|ID}}
         | 2 = Any
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Soft overrides|Soft overrides]]
+        | 1 = {{ll|Scripts#Soft overrides|Soft overrides}}
         | 2 = Need testing
         }}
     }}
 }}
-{{About|custom mannequin [[scripts]]|mannequin objects|mannequin}}
+{{About|custom mannequin {{ll|scripts}}|mannequin objects|mannequin}}
+<translate>
+
+<!--T:1-->
 [[File:mannequin - mapping guide.png|thumb]]
-Used to define [[Mannequin|mannequins]], which can be used in [[Mapping|mapping]] to create mannequins in the world.
 
-To get a list of available mannequins, see [[Mannequin_(scripts)#Available_mannequins|this]].
+<!--T:2-->
+Used to define {{ll|Mannequin|mannequins}}, which can be used in {{ll|Mapping|mapping}} to create mannequins in the world.
 
-== Parameters ==
-You can find a full list of the parameters in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/mannequin.html ScriptsDocs].
+<!--T:3-->
+To get a list of available mannequins, see {{ll|Mannequin_(scripts)#Available_mannequins|this}}.
 
-{{Note|Animal models and textures can be used in mannequins ! For the [[outfit]] parameter, you can use the {{Code|Naked}} outfit but some clothing items can be used by animals such as hats.}}
+== Parameters == <!--T:4-->
 
-== Available mannequins ==
+<!--T:5-->
+You can find a full list of the parameters in the
+</translate> <translate><!--T:6--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/mannequin.html ScriptsDocs]</translate><translate>
+<!--T:7-->
+.
+</translate>
+
+{{Note|Animal models and textures can be used in mannequins ! For the {{ll|outfit}} parameter, you can use the {{Code|Naked}} outfit but some clothing items can be used by animals such as hats.}}
+
+<translate>
+== Available mannequins == <!--T:8-->
+
+<!--T:9-->
 Below is the list of available mannequins in the vanilla game:
 <div class="list-columns" style="column-width:200px; max-width:900px;">
 *<code>FemaleBlack01</code>
@@ -78,7 +93,9 @@ Below is the list of available mannequins in the vanilla game:
 *<code>MaleLeather</code>
 </div>
 
-== Navigation ==
+== Navigation == <!--T:10-->
+</translate>
+
 {{Navbox modding}}
 
 {{ll|Category:Scripts}}

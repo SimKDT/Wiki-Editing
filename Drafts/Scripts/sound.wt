@@ -1,7 +1,7 @@
 {{Title|sound (scripts)}}
-{{LangSwitch}}
-{{Navbar modding}}
-{{Page version|42.19.0|2=1371455}}
+<languages />
+{{Navbar scripts}}
+{{Page version|42.19.0}}
 {{Infobox
 | title = sound
 | class = theme-blue
@@ -16,29 +16,38 @@
     | 1 = Properties
     | 2 =
         {{Infobox/row
-        | 1 = [[Scripts#Parent blocks|Parent blocks]]
-        | 2 = [[module (scripts)|module]]<br>[[vehicle (scripts)|vehicle]]<br>[[template (scripts)|template]]
+        | 1 = {{ll|Scripts#Parent blocks|Parent blocks}}
+        | 2 = {{ll|module (scripts)|module}}<br>{{ll|vehicle (scripts)|vehicle}}<br>{{ll|template (scripts)|template}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Children blocks|Children blocks]]
-        | 2 = [[clip (scripts)|clip]]
+        | 1 = {{ll|Scripts#Children blocks|Children blocks}}
+        | 2 = {{ll|clip (scripts)|clip}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#ID|ID]]
-        | 2 = Any except when parent is:<br>[[vehicle (scripts)|vehicle]]<br>[[template (scripts)|template]]
+        | 1 = {{ll|Scripts#ID|ID}}
+        | 2 = Any except when parent is:<br>{{ll|vehicle (scripts)|vehicle}}<br>{{ll|template (scripts)|template}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Soft overrides|Soft overrides]]
+        | 1 = {{ll|Scripts#Soft overrides|Soft overrides}}
         | 2 = Need testing
         }}
     }}
 }}
+<translate>
+<!--T:1-->
 Makes one or more sound clips available for use in the game. Multiple clips can be added to a sound script, and the game will randomly select one of them to play when the sound is triggered.
 
-== Parameters ==
-You can find a full list of the parameters in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/sound.html ScriptsDocs].
+== Parameters == <!--T:2-->
 
-== Example ==
+<!--T:3-->
+You can find a full list of the parameters in the
+</translate> <translate><!--T:4--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/sound.html ScriptsDocs]</translate><translate>
+<!--T:5-->
+.
+
+== Example == <!--T:6-->
+</translate>
+
 {{CodeSnip
 | lang = cpp
 | code = 
@@ -58,7 +67,10 @@ module yourModule {
 }
 }}
 
-== Navigation ==
+<translate>
+== Navigation == <!--T:7-->
+</translate>
+
 {{Navbox modding}}
 
 {{ll|Category:Scripts}}

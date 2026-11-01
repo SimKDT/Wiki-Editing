@@ -1,6 +1,6 @@
 {{Title|item (scripts)}}
-{{LangSwitch}}
-{{Navbar modding}}
+<languages />
+{{Navbar scripts}}
 {{Page version|42.20.4}}
 {{Infobox
 | title = item
@@ -16,27 +16,36 @@
     | 1 = Properties
     | 2 =
         {{Infobox/row
-        | 1 = [[Scripts#Parent blocks|Parent blocks]]
-        | 2 = [[module (scripts)|module]]
+        | 1 = {{ll|Scripts#Parent blocks|Parent blocks}}
+        | 2 = {{ll|module (scripts)|module}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Children blocks|Children blocks]]
-        | 2 = [[component (scripts)|component]]<br>[[component FluidContainer (scripts)|component FluidContainer]]<br>[[component Durability (scripts)|component Durability]]<br>[[component ContextMenuConfig (scripts)|component ContextMenuConfig]]
+        | 1 = {{ll|Scripts#Children blocks|Children blocks}}
+        | 2 = {{ll|component (scripts)|component}}<br>{{ll|component FluidContainer (scripts)|component FluidContainer}}<br>{{ll|component Durability (scripts)|component Durability}}<br>{{ll|component ContextMenuConfig (scripts)|component ContextMenuConfig}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#ID|ID]]
+        | 1 = {{ll|Scripts#ID|ID}}
         | 2 = Any
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Soft overrides|Soft overrides]]
+        | 1 = {{ll|Scripts#Soft overrides|Soft overrides}}
         | 2 = True
         }}
     }}
 }}
-[[File:ZedScript-Items.png|thumb|List of parameters for each item type (OUTDATED B41) - see [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#itemtype-parameters ScriptsDocs]]]
-The item block is used to create items in the game, from weapons to food and clothing. The parameters available in this block mostly depend on the type of item you are creating, set with [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#item-itemtype ItemType].
+<translate>
 
+<!--T:1-->
+[[File:ZedScript-Items.png|thumb|List of parameters for each item type (OUTDATED B41) - see [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#itemtype-parameters ScriptsDocs]]
+]
+The item block is used to create items in the game, from weapons to food and clothing. The parameters available in this block mostly depend on the type of item you are creating, set with
+</translate> <translate><!--T:2--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#item-itemtype ItemType]</translate><translate>
+<!--T:3-->
+.
+
+<!--T:4-->
 To get started, create a simple item structure by setting that parameter up correctly, then add more parameters as you need. For example, for a normal item:
+</translate>
 {{CodeSnip
 | lang = cpp
 | code = 
@@ -50,12 +59,23 @@ module yourModule
 }
 }}
 
-== Parameters ==
-{{Note|When writing a script for an item, be guided by the scripts of similar items from the vanilla game (or from other mods).}}
-You can find a full list of the parameters in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html ScriptsDocs]. The parameters are arranged by the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#item-itemtype ItemType] parameter. You can find a list of parameters that are exclusive to specific ItemTypes [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#itemtype-specific-parameters here].
+<translate>
+== Parameters == <!--T:5-->
+</translate>
 
-=== Other parameters ===
+{{Note|When writing a script for an item, be guided by the scripts of similar items from the vanilla game (or from other mods).}}
+<translate>
+<!--T:6-->
+You can find a full list of the parameters in the
+</translate> <translate><!--T:7--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html ScriptsDocs]</translate><translate><!--T:8--> . The parameters are arranged by the</translate> <translate><!--T:9--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#item-itemtype ItemType]</translate> <translate><!--T:10--> parameter. You can find a list of parameters that are exclusive to specific ItemTypes</translate> <translate><!--T:11--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#itemtype-specific-parameters here]</translate><translate>
+<!--T:12-->
+.
+
+=== Other parameters === <!--T:13-->
+
+<!--T:14-->
 Any other parameter not in the list will be written as a key-value in the item's ModData. For example:
+</translate>
 {{CodeSnip
 | lang = java
 | code =
@@ -67,10 +87,17 @@ MyCustomOption = This is custom label,
 print(item:getModData().MyCustomOption) -- outputs: This is custom label
 }}
 
-{{Note|type=error|This should not be used in any cases and instead a [[Lua (language)#Lookup tables|lookup table]] should be used associated to the item Type or FullType. Reason being that the custom parameter mod data will be added to every single instance of items that appear in the world, and can bloat save files with repeated informations for every items while using a [[Lua (language)#Lookup tables|lookup table]] for repeated values will not bloat save files.}}
+{{Note|type=error|This should not be used in any cases and instead a {{ll|Lua (language)#Lookup tables|lookup table}} should be used associated to the item Type or FullType. Reason being that the custom parameter mod data will be added to every single instance of items that appear in the world, and can bloat save files with repeated informations for every items while using a {{ll|Lua (language)#Lookup tables|lookup table}} for repeated values will not bloat save files.}}
 
-== Display name ==
-To add a name to display for your item, you need to add the item full type, that is its <code>module.id</code>, inside the [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/translation_files.html#itemname ItemName] translation file. Taking the example from above, your translation file would be:
+<translate>
+== Display name == <!--T:15-->
+
+<!--T:16-->
+To add a name to display for your item, you need to add the item full type, that is its <code>module.id</code>, inside the
+</translate> <translate><!--T:17--> [https://pz-wiki-modding.github.io/PZ-API-Docs/translations/translation_files.html#itemname ItemName]</translate> <translate>
+<!--T:18-->
+translation file. Taking the example from above, your translation file would be:
+</translate>
 {{CodeSnip
 | lang = json
 | code = 
@@ -79,9 +106,15 @@ To add a name to display for your item, you need to add the item full type, that
 }
 }}
 
-== Item ID ==
+<translate>
+== Item ID == <!--T:19-->
+
+<!--T:20-->
 [[File:Item full type.png|class=logo-dark]]
-The ID of an item script is often refered to as the ''type'', while it's full ID is the ''full type''. The ''type'' is simply the [[Scripts#ID|ID]] of the script block, while the ''full type'' is the <code>module.ID</code>. Take for example the following incomplete item definition:
+
+<!--T:21-->
+The ID of an item script is often refered to as the ''type'', while it's full ID is the ''full type''. The ''type'' is simply the {{ll|Scripts#ID|ID}} of the script block, while the ''full type'' is the <code>module.ID</code>. Take for example the following incomplete item definition:
+</translate>
 {{CodeSnip
 | lang = java
 | code =
@@ -92,20 +125,34 @@ module MyModModule {
 }
 }}
 
+<translate>
+<!--T:22-->
 It's ''type'' is <code>MyItem</code> while its ''full type'' is <code>MyModModule.MyItem</code>.
 
-You can retrieve the full type of an [[InventoryItem]] from [[Lua (API)|Lua]] by using the [https://albion.codeberg.page/PZ-JavaDocs/zombie/inventory/InventoryItem.html#getFullType() getFullType] method or for an [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html Item] instance you can use [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#getFullName() getFullName].
+<!--T:23-->
+You can retrieve the full type of an {{ll|InventoryItem}} from {{ll|Lua (API)|Lua}} by using the
+</translate> <translate><!--T:24--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/inventory/InventoryItem.html#getFullType() getFullType]</translate> <translate><!--T:25--> method or for an</translate> <translate><!--T:26--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html Item]</translate> <translate><!--T:27--> instance you can use</translate> <translate><!--T:28--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#getFullName() getFullName]</translate><translate>
+<!--T:29-->
+.
 
-== Modifying existing item definitions ==
+== Modifying existing item definitions == <!--T:30-->
+
+<!--T:31-->
 There are two methods to modify existing items:
-* via [[#Soft overrides]]
-* from Java class instance of the item definition (the [[#Lua]] method)
+* via {{ll|#Soft overrides}}
+* from Java class instance of the item definition (the {{ll|#Lua}} method)
 
-=== Soft overrides ===
+=== Soft overrides === <!--T:32-->
+</translate>
+
 {{Main|Scripts#Soft overrides}}
-This follows the soft overrides rules defined in the main [[Scripts#Soft overrides|Scripts]] page, where you make a new definition of the item in your own mod but only add the parameters you want to modify. 
+<translate>
+<!--T:33-->
+This follows the soft overrides rules defined in the main {{ll|Scripts#Soft overrides|Scripts}} page, where you make a new definition of the item in your own mod but only add the parameters you want to modify. 
 
+<!--T:34-->
 For example take the following existing item definition:
+</translate>
 {{CodeSnip
 | lang = java
 | code = 
@@ -137,7 +184,13 @@ module Base
 }
 }}
 
-If I want to modify the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-eattime Eattime] of this item, and let's say the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-unhappychange UnhappyChange], I can simply do the following in my own [[Scripts]] file:
+<translate>
+<!--T:35-->
+If I want to modify the
+</translate> <translate><!--T:36--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-eattime Eattime]</translate> <translate><!--T:37--> of this item, and let's say the</translate> <translate><!--T:38--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-unhappychange UnhappyChange]</translate><translate>
+<!--T:39-->
+, I can simply do the following in my own {{ll|Scripts}} file:
+</translate>
 {{CodeSnip
 | lang = java
 | code = 
@@ -154,13 +207,19 @@ module Base
 }
 }}
 
-There are specific parameters that may act differently based on their usual behavior. Most parameters will act nicely without any special behavior, but for example [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-tags Tags] doesn't allow you to overwrite existing tags. If you soft override tags, your newly listed tags will simply be added to the existing list of tags from the original definition, which is essentially a good thing because you are not breaking vanilla tags of this item.
+<translate>
+<!--T:40-->
+There are specific parameters that may act differently based on their usual behavior. Most parameters will act nicely without any special behavior, but for example
+</translate> <translate><!--T:41--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-tags Tags]</translate> <translate>
+<!--T:42-->
+doesn't allow you to overwrite existing tags. If you soft override tags, your newly listed tags will simply be added to the existing list of tags from the original definition, which is essentially a good thing because you are not breaking vanilla tags of this item.
+</translate>
 {{CodeSnip
 | lang = java
 | code = 
 module Base
 {
-    /* If you're using [[ZedScripts]], add the following annotation
+    /* If you're using {{ll|ZedScripts}}, add the following annotation
      *@soft-override
      */
     item HotDrinkClay
@@ -170,12 +229,21 @@ module Base
 }
 }}
 
+<translate>
+<!--T:43-->
 The final list of tags will then change from <code>base:alcoholicbeverage;base:lowalcohol;base:herbaltea</code> to <code>base:alcoholicbeverage;base:lowalcohol;base:herbaltea;base:ballpeenhammer</code>.
 
-=== Lua ===
-You can access and modify an item script definition from the [[Lua (API)]] by using the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html ScriptManager]. The most common one is [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html#getItem(java.lang.String) getItem] which uses the item full type to retrieve the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html Item] instance. Other useful ones also exist like [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html#getItemsTag(zombie.scripting.objects.ItemTag) getItemsByTag] and [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html#getItemsByType(java.lang.String) getItemsByType].
+=== Lua === <!--T:44-->
 
-If we try to replace the exact same parameters than in [[#Soft overrides]], it becomes the following:
+<!--T:45-->
+You can access and modify an item script definition from the {{ll|Lua (API)}} by using the
+</translate> <translate><!--T:46--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html ScriptManager]</translate><translate><!--T:47--> . The most common one is</translate> <translate><!--T:48--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html#getItem(java.lang.String) getItem]</translate> <translate><!--T:49--> which uses the item full type to retrieve the</translate> <translate><!--T:50--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html Item]</translate> <translate><!--T:51--> instance. Other useful ones also exist like</translate> <translate><!--T:52--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html#getItemsTag(zombie.scripting.objects.ItemTag) getItemsByTag]</translate> <translate><!--T:53--> and</translate> <translate><!--T:54--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/ScriptManager.html#getItemsByType(java.lang.String) getItemsByType]</translate><translate>
+<!--T:55-->
+.
+
+<!--T:56-->
+If we try to replace the exact same parameters than in {{ll|#Soft overrides}}, it becomes the following:
+</translate>
 {{CodeSnip
 | lang = lua
 | code =
@@ -191,34 +259,55 @@ for param, value in pairs(newValues) do
 end
 }}
 
+<translate>
+<!--T:57-->
 DoParam has two variants:
-* the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#DoParam(java.lang.String) first] takes a single string line, that is going to be the combination <code>param = value,</code> passed directly for processing
-* the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#DoParam(java.lang.String,java.lang.String) second] one, used above, takes the parameter and the value, way easier to use and less risk of wrong formatting
+* the
+</translate> <translate><!--T:58--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#DoParam(java.lang.String) first]</translate> <translate><!--T:59-->
+takes a single string line, that is going to be the combination <code>param = value,</code> passed directly for processing
+* the</translate> <translate><!--T:60--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#DoParam(java.lang.String,java.lang.String) second]</translate> <translate><!--T:61-->
+one, used above, takes the parameter and the value, way easier to use and less risk of wrong formatting
 
-Alternatively you can pass directly a whole script formatting by using the [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#Load(java.lang.String,java.lang.String) Load] method.
+<!--T:62-->
+Alternatively you can pass directly a whole script formatting by using the</translate> <translate><!--T:63--> [https://albion.codeberg.page/PZ-JavaDocs/zombie/scripting/objects/Item.html#Load(java.lang.String,java.lang.String) Load]</translate> <translate>
+<!--T:64-->
+method.
+</translate>
 
 {{CodeSnip
 | lang = lua
 | code =
 local item = ScriptManager.getItem('Base.HotDrinkClay')
 
--- the [[ ]] syntax is a multiline string
-item:Load('HotDrinkClay', [[
+-- the {{ll| }} syntax is a multiline string
+item:Load('HotDrinkClay', {{ll|
 {
     UnhappyChange = -50,
     Eattime = 260,
 }
-]])
+}})
 }}
 
-== Item model ==
-Setting up an item model will be done different whenever the item is a [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-itemtype HandWeapon] or not. The following parameters will have to be used:
-* For HandWeapon items, you need to use [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-weaponsprite WeaponSprite].
-* For other items, you need to use [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-staticmodel StaticModel] for the item attached to the player (in hands for example, or in the back) and [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-worldstaticmodel WorldStaticModel] for the item placed in the world.
+<translate>
+== Item model == <!--T:65-->
+
+<!--T:66-->
+Setting up an item model will be done different whenever the item is a
+</translate> <translate><!--T:67--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-itemtype HandWeapon]</translate> <translate><!--T:68-->
+or not. The following parameters will have to be used:
+* For HandWeapon items, you need to use</translate> <translate><!--T:69--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-weaponsprite WeaponSprite]</translate><translate><!--T:70-->
+.
+* For other items, you need to use</translate> <translate><!--T:71--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-staticmodel StaticModel]</translate> <translate><!--T:72--> for the item attached to the player (in hands for example, or in the back) and</translate> <translate><!--T:73--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-worldstaticmodel WorldStaticModel]</translate> <translate>
+<!--T:74-->
+for the item placed in the world.
+</translate>
 
 {{Note|Alternatively, you can use [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-staticmodelsbyindex StaticModelsByIndex] and [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-worldstaticmodelsbyindex WorldStaticModelsByIndex] to set multiple model variants for the same item.}}
 
-To set those up, you will need to setup at least one [[model (scripts)|model script]]. Take the following model and texture file structure:
+<translate>
+<!--T:75-->
+To set those up, you will need to setup at least one {{ll|model (scripts)|model script}}. Take the following model and texture file structure:
+</translate>
 {{CodeSnip
 | code =
 📁 media
@@ -230,7 +319,10 @@ To set those up, you will need to setup at least one [[model (scripts)|model scr
             📄 yourTextureFile.png
 }}
 
+<translate>
+<!--T:76-->
 The model script will then be:
+</translate>
 {{CodeSnip
 | lang = java
 | code =
@@ -244,7 +336,10 @@ module yourModule
 }
 }}
 
+<translate>
+<!--T:77-->
 You can reference this model script inside the relevant item script parameters to setup up the model that were mentioned above:
+</translate>
 {{CodeSnip
 | lang = java
 | code =
@@ -260,7 +355,10 @@ module yourModule
 }
 }}
 
+<translate>
+<!--T:78-->
 And for weapons:
+</translate>
 {{CodeSnip
 | lang = java
 | code =
@@ -275,12 +373,21 @@ module yourModule
 }
 }}
 
+<translate>
+<!--T:79-->
 Check the documentation of these parameters for more details on what can be achieved.
 
-=== Attachment points ===
-Whenever you want your item to be physically visible in the player hands, attached on its back or belt, or adjust the rotation and position of the model when placed on the ground, you will have to setup an [[attachment (scripts)|attachment script]] inside your item [[mode (scripts)|model scripts]]. You can adjust the translation position of the item using the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/attachment.html#scripts-attachment-offset offset] parameter and the rotation using the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/attachment.html#scripts-attachment-rotate rotate] parameter. This can more easily be achieved using the [[Attachment editor]].
+=== Attachment points === <!--T:80-->
 
+<!--T:81-->
+Whenever you want your item to be physically visible in the player hands, attached on its back or belt, or adjust the rotation and position of the model when placed on the ground, you will have to setup an {{ll|attachment (scripts)|attachment script}} inside your item {{ll|mode (scripts)|model scripts}}. You can adjust the translation position of the item using the
+</translate> <translate><!--T:82--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/attachment.html#scripts-attachment-offset offset]</translate> <translate><!--T:83--> parameter and the rotation using the</translate> <translate><!--T:84--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/attachment.html#scripts-attachment-rotate rotate]</translate> <translate>
+<!--T:85-->
+parameter. This can more easily be achieved using the {{ll|Attachment editor}}.
+
+<!--T:86-->
 If we take our previous model definition, the most common attachment scripts will be the following:
+</translate>
 {{CodeSnip
 | lang = java
 | code =
@@ -320,7 +427,10 @@ module yourModule
 }}
 
 
-== Navigation ==
+<translate>
+== Navigation == <!--T:87-->
+</translate>
+
 {{Navbox modding}}
 
 {{ll|Category:Scripts}}

@@ -1,6 +1,6 @@
 {{Title|fluid (scripts)}}
-{{LangSwitch}}
-{{Navbar modding}}
+<languages />
+{{Navbar scripts}}
 {{Page version|42.19.0}}
 {{Infobox
 | title = fluid
@@ -16,34 +16,47 @@
     | 1 = Properties
     | 2 =
         {{Infobox/row
-        | 1 = [[Scripts#Parent blocks|Parent blocks]]
-        | 2 = [[module (scripts)|module]]
+        | 1 = {{ll|Scripts#Parent blocks|Parent blocks}}
+        | 2 = {{ll|module (scripts)|module}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Children blocks|Children blocks]]
-        | 2 = [[BlendWhiteList (scripts)|BlendWhiteList]]<br>[[Poison (scripts)|Poison]]<br>[[Categories (scripts)|Categories]]<br>[[BlendBlackList (scripts)|BlendBlackList]]<br>[[Properties (scripts)|Properties]]
+        | 1 = {{ll|Scripts#Children blocks|Children blocks}}
+        | 2 = {{ll|BlendWhiteList (scripts)|BlendWhiteList}}<br>{{ll|Poison (scripts)|Poison}}<br>{{ll|Categories (scripts)|Categories}}<br>{{ll|BlendBlackList (scripts)|BlendBlackList}}<br>{{ll|Properties (scripts)|Properties}}
         }}
         {{Infobox/row
-        | 1 = [[Scripts#ID|ID]]
+        | 1 = {{ll|Scripts#ID|ID}}
         | 2 = Any
         }}
         {{Infobox/row
-        | 1 = [[Scripts#Soft overrides|Soft overrides]]
+        | 1 = {{ll|Scripts#Soft overrides|Soft overrides}}
         | 2 = Need testing
         }}
     }}
 }}
 {{About|script blocks defining fluids in-game and how to create a custom fluid|in-game fluids|Fluid}}
+<translate>
+<!--T:1-->
 Create a new fluid definition. Different properties can be provided for the fluid v ia the use of different children blocks:
-* [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/properties.html Properties] is used to indicate the various stats change that drinking this fluid would cause to the player.
-* [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/categories.html Categories] act as tags for the fluid, to easily identify it.
-* [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/blendwhitelist.html BlendWhiteList] and [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/blendblacklist.html BlendBlackList] are used to provide rules for the blending of this fluid with other fluids.
-* [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/poison.html Poison] is used to define poison properties for the fluid.
+*
+</translate> <translate><!--T:2--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/properties.html Properties]</translate> <translate><!--T:3-->
+is used to indicate the various stats change that drinking this fluid would cause to the player.
+*</translate> <translate><!--T:4--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/categories.html Categories]</translate> <translate><!--T:5-->
+act as tags for the fluid, to easily identify it.
+*</translate> <translate><!--T:6--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/blendwhitelist.html BlendWhiteList]</translate> <translate><!--T:7--> and</translate> <translate><!--T:8--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/blendblacklist.html BlendBlackList]</translate> <translate><!--T:9-->
+are used to provide rules for the blending of this fluid with other fluids.
+*</translate> <translate><!--T:10--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/poison.html Poison]</translate> <translate><!--T:11-->
+is used to define poison properties for the fluid.
 
-== Parameters ==
-You can find a full list of the parameters in the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/fluid.html ScriptsDocs].
+== Parameters == <!--T:12-->
 
-== Example ==
+<!--T:13-->
+You can find a full list of the parameters in the</translate> <translate><!--T:14--> [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/fluid.html ScriptsDocs]</translate><translate>
+<!--T:15-->
+.
+
+== Example == <!--T:16-->
+</translate>
+
 {{CodeSnip
 | lang = lua
 | code =
@@ -94,7 +107,7 @@ fluid Test
             fluReduction            = 0,
             painReduction           = 0,
             enduranceChange         = 0,
-            foodSicknessReduction   = 0,
+            foodSicknessChange      = 0,
         }
 
         Poison
@@ -107,7 +120,10 @@ fluid Test
     }
 }}
 
-== Navigation ==
+<translate>
+== Navigation == <!--T:17-->
+</translate>
+
 {{Navbox modding}}
 
 {{ll|Category:Scripts}}

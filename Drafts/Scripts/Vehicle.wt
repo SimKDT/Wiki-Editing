@@ -1,29 +1,40 @@
-{{Header|Modding|Scripts}}
-{{Page version|42.10.0|2=1098817}}
+<languages />
+{{Navbar scripts}}
+{{Page version|42.10.0}}
 {{Wip}}
-[[File:ZedScript-Vehicle.png|thumb|General structure and parameters of a vehicle script]]
-The <code>vehicle</code> script block is used to define the various aspects of a vehicle in the game. This page explains the parameters which are involved in defining a new vehicle.
+<translate>
 
-{{Note|Some parameters are easy to change later in game via debug tool [[Vehicle editor]].}}
-{{Note|type=warn|Vehicles use different Axis logic: 
-*X - width.
-*Y - height.
-*Z - length.
+<!--T:1-->
+[[File:ZedScript-Vehicle.png|thumb|General structure and parameters of a vehicle script]]
+
+<!--T:2-->
+The <code>vehicle</code> script block is used to define the various aspects of a vehicle in the game. This page explains the parameters which are involved in defining a new vehicle.
+</translate>
+
+{{Note|Some parameters are easy to change later in game via debug tool {{ll|Vehicle editor}}.}}
+{{Note|type=warn|Vehicles use different Axis logic:
+* X - width.
+* Y - height.
+* Z - length.
 
 In comparison, the game world coordinates use:
-*X - pointing east.
-*Y - pointing south.
-*Z - pointing up.
+* X - pointing east.
+* Y - pointing south.
+* Z - pointing up.
 }}
 {{Note|type=warn|Vehicles are complex objects to implement due to the high amount of parameters and scripting required.}}
 
 {{Clear}}
-==Parameters==
+
+<translate>
+== Parameters == <!--T:3-->
+
+<!--T:4-->
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | List of parameters for the <code>vehicle</code> block
 ! Parameter name !! Description !! Example
 |-
-| style="padding: 10px;text-align: center;"| [[extents]]
+| style="padding: 10px;text-align: center;"| {{ll|extents}}
 | Dimensions of the physical parallelepiped that the player interacts with (X Y Z). (Vehicle dimensions that affect how close a player can approach the vehicle model). Can be configured in Vehicle Editor.
 | {{CodeSnip
 | lang = java
@@ -31,7 +42,7 @@ In comparison, the game world coordinates use:
 extents = 0.7582 0.5934 1.8462,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[shadowExtents]]
+| style="padding: 10px;text-align: center;"| {{ll|shadowExtents}}
 | Defines the shadow dimensions under the vehicle. (X Z)
 | {{CodeSnip
 | lang = java
@@ -39,7 +50,7 @@ extents = 0.7582 0.5934 1.8462,
 shadowExtents = 0.7582 1.8462,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[shadowOffset]]
+| style="padding: 10px;text-align: center;"| {{ll|shadowOffset}}
 | Defines the shadow offset under the vehicle. (X Z)
 | {{CodeSnip
 | lang = java
@@ -47,7 +58,7 @@ shadowExtents = 0.7582 1.8462,
 shadowOffset = 0.0000 0.0000,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[physicsChassisShape]]
+| style="padding: 10px;text-align: center;"| {{ll|physicsChassisShape}}
 | Dimensions of the vehicle's physical parallelepiped that interacts with the environment (X Y Z) (excluding the player)
 | {{CodeSnip
 | lang = java
@@ -55,7 +66,7 @@ shadowOffset = 0.0000 0.0000,
 physicsChassisShape = 0.7582 0.5934 1.8462,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[extentsOffset]]
+| style="padding: 10px;text-align: center;"| {{ll|extentsOffset}}
 | Not used in game at this moment.
 | {{CodeSnip
 | lang = java
@@ -63,7 +74,7 @@ physicsChassisShape = 0.7582 0.5934 1.8462,
 extentsOffset = 1.0 1.0,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[mass]]
+| style="padding: 10px;text-align: center;"| {{ll|mass}}
 | Sets the vehicle weight. Affects the vehicle's physics behavior.
 | {{CodeSnip
 | lang = java
@@ -71,7 +82,7 @@ extentsOffset = 1.0 1.0,
 mass = 650,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[offRoadEfficiency]]
+| style="padding: 10px;text-align: center;"| {{ll|offRoadEfficiency}}
 | Affects the chance of parts breaking when off-road.
 | {{CodeSnip
 | lang = java
@@ -79,7 +90,7 @@ mass = 650,
 offRoadEfficiency = 0.8,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[centerOfMassOffset]]
+| style="padding: 10px;text-align: center;"| {{ll|centerOfMassOffset}}
 | Defines the vehicle's center of mass.
 | {{CodeSnip
 | lang = java
@@ -87,7 +98,7 @@ offRoadEfficiency = 0.8,
 centerOfMassOffset = 0.0000 0.3077 0.0000,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[engineForce]]
+| style="padding: 10px;text-align: center;"| {{ll|engineForce}}
 | Affects the vehicle's engine power.
 | {{CodeSnip
 | lang = java
@@ -95,7 +106,7 @@ centerOfMassOffset = 0.0000 0.3077 0.0000,
 engineForce = 3600,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[engineIdleSpeed]]
+| style="padding: 10px;text-align: center;"| {{ll|engineIdleSpeed}}
 | Affects the vehicle's speed in idle state.
 | {{CodeSnip
 | lang = java
@@ -103,7 +114,7 @@ engineForce = 3600,
 engineIdleSpeed = 120,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[gearRatioCount]]
+| style="padding: 10px;text-align: center;"| {{ll|gearRatioCount}}
 | Sets the number of gears in the vehicle. (Does not affect the vehicle's maximum speed).
 | {{CodeSnip
 | lang = java
@@ -111,7 +122,7 @@ engineIdleSpeed = 120,
 gearRatioCount = 4,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[textureRust]]
+| style="padding: 10px;text-align: center;"| {{ll|textureRust}}
 | Sets the rust texture for the vehicle.
 | {{CodeSnip
 | lang = java
@@ -119,7 +130,7 @@ gearRatioCount = 4,
 textureRust = Vehicles/Veh_Rust,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[textureMask]]
+| style="padding: 10px;text-align: center;"| {{ll|textureMask}}
 | Sets the mask texture for the vehicle. Used to set the display of changes on certain parts of the vehicle (rust, blood, damage)
 | {{CodeSnip
 | lang = java
@@ -127,7 +138,7 @@ textureRust = Vehicles/Veh_Rust,
 textureMask = Vehicles/vehicle_smallcar_mask,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[textureLights]]
+| style="padding: 10px;text-align: center;"| {{ll|textureLights}}
 | Sets the texture of vehicle lights.
 | {{CodeSnip
 | lang = java
@@ -135,7 +146,7 @@ textureMask = Vehicles/vehicle_smallcar_mask,
 textureLights = Vehicles/vehicle_smallcar_lights,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[textureDamage1Overlay]]
+| style="padding: 10px;text-align: center;"| {{ll|textureDamage1Overlay}}
 | Sets the texture for blood.
 | {{CodeSnip
 | lang = java
@@ -143,7 +154,7 @@ textureLights = Vehicles/vehicle_smallcar_lights,
 textureDamage1Overlay = Vehicles/Veh_Blood_Mask,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[textureDamage1Shell]]
+| style="padding: 10px;text-align: center;"| {{ll|textureDamage1Shell}}
 | Sets the texture for damage. Usually used to display light damage.
 | {{CodeSnip
 | lang = java
@@ -151,7 +162,7 @@ textureDamage1Overlay = Vehicles/Veh_Blood_Mask,
 textureDamage1Shell = Vehicles/Veh_Damage1,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[textureDamage2Overlay]]
+| style="padding: 10px;text-align: center;"| {{ll|textureDamage2Overlay}}
 | Sets the texture for blood. Usually the same texture as textureDamage1Overlay is used.
 | {{CodeSnip
 | lang = java
@@ -159,7 +170,7 @@ textureDamage1Shell = Vehicles/Veh_Damage1,
 textureDamage2Overlay = Vehicles/Veh_Blood_Hvy,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[textureDamage2Shell]]
+| style="padding: 10px;text-align: center;"| {{ll|textureDamage2Shell}}
 | Sets the texture for damage. Usually used to display heavy damage.
 | {{CodeSnip
 | lang = java
@@ -167,7 +178,7 @@ textureDamage2Overlay = Vehicles/Veh_Blood_Hvy,
 textureDamage2Shell = Vehicles/Veh_Damage2,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[textureShadow]]
+| style="padding: 10px;text-align: center;"| {{ll|textureShadow}}
 | Sets the texture for the shadow under the vehicle.
 | {{CodeSnip
 | lang = java
@@ -175,7 +186,7 @@ textureDamage2Shell = Vehicles/Veh_Damage2,
 textureShadow = Vehicles/CustomShadowTexture,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[steeringClamp]]
+| style="padding: 10px;text-align: center;"| {{ll|steeringClamp}}
 | Modifier affecting the vehicle's turning angle.
 | {{CodeSnip
 | lang = java
@@ -183,7 +194,7 @@ textureShadow = Vehicles/CustomShadowTexture,
 steeringClamp = 0.3,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[suspensionStiffness]]
+| style="padding: 10px;text-align: center;"| {{ll|suspensionStiffness}}
 | Sets suspension stiffness. (Physics param)
 | {{CodeSnip
 | lang = java
@@ -191,7 +202,7 @@ steeringClamp = 0.3,
 suspensionStiffness = 30,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[suspensionDamping]]
+| style="padding: 10px;text-align: center;"| {{ll|suspensionDamping}}
 | Sets suspension damping. (Physics param)
 | {{CodeSnip
 | lang = java
@@ -199,7 +210,7 @@ suspensionStiffness = 30,
 suspensionDamping = 2.88,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[suspensionCompression]]
+| style="padding: 10px;text-align: center;"| {{ll|suspensionCompression}}
 | Sets suspension compression. (Physics param)
 | {{CodeSnip
 | lang = java
@@ -207,7 +218,7 @@ suspensionDamping = 2.88,
 suspensionCompression = 2.83,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[suspensionRestLength]]
+| style="padding: 10px;text-align: center;"| {{ll|suspensionRestLength}}
 | Sets suspension rest length. (Physics param)
 | {{CodeSnip
 | lang = java
@@ -215,7 +226,7 @@ suspensionCompression = 2.83,
 suspensionRestLength = 0.2,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[maxSuspensionTravelCm]]
+| style="padding: 10px;text-align: center;"| {{ll|maxSuspensionTravelCm}}
 | Sets max suspension travel cm. (Physics param)
 | {{CodeSnip
 | lang = java
@@ -223,7 +234,7 @@ suspensionRestLength = 0.2,
 maxSuspensionTravelCm = 10,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[wheelFriction]]
+| style="padding: 10px;text-align: center;"| {{ll|wheelFriction}}
 | Wheel friction modifier. (Physics param)
 | {{CodeSnip
 | lang = java
@@ -231,7 +242,7 @@ maxSuspensionTravelCm = 10,
 wheelFriction = 1.6f,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[stoppingMovementForce]]
+| style="padding: 10px;text-align: center;"| {{ll|stoppingMovementForce}}
 | Sets stopping movement force. (Physics param)
 | {{CodeSnip
 | lang = java
@@ -239,7 +250,7 @@ wheelFriction = 1.6f,
 stoppingMovementForce = 2.0f,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[maxSpeed]]
+| style="padding: 10px;text-align: center;"| {{ll|maxSpeed}}
 | Sets max speed. (Physics param)
 | {{CodeSnip
 | lang = java
@@ -247,7 +258,7 @@ stoppingMovementForce = 2.0f,
 maxSpeed = 70f,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[isSmallVehicle]]
+| style="padding: 10px;text-align: center;"| {{ll|isSmallVehicle}}
 | Sets variable that used in zombie behavior logic.
 | {{CodeSnip
 | lang = java
@@ -255,7 +266,7 @@ maxSpeed = 70f,
 isSmallVehicle = false,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[spawnOffsetY]]
+| style="padding: 10px;text-align: center;"| {{ll|spawnOffsetY}}
 | Height at which the vehicle spawns.
 | {{CodeSnip
 | lang = java
@@ -263,7 +274,7 @@ isSmallVehicle = false,
 spawnOffsetY = 0.19392952,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[engineLoudness]]
+| style="padding: 10px;text-align: center;"| {{ll|engineLoudness}}
 | Vehicle loudness modifier.
 | {{CodeSnip
 | lang = java
@@ -271,7 +282,7 @@ spawnOffsetY = 0.19392952,
 engineLoudness = 55,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[engineQuality]]
+| style="padding: 10px;text-align: center;"| {{ll|engineQuality}}
 | Sets the engine quality. Affects the chance to start the vehicle, the chance to hotwire the vehicle. If the engine quality is less than 65 - then the weather will affect the engine start chance.
 | {{CodeSnip
 | lang = java
@@ -279,19 +290,19 @@ engineLoudness = 55,
 engineQuality = 60,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[mechanicType]]
-| Type of vehicle. Values: 
-*0 - Burnt.
-*1 - Standard.
-*2 - Heavy Duty.
-*3 - Sport.
+| style="padding: 10px;text-align: center;"| {{ll|mechanicType}}
+| Type of vehicle. Values:
+* 0 - Burnt.
+* 1 - Standard.
+* 2 - Heavy Duty.
+* 3 - Sport.
 | {{CodeSnip
 | lang = java
 | code =
 mechanicType = 1,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[forcedColor]]
+| style="padding: 10px;text-align: center;"| {{ll|forcedColor}}
 | Sets force vehicle color values (HSV). Values: from 0.0 to 1.0. All vehicles will spawn with this color.
 | {{CodeSnip
 | lang = java
@@ -299,7 +310,7 @@ mechanicType = 1,
 forcedColor = 0.3 0.5 0.0,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[engineRPMType]]
+| style="padding: 10px;text-align: center;"| {{ll|engineRPMType}}
 | Sound of vehicle engine. The sound is set in the sound block from the vehicle block.
 | {{CodeSnip
 | lang = java
@@ -307,7 +318,7 @@ forcedColor = 0.3 0.5 0.0,
 engineRPMType = firebird,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[template]]
+| style="padding: 10px;text-align: center;"| {{ll|template}}
 | Loads template. Allows loading a specific part of template code.
 | {{CodeSnip
 | lang = java
@@ -315,7 +326,7 @@ engineRPMType = firebird,
 template = Trunk/part/TruckBed,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[template!]]
+| style="padding: 10px;text-align: center;"| {{ll|template!}}
 | Loads template. Loads as if the template is part of the script code.
 | {{CodeSnip
 | lang = java
@@ -323,7 +334,7 @@ template = Trunk/part/TruckBed,
 template! = SmallCar,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[engineRepairLevel]]
+| style="padding: 10px;text-align: center;"| {{ll|engineRepairLevel}}
 | Required mechanics skill level for repairing the vehicle's engine.
 | {{CodeSnip
 | lang = java
@@ -331,7 +342,7 @@ template! = SmallCar,
 engineRepairLevel = 4,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[playerDamageProtection]]
+| style="padding: 10px;text-align: center;"| {{ll|playerDamageProtection}}
 | Damage modifier for the player inside the vehicle.
 | {{CodeSnip
 | lang = java
@@ -339,50 +350,53 @@ engineRepairLevel = 4,
 playerDamageProtection = 1.2,
 }}
 |-
-| style="padding: 10px;text-align: center;"| [[area]]
-| Block describes the area around the car in which the player must be in order to access the spare part (The name of area must match the name of the spare part). See [[Area (scripts)|area scripts]] for more details.
-| 
-|-
-| style="padding: 10px;text-align: center;"| [[attachment]]
-| The block describes the parameters for attachments that are used for towing and attaching trailers (trailer and trailerfront). See [[attachment (scripts)|attachment scripts]] for more details.
+| style="padding: 10px;text-align: center;"| {{ll|area}}
+| Block describes the area around the car in which the player must be in order to access the spare part (The name of area must match the name of the spare part). See {{ll|Area (scripts)|area scripts}} for more details.
 |
 |-
-| style="padding: 10px;text-align: center;"| [[model]]
-| Block describes the parameters for vehicle model or part model. See [[model (scripts)|model scripts]] for more details.
+| style="padding: 10px;text-align: center;"| {{ll|attachment}}
+| The block describes the parameters for attachments that are used for towing and attaching trailers (trailer and trailerfront). See {{ll|attachment (scripts)|attachment scripts}} for more details.
 |
 |-
-| style="padding: 10px;text-align: center;"| [[part]]
+| style="padding: 10px;text-align: center;"| {{ll|model}}
+| Block describes the parameters for vehicle model or part model. See {{ll|model (scripts)|model scripts}} for more details.
+|
+|-
+| style="padding: 10px;text-align: center;"| {{ll|part}}
 | {{Stub|section=true}}
 |
 |-
-| style="padding: 10px;text-align: center;"| [[passenger]]
+| style="padding: 10px;text-align: center;"| {{ll|passenger}}
 | {{Stub|section=true}}
 |
 |-
-| style="padding: 10px;text-align: center;"| [[physics]]
+| style="padding: 10px;text-align: center;"| {{ll|physics}}
 | {{Stub|section=true}}
 |
 |-
-| style="padding: 10px;text-align: center;"| [[skin]]
+| style="padding: 10px;text-align: center;"| {{ll|skin}}
 | {{Stub|section=true}}
 |
 |-
-| style="padding: 10px;text-align: center;"| [[wheel]]
+| style="padding: 10px;text-align: center;"| {{ll|wheel}}
 | {{Stub|section=true}}
 |
 |-
-| style="padding: 10px;text-align: center;"| [[lightbar]]
+| style="padding: 10px;text-align: center;"| {{ll|lightbar}}
 | {{Stub|section=true}}
 |
 |-
-| style="padding: 10px;text-align: center;"| [[sound]]
+| style="padding: 10px;text-align: center;"| {{ll|sound}}
 | {{Stub|section=true}}
 |
 |}
 
-==Area block==
+== Area block == <!--T:5-->
+
+<!--T:6-->
 Describes the area around the car in which the player must be in order to access the spare part (The name of the area must match the name of the spare part)
 
+<!--T:7-->
 Example:
 <syntaxhighlight lang="Java">
 area Engine
@@ -391,15 +405,20 @@ area Engine
 }
 </syntaxhighlight>
 
-===xywh===
+=== xywh === <!--T:8-->
+
+<!--T:9-->
 Coordinates of area. (X Y Width Height)
 <syntaxhighlight lang="Java">
 xywh = 0.5989 -0.6703 0.4286 0.4725,
 </syntaxhighlight>
 
-==Attachment block==
+== Attachment block == <!--T:10-->
+
+<!--T:11-->
 The block describes the parameters for attachments that are used for towing, attaching trailers (trailer and trailerfront) or vehicle anims.
 
+<!--T:12-->
 Example:
 <syntaxhighlight lang="Java">
 attachment trailer
@@ -410,39 +429,54 @@ attachment trailer
 }
 </syntaxhighlight>
 
-===bone===
+=== bone === <!--T:13-->
+
+<!--T:14-->
 Not used in game at this moment.
 
-===offset===
+=== offset === <!--T:15-->
+
+<!--T:16-->
 Offset of attachment. (X Y Z)
 <syntaxhighlight lang="Java">
 offset = 0.0000 -0.5934 1.2582,
 </syntaxhighlight>
 
-===rotate===
+=== rotate === <!--T:17-->
+
+<!--T:18-->
 Rotate of attachment (X Y Z)
 <syntaxhighlight lang="Java">
 rotate = 0.0000 0.0000 0.0000,
 </syntaxhighlight>
 
-===canAttach===
+=== canAttach === <!--T:19-->
+
+<!--T:20-->
 Sets attachment to which this attachment can be attached.
 <syntaxhighlight lang="Java">
 canAttach = trailer,
 </syntaxhighlight>
 
-===zoffset===
+=== zoffset === <!--T:21-->
+
+<!--T:22-->
 Sets offset between attachments.
 <syntaxhighlight lang="Java">
 zoffset = 1.0000,
 </syntaxhighlight>
 
-===updateconstraint===
+=== updateconstraint === <!--T:23-->
+
+<!--T:24-->
 ''DEPRECATED''
 
-==Model block==
+== Model block == <!--T:25-->
+
+<!--T:26-->
 Block describes the parameters for vehicle model or part model.
 
+<!--T:27-->
 Example:
 <syntaxhighlight lang="Java">
 model
@@ -453,31 +487,41 @@ model
 }
 </syntaxhighlight>
 
-===file===
+=== file === <!--T:28-->
+
+<!--T:29-->
 Name of (global) model block, that describes 3d model params.
 <syntaxhighlight lang="Java">
 file = Vehicles_SmallCar,
 </syntaxhighlight>
 
-===offset===
+=== offset === <!--T:30-->
+
+<!--T:31-->
 Offset of vehicle model.
 <syntaxhighlight lang="Java">
 offset = 0.0000 0.3022 0.0000,
 </syntaxhighlight>
 
-===rotate===
+=== rotate === <!--T:32-->
+
+<!--T:33-->
 Rotation of vehicle model.
 <syntaxhighlight lang="Java">
 rotate = 0.0000 0.0000 0.0000,
 </syntaxhighlight>
 
-===scale===
+=== scale === <!--T:34-->
+
+<!--T:35-->
 Scale of vehicle model.
 <syntaxhighlight lang="Java">
 scale = 1.8200,
 </syntaxhighlight>
 
-==Part block==
+== Part block == <!--T:36-->
+
+<!--T:37-->
 The part block describes the part parameters for the vehicle part.
 Example:
 <syntaxhighlight lang="Java">
@@ -492,6 +536,7 @@ Vector3f in script example:
 offset = 0 1.2 0.4321,
 </syntaxhighlight>
 
+<!--T:38-->
 {| class="wikitable"
 ! key !! type !! brief
 |-
@@ -516,7 +561,9 @@ offset = 0 1.2 0.4321,
 | wheel || String || vehicle wheel
 |}
 
-==Anim block==
+== Anim block == <!--T:39-->
+
+<!--T:40-->
 {| class="wikitable"
 ! key !! type !! brief
 |-
@@ -538,7 +585,9 @@ offset = 0 1.2 0.4321,
 |}
  For animations the model should be `static = false,`
 
-==Container block==
+== Container block == <!--T:41-->
+
+<!--T:42-->
 {| class="wikitable"
 ! key !! type !! description
 |-
@@ -553,13 +602,17 @@ offset = 0 1.2 0.4321,
 | test || String || lua function - test is called to check if player can access container when player is near or inside vehicle
 |}
 
-==Door block==
+== Door block == <!--T:43-->
+
+<!--T:44-->
 Adds door to part, has no usable values
 <syntaxhighlight lang="Java">
 door {}
 </syntaxhighlight>
 
-==Lua block==
+== Lua block == <!--T:45-->
+
+<!--T:46-->
 Creates a new HashMap with lua functions.
 <syntaxhighlight lang="Java">
 lua {
@@ -567,7 +620,9 @@ lua {
 }
 </syntaxhighlight>
 
-==Table block==
+== Table block == <!--T:47-->
+
+<!--T:48-->
 The table block is parsed into a KahluaTable. If a table exists, then it is added to; otherwise, a new table is created, and values are set, overwriting previous values.
 <syntaxhighlight lang="Java">
 table tableId {
@@ -581,7 +636,9 @@ table tableId {
 }
 </syntaxhighlight>
 
-==Window block==
+== Window block == <!--T:49-->
+
+<!--T:50-->
 Adds window to part.
 <syntaxhighlight lang="Java">
 window { openable = true, }
@@ -592,11 +649,14 @@ window { openable = true, }
 | openable || Boolean || describes if window can be opened
 |}
 
-==Example==
+== Example == <!--T:51-->
+
+<!--T:52-->
 Below is an example of all the different scripts involved in defining a vehicle.
+</translate>
 {{ToggleBox
 | title = Vehicle script example (source: [https://theindiestone.com/forums/index.php?/topic/24408-how-to-create-new-vehicle-mods/ How to create new vehicle mods])
-| content = 
+| content =
 {{CodeSnip
 | lang = java
 | code =
@@ -623,7 +683,7 @@ module Base
         {
             texture = Vehicles/Vehicle_MOD_NAME_Shell,
         }
- 
+
         textureRust = Vehicles/Vehicle_MOD_NAME_Rust,
         textureMask = Vehicles/Vehicle_MOD_NAME_Mask,
         textureLights = Vehicles/Vehicle_MOD_NAME_Lights,
@@ -631,7 +691,6 @@ module Base
         textureDamage1Shell = Vehicles/Vehicle_MOD_NAME_Shell_Damaged01,
         textureDamage2Overlay = Vehicles/Vehicle_MOD_NAME_Overlays_Damaged02,
         textureDamage2Shell = Vehicles/Vehicle_MOD_NAME_Shell_Damaged02,
-       
 
         sound
         {
@@ -811,7 +870,7 @@ module Base
             {
             }
         }
-       
+
         area Engine
         {
             xywh = 0 1.3256 0.814 0.4651,
@@ -1003,8 +1062,18 @@ module Base
 | class = blue
 }}
 
-==See also==
-*[https://theindiestone.com/forums/index.php?/topic/24408-how-to-create-new-vehicle-mods/ How to create new vehicle mods] - an official guide from [[The Indie Stone]] on how to create new vehicle mods.
+<translate>
+== See also == <!--T:53-->
 
-==Navigation==
+<!--T:54-->
+*
+</translate> <translate><!--T:55--> [https://theindiestone.com/forums/index.php?/topic/24408-how-to-create-new-vehicle-mods/ How to create new vehicle mods]</translate> <translate>
+<!--T:56-->
+- an official guide from {{ll|The Indie Stone}} on how to create new vehicle mods.
+
+== Navigation == <!--T:57-->
+</translate>
+
 {{Navbox modding}}
+
+{{ll|Category:Scripts}}
