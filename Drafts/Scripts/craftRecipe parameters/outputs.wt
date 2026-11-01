@@ -1,8 +1,12 @@
 {{Title|outputs}}
-{{Header|Modding|Scripts|craftRecipe parameters}}
+<languages />
+{{Navbar modding}}
 {{Page version|42.5.1}}
 {{Main|CraftRecipe}}
+<translate>
+<!--T:1-->
 The <code>outputs</code> parameter defines the items that will be created when the recipe is finished. Outputs are listed one after the other and follow the format below:
+</translate>
 {{CodeSnip/custom|code=
 outputs
 {{CodeSnip/braces|l}}
@@ -18,7 +22,10 @@ outputs
 
 {{Note|type=error|Every {{Code|outputs}} lines need to finish with a comma or this will cause a parsing error. However, make sure to NOT put a comma after the final {{Code|} }} of the {{Code|outputs}} block !}}
 
-==Parameters==
+<translate>
+== Parameters == <!--T:2-->
+
+<!--T:3-->
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | Parameter details
 ! style="min-width:100px;" | Parameter !! Description
@@ -36,24 +43,29 @@ item 1 Base.ClosedUmbrellaBlack,
 item 1 YourModuleName.YourItemID,
 }}
 
-{{Note|type=warn|Notice the difference with the [[inputs]] writing where here <code>{{CodeSnip/param|2=item}}</code> is not in-between {{Code|[]}} because only one item can exist for an output entry.}}
+<!--T:4-->
+{{Note|type=warn|Notice the difference with the {{ll|inputs}} writing where here <code>{{CodeSnip/param|2=item}}</code> is not in-between {{Code|[]}} because only one item can exist for an output entry.}}
 |-
 | style="text-align:center" | <code>{{CodeSnip/param|5=mapperID}}</code>
-| The {{CodeSnip/param|5=mapper}} is a parameter used to link input items to their output equivalent. To see more detail on mappers and how they are used, see [[itemMapper]].
+| The {{CodeSnip/param|5=mapper}} is a parameter used to link input items to their output equivalent. To see more detail on mappers and how they are used, see {{ll|itemMapper}}.
 |-
 | style="text-align:center" | flags {{sup|unused|red}}
-| Flags for outputs currently do not have a single example in the vanilla recipes. The flags are listed because present in the game code, but there currently is no confirmation of them working. See [[#flags|flags]] for the list of flags.
+| Flags for outputs currently do not have a single example in the vanilla recipes. The flags are listed because present in the game code, but there currently is no confirmation of them working. See {{ll|#flags|flags}} for the list of flags.
 |}
+</translate>
 
 {{Note|type=error|Both {{CodeSnip/param|2=item}} and {{CodeSnip/param|5=mapper}} methods of listing items can't be combined.}}
 
-==flags==
+<translate>
+== flags == <!--T:5-->
+
+<!--T:6-->
 Below is the full list of flags that can be used:
 {| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
 |+ style="white-space:nowrap" | Special conditions
 ! Flag !! Description
 |-
-| style="min-width: 200px;"| <code>HandcraftOnly</code> 
+| style="min-width: 200px;"| <code>HandcraftOnly</code>
 | style="min-width: 600px;"| The output item can only be crafted when you didn't use automation.
 |-
 | style="min-width: 200px;"| <code>AutomationOnly</code>
@@ -63,22 +75,26 @@ Below is the full list of flags that can be used:
 |+ style="white-space:nowrap" | Fluids
 ! Flag !! Description
 |-
-| style="min-width: 200px;"| <code>IsEmpty</code> 
+| style="min-width: 200px;"| <code>IsEmpty</code>
 | style="min-width: 600px;"| The fluidContainer is empty.
 |-
 | style="min-width: 200px;"| <code>ForceEmpty</code>
 | style="min-width: 600px;"| Fluid already contained will be emptied.
 |-
-| style="min-width: 200px;"| <code>AlwaysFill</code> 
+| style="min-width: 200px;"| <code>AlwaysFill</code>
 | style="min-width: 600px;"| The fluidContainer will try to fill up if the available capacity exceeds the create fluid amount.
 |-
 | style="min-width: 200px;"| <code>RespectCapacity</code>
 | style="min-width: 600px;"| The fluidContainer must have enough free capacity.
 |}
+</translate>
 
 {{Note|type=warn|Flags for outputs currently do not have a single example in the vanilla recipes. The flags are listed because present in the game code, but there currently is no confirmation of them working.}}
 
-==Example==
+<translate>
+== Example == <!--T:7-->
+</translate>
+
 {{CodeSnip
 | lang = lua
 | code =
@@ -88,3 +104,5 @@ outputs
     item 1 Base.ScratchTicket,
 }
 }}
+
+{{ll|Category:craftRecipe parameters}}
