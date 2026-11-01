@@ -1,0 +1,46 @@
+<noinclude>
+{{Documentation|doc=
+This is a [[Template:Navbar|navbar]] used at the top of modding pages related to Scripts to assist with user navigation. A navbar differs from a [[Template:Navbox|navbox]] in that it is intended to link to broad overview pages rather than being an exhaustive list of objects.
+
+== Usage ==
+{{tlx|Navbar_scripts}}
+{{Navbar_scripts}}
+
+<code><nowiki>{{Navbar_scripts|no-news=}}</nowiki></code>
+{{Navbar_scripts|no-news=}}
+
+{{Translation guide|{{Note|Any strings not listed below don't need to be translated, as they will use the page title instead. Please see {{tll|Title}} for this.}}
+<syntaxhighlight lang="wikitext">
+{{#switch: {{{1|}}}
+| #default = {{Error|translation}}
+}}
+</syntaxhighlight>}}
+
+=== Parameters ===
+; {{Code|no-news}}
+: When provided, hides the modding news section in the navbar. (no value needed)
+
+== See also ==
+
+{{ll|Category:Navbar}}
+}}
+</noinclude><includeonly>{{Navbar/sandbox
+|title={{ll|Scripts}} ({{ll|:Category:Scripts|☰}})
+|links={{#invoke:Join|join|sep=&#32;&bull;&#32;
+  |{{ll|Modding}} ({{ll|:Category:Modding|☰}})
+  |{{ll|Scripts#Module block|module}}
+  |{{ll|Scripts#Imports block|imports}}
+  |{{ll|craftRecipe}}
+  |{{ll|item (scripts)|item}}
+  |{{ll|model (scripts)|model}}
+  |{{ll|Sandbox options}}
+  |{{ll|Sound (scripts)|sound}}
+  |{{ll|Vehicle (scripts)|vehicle}}
+  |{{ll|Mannequin (scripts)|mannequin}}
+  |{{ll|Entity (scripts)|entity}}
+  |{{ll|Fluid (scripts)|fluid}}
+  |{{ll|Evolvedrecipe (scripts)|evolvedrecipe}}
+  |{{ll|TimedAction (scripts)|timedAction}}
+  }}
+|content={{#ifeq: {{{no-news|+}}} | {{{no-news|-}}} | | {{ModdingNews}} }}
+}}<includeonly/>
