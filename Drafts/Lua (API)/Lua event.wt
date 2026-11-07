@@ -1,23 +1,42 @@
-{{Header|Modding|Lua (API)}}
-{{Page version|42.2.0}}
-A '''Lua event''' in programming is a signal or notification that something has occurred or changed. In [[Project Zomboid]], most often a modder's custom functions are attached as observers to an event, so they'll run when the event is called.
+<languages />
+{{Navbar modding}}
+{{Page version|42.20.4}}
+<translate>
+<!--T:1-->
+A '''Lua event''' in programming is a signal or notification that something has occurred or changed. In {{ll|Project Zomboid}}, most often a modder's custom functions are attached as observers to an event, so they'll run when the event is called.
 
-==Hooking to an event==
+<!--T:2-->
+A full list of the Lua events can be found in:
+* </translate> [[:Category:Current Lua events|Lua events category]]
+<translate>
+<!--T:3-->
+* {{ll|LuaDocs}}
+
+== Hooking to an event == <!--T:4-->
+
+<!--T:5-->
 To hook a function to an event, you use the <code>Events</code> object. For example, to hook a function to the <code>OnCreatePlayer</code> event, you would write:
+</translate>
 {{CodeSnip
 | lang = lua
-| code = 
+| code =
 Events.OnCreatePlayer.Add(yourFunction)
 }}
 
+<translate>
+<!--T:6-->
 <code>yourFunction</code> is a reference to your Lua function. By using this same reference, you can also remove the function from the event:
+</translate>
 {{CodeSnip
 | lang = lua
 | code =
 Events.OnCreatePlayer.Remove(yourFunction)
 }}
 
+<translate>
+<!--T:7-->
 Your function needs to have parameters that match the event's output. For example, the <code>OnCreatePlayer</code> event has the parameter <code>player</code>. Your function would need to be:
+</translate>
 {{CodeSnip
 | lang = lua
 | code =
@@ -26,319 +45,67 @@ local function yourFunction(player)
 end
 }}
 
-Each events listed in [[#Lua events]] have example code snippets to show how to hook a function to them and their various parameters.
+<translate>
+<!--T:8-->
+Each events listed in
+</translate> [[:Category:Current Lua events|Lua events category]] <translate><!--T:9-->
+have example code snippets to show how to hook a function to them and their various parameters.
 
-==New events==
-===42.0.0===
-<div class="list-columns">
-[[OnContextKey]]
-[[OnZombieCreate]]
-[[OnClickedAnimalForContext]]
-[[RenderOpaqueObjectsInWorld]]
-[[OnMouseWheel]]
-[[LoadChunk]]
-[[OnProcessTransaction]]
-[[OnProcessAction]]
-[[OnAlertMessage]]
-[[OnSourceWindowFileReload]]
-[[OnSpawnVehicleStart]]
-[[OnSpawnVehicleEnd]]
-[[OnSleepingTick]]
-[[OnDeadBodySpawn]]
-[[OnAnimalTracks]]
-[[OnItemFound]]
-[[SetDragItem]]
-[[OnSteamServerFailedToRespond2]]
-</div>
+== List of events triggered on game start == <!--T:10-->
 
-==Lua events==
-===Current===
-<div class="list-columns">
-[[AcceptedFactionInvite]]
-[[AcceptedSafehouseInvite]]
-[[AcceptedTrade]]
-[[AddXP]]
-[[DoSpecialTooltip]]
-[[EveryDays]]
-[[EveryHours]]
-[[EveryOneMinute]]
-[[EveryTenMinutes]]
-[[LevelPerk]]
-[[LoadChunk]]
-[[LoadGridsquare]]
-[[MngInvReceiveItems]]
-[[OnAIStateChange]]
-[[OnAcceptInvite]]
-[[OnAddMessage]]
-[[OnAdminMessage]]
-[[OnAlertMessage]]
-[[OnAmbientSound]]
-[[OnAnimalTracks]]
-[[OnCGlobalObjectSystemInit]]
-[[OnChallengeQuery]]
-[[OnCharacterCollide]]
-[[OnCharacterDeath]]
-[[OnChatWindowInit]]
-[[OnClickedAnimalForContext]]
-[[OnClientCommand]]
-[[OnClimateManagerInit]]
-[[OnClimateTick]]
-[[OnClimateTickDebug]]
-[[OnClothingUpdated]]
-[[OnConnectFailed]]
-[[OnConnected]]
-[[OnConnectionStateChanged]]
-[[OnContainerUpdate]]
-[[OnContextKey]]
-[[OnCoopJoinFailed]]
-[[OnCoopServerMessage]]
-[[OnCreateLivingCharacter]]
-[[OnCreatePlayer]]
-[[OnCreateSurvivor]]
-[[OnCreateUI]]
-[[OnCustomUIKey]]
-[[OnCustomUIKeyPressed]]
-[[OnCustomUIKeyReleased]]
-[[OnDeadBodySpawn]]
-[[OnDestroyIsoThumpable]]
-[[OnDeviceText]]
-[[OnDisconnect]]
-[[OnDistributionMerge]]
-[[OnDoTileBuilding2]]
-[[OnDoTileBuilding3]]
-[[OnDynamicMovableRecipe]]
-[[OnEnterVehicle]]
-[[OnEquipPrimary]]
-[[OnEquipSecondary]]
-[[OnExitVehicle]]
-[[OnFETick]]
-[[OnFillContainer]]
-[[OnFillInventoryObjectContextMenu]]
-[[OnFillWorldObjectContextMenu]]
-[[OnGameBoot]]
-[[OnGameStart]]
-[[OnGameStateEnter]]
-[[OnGameTimeLoaded]]
-[[OnGamepadConnect]]
-[[OnGamepadDisconnect]]
-[[OnGetDBSchema]]
-[[OnGetTableResult]]
-[[OnGridBurnt]]
-[[OnHitZombie]]
-[[OnInitGlobalModData]]
-[[OnInitModdedWeatherStage]]
-[[OnInitRecordedMedia]]
-[[OnInitSeasons]]
-[[OnInitWorld]]
-[[OnItemFound]]
-[[OnJoypadActivate]]
-[[OnJoypadActivateUI]]
-[[OnJoypadBeforeDeactivate]]
-[[OnJoypadBeforeReactivate]]
-[[OnJoypadDeactivate]]
-[[OnJoypadReactivate]]
-[[OnJoypadRenderUI]]
-[[OnKeyKeepPressed]]
-[[OnKeyPressed]]
-[[OnKeyStartPressed]]
-[[OnLoad]]
-[[OnLoadMapZones]]
-[[OnLoadRadioScripts]]
-[[OnLoadSoundBanks]]
-[[OnLoadedMapZones]]
-[[OnLoadedTileDefinitions]]
-[[OnMainMenuEnter]]
-[[OnMechanicActionDone]]
-[[OnMiniScoreboardUpdate]]
-[[OnModsModified]]
-[[OnMouseDown]]
-[[OnMouseMove]]
-[[OnMouseUp]]
-[[OnMouseWheel]]
-[[OnMultiTriggerNPCEvent]]
-[[OnNewFire]]
-[[OnNewGame]]
-[[OnObjectAboutToBeRemoved]]
-[[OnObjectAdded]]
-[[OnObjectCollide]]
-[[OnObjectLeftMouseButtonDown]]
-[[OnObjectLeftMouseButtonUp]]
-[[OnObjectRightMouseButtonDown]]
-[[OnObjectRightMouseButtonUp]]
-[[OnPlayerAttackFinished]]
-[[OnPlayerDeath]]
-[[OnPlayerGetDamage]]
-[[OnPlayerMove]]
-[[OnPlayerUpdate]]
-[[OnPostDistributionMerge]]
-[[OnPostFloorLayerDraw]]
-[[OnPostMapLoad]]
-[[OnPostRender]]
-[[OnPostSave]]
-[[OnPostUIDraw]]
-[[OnPreDistributionMerge]]
-[[OnPreFillInventoryObjectContextMenu]]
-[[OnPreFillWorldObjectContextMenu]]
-[[OnPreMapLoad]]
-[[OnPreUIDraw]]
-[[OnPressRackButton]]
-[[OnPressReloadButton]]
-[[OnPressWalkTo]]
-[[OnProcessAction]]
-[[OnProcessTransaction]]
-[[OnReceiveGlobalModData]]
-[[OnReceiveItemListNet]]
-[[OnReceiveUserlog]]
-[[OnRefreshInventoryWindowContainers]]
-[[OnRenderTick]]
-[[OnResetLua]]
-[[OnResolutionChange]]
-[[OnRightMouseDown]]
-[[OnRightMouseUp]]
-[[OnSGlobalObjectSystemInit]]
-[[OnSafehousesChanged]]
-[[OnSave]]
-[[OnScoreboardUpdate]]
-[[OnSeeNewRoom]]
-[[OnServerCommand]]
-[[OnServerFinishSaving]]
-[[OnServerStartSaving]]
-[[OnServerStarted]]
-[[OnServerStatisticReceived]]
-[[OnServerWorkshopItems]]
-[[OnSetDefaultTab]]
-[[OnSleepingTick]]
-[[OnSourceWindowFileReload]]
-[[OnSpawnRegionsLoaded]]
-[[OnSpawnVehicleEnd]]
-[[OnSpawnVehicleStart]]
-[[OnSteamFriendStatusChanged]]
-[[OnSteamGameJoin]]
-[[OnSteamRefreshInternetServers]]
-[[OnSteamRulesRefreshComplete]]
-[[OnSteamServerFailedToRespond2]]
-[[OnSteamServerResponded]]
-[[OnSteamServerResponded2]]
-[[OnSteamWorkshopItemCreated]]
-[[OnSteamWorkshopItemNotCreated]]
-[[OnSteamWorkshopItemNotUpdated]]
-[[OnSteamWorkshopItemUpdated]]
-[[OnSwitchVehicleSeat]]
-[[OnTabAdded]]
-[[OnTabRemoved]]
-[[OnTemplateTextInit]]
-[[OnThrowableExplode]]
-[[OnThunderEvent]]
-[[OnTick]]
-[[OnTickEvenPaused]]
-[[OnTileRemoved]]
-[[OnTriggerNPCEvent]]
-[[OnUpdateModdedWeatherStage]]
-[[OnUseVehicle]]
-[[OnVehicleDamageTexture]]
-[[OnWaterAmountChange]]
-[[OnWeaponHitCharacter]]
-[[OnWeaponHitThumpable]]
-[[OnWeaponHitTree]]
-[[OnWeaponHitXp]]
-[[OnWeaponSwing]]
-[[OnWeaponSwingHitPoint]]
-[[OnWeatherPeriodComplete]]
-[[OnWeatherPeriodStage]]
-[[OnWeatherPeriodStart]]
-[[OnWeatherPeriodStop]]
-[[OnWorldSound]]
-[[OnZombieCreate]]
-[[OnZombieDead]]
-[[OnZombieUpdate]]
-[[ReceiveFactionInvite]]
-[[ReceiveSafehouseInvite]]
-[[RenderOpaqueObjectsInWorld]]
-[[RequestTrade]]
-[[ReuseGridsquare]]
-[[SendCustomModData]]
-[[ServerPinged]]
-[[SetDragItem]]
-[[SwitchChatStream]]
-[[SyncFaction]]
-[[TradingUIAddItem]]
-[[TradingUIRemoveItem]]
-[[TradingUIUpdateState]]
-[[ViewTickets]]
-[[onAddForageDefs]]
-[[onDisableSearchMode]]
-[[onEnableSearchMode]]
-[[onFillSearchIconContextMenu]]
-[[onItemFall]]
-[[onLoadModDataFromServer]]
-[[onToggleSearchMode]]
-[[onUpdateIcon]]
-[[preAddCatDefs]]
-[[preAddForageDefs]]
-[[preAddItemDefs]]
-[[preAddSkillDefs]]
-[[preAddZoneDefs]]
-</div>
+<!--T:11-->
+The list below is a list of events that are triggered when loading into game, ''in the order in which they are triggered.''
 
-===Deprecated===
-<div class="list-columns">
-[[OnAIStateEnter]]
-[[OnAIStateExecute]]
-[[OnAIStateExit]]
-[[OnAddBuilding]]
-[[OnBeingHitByZombie]]
-[[OnChangeWeather]]
-[[OnCharacterCreateStats]]
-[[OnCharacterMeet]]
-[[OnDawn]]
-[[OnDoTileBuilding]]
-[[OnDusk]]
-[[OnFishingActionMPUpdate]]
-[[OnGoogleAuthRequest]]
-[[OnIsoThumpableLoad]]
-[[OnIsoThumpableSave]]
-[[OnLoginState]]
-[[OnLoginStateSuccess]]
-[[OnMakeItem]]
-[[OnMapLoadCreateIsoObject]]
-[[OnMovingObjectCrop]]
-[[OnNPCSurvivorUpdate]]
-[[OnNetworkUsersReceived]]
-[[OnNewSurvivorGroup]]
-[[OnOverrideSearchManager]]
-[[OnPlayerSetSafehouse]]
-[[OnPostCharactersSquareDraw]]
-[[OnPostFloorSquareDraw]]
-[[OnPostTileDraw]]
-[[OnPostTilesSquareDraw]]
-[[OnPostWallSquareDraw]]
-[[OnPreGameStart]]
-[[OnQRReceived]]
-[[OnRadioInteraction]]
-[[OnRainStart]]
-[[OnRainStop]]
-[[OnRenderUpdate]]
-[[OnRolesReceived]]
-[[OnServerCustomizationDataReceived]]
-[[OnVehicleHorn]]
-[[OnWarUpdate]]
-[[OnWorldMessage]]
-[[RefreshCheats]]
-</div>
+<!--T:12-->
+'''Launch Game'''
+* {{ll|OnLoadSoundBanks}}
+* {{ll|OnGameBoot}}
 
-==Custom events libraries==
+<!--T:13-->
+'''Start new game/load game/connect to server'''
+* {{ll|OnPreMapLoad}}
+* {{ll|OnPreDistributionMerge}}
+* {{ll|OnDistributionMerge}}
+* {{ll|OnPostDistributionMerge}}
+* {{ll|OnInitWorld}}
+* ''Sandbox Options loaded here''
+* {{ll|OnLoadedTileDefinitions}}
+* {{ll|OnLoadRadioScripts}}
+* {{ll|OnInitGlobalModData}}
+* {{ll|OnLoadMapZones}}
+* {{ll|OnLoadedMapZones}}
+* {{ll|OnNewGame}} - Client only
+* {{ll|OnGameTimeLoaded}}
+* {{ll|OnSGlobalObjectSystemInit}} - Basically right before the Click to Start screen
+* {{ll|OnServerStarted}} - Server only
+
+<!--T:14-->
+'''Click to Start screen here''' - running heavy functions on the following events is the cause for freezing after clicking to start.
+* {{ll|OnCreatePlayer}} - Client only
+* {{ll|OnGameStart}} - Client only
+* {{ll|OnLoad}} - Client only
+
+== Custom events libraries == <!--T:15-->
+
+<!--T:16-->
 Below are different libraries that add custom events to the game for modders to hook functions to in the same way as vanilla events.
-*[[Events Plus API (Modding project)]] by Dismellion
-*[[Starlit Library (Modding project)]] by Albion
-*[[Doggy's API (Modding project)]] by Sir Doggy Jvla
+* {{ll|Events Plus API}} by Dismellion
+* {{ll|Starlit Library}} by Albion
+* {{ll|Doggy's Library}} by Sir Doggy Jvla
 
-==See also==
-*{{ll|Lua (API)}}
-*{{ll|Lua object}}
+== See also == <!--T:17-->
 
-==External links==
-*[https://github.com/demiurgeQuantified/PZEventDoc/blob/develop/docs/Events.md Albion's export of events and hooks] – updated events and hooks list
+<!--T:18-->
+* {{ll|Lua (API)}}
+* {{ll|Lua object}}
+*</translate> <translate><!--T:19--> [https://demiurgequantified.github.io/ProjectZomboidLuaDocs/md_Events.html Lua events]</translate> <translate>
+<!--T:20-->
+– The {{ll|LuaDocs}} event list.
+
+== Navigation == <!--T:21-->
+</translate>
 
 {{Navbox modding}}
 
+{{ll|Category:Lua (API)}}
 {{ll|Category:Lua events|&#32;}}
