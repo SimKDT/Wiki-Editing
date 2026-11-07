@@ -1,6 +1,7 @@
 <languages />
 {{Navbar modding}}
 {{Page version|42.13.0}}
+{{Delete|This parameter's wiki documentation may be outdated and has been moved to the [[PZ API Documentation]] and this page will be deleted in the future.}}
 {{About|the parameter used in {{ll|Item (scripts)|item scripts}} to assign tags to items.|a list of tags in the base game|Item tag}}
 {{Stub|As of {{ll|Build 42.13.0}}, the '''ItemTags''' parameter has been reshaped to use an enum system instead of string values. This page is a stub and needs to be expanded to document this new system which depends on {{ll|registries}}.}}
 <translate>

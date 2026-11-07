@@ -1,6 +1,7 @@
 <languages />
 {{Navbar modding}}
 {{Page version|42.18.0}}
+{{Delete|This parameter's wiki documentation may be outdated and has been moved to the [[PZ API Documentation]] and this page will be deleted in the future.}}
 {{Removed|text=As of {{ll|Build 42.13.0}}, this feature is deprecated to only depend on {{ll|translations}}.}}
 <translate>
 <!--T:1-->

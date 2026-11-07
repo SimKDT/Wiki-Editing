@@ -1,6 +1,7 @@
 <languages />
 {{Navbar modding}}
 {{Page version|42.12.1}}
+{{Delete|This parameter's wiki documentation may be outdated and has been moved to the [[PZ API Documentation]] and this page will be deleted in the future.}}
 {{Main|item (scripts)}}
 {{About|icons for {{ll|item (scripts)|item scripts}}|icons for {{ll|craftRecipe (scripts)|craftRecipe scripts}}|icon (craftRecipe)}}
 '''{{Code|icon}}''' specifies the Icon for an item, usually used in the inventory and crafting menus. The icon needs to be located inside the {{Code|media/textures/}} folder and must start with {{Code|Item_}} and be of the extension {{ll|File formats#Image formats|<code>.png</code>}}:
