@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== TransmitRange ====
+<translate>
+==== TransmitRange ==== <!--T:1-->
+
+<!--T:2-->
 Range of reception/transmission of a signal by a radio item.
 <syntaxhighlight lang="Java">
 TransmitRange = 7500,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455033}}
+{{Page version|41.78.19}}
 
-==== EnduranceChange ====
+<translate>
+==== EnduranceChange ==== <!--T:1-->
+
+<!--T:2-->
 Used for food. Indicates how much endurance the food will remove. If the number is negative, endurance will decrease, if positive, it will increase.
 <syntaxhighlight lang="Java">
 EnduranceChange = 2,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== SwingSound ====
+<translate>
+==== SwingSound ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. Specifies the sound that is played when swinging a weapon.
 <syntaxhighlight lang="Java">
 SwingSound = GriddlePanSwing,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== TwoHandWeapon ====
+<translate>
+==== TwoHandWeapon ==== <!--T:1-->
+
+<!--T:2-->
 If the parameter is true, then the weapon is considered two-handed.
 <syntaxhighlight lang="Java">
 TwoHandWeapon = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

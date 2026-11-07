@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== Spice ====
+<translate>
+==== Spice ==== <!--T:1-->
+
+<!--T:2-->
 Determines if the item is a spice.
 <syntaxhighlight lang="Java">
 Spice = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

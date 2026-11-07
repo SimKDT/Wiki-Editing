@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== modelWeaponPart ====
+<translate>
+==== modelWeaponPart ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. The parameter specifies the weapon attachment. Format: "partType modelName attachmentNameSelf attachmentParent"
 <syntaxhighlight lang="Java">
 ModelWeaponPart = x8Scope x8Scope scope scope,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

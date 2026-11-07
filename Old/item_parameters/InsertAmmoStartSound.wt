@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== InsertAmmoStartSound ====
+<translate>
+==== InsertAmmoStartSound ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. The parameter specifies the sound that will be played when the reload starts.
 <syntaxhighlight lang="Java">
 InsertAmmoStartSound = DoubleBarrelShotgunInsertAmmoStart,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

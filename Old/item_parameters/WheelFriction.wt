@@ -1,13 +1,18 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== wheelFriction ====
+<translate>
+==== wheelFriction ==== <!--T:1-->
+
+<!--T:2-->
 Modifier friction of wheel for vehicle part.
 
+<!--T:3-->
 Higher wheel friction increases the grip tires have on the road.
 <syntaxhighlight lang="Java">
 wheelFriction = 1.8,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

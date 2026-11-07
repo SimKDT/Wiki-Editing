@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== MountOn ====
+<translate>
+==== MountOn ==== <!--T:1-->
+
+<!--T:2-->
 Indicates which weapon this item (Weapon part) can be applied to.
 <syntaxhighlight lang="Java">
 MountOn = HuntingRifle; VarmintRifle; Shotgun,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

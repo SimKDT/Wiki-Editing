@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== MaxAmmo ====
+<translate>
+==== MaxAmmo ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. Determines the number of ammo that can fit in the item.
 <syntaxhighlight lang="Java">
 MaxAmmo = 15,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

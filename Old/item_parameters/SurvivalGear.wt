@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== SurvivalGear ====
+<translate>
+==== SurvivalGear ==== <!--T:1-->
+
+<!--T:2-->
 Set "ItemType" to "SurvivalGear"
 <syntaxhighlight lang="Java">
 SurvivalGear = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

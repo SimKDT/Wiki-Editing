@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== SoundRadius ====
+<translate>
+==== SoundRadius ==== <!--T:1-->
+
+<!--T:2-->
 Determines the radius of the sound that the item emits.
 <syntaxhighlight lang="Java">
 SoundRadius = 30,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

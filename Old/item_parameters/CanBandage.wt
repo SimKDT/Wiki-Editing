@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454889}}
+{{Page version|41.78.19}}
 
-==== CanBandage ====
+<translate>
+==== CanBandage ==== <!--T:1-->
+
+<!--T:2-->
 Indicates whether this item can apply a bandage to a wound.
 <syntaxhighlight lang="Java">
 CanBandage	=	true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

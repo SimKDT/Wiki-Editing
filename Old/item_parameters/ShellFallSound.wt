@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== ShellFallSound ====
+<translate>
+==== ShellFallSound ==== <!--T:1-->
+
+<!--T:2-->
 Sets the sound of the dropped shell.
 <syntaxhighlight lang="Java">
 ShellFallSound = M9CartridgeFall,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

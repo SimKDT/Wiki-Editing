@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== MaxHitCount ====
+<translate>
+==== MaxHitCount ==== <!--T:1-->
+
+<!--T:2-->
 The parameter determines the maximum number of targets that a player can hit with this weapon in one hit.
 <syntaxhighlight lang="Java">
 MaxHitCount = 2,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

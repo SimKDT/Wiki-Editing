@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== SoundVolume ====
+<translate>
+==== SoundVolume ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for firearms. Determines the volume of the shot.
 <syntaxhighlight lang="Java">
 SoundVolume = 50,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

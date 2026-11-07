@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== WindResistance ====
+<translate>
+==== WindResistance ==== <!--T:1-->
+
+<!--T:2-->
 A modifier that is involved in determining wind protection.
 <syntaxhighlight lang="Java">
 WindResistance = 0.15,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455049}}
+{{Page version|41.78.19}}
 
-==== explosionRange ====
+<translate>
+==== explosionRange ==== <!--T:1-->
+
+<!--T:2-->
 Explosion radius.
 <syntaxhighlight lang="Java">
 ExplosionRange = 6,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

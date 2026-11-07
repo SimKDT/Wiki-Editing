@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454941}}
+{{Page version|41.78.19}}
 
-==== CloseKillMove ====
+<translate>
+==== CloseKillMove ==== <!--T:1-->
+
+<!--T:2-->
 Sets the kill animation up close.
 <syntaxhighlight lang="Java">
 CloseKillMove = Jaw_Stab,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

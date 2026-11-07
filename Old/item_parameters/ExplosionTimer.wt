@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455053}}
+{{Page version|41.78.19}}
 
-==== explosionTimer ====
+<translate>
+==== explosionTimer ==== <!--T:1-->
+
+<!--T:2-->
 The time before the trap explodes.
 <syntaxhighlight lang="Java">
 ExplosionTimer = 5,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

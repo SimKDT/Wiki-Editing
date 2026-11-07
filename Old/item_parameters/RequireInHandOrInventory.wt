@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== RequireInHandOrInventory ====
+<translate>
+==== RequireInHandOrInventory ==== <!--T:1-->
+
+<!--T:2-->
 The parameter specifies the item that the player must have in order to use the original item. You can select multiple items.
 <syntaxhighlight lang="Java">
 RequireInHandOrInventory = Matches/Matchbox/LighterDisposable/Lighter,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

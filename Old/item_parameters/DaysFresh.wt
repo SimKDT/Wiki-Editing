@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455009}}
+{{Page version|41.78.19}}
 
-==== DaysFresh ====
+<translate>
+==== DaysFresh ==== <!--T:1-->
+
+<!--T:2-->
 Used for food. Specifies how many days the food will be fresh.
 <syntaxhighlight lang="Java">
 DaysFresh = 3,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

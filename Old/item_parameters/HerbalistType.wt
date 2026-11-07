@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455099}}
+{{Page version|41.78.19}}
 
-==== HerbalistType ====
+<translate>
+==== HerbalistType ==== <!--T:1-->
+
+<!--T:2-->
 To recognize an item with this parameter, you need to know the Herbalist recipe.
 <syntaxhighlight lang="Java">
 HerbalistType = Mushroom,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

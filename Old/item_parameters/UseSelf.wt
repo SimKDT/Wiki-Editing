@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== UseSelf ====
+<translate>
+==== UseSelf ==== <!--T:1-->
+
+<!--T:2-->
 Used for weapons. If the parameter is true, then the weapon will be spent on use.
 <syntaxhighlight lang="Java">
 UseSelf = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455047}}
+{{Page version|41.78.19}}
 
-==== explosionPower ====
+<translate>
+==== explosionPower ==== <!--T:1-->
+
+<!--T:2-->
 The item's explosion strength modifier.
 <syntaxhighlight lang="Java">
 ExplosionPower = 70,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

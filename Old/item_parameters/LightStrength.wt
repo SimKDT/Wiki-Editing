@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== LightStrength ====
+<translate>
+==== LightStrength ==== <!--T:1-->
+
+<!--T:2-->
 Determines the strength of the item's glow.
 <syntaxhighlight lang="Java">
 LightStrength = 2.3,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

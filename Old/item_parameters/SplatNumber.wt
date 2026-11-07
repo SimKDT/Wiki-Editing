@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== SplatNumber ====
+<translate>
+==== SplatNumber ==== <!--T:1-->
+
+<!--T:2-->
 A modifier that affects the amount of blood that appears after being hit by an item.
 <syntaxhighlight lang="Java">
 SplatNumber = 4,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

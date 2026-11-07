@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454869}}
+{{Page version|41.78.19}}
 
-==== BiteDefense ====
+<translate>
+==== BiteDefense ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for clothes. The parameter specifies the bite protection modifier.
 <syntaxhighlight lang="Java">
 BiteDefense = 20,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

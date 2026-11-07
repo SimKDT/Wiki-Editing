@@ -1,9 +1,10 @@
 {{Title|{{lcs|slash=false}}}} <!-- changes display title to subpage name -->
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
 ==== Weight ====
+
 Sets the weight of the item.
 <syntaxhighlight lang="Java">
 Weight = 1.25,

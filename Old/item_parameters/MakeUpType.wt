@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== MakeUpType ====
+<translate>
+==== MakeUpType ==== <!--T:1-->
+
+<!--T:2-->
 Specifies the location of make up. All list of make up locations you can find in "media\lua\shared\Definitions\MakeUpDefinitions.lua"
 <syntaxhighlight lang="Java">
 MakeUpType = Lips,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

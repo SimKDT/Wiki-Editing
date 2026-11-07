@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== MinRangeModifier ====
+<translate>
+==== MinRangeModifier ==== <!--T:1-->
+
+<!--T:2-->
 Sets the minimum range modifier for the WeaponPart.
 <syntaxhighlight lang="Java">
 MinRangeModifier = 6,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

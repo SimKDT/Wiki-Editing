@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454987}}
+{{Page version|41.78.19}}
 
-==== Cosmetic ====
+<translate>
+==== Cosmetic ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for clothes. If the parameter is true, then the item will not render a 3D model (The exception is an item that is worn on the Eye part of the body)
 <syntaxhighlight lang="Java">
 Cosmetic = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

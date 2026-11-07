@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== PushBackMod ====
+<translate>
+==== PushBackMod ==== <!--T:1-->
+
+<!--T:2-->
 The parameter determines the modifier that affects the stagger of targets after being hit.
 <syntaxhighlight lang="Java">
 PushBackMod = 0.3,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

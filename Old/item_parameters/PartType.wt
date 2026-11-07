@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== PartType ====
+<translate>
+==== PartType ==== <!--T:1-->
+
+<!--T:2-->
 Specifies the type of weapon part.
 <syntaxhighlight lang="Java">
 PartType = Scope,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,8 +1,12 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== PalettesStart ====
+<translate>
+==== PalettesStart ==== <!--T:1-->
+
+<!--T:2-->
 ''DEPRECATED''
+</translate>
 
 {{ll|Category:Item scripts parameters}}

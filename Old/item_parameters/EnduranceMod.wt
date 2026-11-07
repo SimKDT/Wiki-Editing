@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455035}}
+{{Page version|41.78.19}}
 
-==== EnduranceMod ====
+<translate>
+==== EnduranceMod ==== <!--T:1-->
+
+<!--T:2-->
 A modifier that affects how endurance is spent during an attack.
 <syntaxhighlight lang="Java">
 EnduranceMod = 1.4,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

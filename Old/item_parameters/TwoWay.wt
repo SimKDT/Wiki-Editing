@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== TwoWay ====
+<translate>
+==== TwoWay ==== <!--T:1-->
+
+<!--T:2-->
 If the parameter is true, then the item can play and transmit sound. If false - only play.
 <syntaxhighlight lang="Java">
 TwoWay = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

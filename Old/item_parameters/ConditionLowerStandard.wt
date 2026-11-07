@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454979}}
+{{Page version|41.78.19}}
 
-==== ConditionLowerStandard ====
+<translate>
+==== ConditionLowerStandard ==== <!--T:1-->
+
+<!--T:2-->
 A modifier for the Vehicle Part that affects how badly the part will be damaged on a normal road.
 <syntaxhighlight lang="Java">
 ConditionLowerStandard = 0.04,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== IsCookable ====
+<translate>
+==== IsCookable ==== <!--T:1-->
+
+<!--T:2-->
 Used for food. Determines if the item can be cooked.
 <syntaxhighlight lang="Java">
 IsCookable = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

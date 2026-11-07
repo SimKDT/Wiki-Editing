@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== IsHighTier ====
+<translate>
+==== IsHighTier ==== <!--T:1-->
+
+<!--T:2-->
 If the parameter is true, then the chance of the appearance of preset radio stations is higher.
 <syntaxhighlight lang="Java">
 IsHighTier = false,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

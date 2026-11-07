@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455051}}
+{{Page version|41.78.19}}
 
-==== explosionSound ====
+<translate>
+==== explosionSound ==== <!--T:1-->
+
+<!--T:2-->
 The sound that will be played when the object explodes.
 <syntaxhighlight lang="Java">
 ExplosionSound  =   FlameTrapExplode,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

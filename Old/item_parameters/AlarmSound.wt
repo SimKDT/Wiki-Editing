@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454831}}
+{{Page version|41.78.19}}
 
-==== AlarmSound ====
+<translate>
+==== AlarmSound ==== <!--T:1-->
+
+<!--T:2-->
 Sets the alarm sound.
 <syntaxhighlight lang="Java">
 AlarmSound = WatchAlarmLoop,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

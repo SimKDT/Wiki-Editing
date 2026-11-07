@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== suspensionCompression ====
+<translate>
+==== suspensionCompression ==== <!--T:1-->
+
+<!--T:2-->
 Defines a modifier for suspension compression.
 <syntaxhighlight lang="Java">
 suspensionCompression = 1.83,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

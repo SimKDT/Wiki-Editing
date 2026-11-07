@@ -1,9 +1,9 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|42.12.1}}
 {{Main|item (scripts)}}
-{{About|icons for [[item (scripts)|item scripts]]|icons for [[craftRecipe (scripts)|craftRecipe scripts]]|icon (craftRecipe)}}
-'''{{Code|icon}}''' specifies the Icon for an item, usually used in the inventory and crafting menus. The icon needs to be located inside the {{Code|media/textures/}} folder and must start with {{Code|Item_}} and be of the extension [[File formats#Image formats|<code>.png</code>]]:
+{{About|icons for {{ll|item (scripts)|item scripts}}|icons for {{ll|craftRecipe (scripts)|craftRecipe scripts}}|icon (craftRecipe)}}
+'''{{Code|icon}}''' specifies the Icon for an item, usually used in the inventory and crafting menus. The icon needs to be located inside the {{Code|media/textures/}} folder and must start with {{Code|Item_}} and be of the extension {{ll|File formats#Image formats|<code>.png</code>}}:
 {{CodeSnip|code =
 media/
 └── textures/
@@ -25,6 +25,7 @@ To sum it up, follow these rules to set an icon for an item:
 {{Note|type=warn|A common mistake when an icon is not showing up is to forget the {{Code|Item_}} prefix.}}
 
 == Subfolders ==
+
 Subfolders are not directly supported, but you can use some tricks to have one by doing:
 {{CodeSnip|code =
 Icon = subFolder/iconName,
@@ -38,17 +39,19 @@ media/
 }}
 
 == Food icons ==
+
 Icons can be specified for rotten, cooked, and burned food by adding these suffix to the icon files:
 ;{{Code|Rotten}} or {{Code|Spoiled}}
-:Food that has rotten, meaning has passed the [[DaysTotallyRotten]] value.
+:Food that has rotten, meaning has passed the {{ll|DaysTotallyRotten}} value.
 ;{{Code|Cooked}}
-:Food that has been cooked, meaning has passed the [[MinutesToCook]] value.
+:Food that has been cooked, meaning has passed the {{ll|MinutesToCook}} value.
 ;{{Code|Overdone}} or {{Code|Burnt}}
-:Food that has been cooked to the point of burning, meaning has passed the [[MinutesToBurn]] value.
+:Food that has been cooked to the point of burning, meaning has passed the {{ll|MinutesToBurn}} value.
 
 Food condition icons that do not exist will use the default icon value.
 
 === Example ===
+
 Take a food item with the icon file defined as such:
 {{CodeSnip|code =
 Icon = iconName,

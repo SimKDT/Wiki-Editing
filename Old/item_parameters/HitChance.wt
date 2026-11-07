@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455103}}
+{{Page version|41.78.19}}
 
-==== HitChance ====
+<translate>
+==== HitChance ==== <!--T:1-->
+
+<!--T:2-->
 Modifier for firearms. Affects the chance to hit the target.
 <syntaxhighlight lang="Java">
 HitChance = 20,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== ProtectFromRainWhenEquipped ====
+<translate>
+==== ProtectFromRainWhenEquipped ==== <!--T:1-->
+
+<!--T:2-->
 If this parameter is true, then the player is protected from rain if the item is equipped.
 <syntaxhighlight lang="Java">
 ProtectFromRainWhenEquipped = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

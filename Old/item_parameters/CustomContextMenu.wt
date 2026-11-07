@@ -1,16 +1,26 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|42.7.0|2=454997}}
+{{Page version|42.7.0}}
 
-==== CustomContextMenu ====
+<translate>
+==== CustomContextMenu ==== <!--T:1-->
+
+<!--T:2-->
 Changes the context menu item "Eat" of the food to the one specified in the parameter.
+</translate>
 {{CodeSnip
 | lang = java
 | code =
 CustomContextMenu = Smoke,
 }}
 
-To translate the custom context menu entry, simply add a [[Translations|translation]] entry in the file {{Code|ContextMenu}} of your mod. For example:
+<translate>
+<!--T:3-->
+To translate the custom context menu entry, simply add a {{ll|Translations|translation}} entry in the file
+</translate> {{Code|ContextMenu}} <translate>
+<!--T:4-->
+of your mod. For example:
+</translate>
 {{CodeSnip
 | lang = lua
 | code =

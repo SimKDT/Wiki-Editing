@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454887}}
+{{Page version|41.78.19}}
 
-==== Calories ====
+<translate>
+==== Calories ==== <!--T:1-->
+
+<!--T:2-->
 Specifies the number of calories in an item.
 <syntaxhighlight lang="Java">
 Calories = 10.5,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

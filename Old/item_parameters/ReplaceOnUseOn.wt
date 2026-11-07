@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== ReplaceOnUseOn ====
+<translate>
+==== ReplaceOnUseOn ==== <!--T:1-->
+
+<!--T:2-->
 Used to specify an item to replace when the item is filled with something. Written in the format "Source" - "ResultItem".
 <syntaxhighlight lang="Java">
 ReplaceOnUseOn = WaterSource-WaterPot,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

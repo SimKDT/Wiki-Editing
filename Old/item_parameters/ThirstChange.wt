@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== ThirstChange ====
+<translate>
+==== ThirstChange ==== <!--T:1-->
+
+<!--T:2-->
 Used for food. Indicates how much thirst the food will quench if the item is completely consumed. If the number is negative, thirst will decrease, if positive, it will increase.
 <syntaxhighlight lang="Java">
 ThirstChange = -4,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

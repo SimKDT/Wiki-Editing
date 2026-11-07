@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== SkillTrained ====
+<translate>
+==== SkillTrained ==== <!--T:1-->
+
+<!--T:2-->
 Determines the skill that will receive the experience boost.
 <syntaxhighlight lang="Java">
 SkillTrained = Trapping,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

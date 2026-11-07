@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== Poison ====
+<translate>
+==== Poison ==== <!--T:1-->
+
+<!--T:2-->
 Indicates if a food item is poisonous.
 <syntaxhighlight lang="Java">
 Poison = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

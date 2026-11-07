@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454829}}
+{{Page version|41.78.19}}
 
-==== AimingTimeModifier ====
+<translate>
+==== AimingTimeModifier ==== <!--T:1-->
+
+<!--T:2-->
 Modifier for the time it takes to aim (WeaponPart item). A positive number to speed up aiming speed.
 <syntaxhighlight lang="Java">
 AimingTimeModifier = 5,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

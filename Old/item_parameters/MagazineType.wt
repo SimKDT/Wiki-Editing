@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== MagazineType ====
+<translate>
+==== MagazineType ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. The parameter specifies the magazine type for the weapon.
 <syntaxhighlight lang="Java">
 MagazineType = Base.9mmClip,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

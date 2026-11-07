@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== SoundMap ====
+<translate>
+==== SoundMap ==== <!--T:1-->
+
+<!--T:2-->
 Specifies an EventName-Sound pair.
 <syntaxhighlight lang="Java">
 SoundMap = SpearStab SpearHuntingKnifeStab,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

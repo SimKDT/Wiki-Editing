@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== InsertAmmoStopSound ====
+<translate>
+==== InsertAmmoStopSound ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. The parameter specifies the sound that will be played at the end of reloading.
 <syntaxhighlight lang="Java">
 InsertAmmoStopSound = DoubleBarrelShotgunInsertAmmoStop,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

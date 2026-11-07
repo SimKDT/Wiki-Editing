@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455101}}
+{{Page version|41.78.19}}
 
-==== HitAngleMod ====
+<translate>
+==== HitAngleMod ==== <!--T:1-->
+
+<!--T:2-->
 A parameter that affects the attack sector (how many targets will be captured in one hit). The default value is zero. The smaller, the larger the range.
 <syntaxhighlight lang="Java">
 HitAngleMod = -30,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

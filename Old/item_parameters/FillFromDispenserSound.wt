@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455067}}
+{{Page version|41.78.19}}
 
-==== FillFromDispenserSound ====
+<translate>
+==== FillFromDispenserSound ==== <!--T:1-->
+
+<!--T:2-->
 Specifies the sound that will be played when water is poured into the item from the dispenser.
 <syntaxhighlight lang="Java">
 FillFromDispenserSound = GetWaterFromDispenserPlasticMedium,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

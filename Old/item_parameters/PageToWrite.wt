@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== PageToWrite ====
+<translate>
+==== PageToWrite ==== <!--T:1-->
+
+<!--T:2-->
 The number of pages that can be written on in the item.
 <syntaxhighlight lang="Java">
 PageToWrite = 12,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

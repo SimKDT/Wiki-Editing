@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454823}}
+{{Page version|41.78.19}}
 
-==== AimingPerkMinAngleModifier ====
+<translate>
+==== AimingPerkMinAngleModifier ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. A modifier that determines how much the Aim skill affects the aiming angle.
 <syntaxhighlight lang="Java">
 AimingPerkMinAngleModifier = 0.05,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

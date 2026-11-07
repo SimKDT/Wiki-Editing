@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454881}}
+{{Page version|41.78.19}}
 
-==== BringToBearSound ====
+<translate>
+==== BringToBearSound ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. The parameter specifies the sound that will be played when aiming starts.
 <syntaxhighlight lang="Java">
 BringToBearSound = M1911BringToBear,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== ReplaceOnRotten ====
+<translate>
+==== ReplaceOnRotten ==== <!--T:1-->
+
+<!--T:2-->
 Indicates what item the original item will turn into after it rotten.
 <syntaxhighlight lang="Java">
 ReplaceOnRotten = IcecreamMelted,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

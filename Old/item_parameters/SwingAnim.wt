@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== SwingAnim ====
+<translate>
+==== SwingAnim ==== <!--T:1-->
+
+<!--T:2-->
 A value that is used to select the animation for swinging the weapon.
 <syntaxhighlight lang="Java">
 SwingAnim = Bat,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

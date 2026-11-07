@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454975}}
+{{Page version|41.78.19}}
 
-==== ConditionLowerChanceOneIn ====
+<translate>
+==== ConditionLowerChanceOneIn ==== <!--T:1-->
+
+<!--T:2-->
 This parameter specifies the item's breakage modifier when item used.
 <syntaxhighlight lang="Java">
 ConditionLowerChanceOneIn = 25,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

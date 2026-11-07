@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== MultipleHitConditionAffected ====
+<translate>
+==== MultipleHitConditionAffected ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. If the parameter is set to true, then when a weapon hits targets, the durability of the weapon is spent. Usually set to false for firearms.
 <syntaxhighlight lang="Java">
 MultipleHitConditionAffected = false,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== LvlSkillTrained ====
+<translate>
+==== LvlSkillTrained ==== <!--T:1-->
+
+<!--T:2-->
 Max skill level when book item can be read.
 <syntaxhighlight lang="Java">
 LvlSkillTrained = 3,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

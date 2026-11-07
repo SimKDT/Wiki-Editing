@@ -1,13 +1,17 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== OnEat ====
+<translate>
+==== OnEat ==== <!--T:1-->
+
+<!--T:2-->
 Specifies a Lua function to be called when an item is eaten. Food, character and percent of food eaten is passed as parameters.
 <syntaxhighlight lang="Java">
 OnEat = OnEat_Cigarettes,
 </syntaxhighlight>
 
+<!--T:3-->
 <syntaxhighlight lang="Lua">
 function OnEat_Cigarettes(food, character, percent)
     local script = food:getScriptItem()
@@ -34,5 +38,6 @@ function OnEat_Cigarettes(food, character, percent)
     end
 end
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

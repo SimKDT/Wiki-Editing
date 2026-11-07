@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== UnhappyChange ====
+<translate>
+==== UnhappyChange ==== <!--T:1-->
+
+<!--T:2-->
 Indicates how much unhappy the use of the item will remove. If the number is negative, unhappy will decrease, if it is positive, it will increase.
 <syntaxhighlight lang="Java">
 UnhappyChange = -10,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

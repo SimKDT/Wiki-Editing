@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455015}}
+{{Page version|41.78.19}}
 
-==== DisappearOnUse ====
+<translate>
+==== DisappearOnUse ==== <!--T:1-->
+
+<!--T:2-->
 If the parameter is set to false, then there will be no waste of using the item (In normal use).
 <syntaxhighlight lang="Java">
 DisappearOnUse = false,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

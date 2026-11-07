@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455031}}
+{{Page version|41.78.19}}
 
-==== EjectAmmoStopSound ====
+<translate>
+==== EjectAmmoStopSound ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. The parameter specifies the sound that will be played when the weapon is unloaded.
 <syntaxhighlight lang="Java">
 EjectAmmoStopSound = DoubleBarrelShotgunEjectAmmoStop,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454853}}
+{{Page version|41.78.19}}
 
-==== AttachmentReplacement ====
+<translate>
+==== AttachmentReplacement ==== <!--T:1-->
+
+<!--T:2-->
 Determines which slot will replace the item.
 <syntaxhighlight lang="Java">
 AttachmentReplacement = Bag,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

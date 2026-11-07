@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454835}}
+{{Page version|41.78.19}}
 
-==== Alcoholic ====
+<translate>
+==== Alcoholic ==== <!--T:1-->
+
+<!--T:2-->
 The parameter indicates that the item contains alcohol. Used for alcoholic drinks and alcohol-sterilized bandages.
 <syntaxhighlight lang="Java">
 Alcoholic = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454913}}
+{{Page version|41.78.19}}
 
-==== CantBeConsolided ====
+<translate>
+==== CantBeConsolided ==== <!--T:1-->
+
+<!--T:2-->
 If this parameter is true, then this item (Drainable) cannot be combined with an item of a similar type.
 <syntaxhighlight lang="Java">
 CantBeConsolided = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

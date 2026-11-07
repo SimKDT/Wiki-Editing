@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454989}}
+{{Page version|41.78.19}}
 
-==== Count ====
+<translate>
+==== Count ==== <!--T:1-->
+
+<!--T:2-->
 Determines how many items of this type will appear when spawning/crafting this type of item.
 <syntaxhighlight lang="Java">
 Count = 5,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== WeightEmpty ====
+<translate>
+==== WeightEmpty ==== <!--T:1-->
+
+<!--T:2-->
 Used for drainable items. Sets the weight for an item when it is empty. (The game dynamically calculates the weight depending on how much is left in the subject of uses)
 <syntaxhighlight lang="Java">
 WeightEmpty = 3.3,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

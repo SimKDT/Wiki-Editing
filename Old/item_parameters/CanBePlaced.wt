@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454895}}
+{{Page version|41.78.19}}
 
-==== canBePlaced ====
+<translate>
+==== canBePlaced ==== <!--T:1-->
+
+<!--T:2-->
 If the parameter is true, then the trap can be placed on the ground.
 <syntaxhighlight lang="Java">
 CanBePlaced = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

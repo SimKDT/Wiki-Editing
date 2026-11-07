@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== RackSound ====
+<translate>
+==== RackSound ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. The parameter specifies the sound that will be played when rack the gun.
 <syntaxhighlight lang="Java">
 RackSound = DesertEagleRack,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

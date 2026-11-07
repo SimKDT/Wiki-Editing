@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== UseWhileEquipped ====
+<translate>
+==== UseWhileEquipped ==== <!--T:1-->
+
+<!--T:2-->
 If true, the drainable item's charge is spent when activated and equipped.
 <syntaxhighlight lang="Java">
 UseWhileEquipped = false,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

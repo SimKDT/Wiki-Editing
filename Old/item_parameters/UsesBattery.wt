@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== UsesBattery ====
+<translate>
+==== UsesBattery ==== <!--T:1-->
+
+<!--T:2-->
 Sets whether the item uses a battery.
 <syntaxhighlight lang="Java">
 UsesBattery = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

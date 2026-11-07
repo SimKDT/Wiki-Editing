@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455109}}
+{{Page version|41.78.19}}
 
-==== HitFloorSound ====
+<translate>
+==== HitFloorSound ==== <!--T:1-->
+
+<!--T:2-->
 Used for weapons. Indicates the sound that will be played when the item hits the floor.
 <syntaxhighlight lang='Java'>
 HitFloorSound = AxeHit,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

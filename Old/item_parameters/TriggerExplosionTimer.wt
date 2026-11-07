@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== triggerExplosionTimer ====
+<translate>
+==== triggerExplosionTimer ==== <!--T:1-->
+
+<!--T:2-->
 The time after which the item will explode (after activation). Used for items that are thrown.
 <syntaxhighlight lang="Java">
 triggerExplosionTimer   =   50,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

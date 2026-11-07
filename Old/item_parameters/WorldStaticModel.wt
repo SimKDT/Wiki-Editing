@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== WorldStaticModel ====
+<translate>
+==== WorldStaticModel ==== <!--T:1-->
+
+<!--T:2-->
 Used to display an item on the ground.
 <syntaxhighlight lang="Java">
 WorldStaticModel = BookYellowBrown_Ground,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454879}}
+{{Page version|41.78.19}}
 
-==== BreakSound ====
+<translate>
+==== BreakSound ==== <!--T:1-->
+
+<!--T:2-->
 Specifies the sound that will play when the item breaks.
 <syntaxhighlight lang="Java">
 BreakSound = HammerBreak,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== suspensionDamping ====
+<translate>
+==== suspensionDamping ==== <!--T:1-->
+
+<!--T:2-->
 Specifies a modifier for suspension damping.
 <syntaxhighlight lang="Java">
 suspensionDamping = 1.88,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

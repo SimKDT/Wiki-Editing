@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== RecoilDelay ====
+<translate>
+==== RecoilDelay ==== <!--T:1-->
+
+<!--T:2-->
 Specifies the delay between shots.
 <syntaxhighlight lang="Java">
 RecoilDelay = 20,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

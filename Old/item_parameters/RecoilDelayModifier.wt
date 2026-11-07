@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== RecoilDelayModifier ====
+<translate>
+==== RecoilDelayModifier ==== <!--T:1-->
+
+<!--T:2-->
 Determines the recoil of the weapon. Affects the pause between shots.
 <syntaxhighlight lang="Java">
 RecoilDelayModifier = -10.0,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

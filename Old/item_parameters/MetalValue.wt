@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== MetalValue ====
+<translate>
+==== MetalValue ==== <!--T:1-->
+
+<!--T:2-->
 Sets the amount of metal in the item. Affects the operation of the microwave.
 <syntaxhighlight lang='Java'>
 MetalValue = 150,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

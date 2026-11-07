@@ -1,8 +1,9 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
 ==== OnCreate ====
+
 Specifies a Lua function that will be called when the item spawns. An object is passed to the function as an argument. It is convenient to use to set the parameters of an object when it appears in the world.
 <syntaxhighlight lang="Java">
 OnCreate = Fishing.OnCreateFish,

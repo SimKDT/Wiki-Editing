@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== UseForPoison ====
+<translate>
+==== UseForPoison ==== <!--T:1-->
+
+<!--T:2-->
 Used as a multiplier for poison strength in recipes with this item.
 <syntaxhighlight lang="Java">
 UseForPoison = 38,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

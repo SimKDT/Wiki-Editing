@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== NoTransmit ====
+<translate>
+==== NoTransmit ==== <!--T:1-->
+
+<!--T:2-->
 Indicates that the device is not transmitting or receiving data (Radio).
 <syntaxhighlight lang="Java">
 NoTransmit = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

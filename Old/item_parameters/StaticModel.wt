@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== StaticModel ====
+<translate>
+==== StaticModel ==== <!--T:1-->
+
+<!--T:2-->
 Used to display the item in hands.
 <syntaxhighlight lang="Java">
 StaticModel = Book,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

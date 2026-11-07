@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455093}}
+{{Page version|41.78.19}}
 
-==== GunType ====
+<translate>
+==== GunType ==== <!--T:1-->
+
+<!--T:2-->
 Determines the weapon that this item will fit.
 <syntaxhighlight lang="Java">
 GunType = Base.Pistol2,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

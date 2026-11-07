@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== InsertAllBulletsReload ====
+<translate>
+==== InsertAllBulletsReload ==== <!--T:1-->
+
+<!--T:2-->
 Parameter for weapons. If the parameter is true, then the player loads ammo directly into the weapon.
 <syntaxhighlight lang="Java">
 InsertAllBulletsReload = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== UseEndurance ====
+<translate>
+==== UseEndurance ==== <!--T:1-->
+
+<!--T:2-->
 If the parameter is false, then using the weapon will not waste endurance.
 <syntaxhighlight lang="Java">
 UseEndurance = false,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

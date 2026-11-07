@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== MaxCapacity ====
+<translate>
+==== MaxCapacity ==== <!--T:1-->
+
+<!--T:2-->
 Max capacity for vehicle part.
 <syntaxhighlight lang="Java">
 MaxCapacity = 40,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

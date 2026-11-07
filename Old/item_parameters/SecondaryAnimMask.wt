@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== SecondaryAnimMask ====
+<translate>
+==== SecondaryAnimMask ==== <!--T:1-->
+
+<!--T:2-->
 Specifies the animation mask that will be applied to the animation when the item is in the secondary hand.
 <syntaxhighlight lang="Java">
 SecondaryAnimMask = HoldingTorchLeft,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

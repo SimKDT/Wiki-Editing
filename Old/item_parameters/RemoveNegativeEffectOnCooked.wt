@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== RemoveNegativeEffectOnCooked ====
+<translate>
+==== RemoveNegativeEffectOnCooked ==== <!--T:1-->
+
+<!--T:2-->
 If this parameter is true, then the item will remove the negative effects of thirst, boredom and unhappiness after cooking.
 <syntaxhighlight lang="Java">
 RemoveNegativeEffectOnCooked = true,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== Insulation ====
+<translate>
+==== Insulation ==== <!--T:1-->
+
+<!--T:2-->
 Modifier for Insulation which is involved in determining cold protection.
 <syntaxhighlight lang="Java">
 Insulation = 0.75,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

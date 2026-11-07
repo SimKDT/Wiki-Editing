@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=454963}}
+{{Page version|41.78.19}}
 
-==== ColorGreen ====
+<translate>
+==== ColorGreen ==== <!--T:1-->
+
+<!--T:2-->
 Sets the green color parameter (0-255) to use in the tint of the item's icon and to determine the color of the light bulb's glow.
 <syntaxhighlight lang="Java">
 ColorGreen = 195,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

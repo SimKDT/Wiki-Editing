@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
-{{Page version|41.78.19|2=455113}}
+{{Page version|41.78.19}}
 
-==== HungerChange ====
+<translate>
+==== HungerChange ==== <!--T:1-->
+
+<!--T:2-->
 Used for food. Indicates how much hunger the food will satisfy if the item is completely eaten. If the number is negative, hunger will decrease, if positive, it will increase.
 <syntaxhighlight lang="Java">
 HungerChange = -20,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}

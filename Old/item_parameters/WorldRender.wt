@@ -1,11 +1,15 @@
-{{LangSwitch}}
+<languages />
 {{Navbar modding}}
 {{Page version|41.78.19}}
 
-==== WorldRender ====
+<translate>
+==== WorldRender ==== <!--T:1-->
+
+<!--T:2-->
 If the parameter is false, then the item will not appear on the ground as a 3D item.
 <syntaxhighlight lang="Java">
 WorldRender = false,
 </syntaxhighlight>
+</translate>
 
 {{ll|Category:Item scripts parameters}}
