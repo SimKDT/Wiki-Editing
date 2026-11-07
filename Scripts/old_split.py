@@ -42,10 +42,16 @@ for page in root.findall('mediawiki:page', ns):
             print(f"Text is None for page: {title}, skipping.")
             continue
 
+        # skip if / in it
+        if '/' in title:
+            print(f"Title contains '/', skipping: {title}")
+            continue
+
         # create a file for each page
         output_file.parent.mkdir(parents=True, exist_ok=True)
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(text)
+            print(f"{title}")
     except Exception as e:
         print(f"Error processing page: {title}. Error: {e}")
 
