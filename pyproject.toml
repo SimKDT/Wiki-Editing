@@ -1,0 +1,23 @@
+[project]
+name = "wiki-editing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "SimKDT", email = "simon.cadet79@hotmail.fr" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "requests",
+    "lupa",
+    "matplotlib",
+    "rich",
+    "pyyaml",
+]
+
+[project.scripts]
+wiki-editing = "wiki_editing:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
