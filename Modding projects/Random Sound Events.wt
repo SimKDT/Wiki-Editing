@@ -1,0 +1,34 @@
+<languages />
+{{Navbar modding}}
+{{Page version|41.78.21}}
+{{Infobox
+| title = Random Sound Events
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Random Sounds Events - icon.jpeg]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2834231099
+        | Steam Workshop
+        }}
+    }}
+}}
+<translate>
+'''Random Sound Events''' is an API built for [[Build 41]] which allows modders to provide a set of random world sound events that can happen randomly. These sounds are more commonly refered to as [[Metagame|meta events]] which are not tied to anything that could be found in the world directly, but rather events that occur off-screen and are implied to happen within the game world (e.g. distant gunfire, thunder or animal sounds).
+</translate>
+{{Clear}}
+<translate>
+== Navigation ==
+</translate>
+
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

@@ -1,0 +1,41 @@
+<languages />
+{{Navbar modding}}
+{{Page version|42.21.0}}
+{{Infobox
+| title = Fluid Mask By Index API
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Fluid Mask By Index API - icon.jpeg]]
+    |  1 = [[File:Fluid Mask By Index API - icon.jpeg|link=]]
+    | p2 = [[File:Fluid Mask By Index API - preview1.jpeg]]
+    |  2 = [[File:Fluid Mask By Index API - preview1.jpeg|link=]]
+    | p3 = [[File:Fluid Mask By Index API - preview2.jpeg]]
+    |  3 = [[File:Fluid Mask By Index API - preview2.jpeg|link=]]
+    | p4 = [[File:Fluid Mask By Index API - preview3.jpeg]]
+    |  4 = [[File:Fluid Mask By Index API - preview3.jpeg|link=]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3810883159
+        | Steam Workshop
+        }}
+    }}
+}}
+<translate>
+'''Fluid Mask By Index API''' is an API which provides the ability for the [[Item (scripts)|item scripts]] definitions using [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-iconsfortexture IconsForTexture], [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-staticmodelsbyindex StaticModelsByIndex] and [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-worldstaticmodelsbyindex WorldStaticModelsByIndex] to have [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/item.html#scripts-item-worldstaticmodelsbyindex IconFluidMask] applied by index instead of a singular fluid mask for every item variants.
+</translate>
+{{Clear}}
+<translate>
+== Navigation ==
+</translate>
+
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}
