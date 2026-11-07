@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from util.execute_lua import run_files
+from wiki_editing.debug_mode.util.execute_lua import run_files
 
 
 lua_files: list[Path] = []

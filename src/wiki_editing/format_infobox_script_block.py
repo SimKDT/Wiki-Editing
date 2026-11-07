@@ -1,7 +1,7 @@
 import os, json, subprocess
 from pprint import pprint
 import pyperclip
-from util import pzwiki
+from wiki_editing.util import pzwiki
 
 ## Parameters
 ToMap = {
